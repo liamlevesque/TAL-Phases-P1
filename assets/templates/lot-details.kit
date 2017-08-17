@@ -15,29 +15,35 @@
         
         <!-- @include '/assets/components/layout/header' -->
         
-        <div class="l-main-container c-lot-details g-wrapper" v-for="lot in findOneLot(0)"> 
+        <div class="l-main-container"> 
+            <!-- @include '/assets/components/components/navigation_tabs' -->
             <!-- @include '/assets/components/layout/search-n-filter' -->	
-            <!-- @include '/assets/components/components/navigation_breadcrumb' -->	
-            <div class="g-cell">
+           
+            <div class="c-lot-details" v-for="lot in findOneLot(0)">
+                <!-- @include '/assets/components/components/navigation_breadcrumb' -->	
                 <div class="g-wrapper">
-                    <div class="g-cell">
-                        <img v-bind:src="lot.photos[0].src" alt="" class="c-lot-details--lot-photo">
-                        <ul class="c-lot-details--lot-thumbnails">
-                            <li v-for="photo in lot.photos" class="li c-lot-details--lot-thumbnail">
-                                <img v-bind:src="photo.src" alt="">
-                            </li>
-                        </ul>
+                    <div class="g-cell g-cell__two-thirds">
+                        <div class="g-wrapper">
+                            <div class="g-cell c-lot-details--photo-area">
+                                <img v-bind:src="lot.photos[0].src" alt="" class="c-lot-details--lot-photo">
+                                <ul class="c-lot-details--lot-thumbnails">
+                                    <li v-for="photo in lot.photos" class="li c-lot-details--lot-thumbnail">
+                                        <img v-bind:src="photo.src" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="g-cell c-lot--lot-details">
+                                <!-- @include '/assets/components/components/lot_text-fields' -->
+                                <hr class="o-hr">
+                                <button class="o-button__icon">Watch this lot</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="g-cell c-lot--lot-details">
-                        <!-- @include '/assets/components/components/lot_text-fields' -->
-                        <hr class="o-hr">
-                        <button class="o-button__icon">Watch this lot</button>
+                    <div class="g-cell">
+                        <!-- @include '/assets/components/components/lot_bid-area' -->
+                        <!-- @include '/assets/components/components/lot_bid-history' --> 
                     </div>
                 </div>
-            </div>
-            <div class="g-cell">
-                <!-- @include '/assets/components/components/lot_bid-area' -->
-                <!-- @include '/assets/components/components/lot_bid-history' --> 
             </div>
 
         </div>

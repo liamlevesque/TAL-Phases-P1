@@ -1399,11 +1399,33 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .c-lot--lot-details {
   padding: 0 20px; }
 
-.c-lot--highBid {
-  margin-top: 15px; }
+.c-lot--bid-and-closing {
+  padding: 15px 0; }
+  .c-lot--bid-and-closing > div + div {
+    border-top: 1px dotted #CCCCCC;
+    margin-top: 15px;
+    padding-top: 15px; }
 
-.c-lot--closing {
-  margin-bottom: 15px; }
+.c-lot-details--photo-area {
+  max-width: 400px; }
+
+.c-lot-details--lot-thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.c-lot-details--lot-thumbnail {
+  width: 32%;
+  margin-bottom: 10px; }
+  .c-lot-details--lot-thumbnail img {
+    display: block;
+    width: 100%;
+    max-width: 100%; }
 
 .l-header {
   padding: 30px; }

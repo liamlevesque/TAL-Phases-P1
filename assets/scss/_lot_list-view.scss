@@ -20,10 +20,35 @@
         padding: 0 spacing(medium);
     }
     
-    .c-lot--highBid{
-        margin-top: spacing(small);
+    .c-lot--bid-and-closing{
+        padding: spacing(small) 0;
+
+        &>div+div{
+            border-top: $ritchie-border;
+            margin-top: spacing(small);
+            padding-top: spacing(small);
+        } //If there is both boxes show the border between them
     }
 
-    .c-lot--closing{
-        margin-bottom: spacing(small);
+
+.c-lot-details--photo-area{
+    max-width: 400px;
+}
+
+
+    .c-lot-details--lot-thumbnails{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
+
+        .c-lot-details--lot-thumbnail{
+            width: 32%;
+            margin-bottom: spacing(x-small);
+
+            img{
+                display: block;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
