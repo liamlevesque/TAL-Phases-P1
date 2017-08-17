@@ -1172,14 +1172,18 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   background-image: url(../img/ccy-flags.png);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
+.o-data-table {
+  border: 1px solid #CCCCCC; }
+
 .o-data-table--header {
-  padding: 5px 15px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  color: white;
+  background-color: #797979;
+  padding: 5px 15px; }
 
 .o-data-table--row {
   padding: 10px 15px; }
   .o-data-table--row:nth-child(odd) {
-    background-color: rgba(63, 63, 63, 0.2); }
+    background-color: #F0F0F0; }
   .o-data-table--row.s-highlighted {
     background-color: rgba(232, 117, 17, 0.2); }
   .o-data-table--row.s-winning {
@@ -1377,7 +1381,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
           flex-grow: 0;
   white-space: nowrap;
   cursor: pointer; }
-  .c-nav-tabs--tab.s-selected {
+  .c-nav-tabs--tab.s-active {
     border-bottom: 4px solid #E87511;
     color: #D1680F; }
   .c-nav-tabs--tab:hover {

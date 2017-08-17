@@ -1015,10 +1015,22 @@
 		"oAP": "\/lot-details.html",
 		"oF": 2
 		},
+	"\/assets\/templates\/my-selections.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/my-selections.html",
+		"oF": 2
+		},
 	"\/assets\/templates\/pick-sale.kit": {
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/pick-sale.html",
+		"oF": 2
+		},
+	"\/assets\/templates\/purchases.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/purchases.html",
 		"oF": 2
 		},
 	"\/bower.json": {
@@ -10932,6 +10944,12 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"\/my-selections.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/my-selections.html",
+		"oF": 0
 		},
 	"\/pick-sale.html": {
 		"ft": 8192,

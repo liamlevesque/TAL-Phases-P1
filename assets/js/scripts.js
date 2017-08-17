@@ -15,6 +15,7 @@ const tal = {
     categories: categories,
     lots: lotlist,
     choiceGroups: [],
+    watchedLots: [],
 };
 
 $(function(){
@@ -40,7 +41,17 @@ var app = new Vue({
       },
       disableNumberInputScroll: function(e){
         e.preventDefault();
+      },
+      gotoPage(page){
+        console.log(page);
+        window.location = page + ".html";
+      },
+      isActivePage: function(path){
+        console.log('test',path);
+        return {
+            's-active' : window.location.pathname === path
         }
+      },
   },
   computed:{
       findOneLot: function(){
@@ -51,7 +62,7 @@ var app = new Vue({
             console.log(thislot);
             return thislot;
         }
-      }
+      },
   },
   filters:{
       returnFirstItem: function(value){

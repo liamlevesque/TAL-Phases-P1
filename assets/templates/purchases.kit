@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="manifest" href="./manifest.json">
+    <title>RB TIMED AUCTION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+</head>
+
+<body class="body USD">
+	<div class="js--tal">
+        <!-- @include '/assets/components/layout/header' -->
+        
+        <div class="l-main-container"> 
+            <!-- @include '/assets/components/components/navigation_tabs' -->
+            <div v-if="watchedLots.length > 0">
+                <div v-for="lot in watchedLots" class="c-lot-listing"> 
+                    <!-- @include '/assets/components/components/lot_item' -->
+                </div>
+            </div>
+            <div v-else class="l-container__medium">
+                <div class="h-ta-center h-mb-300">
+                    <h3 class="t-h3">You haven't purchased any equipment yet!</h3>
+                    <button class="o-button__primary">Get busy!</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- @include '/assets/components/layout/footer' -->
+        
+	</div>
+	
+    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+
+</body>
+</html>

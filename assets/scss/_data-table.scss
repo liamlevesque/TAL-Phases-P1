@@ -1,10 +1,10 @@
 .o-data-table{
-
+    border: 1px solid palette(grey,2);
 }
     .o-data-table--header{
+        color: white;
+        background-color: palette(grey,4);
         padding: spacing(xx-small) spacing(small);
-        color: palette(grey,dark);
-        box-shadow: $ritchie-shadow;
     }
 
     .o-data-table--row{
@@ -12,7 +12,7 @@
         padding: spacing(x-small) spacing(small);
 
         &:nth-child(odd){
-            background-color: rgba(palette(grey),0.2);
+            background-color: palette(grey,1);
         }
 
         &.s-highlighted{

@@ -1,7 +1,7 @@
 const lotlist = [
 		{
 			"lotNumber" : "5001",
-			"bids": [{bid: 100, bidder: "12345", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
+			"bids": [{bid: 100, bidder: "12345", time: "2017-08-16T22:20:58.162Z", type: 'max'},{bid: 90, bidder: "12346", time: "2017-08-16T22:18:58.162Z", type: 'max'}],
 			"maxBid":{bid: 500,bidder: "12345"},
 			"category": 'Aggregate - Feeders',
 			"watching": [],
