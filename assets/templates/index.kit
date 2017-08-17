@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="manifest" href="./manifest.json">
+    <title>RB TIMED AUCTION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+</head>
+
+<body class="body CAD">
+	<div class="js--tal">
+        
+        <!-- @include '/assets/components/layout/header' -->
+        
+        <div class="l-main-container">
+            <!-- @include '/assets/components/components/navigation_tabs' -->	
+            <!-- @include '/assets/components/layout/search-n-filter' -->	
+            <div v-for="lot in lots" class="c-lot-listing"> 
+                <!-- @include '/assets/components/components/lot_item' -->
+            </div>
+            <!-- <div class="o-notification_one-off" rv-class-s-visible="talObject.scrollUpNoticeVisible">*Pssst* Sold lots are up here <i class="icon-keyboard_arrow_up icon-size--large h-ml-100"></i></div> -->
+        </div> 
+        
+        <div class="l-nav--mobile-footer">
+            
+        </div>
+
+        <!-- @include '/assets/components/layout/footer' -->
+        
+	</div>
+	
+    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+
+</body>
+</html>

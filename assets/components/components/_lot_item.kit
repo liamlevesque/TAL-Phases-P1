@@ -1,0 +1,25 @@
+<div class="g-wrapper">
+    <div class="g-cell g-cell__two-thirds">
+        <div class="g-wrapper">
+            <div class="g-cell">
+                <a href="">
+                    <img v-bind:src="lot.photos[0].src" alt="" class="c-lot--lot-photo">
+                    <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
+                </a>
+            </div>
+            <div class="g-cell g-cell__two-thirds c-lot--lot-details">
+                <a href="">
+                    <h3 class="t-h3 t-link">{{ lot.description }}</h3>
+                </a>
+                <div class="">
+                    <!-- @include '/assets/components/components/lot_text-fields' -->
+                    <button class="o-button__icon">Watch this lot</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="g-cell">
+        <!-- @include '/assets/components/components/lot_bid-area' -->
+    </div>
+</div>

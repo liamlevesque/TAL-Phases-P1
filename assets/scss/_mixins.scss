@@ -1,0 +1,51 @@
+
+@mixin vert-align{
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+@mixin center-content(){
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin tableLayout(){
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+@mixin default-focus{
+	&:hover, &:focus{
+		box-shadow: 0 0 3px 3px palette(blue,2);
+	}
+}
+
+@mixin uparrow($bgcolor: palette(grey,dark)){
+	&:after{
+		content: "";
+		display: block;
+		width: 15px;
+		height: 15px;
+		background-color: $bgcolor;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%,-50%) rotate(45deg);
+	}
+}
+
+@mixin downarrow($bgcolor: palette(grey,dark)){
+	&:after{
+		content: "";
+		display: block;
+		width: 15px;
+		height: 15px;
+		background-color: $bgcolor;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%,-50%) rotate(45deg);
+	}
+}

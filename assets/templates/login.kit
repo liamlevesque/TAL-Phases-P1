@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="manifest" href="./manifest.json">
+    <title>RB TIMED AUCTION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+</head>
+
+<body class="body CAD">
+    <div class="js--tal">
+        <!-- @include '/assets/components/layout/header_logged-out' -->
+
+        <div class="l-container__medium"> 
+
+            <div class="o-message__error h-mb-200">
+                <h4 class="t-h4">We are sorry but we couldn't log you in</h4>
+                <p>Your Bidder No./PIN combination is invalid. Please note: Your PIN is case sensitive.</p>
+                <p>Need help? Please visit the front desk or call 1.800.211.3983.</p>
+            </div>
+            
+            <div class="l-container__narrow">
+                <h3 class="t-h3">Sign In</h3>
+                <div class="o-inputs__row">
+                    <label for="" class="o-input-label">Bidder Number</label>
+                    <input type="text" class="o-input--text" placeholder="eg. 1234, printed on your catalog"></div>
+                <div class="o-inputs__row">
+                    <label for="" class="o-input-label">Timed Auction PIN</label>
+                    <input type="text" class="o-input--text" placeholder="received at registration, a card found in your catalog">
+                    <div class="o-input--hint"><a href="" class="t-link">Lost or forgot your PIN?</a></div>
+                </div>
+
+                <button class="o-button__primary">Sign In</button>
+            </div>
+
+            <div class="o-message__info h-mt-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
+
+        </div>
+
+        <!-- @include '/assets/components/layout/footer' -->
+    </div>
+
+    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+
+</body>

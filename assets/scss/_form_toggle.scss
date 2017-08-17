@@ -1,0 +1,58 @@
+@mixin toggle{
+	display: block;
+    overflow: hidden;
+	cursor: pointer;
+
+	input[type="checkbox"], input[type="radio"] {
+		position: absolute;
+		clip: rect(0,0,0,0);
+
+		&:checked ~ div{
+			background-color: palette(brand,light);
+            color: palette(brand,dark);
+            border:1px solid palette(brand);
+
+			&:before{
+				opacity: 1;
+			}
+		}
+	}
+
+	&>div{
+        border: 1px solid palette(grey,2);
+        background-color: white;
+        color: palette(grey,5);
+		position: relative;
+	}
+}
+
+	.o-input--toggle-group, [class^="o-input--toggle-group"]{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+    }
+
+        .o-input--toggle-group__inline{
+            display: inline-flex;
+        }
+
+        .o-input--toggle{
+            @include toggle;
+            flex: 1 1 0;
+            
+            &>div{
+                padding: 0 $button-padding;
+                border-left: none;
+                text-align: center;
+                height: 34px;
+                line-height: 34px;
+            }
+
+            &:first-child>div{
+                border-radius: $default-border-radius 0 0 $default-border-radius;  
+                border-left: 1px solid palette(grey,2);
+            }
+            &:last-child>div{
+                border-radius: 0 $default-border-radius $default-border-radius 0;  
+            }
+        }

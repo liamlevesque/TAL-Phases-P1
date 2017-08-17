@@ -1,0 +1,148 @@
+body{
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  color: palette(grey,5);
+  font-size: 16px;
+  line-height: 1.52rem;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+  .t-italic{
+    font-style: italic;
+  }
+
+  .t-bold{
+    font-weight: 700;
+  }
+
+$fontsizes: (
+    400: 1.75rem,
+    300: 1.5rem,
+    200: 1.125rem,
+    100: 1rem,
+);
+
+@function fontsize($fontsize) {
+    @return map-get($fontsizes, $fontsize);
+}
+
+  
+  .t-f-small{
+    font-size: fontsize(100);
+  }
+
+  .t-f-medium{
+    font-size: fontsize(200);
+  }
+
+  .t-f-large{
+    font-size: fontsize(300);
+  }
+
+  .t-f-xlarge{
+    font-size: fontsize(400);
+  }
+
+
+
+@mixin allcaps{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+  .t-allcaps{
+      @include allcaps;
+  }
+
+
+
+//HEADERS
+h1, h2, h3, h4, h5 {
+	margin-top: 0;
+	color: black;
+	text-decoration: none;
+	font-size: fontsize(100);
+}
+
+  .t-h1{
+    font-size: fontsize(300);
+
+    @include breakpoint(small){
+      font-size: fontsize(400);
+    }
+  }
+
+  .t-h2{
+    font-size: fontsize(200);
+
+    @include breakpoint(small){
+       font-size: fontsize(300);
+    }
+  }
+
+  .t-h3{
+    font-size: fontsize(200);
+  }
+
+  .t-h4{
+    font-size: fontsize(30);
+
+    @include breakpoint(small){
+       font-size: fontsize(80);
+    }
+  }
+
+p{
+  margin-top: 0;
+  margin-bottom: spacing(x-small);
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+
+	&:hover, &:active, &:focus, &:visited{
+    outline: none;
+    color: inherit;
+  }
+}
+
+  .t-link, a.t-link{
+    text-decoration: none;
+    color: palette(blue);
+    
+    &:hover, &:active{
+      text-decoration: underline;
+    }
+    
+    &:focus {
+      outline: default;
+    }
+  }
+
+  .t-link__message{
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+@mixin ellipsize{
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+@mixin line-clamp(){
+  //IF THIS BROWSER SUPPORTS LINE CLAMPING, THEN USE IT. IF NOT, JUST LET IT OVERFLOW.
+  @supports (-webkit-line-clamp: 1)
+  {
+    display            : -webkit-box;
+    -webkit-box-orient : vertical;
+    overflow           : hidden;
+    text-overflow      : ellipsis;
+    -webkit-line-clamp : 2;
+  }
+}
+

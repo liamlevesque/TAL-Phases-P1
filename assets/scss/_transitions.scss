@@ -1,0 +1,60 @@
+//TRANSITIONS
+$transition-time_1: .2s;
+$transition-time_2: .35s;
+$transition-function: cubic-bezier(0.630, 0.005, 0.365, 1.000);//cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+$transition: $transition-time_1 $transition-function;
+
+@mixin transition($properties...){
+    transition-property: $properties;
+    transition-duration: $transition-time_2;
+    transition-timing-function: $transition-function;
+}
+
+@mixin transition-delayed($delay, $properties...){
+    transition-property: $properties;
+    transition-duration: $transition-time_2;
+    transition-timing-function: $transition-function;
+    transition-delay: $delay;
+}
+
+
+@mixin loading($color,$height:4px,$bottom:0){
+    &:after{
+        display: block;
+        position: absolute;
+        content: " ";
+        left: 0;
+        right: 100%;
+        height: $height;
+        bottom: $bottom;
+        background-color: $color;
+
+        animation-name: waitingslide;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+    }
+}
+
+
+
+    @keyframes waitingslide{
+        0%{
+            left: 0;
+            right: 100%;
+        }
+
+        50%{
+            left: 0;
+            right: 0;
+        }
+
+        100%{
+            left: 100%;
+            right: 0;
+        }
+    }
+
+

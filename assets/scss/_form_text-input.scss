@@ -1,0 +1,14 @@
+.o-input--text, [class^="o-input--text_"]{
+	@include textinput;
+}
+
+	.o-input--text__small{
+		display: inline-block;
+		width: 80px;	
+	}
+
+	.o-input--text__inline{
+		@include textinput;
+		width: auto;
+		display: inline-block;
+	}

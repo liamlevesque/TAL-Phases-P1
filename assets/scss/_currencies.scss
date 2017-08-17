@@ -1,0 +1,50 @@
+$ccys: 	"CAD" "$" "" "," "." true 2,
+		"USD" "$" "" "," "." true 14,
+		"SGD" "$" "" "," "." true 12,
+		"NZD" "$" "" "," "." true 10,
+		"AUD" "$" "" "," "." true 0,
+		"MXN" "$" "" "," "." true 8,
+		"ZAR" "R" "" "," "." true 15,
+		"PLN" "" "z\0142" " " "," true 11,
+		"GBP" "\00A3" "" "," "." true 5,
+		"EUR" "\20AC" "" " " "," true 4,
+		"CNY" "\00A5" "" "," "." true 3,
+		"JPY" "\00A5" "" "," "." false 7,
+		"INR" " \20B9" "" "," "." true 6,
+		"AED" "" "د.إ" "," "." true 1,
+		"NOK" "kr" "" "," "." true 9,
+		"TRY" "\20BA" "" "," "." true 13;
+
+
+@each $ccy in $ccys{
+	.ccy-flag{
+		&.#{nth($ccy,1)}{
+			background-position: 0 -#{nth($ccy,7)*15px};
+		}
+	}
+
+	.#{nth($ccy,1)} .CCY{
+		&:before{
+			content: "#{nth($ccy,2)}";
+		}
+		&:after{
+			content: " #{nth($ccy,1)}";
+			font-size: 0.9em;
+		} 
+
+		.divider:before{
+			content: "#{nth($ccy,4)}";
+		}
+	}
+}
+
+
+.ccy-flag{
+	display: inline-block;
+	width: 30px;
+	height: 15px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-image: url(../img/ccy-flags.png);
+	box-shadow: $ritchie-shadow
+}

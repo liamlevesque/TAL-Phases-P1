@@ -1,0 +1,47 @@
+//BREAKPOINTS
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 80em) { @content; }
+  }
+  @if $point == largemax {
+    @media (max-width: 80em) { @content; }
+  }
+  @if $point == med-large {
+    @media (min-width: 64em) { @content; }
+  }
+  @if $point == med-med-large {
+    @media (min-width: 64em) { @content; }
+  }
+  @else if $point == med-to-medlarge {
+    @media (min-width: 48em) and (max-width: 64em) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 64em) { @content; }
+  }
+  @else if $point == medmax {
+    @media (max-width: 64em) { @content; }
+  }
+  @else if $point == med-lg-max {
+    @media (max-width: 64em) { @content; }
+  }
+
+  @else if $point == small {
+    @media (min-width: 30.0625em)  { @content; }
+  }
+  @else if $point == smallmax {
+    @media (max-width: 30.0625em)  { @content; }
+  }
+}
+
+
+//VERTICAL BREAKPOINTS
+
+@mixin vbreakpoint($point){
+  @if $point == med{
+    @media (min-height: 800px) { @content; }
+  }
+  @if $point == large{
+    @media (min-height: 1000px) { @content; }
+  }
+}

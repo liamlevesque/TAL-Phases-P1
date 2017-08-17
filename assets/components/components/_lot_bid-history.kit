@@ -1,0 +1,10 @@
+<div class="o-table">
+    <h4 class="o-table--header">Bid History</h4>
+    <ul class="o-table--body">
+        <li class="o-table--row g-wrapper" v-for="bid in lot.bids">
+            <div class="g-cell">{{ bid.bidder }}</div>
+            <div class="g-cell">{{ bid.bid }}</div>
+            <div class="g-cell">{{ bid.time }}</div>
+        </li>
+    </ul>
+</div>

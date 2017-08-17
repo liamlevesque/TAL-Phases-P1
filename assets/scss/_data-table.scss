@@ -1,0 +1,25 @@
+.o-data-table{
+
+}
+    .o-data-table--header{
+        padding: spacing(xx-small) spacing(small);
+        color: palette(grey,dark);
+        box-shadow: $ritchie-shadow;
+    }
+
+    .o-data-table--row{
+       // border-bottom: $default-border;
+        padding: spacing(x-small) spacing(small);
+
+        &:nth-child(odd){
+            background-color: rgba(palette(grey),0.2);
+        }
+
+        &.s-highlighted{
+            background-color: rgba(palette(brand),0.2);
+        }
+
+        &.s-winning{
+            background-color: rgba(palette(green),0.2);
+        }
+    }

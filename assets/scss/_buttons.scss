@@ -1,0 +1,70 @@
+$button-height: 40px;
+$button-margin: 20px;
+$button-padding: 25px;
+
+@mixin button(){
+
+    height: $button-height;
+    line-height: $button-height;
+    padding: 0 $button-padding;
+    border: none;
+
+    font-size: fontsize(200);
+    border-radius: $default-border-radius;
+    cursor: pointer;
+    @include default-focus;
+
+    outline: none;
+    &:focus, &:hover{
+        outline: none;
+    }
+}
+
+.o-button__primary{
+    @include button;
+
+    color: white;
+    background-color: palette(brand);
+
+    &:hover{
+        background-color: palette(brand,dark);
+    }
+
+    &[disabled]{
+        color: palette(grey,1);
+        background-color: palette(grey,2);
+    }
+}
+
+.o-button__secondary{
+    @include button;
+
+    color: palette(grey,5);
+    background-color: palette(grey, 1);
+    border: 1px solid palette(grey, 2);
+
+    &:hover{
+        background-color: palette(grey,2);
+    }
+
+    &[disabled]{
+        color: white;
+        background-color: palette(grey,1);
+    }
+}
+
+.o-button__tertiary{
+    @include button;
+    
+    color: white;
+    background-color: palette(blue);
+
+    &:hover{
+        background-color: palette(rbblue);
+    }
+
+    &[disabled]{
+        color: white;
+        background-color: palette(grey,1);
+    }
+}

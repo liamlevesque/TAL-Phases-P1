@@ -1,0 +1,25 @@
+.c-nav-tabs{
+    border-bottom: 1px solid palette(grey,2);
+    margin-bottom: spacing(medium);
+}
+
+    .c-nav-tabs--tab-group{
+        //flex-flow: start;
+    }
+
+    .c-nav-tabs--tab{
+        padding: 10px 25px;
+        flex-grow: 0;
+        white-space: nowrap;
+        cursor: pointer;
+        
+        &.s-selected{
+            border-bottom: 4px solid palette(brand);
+            
+            color: palette(brand,dark);
+        }
+
+        &:hover{
+            color: palette(brand);
+        }
+    }

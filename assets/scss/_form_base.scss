@@ -1,0 +1,53 @@
+$input-height: 40px;
+
+input{
+    outline: none;
+
+    &:focus, &:active{
+        outline: none;
+    }
+}
+
+	.o-inputs__row{
+		margin-bottom: spacing(medium);
+	}
+
+	.o-inputs__inline{
+		display: inline-block;
+	}
+
+	.o-input-label{
+		display: inline-block;
+		margin-bottom: spacing(xx-small);
+	}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+} 
+
+@mixin textinput{
+	appearance: none;
+	
+    height: $input-height;
+	width: 100%;
+	display: block;
+    
+    border: 1px solid palette(grey,2);
+	background-color: white;
+	border-radius: 0;
+    padding: spacing(x-small);
+    
+    @include default-focus;
+    
+    position: relative;
+	font-size: fontsize(100);
+
+	&.invalid, &.s-error,&[invalid]{
+		box-shadow: 0 0 2px 2px palette(red);
+	}
+
+	&[readonly]{
+		background-color: palette(grey,1);
+	}
+
+}

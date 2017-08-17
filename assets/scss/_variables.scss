@@ -1,0 +1,39 @@
+//MEASUREMENTS
+
+$default-border-radius: 5px;
+$large-border-radius: 15px;
+//$default-margin: 15px;
+
+$input-height: 40px;
+
+$combo-pop-up-width: 300px;
+
+$toggle-height: 20px;
+$toggle-padding: 40px; //THIS IS HOW MUCH THE MONEY
+
+$tooltip-icon-size: 24px;
+$lot-header-height: 53px;
+
+//BORDERS
+$ritchie-border: 1px dotted palette(grey,2); 
+.o-hr{
+    border: none;
+    border-bottom: $ritchie-border;
+}
+
+//BOX SHADOW
+$ritchie-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+$ritchie-shadow_inner: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+
+//SPACING
+$spacings: (
+    xx-small: 5px,
+    x-small: 10px,
+    small: 15px,
+    medium: 20px,
+    large: 30px,
+);
+
+@function spacing($spacing) {
+    @return map-get($spacings, $spacing);
+}

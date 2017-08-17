@@ -1,0 +1,29 @@
+.c-lot-listing{
+    padding: spacing(medium) 0;
+
+    &:not(:last-child){
+        border-bottom: $ritchie-border;
+    }
+}
+
+    .c-lot--lot-photo{
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    .c-lot--lot-number{
+        margin-top: spacing(small);
+    }
+
+    .c-lot--lot-details{
+        padding: 0 spacing(medium);
+    }
+    
+    .c-lot--highBid{
+        margin-top: spacing(small);
+    }
+
+    .c-lot--closing{
+        margin-bottom: spacing(small);
+    }

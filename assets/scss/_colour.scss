@@ -1,0 +1,43 @@
+$palettes: (
+    brand: (
+        base:   #E87511,
+        dark:   #D1680F,
+        light:  #FCEFE4,
+    ),
+    rbblue:(
+		base:   #103873,
+    ),
+    red:(
+        base:   #E50000,
+        2:      #F2C7C1,
+        1:      #FDDDD9,
+    ),
+    yellow:(
+        base:   #F2B200,
+        2:      #F2E0A9,
+        1:      #FCF0D4,
+    ),
+    blue:(
+        base:   #20579E,
+        3:      #B7D5E5,
+        2:      #D2ECFA,
+        1:      #ECF5FB,
+    ),
+    green:(
+        base:   #11AF00,
+        2:      #C3E5C5,
+        1:      #DBF3DD,
+    ),
+    grey: (
+        base:   #3F3F3F,
+        1:      #F0F0F0,
+        2:      #CCCCCC,
+        3:      #999999,
+        4:      #797979,
+    )
+); 
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+

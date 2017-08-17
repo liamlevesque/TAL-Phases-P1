@@ -1,0 +1,49 @@
+$gutters: 30px;
+
+.g-wrapper {
+  display: flex;
+}
+
+.g-cell {
+  flex: 1;
+}
+
+/* With gutters */
+.g--gutters {
+  margin: -$gutters 0 0 -$gutters;
+}
+.g--gutters > .g-cell {
+  padding: $gutters 0 0 $gutters;
+}
+
+/* Alignment per row */
+.g--top {
+  align-items: flex-start;
+}
+.g--bottom {
+  align-items: flex-end;
+}
+.g--center {
+  align-items: center;
+}
+
+/* Alignment per cell */
+.g-cell--top {
+  align-self: flex-start;
+}
+.g-cell--bottom {
+  align-self: flex-end;
+}
+.g-cell--center {
+  align-self: center;
+}
+
+.g-cell__half{
+  flex: none!important;  
+  width: 50%!important;
+}
+
+.g-cell__two-thirds{
+  flex: none!important;  
+  width: 66%!important;
+}

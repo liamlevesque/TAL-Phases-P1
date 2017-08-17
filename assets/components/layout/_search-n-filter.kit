@@ -1,0 +1,43 @@
+<div class="c-search-filter h-mb-300">
+    <div class="c-search-filter--search g-wrapper">
+        <div class="g-cell">
+            <div class="">
+                <label for="" class="t-field-label">Keyword Search</label>
+                <input type="text" class="o-input--text__inline" placeholder="ie. gen set">
+                <button class="o-button__primary">Search</button>
+            </div>
+            <div class="">
+                <label for="" class="t-field-label">Filter by Category</label>
+                <select name="" id="" class="o-input--select__inline">
+                    <option value="" v-for="category in categories">{{category.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="g-cell h-ta-right">
+            <label for="" class="t-field-label">Lot Range:</label>
+            <input type="text" class="o-input--text__small" placeholder="from"> - <input type="text" class="o-input--text__small" placeholder="to">
+            <button class="o-button__primary">Go</button>
+        </div>
+    </div>
+    <div class="c-search-filter--filter g-wrapper g--center">
+        <div class="g-cell">
+            <a href="" class="t-link">Create a choice group</a>
+        </div>
+        <div class="g-cell g-cell__half">
+            <div class="o-input--toggle-group">
+                <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>Upcoming Lots</div></label>
+                <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
+                <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>All Lots</div></label>
+            </div>
+        </div>
+        <div class="g-cell h-ta-right">
+            <label for="" class="t-field-label">Sort by:</label>
+            <select class="o-input--select__inline">
+                <option value="">Closing Time</option>
+                <option value="">Closing Time</option>
+                <option value="">Closing Time</option>
+                <option value="">Closing Time</option>
+            </select>
+        </div>
+    </div>
+</div>

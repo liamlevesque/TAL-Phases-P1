@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="manifest" href="./manifest.json">
+    <title>RB TIMED AUCTION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+</head>
+
+<body class="body CAD">
+	<div class="js--tal">
+        
+        <!-- @include '/assets/components/layout/header' -->
+        
+        <div class="l-main-container c-lot-details g-wrapper" v-for="lot in findOneLot(0)"> 
+            <!-- @include '/assets/components/layout/search-n-filter' -->	
+            <!-- @include '/assets/components/components/navigation_breadcrumb' -->	
+            <div class="g-cell">
+                <div class="g-wrapper">
+                    <div class="g-cell">
+                        <img v-bind:src="lot.photos[0].src" alt="" class="c-lot-details--lot-photo">
+                        <ul class="c-lot-details--lot-thumbnails">
+                            <li v-for="photo in lot.photos" class="li c-lot-details--lot-thumbnail">
+                                <img v-bind:src="photo.src" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="g-cell c-lot--lot-details">
+                        <!-- @include '/assets/components/components/lot_text-fields' -->
+                        <hr class="o-hr">
+                        <button class="o-button__icon">Watch this lot</button>
+                    </div>
+                </div>
+            </div>
+            <div class="g-cell">
+                <!-- @include '/assets/components/components/lot_bid-area' -->
+                <!-- @include '/assets/components/components/lot_bid-history' --> 
+            </div>
+
+        </div>
+
+        <!-- @include '/assets/components/layout/footer' -->
+
+    </div>
+	
+    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+
+</body>
+</html>

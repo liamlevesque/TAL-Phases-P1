@@ -1,0 +1,18 @@
+.l-header{
+    padding: spacing(large);
+}
+
+.l-main-container{
+    padding: 0 spacing(large);
+}
+
+
+    .l-container__narrow{
+        margin: 0 auto;
+        max-width: 480px;
+    }
+
+    .l-container__medium{
+        margin: 0 auto;
+        max-width: 800px;
+    }
