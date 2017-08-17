@@ -619,6 +619,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/img\/empty.png": {
+		"ft": 32768,
+		"iS": 7264,
+		"oA": 0,
+		"oAP": "\/assets\/img\/empty.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/logo-square.png": {
 		"ft": 32768,
 		"iS": 760,
@@ -10955,6 +10966,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/pick-sale.html",
+		"oF": 0
+		},
+	"\/purchases.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/purchases.html",
 		"oF": 0
 		}
 	},

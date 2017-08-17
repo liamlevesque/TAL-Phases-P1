@@ -32,6 +32,7 @@ $spacings: (
     small: 15px,
     medium: 20px,
     large: 30px,
+    x-large: 50px,
 );
 
 @function spacing($spacing) {

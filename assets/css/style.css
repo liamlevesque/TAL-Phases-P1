@@ -1513,6 +1513,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .h-mt-300 {
   margin-top: 30px !important; }
 
+.h-mt-500 {
+  margin-top: 50px !important; }
+
 .h-mb-100 {
   margin-bottom: 15px !important; }
 
@@ -1521,6 +1524,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .h-mb-300 {
   margin-bottom: 30px !important; }
+
+.h-mb-500 {
+  margin-bottom: 50px !important; }
 
 .h-mb-50 {
   margin-bottom: 10px !important; }
