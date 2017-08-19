@@ -14762,6 +14762,9 @@ const tal = {
     lots: lotlist,
     choiceGroups: [],
     watchedLots: [],
+
+    selectedLot: 0,
+    confirmPlaceBidVisible: false,
 };
 
 $(function(){
@@ -14793,10 +14796,16 @@ var app = new Vue({
         window.location = page + ".html";
       },
       isActivePage: function(path){
-        console.log('test',path);
         return {
             's-active' : window.location.pathname === path
         }
+      },
+      placeBid: function(lot){
+        this.confirmPlaceBidVisible = true;
+        this.selectedLot = lot; 
+      },
+      completeBid: function(){
+        this.confirmPlaceBidVisible = false;
       },
   },
   computed:{

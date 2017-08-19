@@ -1,0 +1,20 @@
+<div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceBidVisible }">
+
+    <div class="c-modal--content">
+        <div class="c-modal--header">
+            <h3 class="t-h3">Confirm your bid</h3>
+        </div>
+        <div class="c-modal--body">
+
+            Are you sure you want to bid <span class="CCY">35</span> on <span class="t-h4">Lot {{ lots[selectedLot].lotNumber }}</span>?
+
+        </div>
+        <div class="c-modal--footer">
+
+            <button class="o-button__secondary" v-on:click="completeBid">Cancel</button>
+            <button class="o-button__primary" v-on:click="completeBid">Yes, place bid</button>
+
+        </div>
+    </div>
+
+</div>

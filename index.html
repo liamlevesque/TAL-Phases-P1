@@ -138,7 +138,7 @@
                     </div>
                 </div>
             </div>	
-            <div v-for="lot in lots" class="c-lot-listing"> 
+            <div v-for="(lot, index) in lots" class="c-lot-listing"> 
                 <div class="g-wrapper">
                     <div class="g-cell g-cell__two-thirds">
                         <div class="g-wrapper">
@@ -208,7 +208,7 @@
                                 </div>
                                 <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
                                     <div class="h-ta-center">- OR -</div>
-                                    <button class="o-button__primary h-width-100">Bid <span class="CCY">35</span></button>
+                                    <button class="o-button__primary h-width-100" v-on:click="placeBid(index)">Bid <span class="CCY">35</span></button>
                                 </div>
                                 <div><!-- ELSE IF HIGH BIDDER && MAX BID -->
                                     <div class="c-input--hint">Your Maximum Bid: <span class="CCY">35</span></div>
@@ -235,7 +235,26 @@
         </div>
 
         <footer>Footer</footer>
-        
+        <div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceBidVisible }">
+                
+                    <div class="c-modal--content">
+                        <div class="c-modal--header">
+                            <h3 class="t-h3">Confirm your bid</h3>
+                        </div>
+                        <div class="c-modal--body">
+                
+                            Are you sure you want to bid <span class="CCY">35</span> on <span class="t-h4">Lot {{ lots[selectedLot].lotNumber }}</span>?
+                
+                        </div>
+                        <div class="c-modal--footer">
+                
+                            <button class="o-button__secondary" v-on:click="completeBid">Cancel</button>
+                            <button class="o-button__primary" v-on:click="completeBid">Yes, place bid</button>
+                
+                        </div>
+                    </div>
+                
+                </div>
 	</div>
 	
     <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>

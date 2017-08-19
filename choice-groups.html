@@ -188,7 +188,7 @@
                                         </div>
                                         <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
                                             <div class="h-ta-center">- OR -</div>
-                                            <button class="o-button__primary h-width-100">Bid <span class="CCY">35</span></button>
+                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(index)">Bid <span class="CCY">35</span></button>
                                         </div>
                                         <div><!-- ELSE IF HIGH BIDDER && MAX BID -->
                                             <div class="c-input--hint">Your Maximum Bid: <span class="CCY">35</span></div>

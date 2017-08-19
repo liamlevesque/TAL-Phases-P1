@@ -68,3 +68,15 @@ $button-padding: 25px;
         background-color: palette(grey,1);
     }
 }
+
+.o-button__blank{
+    @include button;
+
+    background-color: transparent;
+    border: none;
+
+    &:hover, &:focus{
+        box-shadow: none;
+        text-decoration: underline;
+    }
+}

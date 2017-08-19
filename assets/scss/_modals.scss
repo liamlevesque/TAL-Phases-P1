@@ -1,5 +1,5 @@
 .c-modal{
-	position: absolute;
+	position: fixed;
 	top: 100vh;
 	bottom: 0;
 	left: 0;
@@ -33,6 +33,7 @@
 
 		@include breakpoint(medium){
 			width: 600px;
+			height: auto;
 			margin: 0;
 			position: absolute;
 			top: 50%;
@@ -41,126 +42,43 @@
 			max-height: 90%;
 			
 			//background-color: white;
-			box-shadow: $ritchie-shadow;
-			background-color: transparent;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			background-color: white;
 		}
 	}
-		.c-modal--content_small{
+		.c-modal--content__small{
 			@include breakpoint(medium){
 				width: 400px;
 			}
 		}
 
-		.c-modal--content_large{
+		.c-modal--content__large{
 			@include breakpoint(medium){
 				width: 800px;
 			}
 		}
 
-		.c-modal--content_mini{
-			width: 350px;
-			display: block;
-			height: auto;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin: 0;
-			transform: translate(-50%,-50%);
-
-			.c-modal--footer{
-
-			}
-		}
-
 		.c-modal--header{
-			padding: spacing(x-small) 0;
-			background-color: palette(grey,light);
-			text-align: center;
-
-			@include breakpoint(medmax){
-				height: 55px;
-			}
-
-			@include breakpoint(medium){
-				border-radius: $default-border-radius $default-border-radius 0 0;
-			}
-		}
-
-		.c-modal--close{
-			position: absolute;
-			top: 0;
-			right: 0;
-			padding: 0 5px;
+			padding: spacing(large);
+			padding-bottom: 0;
 		}
 
 		.c-modal--body{
-			flex: auto;
-			background-color: white;
+			padding: 0 spacing(large);
 			overflow-y: auto;
-
-		}
-
-		.c-modal--error{
-			background-color: palette(red);
-			color: white;
-			padding: spacing(x-small) spacing(small);
-
-			@include breakpoint(medium){
-				padding: spacing(x-small) spacing(medium);
-			}
 		}
 
 		.c-modal--footer{
 			height: auto;
 			margin-top: auto;
-			padding: spacing(x-small) spacing(small);
+			padding: spacing(large);
 			position: relative;
+			text-align: right;
 
-			@include breakpoint(medmax){
-				&:before{
-					content: "";
-					display: block;
-					position: absolute;
-					top: -19px;
-					height: 20px;
-					left: 0;
-					right: 0;
-					background: linear-gradient(to bottom, rgba(white,0) 0,white 100%);
-				}
-			}
-
-			@include breakpoint(medium){
-				//height: 75px;
-				padding: spacing(small) spacing(large);
-				background-color: palette(grey,1);
-				border-radius: 0 0 $default-border-radius $default-border-radius;
+			button{
+				margin-left: spacing(medium);
 			}
 		}
 
-		.c-modal--sub-box{
-			background-color: palette(grey,1);
-			padding: spacing(medium);
-		}
 		
-		.c-modal--sub-box_outline{
-			padding: spacing(medium);
-			padding-left: 40px;
-			border: $ritchie-border;
-			border-right: none;
-			border-left: none;
-		}
-
-
-		.swiper-pagination-bullet{
-			background: white;
-			opacity: 0.5;
-			transition: $transition;
-			
-			&.swiper-pagination-bullet-active{
-				background: palette(brand);
-				opacity: 1;
-				transform: scale(1.2);
-			}
-		}
-
 

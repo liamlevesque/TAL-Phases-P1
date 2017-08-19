@@ -19,7 +19,7 @@
             <!-- @include '/assets/components/components/navigation_tabs' -->
             <!-- @include '/assets/components/layout/search-n-filter' -->	
            
-            <div class="c-lot-details" v-for="lot in findOneLot(0)">
+            <div class="c-lot-details" v-for="(lot, index) in findOneLot(0)">
                 <!-- @include '/assets/components/components/navigation_breadcrumb' -->	
                 <div class="g-wrapper">
                     <div class="g-cell g-cell__two-thirds">
