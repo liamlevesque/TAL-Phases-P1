@@ -1,19 +1,25 @@
-$gutters: 30px;
+$gutters: spacing(large);
 
-.g-wrapper {
+.g-wrapper, [class^="g-wrapper"]{
   display: flex;
 }
+
+  /* With gutters */
+  .g-wrapper__gutters {
+    margin-left: -$gutters;
+    display: flex;
+    
+    &> .g-cell, &> [class^="g-cell"] {
+      padding-left: $gutters;
+    }
+  }
 
 .g-cell {
   flex: 1;
 }
 
-/* With gutters */
-.g--gutters {
-  margin: -$gutters 0 0 -$gutters;
-}
-.g--gutters > .g-cell {
-  padding: $gutters 0 0 $gutters;
+.g-cell__no-stretch{
+  flex: none;
 }
 
 /* Alignment per row */

@@ -19,15 +19,18 @@ const tal = {
 
     selectedLot: 0,
     confirmPlaceBidVisible: false,
+
+    creatingChoiceGroup: false,
+    tempChoiceGroup: [],
+    choiceProgress: 1,
+    completeChoiceGroupModalVisible: false,
 };
 
-$(function(){
-
-	for(let i = 0; i < tal.lots.length; i++){
+document.addEventListener('DOMContentLoaded', function(){ 
+    for(let i = 0; i < tal.lots.length; i++){
         tal.lots[i].closes = moment().add((i - tal.preSoldOffset) * tal.closeInterval,'seconds');
     };
-
-});
+}, false);
 
 
 var app = new Vue({
@@ -61,6 +64,21 @@ var app = new Vue({
       completeBid: function(){
         this.confirmPlaceBidVisible = false;
       },
+      toggleCreateChoiceGroup: function(){
+        this.creatingChoiceGroup = !this.creatingChoiceGroup;
+      },
+      toggleCompleteChoiceGroupModalVisible: function(){
+        this.completeChoiceGroupModalVisible = !this.completeChoiceGroupModalVisible;
+      },
+      progressClasses: function(step){  
+        return {
+              's-current': this.choiceProgress === step,
+              's-complete': this.choiceProgress > step,
+          }
+      },
+      setChoiceProgress: function(step){
+        this.choiceProgress = step;
+      },
   },
   computed:{
       findOneLot: function(){
@@ -71,7 +89,7 @@ var app = new Vue({
             console.log(thislot);
             return thislot;
         }
-      },
+      }
   },
   filters:{
       returnFirstItem: function(value){

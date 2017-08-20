@@ -1,4 +1,10 @@
 <div class="g-wrapper">
+    <div v-if="creatingChoiceGroup">
+        <label class="o-input--checkbox">
+            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number>
+            <span class="o-input--checksymbol"></span>
+        </label>
+    </div>
     <div class="g-cell g-cell__two-thirds">
         <div class="g-wrapper">
             <div class="g-cell">

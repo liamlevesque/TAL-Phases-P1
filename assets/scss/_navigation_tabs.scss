@@ -23,3 +23,10 @@
             color: palette(brand);
         }
     }
+
+
+.c-navigation__tertiary{
+    background-color: palette(grey);
+    color: white;
+    padding: spacing(xx-small) spacing(large);
+}

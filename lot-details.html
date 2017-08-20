@@ -118,7 +118,8 @@
                             </div>
                             <div class="c-search-filter--filter g-wrapper g--center">
                                 <div class="g-cell">
-                                    <a href="" class="t-link">Create a choice group</a>
+                                    <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
+                                    <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
                                 </div>
                                 <div class="g-cell g-cell__half">
                                     <div class="o-input--toggle-group">
@@ -137,7 +138,30 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>	
+                        </div>
+                        
+                        <div class="c-navigation__tertiary" v-if="creatingChoiceGroup">
+                            <div class="g-wrapper__gutters g--center">
+                                <div class="g-cell__no-stretch">
+                                    <label class="o-input--checkbox">
+                                        <input type="checkbox">
+                                        <span class="o-input--checksymbol"></span>
+                                        <span for="lotSelectAll" class="t-field-label c-white">Select All</span>
+                                    </label>
+                                    
+                                </div>
+                                <div class="g-cell">
+                                    <label for="" class="t-field-label">Lots Selected:</label>
+                                    <span class="t-h4 h-color-brand">
+                                        <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
+                                    </span>
+                                </div>
+                                <div class="g-cell__no-stretch">
+                                    <button class="o-button__secondary h-mr-50">Cancel</button>
+                                    <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0">Continue Creating Choice Group</button>
+                                </div>
+                            </div>
+                        </div>		
            
             <div class="c-lot-details" v-for="(lot, index) in findOneLot(0)">
                 <div class="c-navigation-header">

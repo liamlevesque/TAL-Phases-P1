@@ -1,0 +1,31 @@
+<ul class="c-progress-indicator">
+    <li class="o-progress--step" v-bind:class="progressClasses(1)">
+        <div class="o-progress--bar"><div class="o-progress--indicator"></div></div>
+        <div class="o-progress--number">
+            <span v-if="choiceProgress > 1"><i class="icon-check-inner"></i></span>
+            <span v-else>1</span>
+        </div>
+        <div class="o-progress--label">Confirm Lots</div>
+    </li>
+    <li class="o-progress--step" v-bind:class="progressClasses(2)">
+        <div class="o-progress--bar"><div class="o-progress--indicator"></div></div>
+        <div class="o-progress--number">
+            <span v-if="choiceProgress > 2"><i class="icon-check-inner"></i></span>
+            <span v-else>2</span>
+        </div>
+        <div class="o-progress--label">Quantity</div>
+    </li>
+    <li class="o-progress--step" v-bind:class="progressClasses(3)">
+        <div class="o-progress--bar"><div class="o-progress--indicator"></div></div>
+        <div class="o-progress--number">
+            <span v-if="choiceProgress > 3"><i class="icon-check-inner"></i></span>
+            <span v-else>3</span>
+        </div>
+        <div class="o-progress--label">Maximum Bid</div>
+    </li>
+    <li class="o-progress--step" v-bind:class="progressClasses(4)">
+        <div class="o-progress--bar"><div class="o-progress--indicator"></div></div>
+        <div class="o-progress--number">4</div>
+        <div class="o-progress--label">Confirm</div>
+    </li>
+</ul>

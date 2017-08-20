@@ -1,5 +1,5 @@
 .c-lot-listing{
-    padding: spacing(medium) 0;
+    padding: spacing(medium) spacing(large);
 
     &:not(:last-child){
         border-bottom: $ritchie-border;

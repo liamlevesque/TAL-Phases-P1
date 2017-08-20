@@ -1,0 +1,89 @@
+.c-progress-indicator{
+    display: flex;
+    margin-bottom: spacing(x-large);
+}
+
+    .o-progress--step{
+        text-align: center;
+        flex: 1;
+        position: relative;
+
+        &:first-child{
+            .o-progress--bar{
+                left: 50%;
+            }
+
+            &.s-current .o-progress--indicator{
+                right: 100%;
+            }
+        }
+
+        &:last-child{
+            .o-progress--bar{
+                right: 50%;
+            }
+
+            &.s-current .o-progress--indicator{
+                right: 0;
+            }
+        }
+
+        &.s-current, &.s-complete{
+            .o-progress--number{
+                background-color: palette(brand);
+                color: white;
+            }
+
+            .o-progress--indicator{
+                background-color: palette(brand);
+            }
+        }
+
+        &.s-current .o-progress--indicator{
+            right: 50%;
+        }
+
+        &.s-complete{
+            .o-progress--label{
+                color: palette(grey,3);
+            }
+        }
+    }
+
+    $progress-step-size: 50px;
+    $progress-bar-background-width: 20px;
+    $progress-bar-foreground-width: 12px;
+
+        .o-progress--bar{
+            background-color: palette(grey,2);
+            position: absolute;
+            top: $progress-step-size/2 - $progress-bar-background-width/2;
+            left: 0;
+            right: 0;
+            height: $progress-bar-background-width;
+            z-index: -1;
+        }
+            .o-progress--indicator{
+                position: absolute;
+                top: ($progress-bar-background-width - $progress-bar-foreground-width)/2;
+                height: $progress-bar-foreground-width; 
+                left: 0;
+                right: 0;
+                background-color: palette(grey,2);
+            }
+
+        .o-progress--number{
+            width: $progress-step-size;
+            height: $progress-step-size;
+            border-radius: 50%;
+            display: inline-block;
+            
+            background-color: palette(grey,2);
+            color: palette(grey);
+            text-align: center;
+            line-height: $progress-step-size;
+        }
+
+        .o-progress--label{
+            margin-top: spacing(x-small);
+        }
