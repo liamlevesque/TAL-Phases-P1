@@ -29,4 +29,13 @@
     background-color: palette(grey);
     color: white;
     padding: spacing(xx-small) spacing(large);
+
+    .s-pin-nav &{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 spacing(large);
+        z-index: 100;
+    }
 }

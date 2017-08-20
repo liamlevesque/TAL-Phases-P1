@@ -14778,6 +14778,16 @@ document.addEventListener('DOMContentLoaded', function(){
     for(let i = 0; i < tal.lots.length; i++){
         tal.lots[i].closes = moment().add((i - tal.preSoldOffset) * tal.closeInterval,'seconds');
     };
+
+    var waypoint = new Waypoint({
+        element: document.querySelector('.js--nav-pin-waypoint'),
+        handler: function(direction) {
+            let body = document.querySelector('body');
+            if(direction === 'down') body.classList.add('s-pin-nav');
+            else body.classList.remove('s-pin-nav');
+        }
+    })
+
 }, false);
 
 
