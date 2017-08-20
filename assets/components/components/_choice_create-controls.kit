@@ -15,7 +15,7 @@
             </span>
         </div>
         <div class="g-cell__no-stretch">
-            <button class="o-button__secondary h-mr-50">Cancel</button>
+            <button class="o-button__secondary h-mr-50" v-on:click="toggleCreateChoiceGroup">Cancel</button>
             <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0">Continue Creating Choice Group</button>
         </div>
     </div>
