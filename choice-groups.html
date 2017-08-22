@@ -35,7 +35,7 @@
         
                 <div class="g-cell h-ta-right">
                     <div class="h-mb-50">
-                        <a href="" class="t-link h-mr-100">Manage alerts</a>
+                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
                         <a href="" class="t-link">Help</a>
                     </div>
         
@@ -226,6 +226,37 @@
         </div>
 
         <footer>Footer</footer>
+        
+        
+        <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
+        
+            <div class="c-modal--content">
+                <div class="c-modal--header">
+                    <h3 class="t-h3">Manage your notifications</h3>
+                </div>
+                <div class="c-modal--body">
+        
+                    <p>You can receive email notifications for items you have bid on. These alerts will inform you of the following conditions.</p>
+                    <ol>
+                        <li>You have been outbid on an item that you were high bidder on</li>
+                        <li>You have won an item</li>
+                        <li>Bidding opens on an item you are interested in</li>
+                    </ol>
+                    <div class="o-message__info h-mb-100">We don't send notifications during the last five minutes of bidding</div>
+                    <hr class="o-hr h-mb-200">
+                    <label for="" class="t-field-label">Enter your email address</label>
+                    <input type="text" class="o-input--text h-mb-100" placeholder="eg. name@email.com">
+        
+                </div>
+                <div class="c-modal--footer">
+        
+                    <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible">I don't want any notifications</button>
+                    <button class="o-button__primary" v-on:click="toggleManageAlertsVisible">Activate Notifications</button>
+        
+                </div>
+            </div>
+        
+        </div>
         
 	</div>
 	

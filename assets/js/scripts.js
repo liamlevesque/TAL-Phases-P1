@@ -24,6 +24,8 @@ const tal = {
     tempChoiceGroup: [],
     choiceProgress: 1,
     completeChoiceGroupModalVisible: false,
+
+    manageAlertsVisible: false,
 };
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -89,6 +91,9 @@ var app = new Vue({
       setChoiceProgress: function(step){
         this.choiceProgress = step;
       },
+      toggleManageAlertsVisible: function(){
+          this.manageAlertsVisible = !this.manageAlertsVisible;
+      }
   },
   computed:{
       findOneLot: function(){

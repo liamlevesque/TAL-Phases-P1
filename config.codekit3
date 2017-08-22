@@ -129,6 +129,12 @@
 		"oAP": "\/assets\/components\/modals\/_confirmBid.html",
 		"oF": 0
 		},
+	"\/assets\/components\/modals\/_manage-alerts.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/modals\/_manage-alerts.html",
+		"oF": 0
+		},
 	"\/assets\/css\/style.css": {
 		"aP": 1,
 		"bl": 0,

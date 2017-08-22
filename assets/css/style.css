@@ -1452,7 +1452,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     z-index: 100; }
 
 .c-lot-listing {
-  padding: 20px 30px; }
+  padding: 20px 0; }
   .c-lot-listing:not(:last-child) {
     border-bottom: 1px dotted #CCCCCC; }
 
