@@ -57,7 +57,7 @@
                     
                     <div class="h-mt-50">
                         <label for="" class="t-field-label">Bidder No.</label>
-                        <span class="t-h3">1042</span>
+                        <span class="t-h3 t-bold h-mr-200">1042</span>
                         <button class="o-button__secondary">Sign Out</button>
                     </div>
         
@@ -105,7 +105,9 @@
                     <div class="g-cell g-cell__two-thirds">
                         <div class="g-wrapper">
                             <div class="g-cell c-lot-details--photo-area">
-                                <img v-bind:src="lot.photos[activeThumbnail].src" alt="" class="c-lot-details--lot-photo">
+                                <div class="c-lot-details--lot-photo">
+                                    <img v-bind:src="lot.photos[activeThumbnail].src" alt="">
+                                </div>
                                 <ul class="c-lot-details--lot-thumbnails">
                                     <li v-for="(photo,index) in lot.photos" class="li c-lot-details--lot-thumbnail" v-on:click="setActiveThumbnail(index)" v-bind:class="{'s-active': index === activeThumbnail}">
                                         <img v-bind:src="photo.src" alt="">

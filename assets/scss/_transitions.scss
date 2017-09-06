@@ -20,21 +20,24 @@ $transition: $transition-time_1 $transition-function;
 
 
 @mixin loading($color,$height:4px,$bottom:0){
+    overflow: hidden;
+
     &:after{
         display: block;
         position: absolute;
         content: " ";
         left: 0;
-        right: 100%;
+        right: 0;
         height: $height;
         bottom: $bottom;
         background-color: $color;
+        transform: translatex(-100%);
 
         animation-name: waitingslide;
         animation-iteration-count: infinite;
         animation-duration: 1s;
         animation-direction: alternate;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
     }
 }
 
@@ -42,18 +45,15 @@ $transition: $transition-time_1 $transition-function;
 
     @keyframes waitingslide{
         0%{
-            left: 0;
-            right: 100%;
+            transform: translatex(-100%);
         }
 
         50%{
-            left: 0;
-            right: 0;
+            transform: translatex(0);
         }
 
         100%{
-            left: 100%;
-            right: 0;
+            transform: translatex(100%);
         }
     }
 

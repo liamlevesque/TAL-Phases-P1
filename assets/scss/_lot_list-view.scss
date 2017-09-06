@@ -43,6 +43,21 @@
     max-width: 400px;
 }
 
+    .c-lot-details--lot-photo{
+        margin-bottom: spacing(medium);
+        position: relative;
+        height: 0;
+        padding-bottom: 75%; //To make it always 4:3 sized, even when image is loading
+        background-color: palette(grey,1);
+
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+    }
 
     .c-lot-details--lot-thumbnails{
         display: flex;

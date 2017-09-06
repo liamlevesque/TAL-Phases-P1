@@ -9,7 +9,9 @@
         <div class="g-wrapper">
             <div class="g-cell">
                 <a href="lot-details.html">
-                    <img v-bind:src="lot.photos[0].src" alt="" class="c-lot--lot-photo">
+                    <div class="c-lot-details--lot-photo">
+                        <img v-bind:src="lot.photos[0].src" alt="">
+                    </div>
                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                 </a>
             </div>

@@ -57,7 +57,7 @@
                     
                     <div class="h-mt-50">
                         <label for="" class="t-field-label">Bidder No.</label>
-                        <span class="t-h3">1042</span>
+                        <span class="t-h3 t-bold h-mr-200">1042</span>
                         <button class="o-button__secondary">Sign Out</button>
                     </div>
         
@@ -175,7 +175,9 @@
                         <div class="g-wrapper">
                             <div class="g-cell">
                                 <a href="lot-details.html">
-                                    <img v-bind:src="lot.photos[0].src" alt="" class="c-lot--lot-photo">
+                                    <div class="c-lot-details--lot-photo">
+                                        <img v-bind:src="lot.photos[0].src" alt="">
+                                    </div>
                                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                 </a>
                             </div>
