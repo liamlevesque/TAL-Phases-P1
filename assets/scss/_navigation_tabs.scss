@@ -43,13 +43,15 @@
 .o-navigation--pagination{
     border-top: $ritchie-border;
     padding: spacing(medium) 0;
+    position: relative;
+    text-align: center;
 }
 
-.o-navigation-link{
-    padding: 0 spacing(xx-small);
+    .o-navigation-link{
+        padding: 0 spacing(xx-small);
 
-    &.s-active{
-        color: black;
-        font-weight: 700;
+        &.s-active{
+            color: black;
+            font-weight: 700;
+        }
     }
-}

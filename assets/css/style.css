@@ -1486,7 +1486,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .o-navigation--pagination {
   border-top: 1px dotted #CCCCCC;
-  padding: 20px 0; }
+  padding: 20px 0;
+  position: relative;
+  text-align: center; }
 
 .o-navigation-link {
   padding: 0 5px; }
@@ -1612,6 +1614,14 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute; }
+
+.h-p-abs-left {
+  position: absolute;
+  left: 0; }
+
+.h-p-abs-right {
+  position: absolute;
+  right: 0; }
 
 .h-mt-50 {
   margin-top: 10px !important; }

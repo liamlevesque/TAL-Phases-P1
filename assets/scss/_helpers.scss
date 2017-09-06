@@ -61,6 +61,16 @@
 		position: absolute;
 	}
 
+	.h-p-abs-left{
+		position: absolute;
+		left: 0;
+	}
+
+	.h-p-abs-right{
+		position: absolute;
+		right: 0;
+	}
+
 	.h-mt-50{
 		margin-top: spacing(x-small) !important;
 	}
