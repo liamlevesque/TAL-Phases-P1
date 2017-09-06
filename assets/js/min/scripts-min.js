@@ -15040,8 +15040,11 @@ var app = new Vue({
         if(lot.maxBid.bidder === this.bidder.number) return true;
         return false;
       },
-      userHasInGroupBid: function(lot){
-        
+      userHasInGroupBid: function(lotNumber){
+        console.log(lotNumber);
+        let grouped = this.choiceGroups.filter(group => group.lots.indexOf(lotNumber) >= 0); 
+        if(grouped.length > 0) return true;
+        return false;
       },
       disableNumberInputScroll: function(e){
         e.preventDefault();

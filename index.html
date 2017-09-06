@@ -252,7 +252,7 @@
                                     <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
                                 </div>
                             </div>
-                            <div class="o-message__info" v-if="userHasInGroupBid(lot)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                            <div class="o-message__info" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                 You selected and bid on this lot in a choice group.
                                 <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                             </div>
