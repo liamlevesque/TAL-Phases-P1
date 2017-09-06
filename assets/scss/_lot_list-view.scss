@@ -53,11 +53,17 @@
         .c-lot-details--lot-thumbnail{
             width: 32%;
             margin-bottom: spacing(x-small);
+            cursor: pointer;
+            transition: $transition;
 
             img{
                 display: block;
                 width: 100%;
                 max-width: 100%;
+            }
+
+            &.s-active{
+                box-shadow: 0 0 0 5px palette(blue);
             }
         }
 

@@ -496,6 +496,9 @@ body {
 .t-f-xlarge {
   font-size: 1.75rem; }
 
+.t-lh-300 {
+  line-height: 40px; }
+
 .t-allcaps {
   text-transform: uppercase;
   letter-spacing: 0.06em; }
@@ -1496,6 +1499,11 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     color: black;
     font-weight: 700; }
 
+.o-breadcrumb-header {
+  background-color: #3F3F3F;
+  padding: 15px 20px;
+  margin-bottom: 30px; }
+
 .o-faq-item {
   margin-bottom: 30px;
   padding-bottom: 30px;
@@ -1550,11 +1558,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .c-lot-details--lot-thumbnail {
   width: 32%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .c-lot-details--lot-thumbnail img {
     display: block;
     width: 100%;
     max-width: 100%; }
+  .c-lot-details--lot-thumbnail.s-active {
+    box-shadow: 0 0 0 5px #20579E; }
 
 .l-header {
   padding: 30px; }
@@ -1675,6 +1687,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .h-mr-50 {
   margin-right: 10px; }
+
+.h-ml-200 {
+  margin-left: 20px; }
 
 .h-ml-100 {
   margin-left: 15px; }

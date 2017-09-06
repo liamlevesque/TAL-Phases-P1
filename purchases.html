@@ -121,10 +121,10 @@
                                         <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                         <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
                                         <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
-                                            <i class="icon-eye"></i>
-                                            <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
-                                            <span v-else>Watch this lot</span>
-                                        </button>
+                                                                <i class="icon-eye"></i>
+                                                                <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
+                                                                <span v-else>Watch this lot</span>
+                                                            </button>
                                     </div> 
                                     
                                 </div>

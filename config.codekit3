@@ -87,6 +87,12 @@
 		"oAP": "\/assets\/components\/components\/_navigation_tabs.html",
 		"oF": 0
 		},
+	"\/assets\/components\/components\/_watch-button.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_watch-button.html",
+		"oF": 0
+		},
 	"\/assets\/components\/layout\/_footer.kit": {
 		"ft": 2048,
 		"oA": 1,

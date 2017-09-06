@@ -14995,6 +14995,8 @@ const tal = {
     manageAlertsVisible: false,
 
     increments: incrementTable,
+
+    activeThumbnail: 0,
 };
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -15145,6 +15147,9 @@ var app = new Vue({
       lotsInGroup: function(lots){
         return this.lots.filter(lot => lots.indexOf(lot.lotNumber) >= 0);
       },
+      setActiveThumbnail: function(index){
+        this.activeThumbnail = index;
+      }
   },
   computed:{
       findOneLot: function(){

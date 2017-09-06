@@ -49,6 +49,9 @@ $fontsizes: (
   }
 
 
+  .t-lh-300{
+    line-height: 40px;
+  }
 
 @mixin allcaps{
   text-transform: uppercase;
