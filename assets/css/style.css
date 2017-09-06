@@ -1487,7 +1487,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .o-navigation-link {
   padding: 0 5px; }
   .o-navigation-link.s-active {
-    color: black; }
+    color: black;
+    font-weight: 700; }
 
 .c-lot-listing {
   padding: 20px 0; }

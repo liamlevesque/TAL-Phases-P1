@@ -15040,7 +15040,7 @@ var app = new Vue({
       },
       isActivePage: function(path){
         return {
-            's-active' : window.location.pathname === path
+            's-active' : window.location.pathname.split('/').pop() === path
         }
       },
       placeBid: function(lot){
