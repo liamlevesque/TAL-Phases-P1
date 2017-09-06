@@ -1496,6 +1496,17 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     color: black;
     font-weight: 700; }
 
+.o-faq-item {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dotted #CCCCCC; }
+
+.o-faq-list__secondary {
+  list-style-type: initial;
+  padding-left: 20px; }
+  .o-faq-list__secondary li:not(:last-child) {
+    margin-bottom: 20px; }
+
 .c-lot-listing {
   padding: 20px 0; }
   .c-lot-listing:not(:last-child) {

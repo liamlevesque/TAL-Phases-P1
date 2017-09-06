@@ -793,6 +793,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/scss\/_faq.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/_faq.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/scss\/_font.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1083,6 +1096,12 @@
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/choice-groups.html",
+		"oF": 2
+		},
+	"\/assets\/templates\/help.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/help.html",
 		"oF": 2
 		},
 	"\/assets\/templates\/index.kit": {
@@ -11216,6 +11235,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/choice-groups.html",
+		"oF": 0
+		},
+	"\/help.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/help.html",
 		"oF": 0
 		},
 	"\/index.html": {

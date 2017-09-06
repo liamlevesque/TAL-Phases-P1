@@ -14,7 +14,6 @@ const tal = {
     },
     categories: categories,
     lots: lotlist,
-    choiceGroups: [],
     watchedLots: ['5001','5022', '5028','5031','5042','5045'],
 
     selectedLot: 0,
@@ -27,6 +26,15 @@ const tal = {
     tempChoiceGroup: [],
     choiceProgress: 1,
     completeChoiceGroupModalVisible: false,
+    choiceGroups: [
+      {
+        uid: '123456',
+        type: 'group',
+        lots: ["5099","5100","5101","5102"],
+        quantity: 2,
+        maxbid: 100,
+      }
+    ],
 
     manageAlertsVisible: false,
 
@@ -160,13 +168,27 @@ var app = new Vue({
       setChoiceProgress: function(step){
         this.choiceProgress = step;
       },
+      finishChoiceGroup: function(){
+        let newGroup = {
+					uid: new Date().toJSON(),
+					type: 'group',
+					lots: this.tempChoiceGroup,
+					quantity: this.tempChoiceGroup.length,
+					maxbid: 100,
+        }
+        
+        this.choiceGroups.push(newGroup);
+        this.toggleCompleteChoiceGroupModalVisible();
+      },
       toggleManageAlertsVisible: function(){
           this.manageAlertsVisible = !this.manageAlertsVisible;
       },
       toggleWatchStatus: function(lot){
         this.watchLot(lot,true);
       },
-      
+      lotsInGroup: function(lots){
+        return this.lots.filter(lot => lots.indexOf(lot.lotNumber) >= 0);
+      },
   },
   computed:{
       findOneLot: function(){

@@ -1,0 +1,18 @@
+.o-faq_list{
+
+}
+
+    .o-faq-item{
+        margin-bottom: spacing(large);
+        padding-bottom: spacing(large);
+        border-bottom: $ritchie-border;
+    }
+
+        .o-faq-list__secondary{
+            list-style-type: initial;
+            padding-left: spacing(medium);
+
+            li:not(:last-child){
+                margin-bottom: spacing(medium);
+            }
+        }

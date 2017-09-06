@@ -1,18 +1,39 @@
-<div class="c-choice-group-view">
+<div class="c-choice-group-view" v-for="(group,index) in choiceGroups"> 
     <div class="c-choice-group--header">
         <div class="g-wrapper">
             <div class="g-cell">
-                <h3 class="t-h3">Group 1 - you are outbid on none</h3>
+                <h3 class="t-h3">Group {{index + 1}} - you are outbid on none</h3>
             </div>
             <div class="g-cell">
                 <label for="" class="t-field-label">Maximum Bid:</label>
-                <span class="CCY">200</span>
-                <input type="text" class="o-input--text" placeholder="enter maximum bid">
+                <span class="CCY">{{ group.maxbid }}</span>
+                <input type="text" class="o-input--text__inline" placeholder="enter maximum bid">
                 <button class="o-button__primary">Change Maximum Bid</button>
             </div>
         </div>
+        <hr class="o-hr"/>
+        <div class="g-wrapper">
+            <div class="g-cell">
+                <label for="" class="t-field-label">Lots in Group:</label>
+                <span>{{ group.lots.length }}</span>
+            </div>
+            <div class="g-cell">
+                <label for="" class="t-field-label">Quantity Selected:</label>
+                <span>{{ group.quantity }}</span>
+            </div>
+            <div class="g-cell">
+                <label for="" class="t-field-label">Quantity Purchased:</label>
+                <span>0</span>
+            </div>
+            <div class="g-cell">
+                <label for="" class="t-field-label">High Bidder On:</label>
+                <span>{{ group.quantity }}</span>
+            </div>
+            
+        </div>
+        
     </div>
-    <div v-for="lot in grouplots">
+    <div v-for="lot in lotsInGroup(group.lots)">
         <!-- @include '/assets/components/components/lot_item' -->
     </div>
 </div>
