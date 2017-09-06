@@ -15,10 +15,13 @@ const tal = {
     categories: categories,
     lots: lotlist,
     choiceGroups: [],
-    watchedLots: [],
+    watchedLots: ['5001','5022','5031','5042','5045'],
 
     selectedLot: 0,
     confirmPlaceBidVisible: false,
+    confirmPlaceMaxBidVisible: false,
+    invalidMaxBidVisible: false,
+    offIncrementMaxBidVisible: false,
 
     creatingChoiceGroup: false,
     tempChoiceGroup: [],
@@ -26,6 +29,8 @@ const tal = {
     completeChoiceGroupModalVisible: false,
 
     manageAlertsVisible: false,
+
+    increments: incrementTable,
 };
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -54,14 +59,24 @@ var app = new Vue({
         return false;
       },
       userIsHighBidder: function(bids){
-          if(typeof bids[0] !='undefined' && bids[0].bidder === this.bidder.number) return true;
-          return false;
+        if(typeof bids[0] !='undefined' && bids[0].bidder === this.bidder.number) return true;
+        return false;
+      },
+      userWasOutbid: function(bids){
+        if(typeof bids[0] ==='undefined') return false;
+        if(bids[0].bidder === this.bidder.number) return false;
+        for(let i = 1; i < bids.length; i++){
+            if(bids[i].bidder === this.bidder.number) return true;
+        }
+      },
+      userIsMaxBidder: function(lot){
+        if(lot.maxBid.bidder === this.bidder.number) return true;
+        return false;
       },
       disableNumberInputScroll: function(e){
         e.preventDefault();
       },
       gotoPage(page){
-        console.log(page);
         window.location = page + ".html";
       },
       isActivePage: function(path){
@@ -73,8 +88,59 @@ var app = new Vue({
         this.confirmPlaceBidVisible = true;
         this.selectedLot = lot; 
       },
+      placeMaxBid: function(lot){
+        if(lot.tempMaxBid === null) {
+            this.toggleInvalidMaxBidVisible();
+            lot.tempMaxBid = null;
+        }
+        else this.toggleOffIncrementMaxBidVisible();
+        //else this.confirmPlaceMaxBidVisible = true;
+        
+        this.selectedLot = lot; 
+      },
+      confirmMaxBid: function(){
+        this.offIncrementMaxBidVisible = false;
+        this.confirmPlaceMaxBidVisible = true;
+      },
       completeBid: function(){
         this.confirmPlaceBidVisible = false;
+        this.watchLot(this.selectedLot,false);
+        this.pricedBid(this.selectedLot,'quick',this.bidder.number,5)
+      },
+      watchLot: function(lot,removeIfExists){
+        if(this.watchedLots.indexOf(lot.lotNumber) < 0){ //IF NOT WATCHING YET
+            this.watchedLots.push(lot.lotNumber);
+        }else{
+            if(removeIfExists) this.watchedLots.splice(this.watchedLots.indexOf(lot.lotNumber),1);
+        }
+      },
+      completeMaxBid: function(){
+        this.confirmPlaceMaxBidVisible = false;
+        this.watchLot(this.selectedLot,false);
+        this.pricedBid(this.selectedLot,'max',this.bidder.number,5);
+        this.selectedLot.maxBid.bid = this.selectedLot.tempMaxBid;
+        this.selectedLot.maxBid.bidder = this.bidder.number;
+      },
+
+      pricedBid: function(lot,type,bidder,amt){
+        lot.bids.unshift(this.buildBid(bidder,amt,type));
+      },
+
+      buildBid: function(bidder,amt,type) {
+        let bid = {
+            bidder: this.bidder.number,
+            bid: amt,
+            time: new Date().toJSON(),
+            type: type,
+        };
+        
+        return bid;
+      },
+      toggleInvalidMaxBidVisible: function(){
+        this.invalidMaxBidVisible = !this.invalidMaxBidVisible;
+      },
+      toggleOffIncrementMaxBidVisible: function(){
+        this.offIncrementMaxBidVisible = !this.offIncrementMaxBidVisible;
       },
       toggleCreateChoiceGroup: function(){
         this.creatingChoiceGroup = !this.creatingChoiceGroup;
@@ -93,7 +159,11 @@ var app = new Vue({
       },
       toggleManageAlertsVisible: function(){
           this.manageAlertsVisible = !this.manageAlertsVisible;
-      }
+      },
+      toggleWatchStatus: function(lot){
+        this.watchLot(lot,true);
+      },
+      
   },
   computed:{
       findOneLot: function(){
@@ -104,6 +174,9 @@ var app = new Vue({
             console.log(thislot);
             return thislot;
         }
+      },
+      lotsImWatching: function(){
+        return this.lots.filter(lot => this.watchedLots.indexOf(lot.lotNumber) >= 0);
       }
   },
   filters:{

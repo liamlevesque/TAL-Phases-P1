@@ -45,6 +45,12 @@
 		"oAP": "\/assets\/components\/components\/_header_logo.html",
 		"oF": 0
 		},
+	"\/assets\/components\/components\/_increment-table.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_increment-table.html",
+		"oF": 0
+		},
 	"\/assets\/components\/components\/_lot_bid-area.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -127,6 +133,12 @@
 		"ft": 2048,
 		"oA": 1,
 		"oAP": "\/assets\/components\/modals\/_confirmBid.html",
+		"oF": 0
+		},
+	"\/assets\/components\/modals\/_confirmMaxBid.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/modals\/_confirmMaxBid.html",
 		"oF": 0
 		},
 	"\/assets\/components\/modals\/_manage-alerts.kit": {
@@ -670,6 +682,15 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/assets\/js\/min\/_categories-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/_increments.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/js\/min\/_increments-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -11265,9 +11286,15 @@
 			"type": 0
 			},
 		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_increments.js",
+			"position": 4,
+			"type": 0
+			},
+		{
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/noframework.waypoints.min.js",
-			"position": 4,
+			"position": 5,
 			"type": 0
 			}
 		]

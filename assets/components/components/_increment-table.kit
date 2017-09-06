@@ -1,0 +1,14 @@
+<div class="o-data-table h-mt-200">
+    <div class="o-data-table--header g-wrapper">
+        <div class="g-cell">Price Range</div>
+        <div class="g-cell"></div>
+        <div class="g-cell">Bid Increment</div>
+    </div>
+    <ul class="o-data-table--body">
+        <li class="o-data-table--row g-wrapper" v-for="increment in increments">
+            <div class="g-cell CCY">{{ increment.from }}</div>
+            <div class="g-cell"> to <span class="CCY">{{ increment.upto }}</span></div>
+            <div class="g-cell CCY">{{ increment.increment }}</div>
+        </li>
+    </ul>
+</div>

@@ -10696,6 +10696,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10718,6 +10719,7 @@ const lotlist = [
 			"status" : 'sold',
 			"description" : "2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set",
 			"photo" : "assets/img/asset1-1.jpg",
+			"tempMaxBid" : null,
 			"photos": [
 				{"src": "assets/img/asset1-1.jpg","disabled":false},
 				{"src": "assets/img/asset1-2.jpg","disabled":false},
@@ -10751,6 +10753,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"unused" : true,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
 			"timeleft": ''
@@ -10777,6 +10780,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "90000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10805,6 +10809,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "110000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10833,6 +10838,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10861,6 +10867,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "90000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10889,6 +10896,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "110000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10917,6 +10925,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10945,6 +10954,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "90000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -10973,6 +10983,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "110000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11001,6 +11012,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "110000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11029,6 +11041,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11057,6 +11070,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11085,6 +11099,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11113,6 +11128,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11141,6 +11157,7 @@ const lotlist = [
 				{"src": "assets/img/asset1-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11169,6 +11186,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11197,6 +11215,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11225,6 +11244,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11253,6 +11273,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11281,6 +11302,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11309,6 +11331,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11337,6 +11360,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11365,6 +11389,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11393,6 +11418,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11421,6 +11447,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11449,6 +11476,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : true,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11476,6 +11504,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11503,6 +11532,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11511,9 +11541,9 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5031",
-			"bids": [],
-			"maxBid":{bid: 0,bidder: null},
-			"category": 'Attachments - Excavator',
+			"bids": [{bid: 10, bidder: "5678", time: "2017-08-16T22:20:58.162Z", type: 'max'},{bid: 5, bidder: "12345", time: "2017-08-16T22:20:58.162Z", type: 'quick'}],
+			"maxBid":{bid: 500,bidder: '5678'},
+			"category": 'Attachments - Excavator', 
 			"watching": [],
 			"equipid": '1234567890A',
 			"flagged": false,
@@ -11530,6 +11560,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11557,6 +11588,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11584,6 +11616,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11611,6 +11644,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11638,6 +11672,7 @@ const lotlist = [
 				{"src": "assets/img/asset13-3.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11664,6 +11699,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11690,6 +11726,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11716,6 +11753,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11742,6 +11780,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11768,6 +11807,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11794,6 +11834,7 @@ const lotlist = [
 				{"src": "assets/img/asset10-2.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11822,6 +11863,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11850,6 +11892,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11878,6 +11921,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11906,6 +11950,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11934,6 +11979,7 @@ const lotlist = [
 				{"src": "assets/img/asset12-4.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11960,6 +12006,7 @@ const lotlist = [
 				{"src": "assets/img/asset8-2.jpg","disabled":false},
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -11986,6 +12033,7 @@ const lotlist = [
 				{"src": "assets/img/asset8-2.jpg","disabled":false},
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12014,6 +12062,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12042,6 +12091,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12070,6 +12120,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12098,6 +12149,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12126,6 +12178,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12154,6 +12207,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12182,6 +12236,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12210,6 +12265,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12238,6 +12294,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12266,6 +12323,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12294,6 +12352,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12322,6 +12381,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12350,6 +12410,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12378,6 +12439,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12406,6 +12468,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12434,6 +12497,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12462,6 +12526,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12490,6 +12555,7 @@ const lotlist = [
 				{"src": "assets/img/asset3-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12518,6 +12584,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12546,6 +12613,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12574,6 +12642,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12602,6 +12671,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12630,6 +12700,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12658,6 +12729,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12686,6 +12758,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12714,6 +12787,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12742,6 +12816,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12770,6 +12845,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12798,6 +12874,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12826,6 +12903,7 @@ const lotlist = [
 				{"src": "assets/img/asset4-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12854,6 +12932,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12882,6 +12961,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12910,6 +12990,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12938,6 +13019,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12966,6 +13048,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -12994,6 +13077,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13022,6 +13106,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13050,6 +13135,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13078,6 +13164,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13106,6 +13193,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13134,6 +13222,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13162,6 +13251,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13190,6 +13280,7 @@ const lotlist = [
 				{"src": "assets/img/asset11-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13218,6 +13309,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13246,6 +13338,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13274,6 +13367,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13302,6 +13396,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13330,6 +13425,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13358,6 +13454,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13386,6 +13483,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13414,6 +13512,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13442,6 +13541,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13470,6 +13570,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13498,6 +13599,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13526,6 +13628,7 @@ const lotlist = [
 				{"src": "assets/img/asset5-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13554,6 +13657,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13582,6 +13686,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13610,6 +13715,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13638,6 +13744,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13666,6 +13773,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13694,6 +13802,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13722,6 +13831,7 @@ const lotlist = [
 				{"src": "assets/img/asset9-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13750,6 +13860,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13778,6 +13889,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13806,6 +13918,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13834,6 +13947,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13862,6 +13976,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13890,6 +14005,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13918,6 +14034,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13946,6 +14063,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -13974,6 +14092,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14002,6 +14121,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14030,6 +14150,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14058,6 +14179,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14086,6 +14208,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14114,6 +14237,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14142,6 +14266,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14170,6 +14295,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14198,6 +14324,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14226,6 +14353,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14254,6 +14382,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14282,6 +14411,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14310,6 +14440,7 @@ const lotlist = [
 				{"src": "assets/img/asset7-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14338,6 +14469,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14366,6 +14498,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14394,6 +14527,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14422,6 +14556,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14450,6 +14585,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14478,6 +14614,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14506,6 +14643,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14534,6 +14672,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14562,6 +14701,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14590,6 +14730,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14618,6 +14759,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14646,6 +14788,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14674,6 +14817,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "100000 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14702,6 +14846,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14730,6 +14875,7 @@ const lotlist = [
 				{"src": "assets/img/asset6-4.jpg","disabled":false}
 			],
 			"usage" : "4756 hrs",
+			"tempMaxBid" : null,
 			"comeswith" : "Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA",
 			"unused" : false,
 			"closes" : "Mon May 22 2017 12:14:04 GMT-0700 (PDT)",
@@ -14737,6 +14883,68 @@ const lotlist = [
 			"active":false
 		}
 	]; 
+
+const incrementTable = [
+	{
+        from: 0,
+        upto: 99,
+		increment: 5
+	},
+	{
+        from: 100,
+        upto: 249,
+		increment: 10
+	},
+	{
+        from: 250,
+        upto: 499,
+		increment: 25
+	},
+	{
+        from: 500,
+        upto: 999,
+		increment: 50
+	},
+	{
+        from: 1000,
+        upto: 2499,
+		increment: 100
+	},
+	{
+        from: 2500,
+        upto: 9999,
+		increment: 250
+	},
+	{
+        from: 10000,
+        upto: 24999,
+		increment: 500
+	},
+	{
+        from: 25000,
+        upto: 149999,
+		increment: 1000
+	},
+	{
+        from: 150000,
+        upto: 299999,
+		increment: 2500
+	},
+	{
+        from: 250000,
+        upto: 999999,
+		increment: 5000
+	},
+	{
+        from: 1000000,
+        upto: 9999999,
+		increment: 10000
+	},
+]
+ 
+
+const increments = [100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000];
+
 
 /*!
 Waypoints - 4.0.0
@@ -14763,10 +14971,13 @@ const tal = {
     categories: categories,
     lots: lotlist,
     choiceGroups: [],
-    watchedLots: [],
+    watchedLots: ['5001','5022','5031','5042','5045'],
 
     selectedLot: 0,
     confirmPlaceBidVisible: false,
+    confirmPlaceMaxBidVisible: false,
+    invalidMaxBidVisible: false,
+    offIncrementMaxBidVisible: false,
 
     creatingChoiceGroup: false,
     tempChoiceGroup: [],
@@ -14774,6 +14985,8 @@ const tal = {
     completeChoiceGroupModalVisible: false,
 
     manageAlertsVisible: false,
+
+    increments: incrementTable,
 };
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -14802,14 +15015,24 @@ var app = new Vue({
         return false;
       },
       userIsHighBidder: function(bids){
-          if(typeof bids[0] !='undefined' && bids[0].bidder === this.bidder.number) return true;
-          return false;
+        if(typeof bids[0] !='undefined' && bids[0].bidder === this.bidder.number) return true;
+        return false;
+      },
+      userWasOutbid: function(bids){
+        if(typeof bids[0] ==='undefined') return false;
+        if(bids[0].bidder === this.bidder.number) return false;
+        for(let i = 1; i < bids.length; i++){
+            if(bids[i].bidder === this.bidder.number) return true;
+        }
+      },
+      userIsMaxBidder: function(lot){
+        if(lot.maxBid.bidder === this.bidder.number) return true;
+        return false;
       },
       disableNumberInputScroll: function(e){
         e.preventDefault();
       },
       gotoPage(page){
-        console.log(page);
         window.location = page + ".html";
       },
       isActivePage: function(path){
@@ -14821,8 +15044,59 @@ var app = new Vue({
         this.confirmPlaceBidVisible = true;
         this.selectedLot = lot; 
       },
+      placeMaxBid: function(lot){
+        if(lot.tempMaxBid === null) {
+            this.toggleInvalidMaxBidVisible();
+            lot.tempMaxBid = null;
+        }
+        else this.toggleOffIncrementMaxBidVisible();
+        //else this.confirmPlaceMaxBidVisible = true;
+        
+        this.selectedLot = lot; 
+      },
+      confirmMaxBid: function(){
+        this.offIncrementMaxBidVisible = false;
+        this.confirmPlaceMaxBidVisible = true;
+      },
       completeBid: function(){
         this.confirmPlaceBidVisible = false;
+        this.watchLot(this.selectedLot,false);
+        this.pricedBid(this.selectedLot,'quick',this.bidder.number,5)
+      },
+      watchLot: function(lot,removeIfExists){
+        if(this.watchedLots.indexOf(lot.lotNumber) < 0){ //IF NOT WATCHING YET
+            this.watchedLots.push(lot.lotNumber);
+        }else{
+            if(removeIfExists) this.watchedLots.splice(this.watchedLots.indexOf(lot.lotNumber),1);
+        }
+      },
+      completeMaxBid: function(){
+        this.confirmPlaceMaxBidVisible = false;
+        this.watchLot(this.selectedLot,false);
+        this.pricedBid(this.selectedLot,'max',this.bidder.number,5);
+        this.selectedLot.maxBid.bid = this.selectedLot.tempMaxBid;
+        this.selectedLot.maxBid.bidder = this.bidder.number;
+      },
+
+      pricedBid: function(lot,type,bidder,amt){
+        lot.bids.unshift(this.buildBid(bidder,amt,type));
+      },
+
+      buildBid: function(bidder,amt,type) {
+        let bid = {
+            bidder: this.bidder.number,
+            bid: amt,
+            time: new Date().toJSON(),
+            type: type,
+        };
+        
+        return bid;
+      },
+      toggleInvalidMaxBidVisible: function(){
+        this.invalidMaxBidVisible = !this.invalidMaxBidVisible;
+      },
+      toggleOffIncrementMaxBidVisible: function(){
+        this.offIncrementMaxBidVisible = !this.offIncrementMaxBidVisible;
       },
       toggleCreateChoiceGroup: function(){
         this.creatingChoiceGroup = !this.creatingChoiceGroup;
@@ -14841,7 +15115,11 @@ var app = new Vue({
       },
       toggleManageAlertsVisible: function(){
           this.manageAlertsVisible = !this.manageAlertsVisible;
-      }
+      },
+      toggleWatchStatus: function(lot){
+        this.watchLot(lot,true);
+      },
+      
   },
   computed:{
       findOneLot: function(){
@@ -14852,6 +15130,9 @@ var app = new Vue({
             console.log(thislot);
             return thislot;
         }
+      },
+      lotsImWatching: function(){
+        return this.lots.filter(lot => this.watchedLots.indexOf(lot.lotNumber) >= 0);
       }
   },
   filters:{

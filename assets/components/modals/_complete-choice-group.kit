@@ -12,7 +12,7 @@
                     <div class="o-data-table--header">Your Selected Lots</div>
                     <ul class="o-data-table--body">
                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                            <div class="g-cell">Lot {{ choicelot }}</div>
+                            <div class="g-cell">Lot {{ choicelot }} - Short description here</div>
                             <div class="g-cell__no-stretch h-color-error"><i class="icon-trash"></i> Remove</div>
                         </li>
                     </ul>
@@ -29,7 +29,7 @@
         <div class="c-modal--step" v-if="choiceProgress === 2">
             <div class="c-modal--body">
                 <p>Of the {{ tempChoiceGroup.length }} selected lots, what is the maximum quantity you would like to purchase?</p>
-                <div class="o-message__warning h-mb-300">You could win up to this many lots, so choose wisely</div>
+                <div class="o-message__warning h-mb-300">You could win up to this many lots</div>
                 <hr class="o-hr h-mb-100"/>
                 <div class="t-h3 g-wrapper g--center">
                     <div class="g-cell h-ta-right">I want to buy up to</div>
@@ -85,7 +85,7 @@
                     <div class="o-data-table--header">Your Selected Lots</div>
                     <ul class="o-data-table--body">
                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                            <div class="g-cell">Lot {{ choicelot }}</div>
+                            <div class="g-cell">Lot {{ choicelot }} - Short Description goes here</div>
                         </li>
                     </ul>
                 </div>

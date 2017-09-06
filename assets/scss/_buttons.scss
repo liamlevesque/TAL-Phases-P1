@@ -80,3 +80,20 @@ $button-padding: 25px;
         text-decoration: underline;
     }
 }
+
+.o-button__icon-toggle{
+    @include button;
+    
+    color: palette(blue);
+    border: 1px solid palette(blue);
+    background-color: transparent;
+
+    i{
+        margin-right: spacing(small);
+    }
+
+    &.s-active{
+        color: white;
+        background-color: palette(blue);
+    }
+}

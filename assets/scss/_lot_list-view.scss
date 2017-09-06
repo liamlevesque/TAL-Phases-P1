@@ -30,6 +30,14 @@
         } //If there is both boxes show the border between them
     }
 
+        .c-lot--highBid{
+            color: palette(brand);
+
+            &.s-high-bidder{
+                color: palette(green);
+            }
+        }
+
 
 .c-lot-details--photo-area{
     max-width: 400px;

@@ -19,8 +19,12 @@
                 </a>
                 <div class="">
                     <!-- @include '/assets/components/components/lot_text-fields' -->
-                    <button class="o-button__icon">Watch this lot</button>
-                </div>
+                    <button class="o-button__icon-toggle" v-if="lot.status != 'sold'" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                        <i class="icon-eye"></i>
+                        <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
+                        <span v-else>Watch this lot</span>
+                    </button>
+                </div> 
                 
             </div>
         </div>

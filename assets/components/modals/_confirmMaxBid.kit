@@ -1,0 +1,73 @@
+<div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceMaxBidVisible }">
+
+    <div class="c-modal--content">
+        <div class="c-modal--header">
+            <h3 class="t-h3">Confirm your bid</h3>
+        </div>
+        <div class="c-modal--body">
+
+            You are about to enter a maximum bid. Are you sure you want to:
+            <hr class="o-hr h-mb-100" />
+            <p class="t-h3">Bid up to <span class="CCY">{{ selectedLot.tempMaxBid }}</span> on lot {{ selectedLot.lotNumber }}?</p>
+            <hr class="o-hr h-mb-100" /> The system will bid on your behalf up to and including this amount.
+
+        </div>
+        <div class="c-modal--footer">
+
+            <button class="o-button__secondary" v-on:click="completeMaxBid">Cancel</button>
+            <button class="o-button__primary" v-on:click="completeMaxBid">Yes, place bid</button>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="c-modal" v-bind:class="{ 's-visible': invalidMaxBidVisible }">
+
+    <div class="c-modal--content">
+        <div class="c-modal--header">
+            <h3 class="t-h3">Your maximum bid is invalid</h3>
+        </div>
+        <div class="c-modal--body">
+
+            <p>Woops - that bid isn’t a valid number. </p>
+            <p>Please enter numbers only. No punctuation or letters please!</p>
+            <hr class="o-hr h-mb-100" />
+            <p class="t-h3">For example: 200</p>
+            <hr class="o-hr h-mb-100" />
+
+        </div>
+        <div class="c-modal--footer">
+
+            <button class="o-button__primary" v-on:click="toggleInvalidMaxBidVisible">Got It</button>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="c-modal" v-bind:class="{ 's-visible': offIncrementMaxBidVisible }">
+        
+    <div class="c-modal--content">
+        <div class="c-modal--header">
+            <div class="o-message__error h-mb-100">You have entered an invalid maximum bid</div>
+        </div>
+        <div class="c-modal--body">
+
+            <p>You must bid according to the pre-set bidding increments (see table below).</p>
+            <p>Choose one of the bids below or click cancel and enter a new bid.</p>
+            <div class="h-ta-center">
+                <button class="o-button__primary" v-on:click="confirmMaxBid">Bid <span class="CCY">100</span></button>
+                <button class="o-button__primary" v-on:click="confirmMaxBid">Bid <span class="CCY">110</span></button>
+            </div>
+            <!-- @include '/assets/components/components/increment-table' -->
+
+        </div>
+        <div class="c-modal--footer h-ta-center">
+            
+            <button class="o-button__blank t-link" v-on:click="toggleOffIncrementMaxBidVisible">Cancel</button>
+
+        </div>
+    </div>
+
+</div>
