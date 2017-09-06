@@ -1568,6 +1568,16 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .c-lot-details--lot-thumbnail.s-active {
     box-shadow: 0 0 0 5px #20579E; }
 
+.c-choice-group-view {
+  border: 1px solid #CCCCCC; }
+
+.c-choice-group--header {
+  background-color: #F0F0F0;
+  padding: 20px; }
+
+.c-choice-group--body {
+  padding: 0 20px; }
+
 .l-header {
   padding: 30px; }
 

@@ -94,9 +94,9 @@
                     </li>
                 </ul>
             </nav>
-            <div class="g-wrapper">
-                <div class="g-cell">
-                    <h3 class="t-h3 c-white">Want to create a new choice group?</h3>
+            <div class="o-breadcrumb-header g-wrapper">
+                <div class="g-cell t-h3 h-color-white t-bold t-lh-300">
+                    {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
                 </div>
                 <div class="g-cell h-ta-right">
                     <button class="o-button__tertiary">Create a choice group</button>
@@ -107,135 +107,137 @@
                 <div class="c-choice-group-view" v-for="(group,index) in choiceGroups"> 
                     <div class="c-choice-group--header">
                         <div class="g-wrapper">
-                            <div class="g-cell">
+                            <div class="">
                                 <h3 class="t-h3">Group {{index + 1}} - you are outbid on none</h3>
                             </div>
-                            <div class="g-cell">
+                            <div class="g-cell h-ta-right">
                                 <label for="" class="t-field-label">Maximum Bid:</label>
-                                <span class="CCY">{{ group.maxbid }}</span>
+                                <span class="CCY t-bold h-mr-100">{{ group.maxbid }}</span>
                                 <input type="text" class="o-input--text__inline" placeholder="enter maximum bid">
                                 <button class="o-button__primary">Change Maximum Bid</button>
                             </div>
                         </div>
-                        <hr class="o-hr"/>
+                        <hr class="o-hr h-mb-200"/>
                         <div class="g-wrapper">
                             <div class="g-cell">
                                 <label for="" class="t-field-label">Lots in Group:</label>
-                                <span>{{ group.lots.length }}</span>
+                                <span class="t-bold">{{ group.lots.length }}</span>
                             </div>
                             <div class="g-cell">
                                 <label for="" class="t-field-label">Quantity Selected:</label>
-                                <span>{{ group.quantity }}</span>
+                                <span class="t-bold">{{ group.quantity }}</span>
                             </div>
                             <div class="g-cell">
                                 <label for="" class="t-field-label">Quantity Purchased:</label>
-                                <span>0</span>
+                                <span class="t-bold">0</span>
                             </div>
                             <div class="g-cell">
                                 <label for="" class="t-field-label">High Bidder On:</label>
-                                <span>{{ group.quantity }}</span>
+                                <span class="t-bold">{{ group.quantity }}</span>
                             </div>
                             
                         </div>
                         
                     </div>
-                    <div v-for="lot in lotsInGroup(group.lots)">
-                        <div class="g-wrapper">
-                            <div v-if="creatingChoiceGroup">
-                                <label class="o-input--checkbox">
-                                    <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number>
-                                    <span class="o-input--checksymbol"></span>
-                                </label>
-                            </div>
-                            <div class="g-cell g-cell__two-thirds">
-                                <div class="g-wrapper">
-                                    <div class="g-cell">
-                                        <a href="lot-details.html">
-                                            <img v-bind:src="lot.photos[0].src" alt="" class="c-lot--lot-photo">
-                                            <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
-                                        </a>
-                                    </div>
-                                    <div class="g-cell g-cell__two-thirds c-lot--lot-details">
-                                        <a href="lot-details.html">
-                                            <h3 class="t-h3 t-link">{{ lot.description }}</h3>
-                                        </a>
-                                        <div class="">
-                                            <p class="o-field-and-value" v-if="lot.equipid"><label for="" class="t-field-label">Serial #:</label>{{ lot.equipid }}</p>
-                                            <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-field-label">Usage:</label>{{ lot.usage }}</p>
-                                            <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
-                                            <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
-                                            <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
-                                                                    <i class="icon-eye"></i>
-                                                                    <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
-                                                                    <span v-else>Watch this lot</span>
-                                                                </button>
-                                        </div> 
-                                        
-                                    </div>
+                    <div class="c-choice-group--body">
+                        <div class="c-lot-listing" v-for="lot in lotsInGroup(group.lots)">
+                            <div class="g-wrapper">
+                                <div v-if="creatingChoiceGroup">
+                                    <label class="o-input--checkbox">
+                                        <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number>
+                                        <span class="o-input--checksymbol"></span>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="g-cell">
-                                
-                                <div v-if="lot.status === 'sold'">
-                                    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
-                                    <h3 class="h-mt-100" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
-                                    <h3 class="h-mt-100" v-else>Bidding is closed for this item</h3>
-                                </div>
-                                <div v-else>
-                                    <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
-                                    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
-                                </div>
-                                
-                                <div class="c-lot--bid-and-closing">
-                                    <div class="c-lot--highBid g-wrapper" v-if="lot.bids.length > 0" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
+                                <div class="g-cell g-cell__two-thirds">
+                                    <div class="g-wrapper">
                                         <div class="g-cell">
-                                            <label for="" class="t-field-label">High Bidder:</label>
-                                            <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
+                                            <a href="lot-details.html">
+                                                <img v-bind:src="lot.photos[0].src" alt="" class="c-lot--lot-photo">
+                                                <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
+                                            </a>
                                         </div>
-                                        <div class="g-cell h-t-a-right">
-                                            <label for="" class="t-field-label">Bid:</label>
-                                            <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
+                                        <div class="g-cell g-cell__two-thirds c-lot--lot-details">
+                                            <a href="lot-details.html">
+                                                <h3 class="t-h3 t-link">{{ lot.description }}</h3>
+                                            </a>
+                                            <div class="">
+                                                <p class="o-field-and-value" v-if="lot.equipid"><label for="" class="t-field-label">Serial #:</label>{{ lot.equipid }}</p>
+                                                <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-field-label">Usage:</label>{{ lot.usage }}</p>
+                                                <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
+                                                <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
+                                                <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                                                                        <i class="icon-eye"></i>
+                                                                        <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
+                                                                        <span v-else>Watch this lot</span>
+                                                                    </button>
+                                            </div> 
+                                            
                                         </div>
-                                    </div>
-                                    <div v-else class="t-faint">
-                                        No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
-                                    </div>
-                                    <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
-                                        <div class="g-cell">
-                                            <label for="" class="t-field-label">Bidding Closes:</label>
-                                            <span class="t-h4">{{ lot.closes | countdownTime }}</span>
-                                        </div>
-                                        <div class="g-cell h-ta-right">({{ lot.closes | calendarTime }})</div>
                                     </div>
                                 </div>
-                                
-                                <div class="c-lot--bidding">
-                                    <div class="" v-if="lot.status != 'sold'"><!-- IF NOT PART OF A CHOICE GROUP -->
-                                        <div class="g-wrapper">
-                                            <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" placeholder="$35 USD or higher"></div>
+                                <div class="g-cell">
+                                    
+                                    <div v-if="lot.status === 'sold'">
+                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
+                                        <h3 class="h-mt-100" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
+                                        <h3 class="h-mt-100" v-else>Bidding is closed for this item</h3>
+                                    </div>
+                                    <div v-else>
+                                        <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
+                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
+                                    </div>
+                                    
+                                    <div class="c-lot--bid-and-closing">
+                                        <div class="c-lot--highBid g-wrapper" v-if="lot.bids.length > 0" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                             <div class="g-cell">
-                                                <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
-                                                    <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
-                                                    <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
-                                                </button>
+                                                <label for="" class="t-field-label">High Bidder:</label>
+                                                <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
+                                            </div>
+                                            <div class="g-cell h-t-a-right">
+                                                <label for="" class="t-field-label">Bid:</label>
+                                                <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
                                             </div>
                                         </div>
-                                        <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
-                                            <div class="h-ta-center">- OR -</div>
-                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY">35</span></button>
+                                        <div v-else class="t-faint">
+                                            No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
                                         </div>
-                                        <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
-                                            <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
+                                        <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
+                                            <div class="g-cell">
+                                                <label for="" class="t-field-label">Bidding Closes:</label>
+                                                <span class="t-h4">{{ lot.closes | countdownTime }}</span>
+                                            </div>
+                                            <div class="g-cell h-ta-right">({{ lot.closes | calendarTime }})</div>
                                         </div>
                                     </div>
-                                    <div class="o-message__info" v-if="userHasInGroupBid(lot)"><!-- IF BID AS PART OF CHOICE GROUP -->
-                                        You selected and bid on this lot in a choice group.
-                                        <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
-                                    </div>
-                                
-                                    <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
-                                        Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
-                                        <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
+                                    
+                                    <div class="c-lot--bidding">
+                                        <div class="" v-if="lot.status != 'sold'"><!-- IF NOT PART OF A CHOICE GROUP -->
+                                            <div class="g-wrapper">
+                                                <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" placeholder="$35 USD or higher"></div>
+                                                <div class="g-cell">
+                                                    <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
+                                                        <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
+                                                        <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
+                                                <div class="h-ta-center">- OR -</div>
+                                                <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY">35</span></button>
+                                            </div>
+                                            <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
+                                                <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="o-message__info" v-if="userHasInGroupBid(lot)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                            You selected and bid on this lot in a choice group.
+                                            <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
+                                        </div>
+                                    
+                                        <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
+                                            Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
+                                            <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

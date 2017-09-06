@@ -33,7 +33,8 @@ const tal = {
         lots: ["5099","5100","5101","5102"],
         quantity: 2,
         maxbid: 100,
-      }
+      },
+      
     ],
 
     manageAlertsVisible: false,
