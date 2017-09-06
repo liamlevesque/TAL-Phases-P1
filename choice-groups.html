@@ -87,7 +87,7 @@
                         Watching & Bidding
                     </li>
                     <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('/choice-groups.html')">
-                        Choice Groups
+                        My Choice Groups
                     </li>
                     <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('/purchases.html')">
                         My Purchases
@@ -204,9 +204,9 @@
                                             <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
                                         </div>
                                     </div>
-                                    <div class="o-message__info"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                    <div class="o-message__info" v-if="userHasInGroupBid(lot)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                         You selected and bid on this lot in a choice group.
-                                        <br><a href="" class="t-link__message">Show me</a>
+                                        <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                                     </div>
                                 
                                     <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
@@ -225,7 +225,10 @@
                     <h3 class="t-h3">You haven't created any choice groups yet!</h3>
                     <button class="o-button__primary">Create your first choice group</button>
                 </div>
-                <div class="o-message__info">In our live auctions, similar items are sometimes sold as choice group. In the Timed Auction, you can create your own choice group. This is a good option if you want to buy a certain type of item, rather than a specific lot. For example, if we're selling 10 identical gen sets and you want to buy three of them, you can create a choice group out of the 10 items and specify that you want a quantity of up to three.</div>
+                <div class="o-message__info">
+                    <p>In our live auctions, similar items are sometimes sold as choice group. In the Timed Auction, you can create your own choice group. This is a good option if you want to buy a certain type of item, rather than a specific lot. For example, if we're selling 10 identical gen sets and you want to buy three of them, you can create a choice group out of the 10 items and specify that you want a quantity of up to three.</p>
+                    <a href="http://www.rbauction.com/buying/how-to-buy/at-a-timed-auction/advanced-bidding" class="t-link__message" target="_blank">Learn More</a>
+                </div>
             </div>
 
         </div>

@@ -88,7 +88,7 @@
                         Watching & Bidding
                     </li>
                     <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('/choice-groups.html')">
-                        Choice Groups
+                        My Choice Groups
                     </li>
                     <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('/purchases.html')">
                         My Purchases
@@ -249,9 +249,9 @@
                                     <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
                                 </div>
                             </div>
-                            <div class="o-message__info"><!-- IF BID AS PART OF CHOICE GROUP -->
+                            <div class="o-message__info" v-if="userHasInGroupBid(lot)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                 You selected and bid on this lot in a choice group.
-                                <br><a href="" class="t-link__message">Show me</a>
+                                <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                             </div>
                         
                             <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->

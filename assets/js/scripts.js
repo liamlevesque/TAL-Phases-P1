@@ -15,7 +15,7 @@ const tal = {
     categories: categories,
     lots: lotlist,
     choiceGroups: [],
-    watchedLots: ['5001','5022','5031','5042','5045'],
+    watchedLots: ['5001','5022', '5028','5031','5042','5045'],
 
     selectedLot: 0,
     confirmPlaceBidVisible: false,
@@ -72,6 +72,9 @@ var app = new Vue({
       userIsMaxBidder: function(lot){
         if(lot.maxBid.bidder === this.bidder.number) return true;
         return false;
+      },
+      userHasInGroupBid: function(lot){
+        
       },
       disableNumberInputScroll: function(e){
         e.preventDefault();
