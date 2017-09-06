@@ -199,6 +199,19 @@ var app = new Vue({
       },
       setActiveThumbnail: function(index){
         this.activeThumbnail = index;
+      },
+
+
+
+
+      emptyPurchases: function(){
+        this.purchasedLots = [];
+      },
+      emptyWatching: function(){
+        this.watchedLots = [];
+      },
+      emptyGroups: function(){
+        this.choiceGroups = [];
       }
   },
   computed:{

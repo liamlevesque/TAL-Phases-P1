@@ -96,11 +96,12 @@
             </nav>
 
             <div class="l-container__medium">
-                <h3 class="t-h3">This is not an invoice</h3>
-                <div class="o-message__warning h-mb-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
-                <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
-                <hr class="o-hr h-mb-200"/>
+                
                 <div v-if="purchasedLots.length > 0">
+                    <h3 class="t-h3">This is not an invoice</h3>
+                    <div class="o-message__warning h-mb-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
+                    <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
+                    <hr class="o-hr h-mb-200"/>
                     <div class="o-breadcrumb-header g-wrapper t-h3 h-color-white h-mb-0">
                         <div class="g-cell t-bold">{{ purchasedLots.length > 1 ? purchasedLots.length + ' Lots ' : '1 Lot ' }}Purchased</div>
                         <div class="">Last updated: <span class="t-bold">1 minute ago</span></div>
@@ -121,14 +122,14 @@
                     <div class="h-ta-center h-mt-500 h-mb-500">
                         <img src="assets/img/empty.png">
                         <h3 class="t-h3">You haven't purchased any equipment yet!</h3>
-                        <button class="o-button__primary">Start Bidding!</button>
+                        <button class="o-button__primary" v-on:click="gotoPage('index')">Start Bidding!</button>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
+        <footer>Prototype controls: <button v-on:click="emptyPurchases">Show Empty Version</button></footer>
         <footer>Footer</footer>
         
         
