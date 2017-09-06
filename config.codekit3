@@ -69,6 +69,12 @@
 		"oAP": "\/assets\/components\/components\/_lot_item.html",
 		"oF": 0
 		},
+	"\/assets\/components\/components\/_lot_item_purchased.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_lot_item_purchased.html",
+		"oF": 0
+		},
 	"\/assets\/components\/components\/_lot_text-fields.kit": {
 		"ft": 2048,
 		"oA": 1,

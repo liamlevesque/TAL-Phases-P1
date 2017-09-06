@@ -37,6 +37,8 @@ const tal = {
       
     ],
 
+    purchasedLots: ["5001","5004"],
+
     manageAlertsVisible: false,
 
     increments: incrementTable,
@@ -211,6 +213,9 @@ var app = new Vue({
       },
       lotsImWatching: function(){
         return this.lots.filter(lot => this.watchedLots.indexOf(lot.lotNumber) >= 0);
+      },
+      lotsIveWon: function(){
+        return this.lots.filter(lot => this.purchasedLots.indexOf(lot.lotNumber) >= 0);
       }
   },
   filters:{

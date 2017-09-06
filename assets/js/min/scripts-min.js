@@ -10760,7 +10760,7 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5004",
-			"bids": [],
+			"bids": [{bid: 100, bidder: "12345", time: "2017-08-16T22:20:58.162Z", type: 'quick'}],
 			"maxBid":{bid: 0,bidder: null},
 			"category": 'Aggregate - Feeders',
 			"watching": [],
@@ -14993,6 +14993,8 @@ const tal = {
       
     ],
 
+    purchasedLots: ["5001","5004"],
+
     manageAlertsVisible: false,
 
     increments: incrementTable,
@@ -15167,6 +15169,9 @@ var app = new Vue({
       },
       lotsImWatching: function(){
         return this.lots.filter(lot => this.watchedLots.indexOf(lot.lotNumber) >= 0);
+      },
+      lotsIveWon: function(){
+        return this.lots.filter(lot => this.purchasedLots.indexOf(lot.lotNumber) >= 0);
       }
   },
   filters:{
