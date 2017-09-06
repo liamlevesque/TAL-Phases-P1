@@ -134,7 +134,8 @@
                             
                             <div v-if="lot.status === 'sold'">
                                 <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
-                                <h3 class="h-mt-100">This item has been sold!</h3><!-- IF ITEM SOLD -->
+                                <h3 class="h-mt-100" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
+                                <h3 class="h-mt-100" v-else>Bidding is closed for this item</h3>
                             </div>
                             <div v-else>
                                 <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
@@ -142,7 +143,7 @@
                             </div>
                             
                             <div class="c-lot--bid-and-closing">
-                                <div class="c-lot--highBid g-wrapper" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
+                                <div class="c-lot--highBid g-wrapper" v-if="lot.bids.length > 0" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                     <div class="g-cell">
                                         <label for="" class="t-field-label">High Bidder:</label>
                                         <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
@@ -152,7 +153,9 @@
                                         <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
                                     </div>
                                 </div>
-                            
+                                <div v-else class="t-faint">
+                                    No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
+                                </div>
                                 <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                     <div class="g-cell">
                                         <label for="" class="t-field-label">Bidding Closes:</label>

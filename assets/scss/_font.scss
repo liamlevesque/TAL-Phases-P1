@@ -15,6 +15,11 @@ body{
     font-weight: 700;
   }
 
+  .t-faint{
+    font-style: italic;
+    color: palette(grey,4);
+  }
+
 $fontsizes: (
     400: 1.75rem,
     300: 1.5rem,

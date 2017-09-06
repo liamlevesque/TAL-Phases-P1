@@ -480,6 +480,10 @@ body {
 .t-bold {
   font-weight: 700; }
 
+.t-faint {
+  font-style: italic;
+  color: #797979; }
+
 .t-f-small {
   font-size: 1rem; }
 
