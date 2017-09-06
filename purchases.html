@@ -120,7 +120,7 @@
                                         <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-field-label">Usage:</label>{{ lot.usage }}</p>
                                         <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                         <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
-                                        <button class="o-button__icon-toggle" v-if="lot.status != 'sold'" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                                        <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                             <i class="icon-eye"></i>
                                             <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
                                             <span v-else>Watch this lot</span>
@@ -138,14 +138,14 @@
                             </div>
                             <div v-else>
                                 <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
-                                <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder</div> <!-- IF YOU WERE OUTBID -->
+                                <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
                             </div>
                             
                             <div class="c-lot--bid-and-closing">
                                 <div class="c-lot--highBid g-wrapper" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                     <div class="g-cell">
                                         <label for="" class="t-field-label">High Bidder:</label>
-                                        <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You' : lot.bids[0].bidder }}</span>
+                                        <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                     </div>
                                     <div class="g-cell h-t-a-right">
                                         <label for="" class="t-field-label">Bid:</label>

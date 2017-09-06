@@ -1480,6 +1480,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     margin: 0 30px;
     z-index: 100; }
 
+.o-navigation--pagination {
+  border-top: 1px dotted #CCCCCC;
+  padding: 20px 0; }
+
+.o-navigation-link {
+  padding: 0 5px; }
+  .o-navigation-link.s-active {
+    color: black; }
+
 .c-lot-listing {
   padding: 20px 0; }
   .c-lot-listing:not(:last-child) {

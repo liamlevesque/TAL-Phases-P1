@@ -93,6 +93,12 @@
 		"oAP": "\/assets\/components\/layout\/_footer.html",
 		"oF": 0
 		},
+	"\/assets\/components\/layout\/_footer_paginated.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/layout\/_footer_paginated.html",
+		"oF": 0
+		},
 	"\/assets\/components\/layout\/_header.kit": {
 		"ft": 2048,
 		"oA": 1,

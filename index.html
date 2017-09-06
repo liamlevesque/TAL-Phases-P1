@@ -188,7 +188,7 @@
                                     <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-field-label">Usage:</label>{{ lot.usage }}</p>
                                     <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                     <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
-                                    <button class="o-button__icon-toggle" v-if="lot.status != 'sold'" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                                    <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                         <i class="icon-eye"></i>
                                         <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
                                         <span v-else>Watch this lot</span>
@@ -206,14 +206,14 @@
                         </div>
                         <div v-else>
                             <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
-                            <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder</div> <!-- IF YOU WERE OUTBID -->
+                            <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
                         </div>
                         
                         <div class="c-lot--bid-and-closing">
                             <div class="c-lot--highBid g-wrapper" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                 <div class="g-cell">
                                     <label for="" class="t-field-label">High Bidder:</label>
-                                    <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You' : lot.bids[0].bidder }}</span>
+                                    <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                 </div>
                                 <div class="g-cell h-t-a-right">
                                     <label for="" class="t-field-label">Bid:</label>
@@ -269,38 +269,28 @@
             
         </div>
 
-        <footer>Footer</footer>
-        
-        
-        <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
-        
-            <div class="c-modal--content">
-                <div class="c-modal--header">
-                    <h3 class="t-h3">Manage your notifications for this event</h3>
+        <footer class="l-main-container">
+            <div class="g-wrapper o-navigation--pagination">
+                <div class="g-cell">Items Per Page:<span class="h-ml-100"> <a href="" class="t-link o-navigation-link s-active">10</a> | <a href="" class="t-link o-navigation-link">15</a> | <a href="" class="t-link o-navigation-link">20</a></span> </div>
+                <div class="g-cell h-ta-center">
+                    <a class="t-link o-navigation-link"><<</a>|
+                    <a class="t-link o-navigation-link">Previous</a>|
+                    <a class="t-link o-navigation-link s-active">1</a>|
+                    <a class="t-link o-navigation-link">2</a>|
+                    <a class="t-link o-navigation-link">3</a>|
+                    <a class="t-link o-navigation-link">4</a>|
+                    <a class="t-link o-navigation-link">5</a>|
+                    <a class="t-link o-navigation-link">6</a>|
+                    <a class="t-link o-navigation-link">7</a>|
+                    <a class="t-link o-navigation-link">8</a>|
+                    <a class="t-link o-navigation-link">Next</a>|
+                    <a class="t-link o-navigation-link">>></a>
                 </div>
-                <div class="c-modal--body">
-        
-                    <p>You can receive email notifications for items you have bid on in this event. These alerts will inform you of the following conditions.</p>
-                    <ol>
-                        <li>You have been outbid on an item that you were high bidder on</li>
-                        <li>You have won an item</li>
-                        <li>Bidding opens on an item you are interested in</li>
-                    </ol>
-                    <div class="o-message__info h-mb-100">We don't send notifications during the last five minutes of bidding</div>
-                    <hr class="o-hr h-mb-200">
-                    <label for="" class="t-field-label">Enter your email address</label>
-                    <input type="text" class="o-input--text h-mb-100" placeholder="eg. name@email.com">
-        
-                </div>
-                <div class="c-modal--footer">
-        
-                    <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible">I don't want any notifications</button>
-                    <button class="o-button__primary" v-on:click="toggleManageAlertsVisible">Activate Notifications</button>
-        
+                <div class="g-cell h-ta-right">
+                    Page <span class="t-h4">1</span> of <span class="t-h4">32</span>
                 </div>
             </div>
-        
-        </div>
+        </footer>
         <div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceBidVisible }">
                 
                     <div class="c-modal--content">

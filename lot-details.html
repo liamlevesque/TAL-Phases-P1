@@ -198,14 +198,14 @@
                         </div>
                         <div v-else>
                             <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
-                            <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder</div> <!-- IF YOU WERE OUTBID -->
+                            <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
                         </div>
                         
                         <div class="c-lot--bid-and-closing">
                             <div class="c-lot--highBid g-wrapper" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                 <div class="g-cell">
                                     <label for="" class="t-field-label">High Bidder:</label>
-                                    <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You' : lot.bids[0].bidder }}</span>
+                                    <span class="t-h3">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                 </div>
                                 <div class="g-cell h-t-a-right">
                                     <label for="" class="t-field-label">Bid:</label>

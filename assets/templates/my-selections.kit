@@ -16,6 +16,26 @@
         
         <div class="l-main-container"> 
             <!-- @include '/assets/components/components/navigation_tabs' -->
+            <div class="c-search-filter--filter g-wrapper g--center">
+                <div class="g-cell">
+                </div>
+                <div class="g-cell g-cell__half">
+                    <div class="o-input--toggle-group">
+                        <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>Upcoming Lots</div></label>
+                        <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
+                        <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>All Lots</div></label>
+                    </div>
+                </div>
+                <div class="g-cell h-ta-right">
+                    <label for="" class="t-field-label">Sort by:</label>
+                    <select class="o-input--select__inline">
+                        <option value="">Closing Time</option>
+                        <option value="">Closing Time</option>
+                        <option value="">Closing Time</option>
+                        <option value="">Closing Time</option>
+                    </select>
+                </div>
+            </div>
             <div v-if="watchedLots.length > 0">
                 <div v-for="lot in lotsImWatching" class="c-lot-listing"> 
                     <!-- @include '/assets/components/components/lot_item' -->
@@ -31,7 +51,7 @@
 
         </div>
 
-        <!-- @include '/assets/components/layout/footer' -->
+        <!-- @include '/assets/components/layout/footer_paginated' -->
         
 	</div>
 	
