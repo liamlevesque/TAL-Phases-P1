@@ -141,6 +141,12 @@
 		"oAP": "\/assets\/components\/layout\/_subheader.html",
 		"oF": 0
 		},
+	"\/assets\/components\/modals\/_auction-paused.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/modals\/_auction-paused.html",
+		"oF": 0
+		},
 	"\/assets\/components\/modals\/_complete-choice-group.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -689,6 +695,17 @@
 		"iS": 760,
 		"oA": 0,
 		"oAP": "\/assets\/img\/logo-square.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/TAL-Icon.png": {
+		"ft": 32768,
+		"iS": 2542,
+		"oA": 0,
+		"oAP": "\/assets\/img\/TAL-Icon.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

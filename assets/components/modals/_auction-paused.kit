@@ -1,0 +1,23 @@
+
+
+<div class="c-modal" v-bind:class="{ 's-visible': pausedMessageVisible }">
+   
+    <div class="c-modal--content">
+        <div class="c-modal--header">
+            <div class="o-message__error h-mb-200">
+                <span class="t-h3 t-bold">The auction has been paused</span>
+            </div>
+        </div>
+        <div class="c-modal--body">
+
+                Due to technical difficulties the Timed Auction has been temporarily paused. All unsold items will have their closing times extended. No lots will be sold during this pause. Please check back regularly as the Timed Auction will resume once the issue has been resolved.
+
+        </div>
+        <div class="c-modal--footer">
+
+            <button class="o-button__primary" v-on:click="togglePausedMessageVisible">Got It</button>
+
+        </div>
+    </div>
+
+</div>

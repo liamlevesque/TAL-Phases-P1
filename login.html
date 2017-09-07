@@ -56,7 +56,7 @@
             <div class="l-subheader g-wrapper">
                 <div class="g-cell">
                     <h2 class="t-h2">{{ sale.name }}</h2>
-                    <h3 class="t-h3">Timed Auction - Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
+                    <h3 class="t-h3"><i class="icon-tal h-mr-100"></i> Timed Auction - Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
                 </div>
                 <div class="g-cell g-cell--bottom">
                     <div class="h-float-right">
@@ -73,6 +73,10 @@
                 <h4 class="t-h4">We are sorry but we couldn't log you in</h4>
                 <p>Your Bidder No./PIN combination is invalid. Please note: Your PIN is case sensitive.</p>
                 <p>Need help? Please visit the front desk or call 1.800.211.3983.</p>
+            </div>
+
+            <div class="o-message__error h-mb-200">
+                <span class="t-h3 t-bold">The auction has been paused</span>
             </div>
             
             <div class="l-container__narrow">
@@ -93,8 +97,11 @@
 
         </div>
 
-        <footer>Footer</footer>
+        <footer></footer>
         
+        <div>
+            Prototype Controls: <button v-on:click="togglePausedMessageVisible">Show Paused State</button>
+        </div>
         
         <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
         
@@ -125,6 +132,30 @@
             </div>
         
         </div>
+        
+        
+        <div class="c-modal" v-bind:class="{ 's-visible': pausedMessageVisible }">
+           
+            <div class="c-modal--content">
+                <div class="c-modal--header">
+                    <div class="o-message__error h-mb-200">
+                        <span class="t-h3 t-bold">The auction has been paused</span>
+                    </div>
+                </div>
+                <div class="c-modal--body">
+        
+                        Due to technical difficulties the Timed Auction has been temporarily paused. All unsold items will have their closing times extended. No lots will be sold during this pause. Please check back regularly as the Timed Auction will resume once the issue has been resolved.
+        
+                </div>
+                <div class="c-modal--footer">
+        
+                    <button class="o-button__primary" v-on:click="togglePausedMessageVisible">Got It</button>
+        
+                </div>
+            </div>
+        
+        </div>
+        
     </div>
 
     <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>

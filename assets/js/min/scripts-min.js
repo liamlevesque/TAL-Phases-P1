@@ -15000,6 +15000,8 @@ const tal = {
     increments: incrementTable,
 
     activeThumbnail: 0,
+
+    pausedMessageVisible: false,
 };
 
 document.addEventListener('DOMContentLoaded', function(){ 
@@ -15043,7 +15045,6 @@ var app = new Vue({
         return false;
       },
       userHasInGroupBid: function(lotNumber){
-        console.log(lotNumber);
         let grouped = this.choiceGroups.filter(group => group.lots.indexOf(lotNumber) >= 0); 
         if(grouped.length > 0) return true;
         return false;
@@ -15156,8 +15157,12 @@ var app = new Vue({
       setActiveThumbnail: function(index){
         this.activeThumbnail = index;
       },
-
-
+      nextIncrement:function(lot){
+        return '$' + (lot.bids.length > 0 ? lot.bids[0].bid + 5 : '5') + ' USD or higher';
+      },
+      togglePausedMessageVisible: function(){
+        this.pausedMessageVisible = !this.pausedMessageVisible;
+      },
 
 
       emptyPurchases: function(){
@@ -15175,8 +15180,7 @@ var app = new Vue({
         let context = this;
         return function(number){
             let thislot = [];
-            thislot.push(context.lots[number])
-            console.log(thislot);
+            thislot.push(context.lots[number]);
             return thislot;
         }
       },
