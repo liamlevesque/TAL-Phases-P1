@@ -59,8 +59,16 @@ document.addEventListener('DOMContentLoaded', function(){
         element: document.querySelector('.js--nav-pin-waypoint'),
         handler: function(direction) {
             let body = document.querySelector('body');
-            if(direction === 'down') body.classList.add('s-pin-nav');
-            else body.classList.remove('s-pin-nav');
+            if(direction === 'down'){
+              body.classList.add('s-pin-nav');
+              let headerheight =  document.querySelector('.js--pinned-header').offsetHeight;
+              document.querySelector('.js--nav-pin-waypoint').style.height = headerheight + 'px';
+              //document.querySelector('body').scrollTop -= headerheight;
+            }
+            else{
+              body.classList.remove('s-pin-nav');
+              document.querySelector('.js--nav-pin-waypoint').style.height = '0px';
+            } 
         }
     })
 

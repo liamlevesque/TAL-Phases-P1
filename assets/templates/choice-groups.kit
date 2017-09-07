@@ -6,7 +6,7 @@
     <title>RB TIMED AUCTION</title>
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta charset="utf-8"> 
 </head>
 
@@ -15,13 +15,16 @@
         <!-- @include '/assets/components/layout/header' -->
         
         <div class="l-main-container"> 
-            <!-- @include '/assets/components/components/navigation_tabs' -->
-            <div class="o-breadcrumb-header g-wrapper">
-                <div class="g-cell t-h3 h-color-white t-bold t-lh-300">
-                    {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
-                </div>
-                <div class="g-cell h-ta-right">
-                    <button class="o-button__tertiary">Create a choice group</button>
+            <div class="js--nav-pin-waypoint"></div>
+            <div class="l-pin-header-wrapper js--pinned-header">
+                <!-- @include '/assets/components/components/navigation_tabs' -->
+                <div class="c-navigation__tertiary h-mb-200 g-wrapper">
+                    <div class="g-cell t-h3 h-color-white t-bold t-lh-300">
+                        {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
+                    </div>
+                    <div class="g-cell h-ta-right">
+                        <button class="o-button__tertiary">Create a choice group</button>
+                    </div>
                 </div>
             </div>
 

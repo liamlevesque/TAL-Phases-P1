@@ -17,7 +17,7 @@
                 <div class="g-cell">
                     
                     <div class="logo" rv-on-click="talController.loadTab" data-tab="auction">
-                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="46" enable-background="new 0 0 162 40.25" xml:space="preserve">
+                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="66" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
                             <g>
                                 <g>
                                     <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
@@ -78,31 +78,34 @@
         </header>
         
         <div class="l-main-container"> 
-            <nav class="c-nav-tabs">
-                <ul class="g-wrapper c-nav-tabs--tab-group">
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
-                        All Listings
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
-                        Watching & Bidding
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
-                        My Choice Groups
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
-                        My Purchases
-                    </li>
-                </ul>
-            </nav>
-
+            <div class="js--nav-pin-waypoint"></div>
+            <div class="l-pin-header-wrapper js--pinned-header">
+                <nav class="c-nav-tabs">
+                    <ul class="g-wrapper c-nav-tabs--tab-group">
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                            All Listings
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                            Watching & Bidding
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                            My Choice Groups
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                            My Purchases
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
             <div class="l-container__medium">
                 
                 <div v-if="purchasedLots.length > 0">
-                    <h3 class="t-h3">This is not an invoice</h3>
+                    <h3 class="t-h3 h-mt-200">This is not an invoice</h3>
                     <div class="o-message__warning h-mb-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
                     <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
                     <hr class="o-hr h-mb-200"/>
-                    <div class="o-breadcrumb-header g-wrapper t-h3 h-color-white h-mb-0">
+                    <div class="c-navigation__tertiary g-wrapper t-h3 h-color-white h-mb-0">
                         <div class="g-cell t-bold">{{ purchasedLots.length > 1 ? purchasedLots.length + ' Lots ' : '1 Lot ' }}Purchased</div>
                         <div class="">Last updated: <span class="t-bold">1 minute ago</span></div>
                     </div>
@@ -114,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="o-breadcrumb-header h-ta-right t-h3 h-color-white">
+                    <div class="c-navigation__tertiary h-mb-200 h-ta-right t-h3 h-color-white">
                         Subtotal: <span class="CCY t-bold">1500</span>
                     </div>
                 </div>

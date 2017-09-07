@@ -16,8 +16,11 @@
         <!-- @include '/assets/components/layout/header' -->
         
         <div class="l-main-container">
-            <!-- @include '/assets/components/components/navigation_tabs' -->	
-            <!-- @include '/assets/components/layout/search-n-filter' -->	
+            <div class="js--nav-pin-waypoint"></div>
+            <div class="l-pin-header-wrapper js--pinned-header">
+                <!-- @include '/assets/components/components/navigation_tabs' -->	
+                <!-- @include '/assets/components/layout/search-n-filter' -->	
+            </div>
             <div v-for="(lot, index) in lots" class="c-lot-listing"> 
                 <!-- @include '/assets/components/components/lot_item' -->
             </div>

@@ -1,6 +1,6 @@
 .c-nav-tabs{
     border-bottom: 1px solid palette(grey,2);
-    margin-bottom: spacing(medium);
+    background-color: white;
 }
 
     // .c-nav-tabs--tab-group{
@@ -28,16 +28,7 @@
 .c-navigation__tertiary{
     background-color: palette(grey);
     color: white;
-    padding: spacing(xx-small) spacing(large);
-
-    .s-pin-nav &{
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 spacing(large);
-        z-index: 100;
-    }
+    padding: spacing(xx-small) spacing(medium);
 }
 
 .o-navigation--pagination{
@@ -57,8 +48,3 @@
     }
 
 
-.o-breadcrumb-header{
-    background-color: palette(grey);
-    padding: spacing(small) spacing(medium);
-    margin-bottom: spacing(large);
-}

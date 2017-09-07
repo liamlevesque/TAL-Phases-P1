@@ -21,7 +21,8 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0; }
+  margin: 0;
+  overflow-anchor: none; }
 
 /**
  * Add the correct display in IE 9-.
@@ -1478,6 +1479,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .c-modal--footer button {
     margin-left: 20px; }
 
+.c-search-filter {
+  background-color: white; }
+
 .c-search-filter--search {
   padding: 5px 30px; }
 
@@ -1488,7 +1492,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .c-nav-tabs {
   border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 20px; }
+  background-color: white; }
 
 .c-nav-tabs--tab {
   padding: 10px 25px;
@@ -1506,14 +1510,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .c-navigation__tertiary {
   background-color: #3F3F3F;
   color: white;
-  padding: 5px 30px; }
-  .s-pin-nav .c-navigation__tertiary {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 30px;
-    z-index: 100; }
+  padding: 5px 20px; }
 
 .o-navigation--pagination {
   border-top: 1px dotted #CCCCCC;
@@ -1526,11 +1523,6 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .o-navigation-link.s-active {
     color: black;
     font-weight: 700; }
-
-.o-breadcrumb-header {
-  background-color: #3F3F3F;
-  padding: 15px 20px;
-  margin-bottom: 30px; }
 
 .o-faq-item {
   margin-bottom: 30px;
@@ -1621,7 +1613,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding: 0 20px; }
 
 .l-header {
-  padding: 30px; }
+  padding: 30px;
+  padding-bottom: 15px; }
 
 .l-main-container {
   padding: 0 30px; }
@@ -1641,6 +1634,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   margin-left: -240px;
   width: 480px;
   z-index: 1000; }
+
+.s-pin-nav .l-pin-header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 30px;
+  z-index: 100;
+  -webkit-transform: translateZ(0); }
 
 /*******************
 	HELPER CLASSES

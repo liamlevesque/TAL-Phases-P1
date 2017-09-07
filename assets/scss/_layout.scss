@@ -1,5 +1,6 @@
 .l-header{
     padding: spacing(large);
+    padding-bottom: spacing(small);
 }
 
 .l-main-container{
@@ -25,4 +26,16 @@
     margin-left: -240px;
     width: 480px;
     z-index: 1000;
+}
+
+.l-pin-header-wrapper{
+    .s-pin-nav &{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 spacing(large);
+        z-index: 100;
+        -webkit-transform: translateZ(0);
+    }
 }

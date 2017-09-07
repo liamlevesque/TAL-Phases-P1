@@ -6,7 +6,7 @@
     <title>RB TIMED AUCTION</title>
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta charset="utf-8"> 
 </head>
 
@@ -17,7 +17,7 @@
                 <div class="g-cell">
                     
                     <div class="logo" rv-on-click="talController.loadTab" data-tab="auction">
-                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="46" enable-background="new 0 0 162 40.25" xml:space="preserve">
+                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="66" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
                             <g>
                                 <g>
                                     <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
@@ -78,28 +78,31 @@
         </header>
         
         <div class="l-main-container"> 
-            <nav class="c-nav-tabs">
-                <ul class="g-wrapper c-nav-tabs--tab-group">
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
-                        All Listings
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
-                        Watching & Bidding
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
-                        My Choice Groups
-                    </li>
-                    <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
-                        My Purchases
-                    </li>
-                </ul>
-            </nav>
-            <div class="o-breadcrumb-header g-wrapper">
-                <div class="g-cell t-h3 h-color-white t-bold t-lh-300">
-                    {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
-                </div>
-                <div class="g-cell h-ta-right">
-                    <button class="o-button__tertiary">Create a choice group</button>
+            <div class="js--nav-pin-waypoint"></div>
+            <div class="l-pin-header-wrapper js--pinned-header">
+                <nav class="c-nav-tabs">
+                    <ul class="g-wrapper c-nav-tabs--tab-group">
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                            All Listings
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                            Watching & Bidding
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                            My Choice Groups
+                        </li>
+                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                            My Purchases
+                        </li>
+                    </ul>
+                </nav>
+                <div class="c-navigation__tertiary h-mb-200 g-wrapper">
+                    <div class="g-cell t-h3 h-color-white t-bold t-lh-300">
+                        {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
+                    </div>
+                    <div class="g-cell h-ta-right">
+                        <button class="o-button__tertiary">Create a choice group</button>
+                    </div>
                 </div>
             </div>
 
