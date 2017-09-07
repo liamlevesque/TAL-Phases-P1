@@ -7,9 +7,10 @@
     border: 1px solid transparent;
 
     &:before{
-        content: "x";
+        @include icon-font;
+        font-size: 32px;
         position: absolute;
-        top: spacing(small);
+        top: 10px;
         left: 10px;
         width: 32px;
         height: 32px;
@@ -26,9 +27,10 @@
         color: black;
         background-color: palette(blue,1);
         border-color: palette(blue,2);
+        @extend .icon-information;
 
         &:before{
-            background-color: palette(blue);
+            color: palette(blue);
         }
     }
 
@@ -36,9 +38,10 @@
         color: black;
         background-color: palette(red,1);
         border-color: palette(red,2);
+        @extend .icon-wrong;
         
         &:before{
-            background-color: palette(red);
+            color: palette(red);
         }
     }
 
@@ -46,9 +49,10 @@
         color: black;
         background-color: palette(yellow,1);
         border-color: palette(yellow,2);
+        @extend .icon-warning;
 
         &:before{
-            background-color: palette(yellow);
+            color: palette(yellow);
         }
     }
 
@@ -56,8 +60,9 @@
         color: black;
         background-color: palette(green,1);
         border-color: palette(green,2);
+        @extend .icon-correct;
 
         &:before{
-            background-color: palette(green);
+            color: palette(green);
         }
     }

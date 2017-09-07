@@ -1,36 +1,41 @@
 $icon-small: 8px;
 $icon-medium: 16px;
 $icon-large: 24px;
+$icon-xlarge: 36px;
 $icon-xxlarge: 48px;
+
+[class*="icon-size"]{
+  vertical-align: middle;
+}
 
 .icon-size--small{
     font-size: $icon-small;
-    vertical-align: middle;
 }
 
 .icon-size--medium{
     font-size: $icon-medium;
-    vertical-align: middle;
 }
 
 .icon-size--large{
     font-size: $icon-large;
-    vertical-align: middle;
+}
+
+.icon-size--xlarge{
+    font-size: $icon-xlarge;
 }
 
 .icon-size--xxlarge{
     font-size: $icon-xxlarge;
-    vertical-align: middle;
 }
 
 
 @font-face {
     font-family: 'ritchie-icons';
-    src:    url('../fonts/ritchie-icons.eot?yxocwn');
-    src:    url('../fonts/ritchie-icons.eot?yxocwn#iefix') format('embedded-opentype'),
-        url('../fonts/ritchie-icons.ttf?yxocwn') format('truetype'),
-        url('../fonts/ritchie-icons.woff?yxocwn') format('woff'),
-        url('../fonts/ritchie-icons.svg?yxocwn#ritchie-icons') format('svg');
+    src:    url('../fonts/ritchie-icons.eot?lwbcwc');
+    src:    url('../fonts/ritchie-icons.eot?lwbcwc#iefix') format('embedded-opentype'),
+        url('../fonts/ritchie-icons.ttf?lwbcwc') format('truetype'),
+        url('../fonts/ritchie-icons.woff?lwbcwc') format('woff'),
+        url('../fonts/ritchie-icons.svg?lwbcwc#ritchie-icons') format('svg'); 
     font-weight: normal;
     font-style: normal;
 } 
@@ -65,6 +70,22 @@ $icon-xxlarge: 48px;
 .i-size-med{
     font-size: 20px;
     vertical-align: middle;
+}
+
+.icon-correct:before {
+  content: "\e908";
+}
+.icon-information:before {
+  content: "\e910";
+}
+.icon-warning:before {
+  content: "\e91b";
+}
+.icon-wrong:before {
+  content: "\e92d";
+}
+.icon-TAL:before {
+  content: "\e900";
 }
 
 .icon-keyboard_arrow_up:before {

@@ -564,26 +564,28 @@ a {
 .t-field-label, .t-lh-300 {
   line-height: 40px; }
 
-.icon-size--small {
-  font-size: 8px;
+[class*="icon-size"] {
   vertical-align: middle; }
+
+.icon-size--small {
+  font-size: 8px; }
 
 .icon-size--medium {
-  font-size: 16px;
-  vertical-align: middle; }
+  font-size: 16px; }
 
 .icon-size--large {
-  font-size: 24px;
-  vertical-align: middle; }
+  font-size: 24px; }
+
+.icon-size--xlarge {
+  font-size: 36px; }
 
 .icon-size--xxlarge {
-  font-size: 48px;
-  vertical-align: middle; }
+  font-size: 48px; }
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?yxocwn");
-  src: url("../fonts/ritchie-icons.eot?yxocwn#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?yxocwn") format("truetype"), url("../fonts/ritchie-icons.woff?yxocwn") format("woff"), url("../fonts/ritchie-icons.svg?yxocwn#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?lwbcwc");
+  src: url("../fonts/ritchie-icons.eot?lwbcwc#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?lwbcwc") format("truetype"), url("../fonts/ritchie-icons.woff?lwbcwc") format("woff"), url("../fonts/ritchie-icons.svg?lwbcwc#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -603,6 +605,21 @@ a {
 .i-size-med {
   font-size: 20px;
   vertical-align: middle; }
+
+.icon-correct:before, .o-message__success:before {
+  content: "\e908"; }
+
+.icon-information:before, .o-message__info:before {
+  content: "\e910"; }
+
+.icon-warning:before, .o-message__warning:before {
+  content: "\e91b"; }
+
+.icon-wrong:before, .o-message__error:before {
+  content: "\e92d"; }
+
+.icon-TAL:before {
+  content: "\e900"; }
 
 .icon-keyboard_arrow_up:before {
   content: "\e929"; }
@@ -682,7 +699,7 @@ a {
 .icon-user:before {
   content: "\e912"; }
 
-.icon-warning:before {
+.icon-warning:before, .o-message__warning:before {
   content: "\e913"; }
 
 .icon-warranty:before {
@@ -1320,9 +1337,18 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding-left: 52px;
   border: 1px solid transparent; }
   [class^="o-message"]:before {
-    content: "x";
+    font-family: 'ritchie-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 32px;
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 10px;
     width: 32px;
     height: 32px; }
@@ -1343,28 +1369,28 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   background-color: #ECF5FB;
   border-color: #D2ECFA; }
   .o-message__info:before {
-    background-color: #20579E; }
+    color: #20579E; }
 
 .o-message__error {
   color: black;
   background-color: #FDDDD9;
   border-color: #F2C7C1; }
   .o-message__error:before {
-    background-color: #E50000; }
+    color: #E50000; }
 
 .o-message__warning {
   color: black;
   background-color: #FCF0D4;
   border-color: #F2E0A9; }
   .o-message__warning:before {
-    background-color: #F2B200; }
+    color: #F2B200; }
 
 .o-message__success {
   color: black;
   background-color: #DBF3DD;
   border-color: #C3E5C5; }
   .o-message__success:before {
-    background-color: #11AF00; }
+    color: #11AF00; }
 
 .c-progress-indicator {
   display: -webkit-box;
