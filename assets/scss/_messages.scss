@@ -14,7 +14,13 @@
         width: 32px;
         height: 32px;
     }
+
+    &.s-pulsating{
+        @include pulsating;
+    }
 }
+
+
 
     .o-message__info{
         color: black;

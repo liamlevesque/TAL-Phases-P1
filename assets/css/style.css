@@ -732,6 +732,22 @@ a {
 .icon-pause:before {
   content: "\e927"; }
 
+@-webkit-keyframes pulsating {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03); } }
+
+@keyframes pulsating {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03); } }
+
 @-webkit-keyframes waitingslide {
   0% {
     -webkit-transform: translatex(-100%);
@@ -1295,6 +1311,17 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     left: 10px;
     width: 32px;
     height: 32px; }
+  [class^="o-message"].s-pulsating {
+    -webkit-animation-name: pulsating;
+            animation-name: pulsating;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
 
 .o-message__info {
   color: black;
@@ -1609,8 +1636,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   position: fixed;
   top: 40px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  margin-left: -240px;
   width: 480px;
   z-index: 1000; }
 

@@ -18,6 +18,24 @@ $transition: $transition-time_1 $transition-function;
     transition-delay: $delay;
 }
 
+@mixin pulsating{
+    animation-name: pulsating;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulsating{
+    0%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(1.03);
+    }
+}
+
 
 @mixin loading($color,$height:4px,$bottom:0){
     overflow: hidden;
