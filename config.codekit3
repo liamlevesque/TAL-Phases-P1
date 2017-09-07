@@ -1188,6 +1188,12 @@
 		"oAP": "\/purchases.html",
 		"oF": 2
 		},
+	"\/assets\/templates\/search-results.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/search-results.html",
+		"oF": 2
+		},
 	"\/bower.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -11333,6 +11339,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/purchases.html",
+		"oF": 0
+		},
+	"\/search-results.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/search-results.html",
 		"oF": 0
 		}
 	},

@@ -39,6 +39,7 @@ const tal = {
     ],
 
     purchasedLots: ["5001","5004"],
+    searchResults: ["5045","5046","5047","5048","5049","5050"],
 
     manageAlertsVisible: false,
 
@@ -221,6 +222,9 @@ var app = new Vue({
       },
       emptyGroups: function(){
         this.choiceGroups = [];
+      },
+      emptySearch: function(){
+        this.searchResults = [];
       }
   },
   computed:{
@@ -237,7 +241,10 @@ var app = new Vue({
       },
       lotsIveWon: function(){
         return this.lots.filter(lot => this.purchasedLots.indexOf(lot.lotNumber) >= 0);
-      }
+      },
+      searchedLots: function(){
+        return this.lots.filter(lot => this.searchResults.indexOf(lot.lotNumber) >= 0);
+      },
   },
   filters:{
       returnFirstItem: function(value){

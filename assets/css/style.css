@@ -1483,7 +1483,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .c-search-filter--filter {
   background-color: #F0F0F0;
-  padding: 5px 30px; }
+  padding: 5px 30px;
+  position: relative; }
 
 .c-nav-tabs {
   border-bottom: 1px solid #CCCCCC;
@@ -1609,7 +1610,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     box-shadow: 0 0 0 5px #20579E; }
 
 .c-choice-group-view {
-  border: 1px solid #CCCCCC; }
+  border: 1px solid #CCCCCC;
+  margin-bottom: 20px; }
 
 .c-choice-group--header {
   background-color: #F0F0F0;
