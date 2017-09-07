@@ -16,6 +16,10 @@ $gutters: spacing(large);
 
   .g-wrapper__centered-element{
     .g-cell{
+      &:first-child{
+        text-align: left;
+      }
+
       &:nth-child(2){
         flex: none;
         text-align: center;
