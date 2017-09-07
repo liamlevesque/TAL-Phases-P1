@@ -14,6 +14,19 @@ $gutters: spacing(large);
     }
   }
 
+  .g-wrapper__centered-element{
+    .g-cell{
+      &:nth-child(2){
+        flex: none;
+        text-align: center;
+      }
+
+      &:last-child{
+        text-align: right;
+      }
+    }
+  }
+
 .g-cell {
   flex: 1;
 }

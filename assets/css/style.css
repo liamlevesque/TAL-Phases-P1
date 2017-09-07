@@ -417,6 +417,15 @@ ul {
   .g-wrapper__gutters > .g-cell, .g-wrapper__gutters > [class^="g-cell"] {
     padding-left: 30px; }
 
+.g-wrapper__centered-element .g-cell:nth-child(2) {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  text-align: center; }
+
+.g-wrapper__centered-element .g-cell:last-child {
+  text-align: right; }
+
 .g-cell {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -497,9 +506,6 @@ body {
 .t-f-xlarge {
   font-size: 1.75rem; }
 
-.t-lh-300 {
-  line-height: 40px; }
-
 .t-allcaps {
   text-transform: uppercase;
   letter-spacing: 0.06em; }
@@ -551,6 +557,9 @@ a {
   color: black;
   text-decoration: underline;
   cursor: pointer; }
+
+.t-field-label, .t-lh-300 {
+  line-height: 40px; }
 
 .icon-size--small {
   font-size: 8px;
@@ -914,9 +923,11 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   position: relative;
   font-size: 1rem;
   padding-right: 40px;
-  background: white url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' fill='#999999' transform='translate(-4 -8.5)'/></svg>") right 10px center no-repeat;
+  background-color: white;
+  background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #CCCCCC;' transform='translate(-4 -8.5)'/></svg>");
   background-size: 20px 20px;
-  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  background-position: right 10px center;
+  background-repeat: no-repeat;
   cursor: pointer;
   margin-bottom: 0;
   overflow: hidden;
@@ -932,7 +943,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .o-input--select:focus, [class^="o-input--select"]:focus {
     outline: none; }
   .o-input--select:hover, [class^="o-input--select"]:hover {
-    background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' fill='' transform='translate(-4 -8.5)'/></svg>"); }
+    background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #3F3F3F;' transform='translate(-4 -8.5)'/></svg>"); }
   .o-input--select:placeholder-shown ~ span, [class^="o-input--select"]:placeholder-shown ~ span {
     opacity: 0 !important; }
   .o-input--select:focus ~ span, .o-input--select:not(:placeholder-shown) ~ span, [class^="o-input--select"]:focus ~ span, [class^="o-input--select"]:not(:placeholder-shown) ~ span {

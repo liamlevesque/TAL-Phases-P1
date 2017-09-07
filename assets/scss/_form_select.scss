@@ -1,9 +1,11 @@
 .o-input--select, [class^="o-input--select"]{
 	@include textinput;
 	padding-right: 40px;
-	background:white url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' fill='#{palette(grey,3)}' transform='translate(-4 -8.5)'/></svg>") right 10px center no-repeat;
+	background-color:white;
+	background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(grey,2)};' transform='translate(-4 -8.5)'/></svg>");
 	background-size: 20px 20px;
-	transition: $transition;
+	background-position: right 10px center; 
+	background-repeat: no-repeat;
 	cursor: pointer;
 	margin-bottom: 0;
 	@include ellipsize;
@@ -13,7 +15,7 @@
 	}
 
 	&:hover{
-		background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' fill='#{palette(grey,5)}' transform='translate(-4 -8.5)'/></svg>");
+		background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(grey)};' transform='translate(-4 -8.5)'/></svg>");
 		//background-color: palette(grey,light); 
 	}
 

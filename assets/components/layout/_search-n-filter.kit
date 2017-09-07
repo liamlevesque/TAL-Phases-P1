@@ -3,10 +3,10 @@
         <div class="g-cell g-wrapper">
             <div class="h-mr-100 h-ta-right">
                 <div>
-                    <label for="" class="t-field-label t-lh-300">Keyword Search:</label>
+                    <label for="" class="t-field-label">Keyword Search:</label>
                 </div>
                 <div class="h-mt-100">
-                    <label for="" class="t-field-label t-lh-300">Filter by Category:</label>
+                    <label for="" class="t-field-label">Filter by Category:</label>
                 </div>
             </div>
             <div>
@@ -27,21 +27,21 @@
             <button class="o-button__primary" v-on:click="gotoPage('search-results')">Go</button>
         </div>
     </div>
-    <div class="c-search-filter--filter g-wrapper g--center">
-        <div class="h-p-abs-left">
+    <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
+        <div class="g-cell">
             <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
             <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
         </div>
-        <div class="h-width-100 h-ta-center">
+        <div class="g-cell">
             <div class="o-input--toggle-group__inline">
                 <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>Upcoming Lots</div></label>
                 <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
                 <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>All Lots</div></label>
             </div>
         </div>
-        <div class="h-p-abs-right">
+        <div class="g-cell">
             <label for="" class="t-field-label">Sort by:</label>
-            <select class="o-input--select__inline h-mr-100">
+            <select class="o-input--select__inline">
                 <option value="">Closing Time</option>
                 <option value="">Closing Time</option>
                 <option value="">Closing Time</option>

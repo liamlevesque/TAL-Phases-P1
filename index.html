@@ -102,10 +102,10 @@
                         <div class="g-cell g-wrapper">
                             <div class="h-mr-100 h-ta-right">
                                 <div>
-                                    <label for="" class="t-field-label t-lh-300">Keyword Search:</label>
+                                    <label for="" class="t-field-label">Keyword Search:</label>
                                 </div>
                                 <div class="h-mt-100">
-                                    <label for="" class="t-field-label t-lh-300">Filter by Category:</label>
+                                    <label for="" class="t-field-label">Filter by Category:</label>
                                 </div>
                             </div>
                             <div>
@@ -126,21 +126,21 @@
                             <button class="o-button__primary" v-on:click="gotoPage('search-results')">Go</button>
                         </div>
                     </div>
-                    <div class="c-search-filter--filter g-wrapper g--center">
-                        <div class="h-p-abs-left">
+                    <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
+                        <div class="g-cell">
                             <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
                             <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
                         </div>
-                        <div class="h-width-100 h-ta-center">
+                        <div class="g-cell">
                             <div class="o-input--toggle-group__inline">
                                 <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>Upcoming Lots</div></label>
                                 <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
                                 <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>All Lots</div></label>
                             </div>
                         </div>
-                        <div class="h-p-abs-right">
+                        <div class="g-cell">
                             <label for="" class="t-field-label">Sort by:</label>
-                            <select class="o-input--select__inline h-mr-100">
+                            <select class="o-input--select__inline">
                                 <option value="">Closing Time</option>
                                 <option value="">Closing Time</option>
                                 <option value="">Closing Time</option>
@@ -198,10 +198,10 @@
                                     <h3 class="t-h3 t-link">{{ lot.description }}</h3>
                                 </a>
                                 <div class="">
-                                    <p class="o-field-and-value" v-if="lot.equipid"><label for="" class="t-field-label">Serial #:</label>{{ lot.equipid }}</p>
-                                    <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-field-label">Usage:</label>{{ lot.usage }}</p>
-                                    <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-field-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
-                                    <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-field-label">Comes With:</label>{{ lot.notes }}</p>
+                                    <p class="o-field-and-value" v-if="lot.equipid"><label for="" class="t-inline-label">Serial #:</label>{{ lot.equipid }}</p>
+                                    <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-inline-label">Usage:</label>{{ lot.usage }}</p>
+                                    <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-inline-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
+                                    <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-inline-label">Comes With:</label>{{ lot.notes }}</p>
                                     <button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                                             <i class="icon-eye"></i>
                                                             <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
@@ -227,11 +227,11 @@
                         <div class="c-lot--bid-and-closing">
                             <div class="c-lot--highBid g-wrapper" v-if="lot.bids.length > 0" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
                                 <div class="g-cell">
-                                    <label for="" class="t-field-label">High Bidder:</label>
+                                    <label for="" class="t-inline-label">High Bidder:</label>
                                     <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                 </div>
                                 <div class="g-cell h-t-a-right">
-                                    <label for="" class="t-field-label">Bid:</label>
+                                    <label for="" class="t-inline-label">Bid:</label>
                                     <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
                                 </div>
                             </div>
@@ -240,7 +240,7 @@
                             </div>
                             <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                 <div class="g-cell">
-                                    <label for="" class="t-field-label">Bidding Closes:</label>
+                                    <label for="" class="t-inline-label">Bidding Closes:</label>
                                     <span class="t-h4">{{ lot.closes | countdownTime }}</span>
                                 </div>
                                 <div>({{ lot.closes | calendarTime }})</div>

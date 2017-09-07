@@ -12,11 +12,11 @@
 <div class="c-lot--bid-and-closing">
     <div class="c-lot--highBid g-wrapper" v-if="lot.bids.length > 0" v-bind:class="{'s-high-bidder': userIsHighBidder(lot.bids)}">
         <div class="g-cell">
-            <label for="" class="t-field-label">High Bidder:</label>
+            <label for="" class="t-inline-label">High Bidder:</label>
             <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
         </div>
         <div class="g-cell h-t-a-right">
-            <label for="" class="t-field-label">Bid:</label>
+            <label for="" class="t-inline-label">Bid:</label>
             <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
         </div>
     </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
         <div class="g-cell">
-            <label for="" class="t-field-label">Bidding Closes:</label>
+            <label for="" class="t-inline-label">Bidding Closes:</label>
             <span class="t-h4">{{ lot.closes | countdownTime }}</span>
         </div>
         <div>({{ lot.closes | calendarTime }})</div>

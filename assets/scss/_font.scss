@@ -49,10 +49,6 @@ $fontsizes: (
   }
 
 
-  .t-lh-300{
-    line-height: 40px;
-  }
-
 @mixin allcaps{
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -133,6 +129,11 @@ a{
     color: black;
     text-decoration: underline;
     cursor: pointer;
+  }
+
+
+  .t-field-label, .t-lh-300{
+    line-height: $input-height;
   }
 
 

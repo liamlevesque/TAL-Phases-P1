@@ -27,19 +27,19 @@
                     <div class="o-message__warning h-mb-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
                     <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
                     <hr class="o-hr h-mb-200"/>
-                    <div class="c-navigation__tertiary g-wrapper t-h3 h-color-white h-mb-0">
+                    <div class="c-navigation__tertiary g-wrapper t-h3 t-lh-300 h-color-white h-mb-0">
                         <div class="g-cell t-bold">{{ purchasedLots.length > 1 ? purchasedLots.length + ' Lots ' : '1 Lot ' }}Purchased</div>
                         <div class="">Last updated: <span class="t-bold">1 minute ago</span></div>
                     </div>
                     <div class="o-data-table"> 
                         <div class="o-data-table--body">
-                            <div v-for="lot in lotsIveWon" class="o-data-table--row g-wrapper"> 
+                            <div v-for="lot in lotsIveWon" class="o-data-table--row g-wrapper t-lh-300"> 
                                 <div class="g-cell">Lot {{ lot.lotNumber }} - {{ lot.description }}</div>
                                 <div class="h-ta-right CCY t-bold">750</div>
                             </div>
                         </div>
                     </div>
-                    <div class="c-navigation__tertiary h-mb-200 h-ta-right t-h3 h-color-white">
+                    <div class="c-navigation__tertiary h-mb-200 h-ta-right t-h3 t-lh-300 h-color-white">
                         Subtotal: <span class="CCY t-bold">1500</span>
                     </div>
                 </div>
