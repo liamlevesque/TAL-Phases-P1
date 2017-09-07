@@ -298,7 +298,8 @@
         </footer>
         
         <div>
-            Prototype Controls: <button v-on:click="togglePausedMessageVisible">Show Paused State</button>
+            <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
+            <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
         </div>
         <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
         
@@ -336,7 +337,7 @@
             <div class="c-modal--content">
                 <div class="c-modal--header">
                     <div class="o-message__error h-mb-200">
-                        <span class="t-h3 t-bold">The auction has been paused</span>
+                        <span class="t-h3 t-bold">The Timed Auction has been paused</span>
                     </div>
                 </div>
                 <div class="c-modal--body">
@@ -352,6 +353,10 @@
             </div>
         
         </div>
+        <div class="o-message__error l-fixed-banner" v-if="sale.paused">
+            <span class="t-h3 t-bold">The Timed Auction has been paused</span>
+        </div> 
+        
         <div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceBidVisible }">
                 
                     <div class="c-modal--content">

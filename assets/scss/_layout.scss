@@ -16,3 +16,13 @@
         margin: 0 auto;
         max-width: 800px;
     }
+
+
+.l-fixed-banner{
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    z-index: 1000;
+}

@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25849",
 "files": {
+	"\/assets\/components\/components\/_auction-paused.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_auction-paused.html",
+		"oF": 0
+		},
 	"\/assets\/components\/components\/_choice_create-controls.kit": {
 		"ft": 2048,
 		"oA": 1,

@@ -1605,6 +1605,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   margin: 0 auto;
   max-width: 800px; }
 
+.l-fixed-banner {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 480px;
+  z-index: 1000; }
+
 /*******************
 	HELPER CLASSES
 ********************/

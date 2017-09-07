@@ -14961,7 +14961,8 @@ const tal = {
         lotRange: {
             start: 5001,
             end: 5495
-        }
+        }, 
+        paused: false,
     },
     preSoldOffset: 20,
     closeInterval: 30,
@@ -15162,6 +15163,9 @@ var app = new Vue({
       },
       togglePausedMessageVisible: function(){
         this.pausedMessageVisible = !this.pausedMessageVisible;
+      },
+      togglePausedState: function(){
+        this.sale.paused = !this.sale.paused;
       },
 
 
