@@ -187,6 +187,34 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/fonts\/ritchie-icons.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ritchie-icons.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ritchie-icons.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ritchie-icons.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/ritchie-icons.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ritchie-icons.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/ritchie-icons.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/ritchie-icons.woff",
+		"oF": 0
+		},
 	"\/assets\/img\/asset1-1.jpg": {
 		"ft": 16384,
 		"iS": 20706,
@@ -717,6 +745,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/assets\/js\/min\/moment-with-locales.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/min\/moment-with-locales.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/min\/scripts-min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -733,7 +770,7 @@
 		"oAP": "\/assets\/js\/min\/scripts-min.js",
 		"oF": 0,
 		"sC": 1,
-		"tS": 0
+		"tS": 1
 		},
 	"\/assets\/scss\/_breakpoints.scss": {
 		"aP": 0,
@@ -3338,7 +3375,7 @@
 	"\/bower_components\/moment\/min\/moment-with-locales.min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/moment\/min\/moment-with-locales.min.js",
 		"oF": 0,
 		"sC": 1,
@@ -7401,7 +7438,7 @@
 	"\/bower_components\/vue\/dist\/vue.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/vue\/dist\/vue.js",
 		"oF": 0,
 		"sC": 1,
@@ -11325,39 +11362,27 @@
 "manualImportLinks": {
 	"\/assets\/js\/scripts.js": [
 		{
-			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/vue\/dist\/vue.js",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/moment\/min\/moment-with-locales.min.js",
-			"position": 1,
-			"type": 0
-			},
-		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/assets\/js\/_categories.js",
-			"position": 2,
+			"position": 0,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/assets\/js\/_lots.js",
-			"position": 3,
+			"position": 1,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/assets\/js\/_increments.js",
-			"position": 4,
+			"position": 2,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/noframework.waypoints.min.js",
-			"position": 5,
+			"position": 3,
 			"type": 0
 			}
 		]

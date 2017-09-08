@@ -1537,8 +1537,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .c-nav-tabs--tab {
   padding: 10px 25px;
   -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+      -ms-flex: none;
+          flex: none;
   white-space: nowrap;
   cursor: pointer; }
   .c-nav-tabs--tab.s-active {
