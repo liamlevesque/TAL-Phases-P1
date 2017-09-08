@@ -1,10 +1,13 @@
 <div class="o-data-table h-mt-200">
     <div class="o-data-table--header">Bid History</div>
-    <ul class="o-data-table--body">
+    <ul v-if="lot.bids.length > 0" class="o-data-table--body">
         <li class="o-data-table--row g-wrapper" v-for="bid in lot.bids">
             <div class="g-cell">{{ bid.bidder }}</div>
             <div class="g-cell CCY">{{ bid.bid }}</div>
             <div class="g-cell g-cell__half">{{ bid.time | calendarTime }}</div>
         </li>
     </ul>
+    <div class="o-data-table--body h-p-100 t-faint" v-else>
+        No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
+    </div>
 </div>

@@ -3948,7 +3948,7 @@ var app = new Vue({
       this.activeThumbnail = index;
     },
     nextIncrement: function nextIncrement(lot) {
-      return '$' + (lot.bids.length > 0 ? lot.bids[0].bid + 5 : '5') + ' USD or higher';
+      return (lot.bids.length > 0 ? lot.bids[0].bid + 5 : '5') + ' USD or higher';
     },
     togglePausedMessageVisible: function togglePausedMessageVisible() {
       this.pausedMessageVisible = !this.pausedMessageVisible;

@@ -1,10 +1,37 @@
 .l-header{
-    padding: spacing(large);
-    padding-bottom: spacing(small);
+    padding: spacing(x-small);
+    @include breakpoint(medium){
+        padding: spacing(large);
+        padding-bottom: spacing(small);
+    }
 }
+    .logo{
+        width: 60px;
+    }
+
+        #rba-header-logo-svg{
+            height: 40px;
+
+            @include breakpoint(medium){
+                height: 66px;
+            }
+        }
+
+            .logo-hide-small{
+                @include breakpoint(medmax){
+                    display: none;
+                }
+            }
+
+    .l-mobile-header--title{
+        padding-top: spacing(xx-small);
+        padding-right: 100px;
+    }
 
 .l-main-container{
-    padding: 0 spacing(large);
+    @include breakpoint(medium){
+        padding: 0 spacing(large);
+    }
 }
 
 
@@ -33,9 +60,11 @@
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        margin: 0 spacing(large);
+        width: 100vw;
         z-index: 100;
-        -webkit-transform: translateZ(0);
+        
+        @include breakpoint(medium){
+            padding: 0 spacing(large);
+        }
     }
 }

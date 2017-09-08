@@ -14,10 +14,9 @@
 	<div class="js--tal">
         <header class="l-header">
             <div class="g-wrapper">
-                <div class="">
-                    
-                    <div class="logo" rv-on-click="talController.loadTab" data-tab="auction">
-                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="66" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
+                <div class="g-wrapper">
+                    <div class="logo" v-on:click="gotoPage('index')">
+                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
                             <g>
                                 <g>
                                     <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
@@ -30,48 +29,60 @@
                             </g>
                         </svg>
                     </div>
-        
+                    <div class="g-cell h-hide-desktop">
+                        <h2 class="l-mobile-header--title t-h2 h-color-brand">{{ sale.name }}</h2>
+                    </div>
                 </div>
         
-                <div class="g-cell h-ta-right">
-                    <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
-                        <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+                <div class="h-hide-desktop g-wrapper g--center h-width-100">
+                    <div class="g-cell">
+                        <h3 class="t-h3 h-mb-0"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i>Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
                     </div>
+                    <div class="t-bold">$ USD</div>
+                </div>
         
-                    <div class="">
-                       <label for="" class="t-field-label">Change Language</label>
-                       <select name="" id="" class="o-input--select__inline">
-                           <option value="">English</option>
-                           <option value="">Deutsch</option>
-                           <option value="">Fran&ccedil;ais - Canada</option>
-                           <option value="">Fran&ccedil;ais - France</option>
-                           <option value="">Espa&ntilde;ol - M&eacute;xico</option>
-                           <option value="">Espa&ntilde;ol - Espa&ntilde;a</option>
-                           <option value="">简体汉字</option>
-                           <option value="">Italiano</option>
-                           <option value="">Nederlands</option>
-                       </select>
-                   </div>	
+                <div class="g-cell h-ta-right g-mob--full">
+                    <input id="o-mobile-collapse--toggle" class="h-hide-desktop" type="checkbox">
+                    <label for="o-mobile-collapse--toggle" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-settings"></i>Settings and Profile</div></label>
                     
-                    <div class="h-mt-50">
-                        <label for="" class="t-field-label">Bidder No.</label>
-                        <span class="t-h3 t-bold h-mr-200">1042</span>
-                        <button class="o-button__secondary">Sign Out</button>
+                    <div class="o-mobile-collapse--container__wrapped">
+                        <div class="h-mb-50">
+                            <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                            <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+                        </div>
+        
+                         <div class="">
+                            <label for="" class="t-field-label">Change Language</label>
+                            <select name="" id="" class="o-input--select__inline">
+                                <option value="">English</option>
+                                <option value="">Deutsch</option>
+                                <option value="">Fran&ccedil;ais - Canada</option>
+                                <option value="">Fran&ccedil;ais - France</option>
+                                <option value="">Espa&ntilde;ol - M&eacute;xico</option>
+                                <option value="">Espa&ntilde;ol - Espa&ntilde;a</option>
+                                <option value="">简体汉字</option>
+                                <option value="">Italiano</option>
+                                <option value="">Nederlands</option>
+                            </select>
+                        </div>	
+                        
+                        <div class="h-mt-50">
+                            <label for="" class="t-field-label">Bidder No.</label>
+                            <span class="t-h3 t-bold h-mr-200">1042</span>
+                            <button class="o-button__secondary">Sign Out</button>
+                        </div>
                     </div>
         
                 </div>
             </div>
         
-            <div class="l-subheader g-wrapper">
-                <div class="g-cell">
-                    <h2 class="t-h2">{{ sale.name }}</h2>
+            <div class="l-subheader g-wrapper h-hide-mobile">
+                <div class="g-cell g-mob--full">
+                    <h2 class="t-h2 h-color-brand">{{ sale.name }}</h2>
                     <h3 class="t-h3"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i> Timed Auction - Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
                 </div>
-                <div class="g-cell g-cell--bottom">
-                    <div class="h-float-right">
-                        <h3 class="t-h3">Auction Currency - $ USD</h3>
-                    </div>
+                <div class="g-cell--bottom g-mob--full">
+                    <h3 class="t-h3">Auction Currency - $ USD</h3>
                 </div>
             </div>	
             
@@ -100,11 +111,12 @@
             
             <div class="l-container__medium">
                 
-                <div v-if="purchasedLots.length > 0">
+                <div v-if="purchasedLots.length > 0" class="h-p-100">
                     <h3 class="t-h3 h-mt-200">This is not an invoice</h3>
                     <div class="o-message__warning h-mb-200">We never send invoices as email attachments. If you are a successful bidder, we will email you a link to a secure website (DocuSign), where your invoice can be viewed. To protect yourself from email fraud, never open unsolicited email attachments.</div>
                     <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
                     <hr class="o-hr h-mb-200"/>
+                    
                     <div class="c-navigation__tertiary g-wrapper t-h3 t-lh-300 h-color-white h-mb-0">
                         <div class="g-cell t-bold">{{ purchasedLots.length > 1 ? purchasedLots.length + ' Lots ' : '1 Lot ' }}Purchased</div>
                         <div class="">Last updated: <span class="t-bold">1 minute ago</span></div>
@@ -112,12 +124,12 @@
                     <div class="o-data-table"> 
                         <div class="o-data-table--body">
                             <div v-for="lot in lotsIveWon" class="o-data-table--row g-wrapper t-lh-300"> 
-                                <div class="g-cell">Lot {{ lot.lotNumber }} - {{ lot.description }}</div>
+                                <div class="g-cell"><span class="t-bold">Lot {{ lot.lotNumber }}</span> - {{ lot.description }}</div>
                                 <div class="h-ta-right CCY t-bold">750</div>
                             </div>
                         </div>
                     </div>
-                    <div class="c-navigation__tertiary h-mb-200 h-ta-right t-h3 t-lh-300 h-color-white">
+                    <div class="c-navigation__tertiary h-ta-right t-h3 t-lh-300 h-color-white">
                         Subtotal: <span class="CCY t-bold">1500</span>
                     </div>
                 </div>

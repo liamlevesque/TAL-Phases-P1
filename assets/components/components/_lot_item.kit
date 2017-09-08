@@ -1,13 +1,13 @@
 <div class="g-wrapper">
-    <div v-if="creatingChoiceGroup">
+    <div class="h-hide-mobile" v-if="creatingChoiceGroup">
         <label class="o-input--checkbox">
             <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number>
             <span class="o-input--checksymbol"></span>
         </label>
     </div>
-    <div class="g-cell g-cell__two-thirds">
+    <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
         <div class="g-wrapper">
-            <div class="g-cell">
+            <div class="g-cell g-mob--quarter">
                 <a href="lot-details.html">
                     <div class="c-lot-details--lot-photo">
                         <img v-bind:src="lot.photos[0].src" alt="">
@@ -21,13 +21,14 @@
                 </a>
                 <div class="">
                     <!-- @include '/assets/components/components/lot_text-fields' -->
-                    <!-- @include '/assets/components/components/watch-button' -->
+                    <div class="h-hide-mobile"><!-- @include '/assets/components/components/watch-button' --></div>
                 </div> 
                 
             </div>
         </div>
     </div>
-    <div class="g-cell">
+    <div class="c-lot--bidding g-cell g-mob--full">
         <!-- @include '/assets/components/components/lot_bid-area' -->
+        <!-- @include '/assets/components/components/lot_bid-messages' -->
     </div>
 </div>

@@ -63,10 +63,22 @@
 		"oAP": "\/assets\/components\/components\/_lot_bid-area.html",
 		"oF": 0
 		},
+	"\/assets\/components\/components\/_lot_bid-buttons.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_lot_bid-buttons.html",
+		"oF": 0
+		},
 	"\/assets\/components\/components\/_lot_bid-history.kit": {
 		"ft": 2048,
 		"oA": 1,
 		"oAP": "\/assets\/components\/components\/_lot_bid-history.html",
+		"oF": 0
+		},
+	"\/assets\/components\/components\/_lot_bid-messages.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/components\/_lot_bid-messages.html",
 		"oF": 0
 		},
 	"\/assets\/components\/components\/_lot_item.kit": {
@@ -1041,6 +1053,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/css\/_mixins.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/scss\/_mobile-collapse.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/_mobile-collapse.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

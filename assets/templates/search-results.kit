@@ -19,7 +19,7 @@
             <div class="l-pin-header-wrapper js--pinned-header">
                 <!-- @include '/assets/components/components/navigation_tabs' -->
                 <!-- @include '/assets/components/layout/search-n-filter' -->
-                <div class="c-navigation__tertiary h-mb-200 g-wrapper">
+                <div class="c-navigation__tertiary g-wrapper">
                     <button class="o-button__tertiary" v-on:click="gotoPage('index')"><i class="icon-arrow-left h-mr-50"></i> Back</button>
                     <div v-if="searchResults.length > 0" class="g-cell t-h2 t-lh-300 h-color-white h-ml-200"><span class="t-bold">{{ searchResults.length }} Results</span> found for: <span class="t-bold">Attachments - Skid Steer</span></div>
                     <div v-else class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200">0 Results found</div>
@@ -34,7 +34,7 @@
             <div v-else class="l-container__medium">
                 <div class="h-ta-center h-mt-500 h-mb-500">
                     <img src="assets/img/empty.png">
-                    <h3 class="t-h3">We couldn't find any lots matching your request!</h3>
+                    <h3 class="t-h3">We couldn't find any lots matching your request</h3>
                     <button class="o-button__primary">Back to all listings</button>
                 </div>
             </div>

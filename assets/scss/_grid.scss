@@ -2,6 +2,9 @@ $gutters: spacing(large);
 
 .g-wrapper, [class^="g-wrapper"]{
   display: flex;
+  @include breakpoint(medmax){
+    flex-wrap: wrap;
+  }
 }
 
   /* With gutters */
@@ -28,12 +31,32 @@ $gutters: spacing(large);
       &:last-child{
         text-align: right;
       }
+
+            
+      @include breakpoint(medmax){
+        text-align: center !important;  
+      }
     }
   }
 
 .g-cell {
-  flex: 1;
+  
+    flex: 1;
 }
+
+  .g-mob--full{
+    @include breakpoint(medmax){
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .g-mob--quarter{
+    @include breakpoint(medmax){
+      flex: none !important;
+      width: 25vw;
+    }
+  }
 
 .g-cell__no-stretch{
   flex: none;
@@ -61,12 +84,30 @@ $gutters: spacing(large);
   align-self: center;
 }
 
+
 .g-cell__half{
-  flex: none!important;  
-  width: 50%!important;
+  @include breakpoint(medium){
+    flex: none!important;  
+    width: 50%!important;
+  }
 }
 
 .g-cell__two-thirds{
-  flex: none!important;  
-  width: 66%!important;
+  @include breakpoint(medium){
+    flex: none!important;  
+    width: 66%!important;
+  }
+}
+
+
+.g-mob-order--first{
+  @include breakpoint(medmax){
+    order: 1;
+  }
+}
+
+.g-mob-order--last{
+  @include breakpoint(medmax){
+    order: 2;
+  }
 }

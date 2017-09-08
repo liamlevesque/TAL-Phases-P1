@@ -28,7 +28,12 @@
 .c-navigation__tertiary{
     background-color: palette(grey);
     color: white;
-    padding: spacing(xx-small) spacing(medium);
+    padding: spacing(xx-small);
+
+    @include breakpoint(medium){
+        margin-bottom: spacing(medium);
+        padding: spacing(xx-small) spacing(medium);
+    }
 }
 
 .o-navigation--pagination{
@@ -36,10 +41,18 @@
     padding: spacing(medium) 0;
     position: relative;
     text-align: center;
+
+    & > div{
+        padding: spacing(x-small) 0;
+    }
 }
 
     .o-navigation-link{
         padding: 0 spacing(xx-small);
+
+        @include breakpoint(medmax){
+            padding: spacing(medium) spacing(small);
+        }
 
         &.s-active{
             color: black;

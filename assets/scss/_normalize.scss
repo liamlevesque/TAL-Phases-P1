@@ -13,6 +13,8 @@ html {
   line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Sections
@@ -25,6 +27,9 @@ html {
 body {
   margin: 0;
   overflow-anchor: none;//Disable Scroll Anchoring in chrome
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /**

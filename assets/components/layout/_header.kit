@@ -1,23 +1,36 @@
 <header class="l-header">
     <div class="g-wrapper">
-        <div class="">
-            
+        <div class="g-wrapper">
             <!-- @include '/assets/components/components/header_logo' -->
-
+            <div class="g-cell h-hide-desktop">
+                <h2 class="l-mobile-header--title t-h2 h-color-brand">{{ sale.name }}</h2>
+            </div>
         </div>
 
-        <div class="g-cell h-ta-right">
-            <div class="h-mb-50">
-                <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
-                <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+        <div class="h-hide-desktop g-wrapper g--center h-width-100">
+            <div class="g-cell">
+                <h3 class="t-h3 h-mb-0"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i>Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
             </div>
+            <div class="t-bold">$ USD</div>
+        </div>
 
-           <!-- @include '/assets/components/components/header_language-select' -->	
+        <div class="g-cell h-ta-right g-mob--full">
+            <input id="o-mobile-collapse--toggle" class="h-hide-desktop" type="checkbox">
+            <label for="o-mobile-collapse--toggle" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-settings"></i>Settings and Profile</div></label>
             
-            <div class="h-mt-50">
-                <label for="" class="t-field-label">Bidder No.</label>
-                <span class="t-h3 t-bold h-mr-200">1042</span>
-                <button class="o-button__secondary">Sign Out</button>
+            <div class="o-mobile-collapse--container__wrapped">
+                <div class="h-mb-50">
+                    <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                    <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+                </div>
+
+                <!-- @include '/assets/components/components/header_language-select' -->	
+                
+                <div class="h-mt-50">
+                    <label for="" class="t-field-label">Bidder No.</label>
+                    <span class="t-h3 t-bold h-mr-200">1042</span>
+                    <button class="o-button__secondary">Sign Out</button>
+                </div>
             </div>
 
         </div>

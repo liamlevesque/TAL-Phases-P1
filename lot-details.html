@@ -13,112 +13,130 @@
 <body class="body USD">
 	<div class="js--tal">
         
-        <header class="l-header">
-            <div class="g-wrapper">
-                <div class="">
-                    
-                    <div class="logo" rv-on-click="talController.loadTab" data-tab="auction">
-                        <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="66" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
-                            <g>
+        <div class="h-hide-mobile">
+            <header class="l-header">
+                <div class="g-wrapper">
+                    <div class="g-wrapper">
+                        <div class="logo" v-on:click="gotoPage('index')">
+                            <svg version="1.1" id="rba-header-logo-svg" class="s-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" enable-background="new 0 0 162 40.25" viewBox="0 0 162 40.25" xml:space="preserve">
                                 <g>
-                                    <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
-                                    <path fill="#E87511" d="M4.5,15.6c0-0.2,0.2-0.3,0.3-0.3l6.1,0l0-4.3c0,0-7.3,0-7.5,0c-1.9,0-3.4,1.5-3.4,3.4c0,0.1,0,14.1,0,14.1 h4.5L4.5,15.6z"></path>
+                                    <g>
+                                        <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
+                                        <path fill="#E87511" d="M4.5,15.6c0-0.2,0.2-0.3,0.3-0.3l6.1,0l0-4.3c0,0-7.3,0-7.5,0c-1.9,0-3.4,1.5-3.4,3.4c0,0.1,0,14.1,0,14.1 h4.5L4.5,15.6z"></path>
+                                    </g>
+                                    <g class="logo-hide-small">
+                                        <path fill="#000000" d="M84.9,34.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.6-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2C86.1,33.7,85.6,34.2,84.9,34.2z M84.9,31.9c-0.6,0-1,0.5-1,1.1c0,0.6,0.4,1.1,1,1.1c0.6,0,1-0.5,1-1.1C85.9,32.4,85.5,31.9,84.9,31.9z M85.2,33.7 c0-0.1-0.1-0.1-0.1-0.2c-0.1-0.2-0.1-0.2-0.2-0.3c0,0-0.1-0.1-0.1-0.1v0.6h-0.2v-1.4h0.4c0.2,0,0.3,0,0.3,0.1 c0.1,0.1,0.1,0.1,0.1,0.3c0,0.2-0.1,0.4-0.4,0.4c0.1,0,0.1,0.1,0.1,0.1c0,0,0.1,0.1,0.1,0.2l0.2,0.3H85.2z M85,32.5 c0,0-0.1,0-0.2,0h-0.1v0.5h0.1c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C85.1,32.6,85.1,32.5,85,32.5z"></path>
+                                        <path fill="#000000" d="M80.3,37.8c0.2,0.1,0.7,0.3,1.3,0.3c0.5,0,0.8-0.1,0.8-0.5c0-0.2-0.1-0.4-0.6-0.7l-0.5-0.3c-0.5-0.3-1.1-0.6-1.1-1.5 c0-0.7,0.7-1.5,1.8-1.5c0.7,0,1.2,0.2,1.3,0.2l-0.1,1c-0.3-0.1-0.7-0.2-1.1-0.2c-0.5,0-0.7,0.2-0.7,0.5c0,0.3,0.2,0.4,0.6,0.7 l0.6,0.4c0.7,0.4,1,0.7,1,1.3c0,1-0.8,1.5-1.9,1.5c-0.6,0-1.2-0.2-1.5-0.3L80.3,37.8z M77.1,34.7c0-0.3,0-0.6,0-0.9h1.1 c0,0.3,0,0.6,0,1h0c0.2-0.4,0.6-1,1.3-1c0.1,0,0.1,0,0.2,0v1.2c-0.1,0-0.2,0-0.4,0c-0.5,0-1.1,0.3-1.1,1.3V39h-1.3V34.7z M75.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H75.1z M76,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.1-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L76,38.8z M70.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H70.1z M71.1,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.2-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L71.1,38.8z M62.2,34.7 c0-0.3,0-0.6,0-0.9h1.2c0,0.3,0,0.5,0,0.8h0h0c0.2-0.3,0.5-0.9,1.4-0.9c1.2,0,1.5,0.9,1.5,1.9V39H65v-3.1c0-0.8-0.2-1.1-0.7-1.1 c-0.7,0-0.9,0.6-0.9,1.2v3h-1.3V34.7z M59,38.2c0.8,0,1-0.9,1-1.8c0-0.9-0.2-1.8-1-1.8c-0.8,0-1,0.9-1,1.8 C58,37.3,58.2,38.2,59,38.2 M59,33.7c1.1,0,2.3,0.6,2.3,2.7c0,2.2-1.2,2.7-2.3,2.7c-1.1,0-2.3-0.5-2.3-2.7 C56.7,34.3,58,33.7,59,33.7 M54.5,33.8h1.3V39h-1.3V33.8z M54.5,31.6h1.3v1.2h-1.3V31.6z M51.4,32.7l1.3-0.4v1.5h1v0.9h-1v2.7 c0,0.6,0.2,0.7,0.6,0.7c0.2,0,0.4-0.1,0.5-0.1v0.9c-0.2,0.1-0.5,0.2-0.8,0.2c-0.9,0-1.5-0.4-1.5-1.5V32.7z M50.8,38.9 c-0.3,0.1-0.7,0.2-1.2,0.2c-1.7,0-2.5-1.2-2.5-2.7c0-1.5,0.8-2.7,2.5-2.7c0.4,0,0.9,0.1,1.1,0.2l-0.1,1c-0.2-0.1-0.5-0.2-0.9-0.2 c-1,0-1.4,0.6-1.4,1.7c0,1,0.5,1.7,1.4,1.7c0.3,0,0.7-0.1,0.9-0.3L50.8,38.9z M46.2,38.2c0,0.3,0,0.6,0,0.9h-1.2c0-0.3,0-0.5,0-0.8 l0,0l0,0c-0.2,0.4-0.6,0.9-1.4,0.9c-1.2,0-1.5-0.9-1.5-1.9v-3.4h1.3v3.1c0,0.8,0.2,1.1,0.7,1.1c0.7,0,0.9-0.6,0.9-1.3v-3h1.3V38.2z M39.5,36.3L38.6,33h0l-1,3.3H39.5z M39.8,37.3h-2.4L36.8,39h-1.3l2.4-7.1h1.4l2.3,7.1h-1.3L39.8,37.3z M158.4,25.1 c-0.4,0.4-0.6,0.9-0.6,1.5c0,0.6,0.2,1.1,0.6,1.5c0.4,0.4,0.9,0.6,1.5,0.6c0.6,0,1.1-0.2,1.5-0.6c0.4-0.4,0.6-0.9,0.6-1.4 c0-0.6-0.2-1.1-0.6-1.5c-0.4-0.4-0.9-0.6-1.5-0.6C159.3,24.5,158.8,24.7,158.4,25.1 M152.9,10.6c-1.1,0-2.1,0.2-2.8,0.5 c-0.8,0.3-1.4,0.9-2,1.6c-0.8,1-1.2,2.2-1.2,3.5c0,1,0.3,2,0.8,2.8c0.7,1.1,1.9,1.8,3.7,2.3c1,0.2,1.6,0.4,1.9,0.6 c0.6,0.3,0.9,0.8,0.9,1.5c0,0.6-0.2,1.1-0.7,1.5c-0.4,0.4-1,0.6-1.8,0.6c-1.2,0-2.7-0.4-4.5-1.2v3.7c1.7,0.6,3.2,0.9,4.5,0.9 c1.8,0,3.2-0.4,4.3-1.3c1.3-1.1,1.9-2.5,1.9-4.2c0-1.4-0.5-2.7-1.4-3.6c-0.4-0.4-0.8-0.7-1.3-0.9c-0.5-0.2-1.3-0.5-2.4-0.8 c-0.9-0.2-1.5-0.5-1.8-0.8c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.5,0.2-1,0.6-1.4c0.4-0.4,1.1-0.6,1.9-0.6c1,0,2.1,0.3,3.4,0.9v-3.7 C155.1,10.7,154,10.6,152.9,10.6 M131.6,12.8c-2.1,1.8-3.1,4.1-3.1,6.8c0,1.6,0.4,3.1,1.2,4.5c0.8,1.4,2,2.6,3.5,3.4 c1.4,0.8,2.8,1.1,4.4,1.1c1.6,0,3-0.4,4.4-1.1c1.4-0.8,2.5-1.9,3.4-3.2c0.9-1.4,1.3-3,1.3-4.6c0-2.6-0.9-4.7-2.6-6.5 c-1.8-1.8-3.9-2.7-6.4-2.7C135.3,10.6,133.3,11.3,131.6,12.8 M141.3,15.5c1.2,1.1,1.8,2.5,1.8,4.2c0,1.3-0.4,2.5-1.3,3.6 c-1.1,1.3-2.5,2-4.1,2c-1.4,0-2.6-0.5-3.6-1.4c-1.3-1.1-1.9-2.5-1.9-4.2c0-1.4,0.4-2.6,1.4-3.7c1.1-1.3,2.5-1.9,4.2-1.9 C139.1,14.1,140.3,14.6,141.3,15.5 M120.4,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.2,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H120.4z M122,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H122z M109.9,14.3c0.6,0,1.1,0.2,1.4,0.4 c0.4,0.3,0.5,0.7,0.5,1.2c0,0.5-0.2,0.9-0.6,1.3c-0.3,0.2-0.7,0.3-1.4,0.3h-1.2v-3.2H109.9z M115,17.2c0.3-0.5,0.4-1.2,0.4-1.8 c0-0.9-0.2-1.7-0.7-2.4c-0.5-0.7-1.1-1.3-1.9-1.6c-0.8-0.3-2-0.5-3.8-0.5c-0.8,0-1.4,0.1-1.8,0.2c-0.4,0.1-0.8,0.3-1.1,0.6 c-0.3,0.3-0.6,0.7-0.7,1.1c-0.1,0.4-0.2,1.1-0.2,1.9v9.6c0,0.9,0.1,1.6,0.2,2.1c0.1,0.5,0.4,0.9,0.7,1.2c0.4,0.3,0.8,0.5,1.2,0.7 c0.5,0.1,1.2,0.2,2.3,0.2c1.4,0,2.4-0.1,2.9-0.2c1.1-0.3,2-0.9,2.8-1.8c0.6-0.9,1-1.8,1-2.9c0-0.7-0.1-1.3-0.4-2 c-0.3-0.6-0.6-1.2-1.1-1.7c-0.3-0.3-0.7-0.6-1.2-0.9C114.3,18.4,114.7,17.8,115,17.2 M109.9,20.9c0.6,0,1,0,1.2,0 c0.2,0,0.4,0.1,0.6,0.2c0.3,0.2,0.6,0.4,0.8,0.7c0.2,0.3,0.3,0.7,0.3,1c0,0.8-0.3,1.4-1,1.7c-0.3,0.1-0.5,0.2-0.7,0.2 c-0.2,0-0.6,0-1.2,0h-1.2v-4H109.9z M95.4,10.9c-1.3,0-2.2,0.3-2.8,0.8c-0.6,0.6-0.8,1.5-0.8,2.9v10.1c0,0.7,0.1,1.2,0.2,1.6 c0.1,0.4,0.3,0.8,0.6,1.1c0.3,0.4,0.7,0.6,1.1,0.8c0.4,0.1,1,0.2,1.8,0.2h5.1V25h-5.2v-4h4.8v-3.3h-4.8v-3.3h5.2v-3.4H95.4z M86.8,28.4h3.6V10.9h-3.6V28.4z M81.9,10.9v6.8h-5.5v-6.8h-3.6v17.5h3.6V21h5.5v7.4h3.6V10.9H81.9z M71.8,10.9h-1.2 c-1,0-1.8,0.1-2.4,0.2c-1.8,0.4-3.4,1.3-4.6,2.6c-1.5,1.7-2.3,3.6-2.3,5.9c0,2,0.6,3.7,1.8,5.3c1.2,1.5,2.7,2.6,4.5,3.1 c0.8,0.2,1.8,0.3,3.2,0.3h1V25h-1c-1.1,0-2-0.2-2.7-0.5c-0.7-0.3-1.4-0.8-2-1.5c-0.8-1-1.2-2.1-1.2-3.4c0-0.9,0.2-1.8,0.7-2.6 c0.4-0.7,0.9-1.3,1.6-1.8c0.5-0.4,1-0.6,1.6-0.8c0.5-0.1,1.2-0.2,2-0.2h1.1V10.9z M52.2,10.9v3.4h3.3v14.1h3.6V14.3h3.3v-3.4H52.2z M47.7,28.4h3.6V10.9h-3.6V28.4z M39.2,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.3,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0.1-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H39.2z M40.8,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H40.8z"></path>
+                                    </g>
                                 </g>
-                                <g class="logo-hide-small">
-                                    <path fill="#000000" d="M84.9,34.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.6-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2C86.1,33.7,85.6,34.2,84.9,34.2z M84.9,31.9c-0.6,0-1,0.5-1,1.1c0,0.6,0.4,1.1,1,1.1c0.6,0,1-0.5,1-1.1C85.9,32.4,85.5,31.9,84.9,31.9z M85.2,33.7 c0-0.1-0.1-0.1-0.1-0.2c-0.1-0.2-0.1-0.2-0.2-0.3c0,0-0.1-0.1-0.1-0.1v0.6h-0.2v-1.4h0.4c0.2,0,0.3,0,0.3,0.1 c0.1,0.1,0.1,0.1,0.1,0.3c0,0.2-0.1,0.4-0.4,0.4c0.1,0,0.1,0.1,0.1,0.1c0,0,0.1,0.1,0.1,0.2l0.2,0.3H85.2z M85,32.5 c0,0-0.1,0-0.2,0h-0.1v0.5h0.1c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C85.1,32.6,85.1,32.5,85,32.5z"></path>
-                                    <path fill="#000000" d="M80.3,37.8c0.2,0.1,0.7,0.3,1.3,0.3c0.5,0,0.8-0.1,0.8-0.5c0-0.2-0.1-0.4-0.6-0.7l-0.5-0.3c-0.5-0.3-1.1-0.6-1.1-1.5 c0-0.7,0.7-1.5,1.8-1.5c0.7,0,1.2,0.2,1.3,0.2l-0.1,1c-0.3-0.1-0.7-0.2-1.1-0.2c-0.5,0-0.7,0.2-0.7,0.5c0,0.3,0.2,0.4,0.6,0.7 l0.6,0.4c0.7,0.4,1,0.7,1,1.3c0,1-0.8,1.5-1.9,1.5c-0.6,0-1.2-0.2-1.5-0.3L80.3,37.8z M77.1,34.7c0-0.3,0-0.6,0-0.9h1.1 c0,0.3,0,0.6,0,1h0c0.2-0.4,0.6-1,1.3-1c0.1,0,0.1,0,0.2,0v1.2c-0.1,0-0.2,0-0.4,0c-0.5,0-1.1,0.3-1.1,1.3V39h-1.3V34.7z M75.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H75.1z M76,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.1-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L76,38.8z M70.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H70.1z M71.1,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.2-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L71.1,38.8z M62.2,34.7 c0-0.3,0-0.6,0-0.9h1.2c0,0.3,0,0.5,0,0.8h0h0c0.2-0.3,0.5-0.9,1.4-0.9c1.2,0,1.5,0.9,1.5,1.9V39H65v-3.1c0-0.8-0.2-1.1-0.7-1.1 c-0.7,0-0.9,0.6-0.9,1.2v3h-1.3V34.7z M59,38.2c0.8,0,1-0.9,1-1.8c0-0.9-0.2-1.8-1-1.8c-0.8,0-1,0.9-1,1.8 C58,37.3,58.2,38.2,59,38.2 M59,33.7c1.1,0,2.3,0.6,2.3,2.7c0,2.2-1.2,2.7-2.3,2.7c-1.1,0-2.3-0.5-2.3-2.7 C56.7,34.3,58,33.7,59,33.7 M54.5,33.8h1.3V39h-1.3V33.8z M54.5,31.6h1.3v1.2h-1.3V31.6z M51.4,32.7l1.3-0.4v1.5h1v0.9h-1v2.7 c0,0.6,0.2,0.7,0.6,0.7c0.2,0,0.4-0.1,0.5-0.1v0.9c-0.2,0.1-0.5,0.2-0.8,0.2c-0.9,0-1.5-0.4-1.5-1.5V32.7z M50.8,38.9 c-0.3,0.1-0.7,0.2-1.2,0.2c-1.7,0-2.5-1.2-2.5-2.7c0-1.5,0.8-2.7,2.5-2.7c0.4,0,0.9,0.1,1.1,0.2l-0.1,1c-0.2-0.1-0.5-0.2-0.9-0.2 c-1,0-1.4,0.6-1.4,1.7c0,1,0.5,1.7,1.4,1.7c0.3,0,0.7-0.1,0.9-0.3L50.8,38.9z M46.2,38.2c0,0.3,0,0.6,0,0.9h-1.2c0-0.3,0-0.5,0-0.8 l0,0l0,0c-0.2,0.4-0.6,0.9-1.4,0.9c-1.2,0-1.5-0.9-1.5-1.9v-3.4h1.3v3.1c0,0.8,0.2,1.1,0.7,1.1c0.7,0,0.9-0.6,0.9-1.3v-3h1.3V38.2z M39.5,36.3L38.6,33h0l-1,3.3H39.5z M39.8,37.3h-2.4L36.8,39h-1.3l2.4-7.1h1.4l2.3,7.1h-1.3L39.8,37.3z M158.4,25.1 c-0.4,0.4-0.6,0.9-0.6,1.5c0,0.6,0.2,1.1,0.6,1.5c0.4,0.4,0.9,0.6,1.5,0.6c0.6,0,1.1-0.2,1.5-0.6c0.4-0.4,0.6-0.9,0.6-1.4 c0-0.6-0.2-1.1-0.6-1.5c-0.4-0.4-0.9-0.6-1.5-0.6C159.3,24.5,158.8,24.7,158.4,25.1 M152.9,10.6c-1.1,0-2.1,0.2-2.8,0.5 c-0.8,0.3-1.4,0.9-2,1.6c-0.8,1-1.2,2.2-1.2,3.5c0,1,0.3,2,0.8,2.8c0.7,1.1,1.9,1.8,3.7,2.3c1,0.2,1.6,0.4,1.9,0.6 c0.6,0.3,0.9,0.8,0.9,1.5c0,0.6-0.2,1.1-0.7,1.5c-0.4,0.4-1,0.6-1.8,0.6c-1.2,0-2.7-0.4-4.5-1.2v3.7c1.7,0.6,3.2,0.9,4.5,0.9 c1.8,0,3.2-0.4,4.3-1.3c1.3-1.1,1.9-2.5,1.9-4.2c0-1.4-0.5-2.7-1.4-3.6c-0.4-0.4-0.8-0.7-1.3-0.9c-0.5-0.2-1.3-0.5-2.4-0.8 c-0.9-0.2-1.5-0.5-1.8-0.8c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.5,0.2-1,0.6-1.4c0.4-0.4,1.1-0.6,1.9-0.6c1,0,2.1,0.3,3.4,0.9v-3.7 C155.1,10.7,154,10.6,152.9,10.6 M131.6,12.8c-2.1,1.8-3.1,4.1-3.1,6.8c0,1.6,0.4,3.1,1.2,4.5c0.8,1.4,2,2.6,3.5,3.4 c1.4,0.8,2.8,1.1,4.4,1.1c1.6,0,3-0.4,4.4-1.1c1.4-0.8,2.5-1.9,3.4-3.2c0.9-1.4,1.3-3,1.3-4.6c0-2.6-0.9-4.7-2.6-6.5 c-1.8-1.8-3.9-2.7-6.4-2.7C135.3,10.6,133.3,11.3,131.6,12.8 M141.3,15.5c1.2,1.1,1.8,2.5,1.8,4.2c0,1.3-0.4,2.5-1.3,3.6 c-1.1,1.3-2.5,2-4.1,2c-1.4,0-2.6-0.5-3.6-1.4c-1.3-1.1-1.9-2.5-1.9-4.2c0-1.4,0.4-2.6,1.4-3.7c1.1-1.3,2.5-1.9,4.2-1.9 C139.1,14.1,140.3,14.6,141.3,15.5 M120.4,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.2,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H120.4z M122,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H122z M109.9,14.3c0.6,0,1.1,0.2,1.4,0.4 c0.4,0.3,0.5,0.7,0.5,1.2c0,0.5-0.2,0.9-0.6,1.3c-0.3,0.2-0.7,0.3-1.4,0.3h-1.2v-3.2H109.9z M115,17.2c0.3-0.5,0.4-1.2,0.4-1.8 c0-0.9-0.2-1.7-0.7-2.4c-0.5-0.7-1.1-1.3-1.9-1.6c-0.8-0.3-2-0.5-3.8-0.5c-0.8,0-1.4,0.1-1.8,0.2c-0.4,0.1-0.8,0.3-1.1,0.6 c-0.3,0.3-0.6,0.7-0.7,1.1c-0.1,0.4-0.2,1.1-0.2,1.9v9.6c0,0.9,0.1,1.6,0.2,2.1c0.1,0.5,0.4,0.9,0.7,1.2c0.4,0.3,0.8,0.5,1.2,0.7 c0.5,0.1,1.2,0.2,2.3,0.2c1.4,0,2.4-0.1,2.9-0.2c1.1-0.3,2-0.9,2.8-1.8c0.6-0.9,1-1.8,1-2.9c0-0.7-0.1-1.3-0.4-2 c-0.3-0.6-0.6-1.2-1.1-1.7c-0.3-0.3-0.7-0.6-1.2-0.9C114.3,18.4,114.7,17.8,115,17.2 M109.9,20.9c0.6,0,1,0,1.2,0 c0.2,0,0.4,0.1,0.6,0.2c0.3,0.2,0.6,0.4,0.8,0.7c0.2,0.3,0.3,0.7,0.3,1c0,0.8-0.3,1.4-1,1.7c-0.3,0.1-0.5,0.2-0.7,0.2 c-0.2,0-0.6,0-1.2,0h-1.2v-4H109.9z M95.4,10.9c-1.3,0-2.2,0.3-2.8,0.8c-0.6,0.6-0.8,1.5-0.8,2.9v10.1c0,0.7,0.1,1.2,0.2,1.6 c0.1,0.4,0.3,0.8,0.6,1.1c0.3,0.4,0.7,0.6,1.1,0.8c0.4,0.1,1,0.2,1.8,0.2h5.1V25h-5.2v-4h4.8v-3.3h-4.8v-3.3h5.2v-3.4H95.4z M86.8,28.4h3.6V10.9h-3.6V28.4z M81.9,10.9v6.8h-5.5v-6.8h-3.6v17.5h3.6V21h5.5v7.4h3.6V10.9H81.9z M71.8,10.9h-1.2 c-1,0-1.8,0.1-2.4,0.2c-1.8,0.4-3.4,1.3-4.6,2.6c-1.5,1.7-2.3,3.6-2.3,5.9c0,2,0.6,3.7,1.8,5.3c1.2,1.5,2.7,2.6,4.5,3.1 c0.8,0.2,1.8,0.3,3.2,0.3h1V25h-1c-1.1,0-2-0.2-2.7-0.5c-0.7-0.3-1.4-0.8-2-1.5c-0.8-1-1.2-2.1-1.2-3.4c0-0.9,0.2-1.8,0.7-2.6 c0.4-0.7,0.9-1.3,1.6-1.8c0.5-0.4,1-0.6,1.6-0.8c0.5-0.1,1.2-0.2,2-0.2h1.1V10.9z M52.2,10.9v3.4h3.3v14.1h3.6V14.3h3.3v-3.4H52.2z M47.7,28.4h3.6V10.9h-3.6V28.4z M39.2,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.3,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0.1-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H39.2z M40.8,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H40.8z"></path>
-                                </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
+                        <div class="g-cell h-hide-desktop">
+                            <h2 class="l-mobile-header--title t-h2 h-color-brand">{{ sale.name }}</h2>
+                        </div>
                     </div>
-        
-                </div>
-        
-                <div class="g-cell h-ta-right">
-                    <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
-                        <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+            
+                    <div class="h-hide-desktop g-wrapper g--center h-width-100">
+                        <div class="g-cell">
+                            <h3 class="t-h3 h-mb-0"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i>Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
+                        </div>
+                        <div class="t-bold">$ USD</div>
                     </div>
-        
-                    <div class="">
-                       <label for="" class="t-field-label">Change Language</label>
-                       <select name="" id="" class="o-input--select__inline">
-                           <option value="">English</option>
-                           <option value="">Deutsch</option>
-                           <option value="">Fran&ccedil;ais - Canada</option>
-                           <option value="">Fran&ccedil;ais - France</option>
-                           <option value="">Espa&ntilde;ol - M&eacute;xico</option>
-                           <option value="">Espa&ntilde;ol - Espa&ntilde;a</option>
-                           <option value="">简体汉字</option>
-                           <option value="">Italiano</option>
-                           <option value="">Nederlands</option>
-                       </select>
-                   </div>	
-                    
-                    <div class="h-mt-50">
-                        <label for="" class="t-field-label">Bidder No.</label>
-                        <span class="t-h3 t-bold h-mr-200">1042</span>
-                        <button class="o-button__secondary">Sign Out</button>
+            
+                    <div class="g-cell h-ta-right g-mob--full">
+                        <input id="o-mobile-collapse--toggle" class="h-hide-desktop" type="checkbox">
+                        <label for="o-mobile-collapse--toggle" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-settings"></i>Settings and Profile</div></label>
+                        
+                        <div class="o-mobile-collapse--container__wrapped">
+                            <div class="h-mb-50">
+                                <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                                <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+                            </div>
+            
+                             <div class="">
+                                <label for="" class="t-field-label">Change Language</label>
+                                <select name="" id="" class="o-input--select__inline">
+                                    <option value="">English</option>
+                                    <option value="">Deutsch</option>
+                                    <option value="">Fran&ccedil;ais - Canada</option>
+                                    <option value="">Fran&ccedil;ais - France</option>
+                                    <option value="">Espa&ntilde;ol - M&eacute;xico</option>
+                                    <option value="">Espa&ntilde;ol - Espa&ntilde;a</option>
+                                    <option value="">简体汉字</option>
+                                    <option value="">Italiano</option>
+                                    <option value="">Nederlands</option>
+                                </select>
+                            </div>	
+                            
+                            <div class="h-mt-50">
+                                <label for="" class="t-field-label">Bidder No.</label>
+                                <span class="t-h3 t-bold h-mr-200">1042</span>
+                                <button class="o-button__secondary">Sign Out</button>
+                            </div>
+                        </div>
+            
                     </div>
-        
                 </div>
-            </div>
-        
-            <div class="l-subheader g-wrapper">
-                <div class="g-cell">
-                    <h2 class="t-h2">{{ sale.name }}</h2>
-                    <h3 class="t-h3"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i> Timed Auction - Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
-                </div>
-                <div class="g-cell g-cell--bottom">
-                    <div class="h-float-right">
+            
+                <div class="l-subheader g-wrapper h-hide-mobile">
+                    <div class="g-cell g-mob--full">
+                        <h2 class="t-h2 h-color-brand">{{ sale.name }}</h2>
+                        <h3 class="t-h3"><i class="icon-TAL icon-size--xlarge h-color-brand h-mr-50"></i> Timed Auction - Lots <span>{{ sale.lotRange.start }}</span> - <span>{{ sale.lotRange.end }}</span></h3>
+                    </div>
+                    <div class="g-cell--bottom g-mob--full">
                         <h3 class="t-h3">Auction Currency - $ USD</h3>
                     </div>
-                </div>
-            </div>	
-            
-        </header>
+                </div>	
+                
+            </header>
+        </div>
         
         <div class="l-main-container"> 
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
-                <nav class="c-nav-tabs">
-                    <ul class="g-wrapper c-nav-tabs--tab-group">
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
-                            All Listings
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
-                            Watching & Bidding
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
-                            My Choice Groups
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
-                            My Purchases
-                        </li>
-                    </ul>
-                </nav>
-                <div class="c-navigation__tertiary h-mb-200 g-wrapper">
+                <div class="h-hide-mobile">
+                    <nav class="c-nav-tabs">
+                        <ul class="g-wrapper c-nav-tabs--tab-group">
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                                All Listings
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                                Watching & Bidding
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                                My Choice Groups
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                                My Purchases
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="c-navigation__tertiary g-wrapper">
                     <button class="o-button__tertiary" v-on:click="gotoPage('index')"><i class="icon-arrow-left h-mr-50"></i> Back</button>
-                    <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200">Lot 5001</span> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</div>
+                    <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200"><span class="t-bold">Lot 5001</span><span class="h-hide-mobile"> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</span></div>
                 </div>	
             </div>
            
-            <div class="c-lot-details" v-for="(lot, index) in findOneLot(0)">
+            <div class="c-lot-details" v-for="(lot, index) in findOneLot(55)">
                 
                 <div class="g-wrapper">
-                    <div class="g-cell g-cell__two-thirds">
+                    <div class="g-cell g-cell__two-thirds g-mob--full">
                         <div class="g-wrapper">
-                            <div class="g-cell c-lot-details--photo-area">
+                            <div class="g-cell c-lot-details--photo-area g-mob--full">
                                 <div class="c-lot-details--lot-photo">
                                     <img v-bind:src="lot.photos[activeThumbnail].src" alt="">
                                 </div>
-                                <ul class="c-lot-details--lot-thumbnails">
+                                <ul class="c-lot-details--lot-thumbnails g-mob--full">
                                     <li v-for="(photo,index) in lot.photos" class="li c-lot-details--lot-thumbnail" v-on:click="setActiveThumbnail(index)" v-bind:class="{'s-active': index === activeThumbnail}">
                                         <img v-bind:src="photo.src" alt="">
                                     </li>
                                 </ul>
                             </div>
-                            <div class="g-cell c-lot--lot-details">
+                            <div class="g-cell c-lot-details--details g-mob--full">
+                                <div class="h-hide-desktop t-h2 t-bold h-mb-100 h-mt-100">
+                                    {{ lot.description }}
+                                </div>
                                 <p class="o-field-and-value" v-if="lot.equipid"><label for="" class="t-inline-label">Serial #:</label>{{ lot.equipid }}</p>
                                 <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-inline-label">Usage:</label>{{ lot.usage }}</p>
                                 <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-inline-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
@@ -132,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="g-cell">
+                    <div class="c-lot-details--bidding g-cell g-mob--full">
                         
                         <div v-if="lot.status === 'sold'">
                             <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
@@ -167,110 +185,221 @@
                             </div>
                         </div>
                         
-                        <div class="c-lot--bidding">
-                            <div class="" v-if="lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber)"><!-- IF NOT PART OF A CHOICE GROUP -->
-                                <div class="g-wrapper">
-                                    <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="nextIncrement(lot)"></div>
-                                    <div class="g-cell">
-                                        <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
-                                            <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
-                                            <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
-                                        </button>
-                                    </div>
-                                </div>
-                                <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
-                                    <div class="h-ta-center">- OR -</div>
-                                    <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">35</span></button>
-                                </div>
-                                <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
-                                    <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
-                                </div>
+                        <div class="c-lot--bid-buttons">
+                                                    <div class="" v-if="lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber)"><!-- IF NOT PART OF A CHOICE GROUP -->
+                                                        <div class="g-wrapper">
+                                                            <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
+                                                            <div class="g-cell">
+                                                                <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
+                                                                    <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
+                                                                    <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
+                                                            <div class="h-ta-center">- OR -</div>
+                                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
+                                                        </div>
+                                                        <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
+                                                            <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                        <div class="c-lot--messages">
+                                                                            <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                                                You selected and bid on this lot in a choice group.
+                                                                                <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
+                                                                            </div>
+                                                                        
+                                                                            <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
+                                                                                Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
+                                                                                <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
+                                                                            </div>
+                                                                        </div>
+                        <div class="o-data-table h-mt-200">
+                                                                                                    <div class="o-data-table--header">Bid History</div>
+                                                                                                    <ul v-if="lot.bids.length > 0" class="o-data-table--body">
+                                                                                                        <li class="o-data-table--row g-wrapper" v-for="bid in lot.bids">
+                                                                                                            <div class="g-cell">{{ bid.bidder }}</div>
+                                                                                                            <div class="g-cell CCY">{{ bid.bid }}</div>
+                                                                                                            <div class="g-cell g-cell__half">{{ bid.time | calendarTime }}</div>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                    <div class="o-data-table--body h-p-100 t-faint" v-else>
+                                                                                                        No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
+                                                                                                    </div>
+                                                                                                </div> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceBidVisible }">
+        
+            <div class="c-modal--content">
+                <div class="c-modal--header">
+                    <h3 class="t-h3">Confirm your bid</h3>
+                </div>
+                <div class="c-modal--body">
+        
+                    Are you sure you want to bid <span class="t-h4 CCY">35</span> on <span class="t-h4">Lot {{ selectedLot.lotNumber }}</span>?
+        
+                </div>
+                <div class="c-modal--footer">
+        
+                    <button class="o-button__secondary" v-on:click="completeBid">Cancel</button>
+                    <button class="o-button__primary" v-on:click="completeBid">Yes, place bid</button>
+        
+                </div>
+            </div>
+        
+        </div>
+        <div class="c-modal" v-bind:class="{ 's-visible': confirmPlaceMaxBidVisible }">
+                
+                    <div class="c-modal--content">
+                        <div class="c-modal--header">
+                            <h3 class="t-h3">Confirm your bid</h3>
+                        </div>
+                        <div class="c-modal--body">
+                
+                            You are about to enter a maximum bid. Are you sure you want to:
+                            <hr class="o-hr h-mb-100" />
+                            <p class="t-h3">Bid up to <span class="CCY">{{ selectedLot.tempMaxBid }}</span> on lot {{ selectedLot.lotNumber }}?</p>
+                            <hr class="o-hr h-mb-100" /> The system will bid on your behalf up to and including this amount.
+                
+                        </div>
+                        <div class="c-modal--footer">
+                
+                            <button class="o-button__secondary" v-on:click="completeMaxBid">Cancel</button>
+                            <button class="o-button__primary" v-on:click="completeMaxBid">Yes, place bid</button>
+                
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <div class="c-modal" v-bind:class="{ 's-visible': invalidMaxBidVisible }">
+                
+                    <div class="c-modal--content">
+                        <div class="c-modal--header">
+                            <h3 class="t-h3">Your maximum bid is invalid</h3>
+                        </div>
+                        <div class="c-modal--body">
+                
+                            <p>Whoops - that bid isn’t a valid number. </p>
+                            <p>Please enter numbers only. No punctuation or letters please!</p>
+                            <hr class="o-hr h-mb-100" />
+                            <p class="t-h3">For example: 200</p>
+                            <hr class="o-hr h-mb-100" />
+                
+                        </div>
+                        <div class="c-modal--footer">
+                
+                            <button class="o-button__primary" v-on:click="toggleInvalidMaxBidVisible">Got It</button>
+                
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <div class="c-modal" v-bind:class="{ 's-visible': offIncrementMaxBidVisible }">
+                        
+                    <div class="c-modal--content">
+                        <div class="c-modal--header">
+                            <div class="o-message__error h-mb-100">You have entered an invalid maximum bid</div>
+                        </div>
+                        <div class="c-modal--body">
+                
+                            <p>You must bid according to the pre-set bidding increments (see table below).</p>
+                            <p>Choose one of the bids below or click cancel and enter a new bid.</p>
+                            <div class="h-ta-center">
+                                <button class="o-button__primary" v-on:click="confirmMaxBid">Bid <span class="CCY">100</span></button>
+                                <button class="o-button__primary" v-on:click="confirmMaxBid">Bid <span class="CCY">110</span></button>
                             </div>
-                            <div class="o-message__info" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
-                                You selected and bid on this lot in a choice group.
-                                <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
+                            <div class="o-data-table h-mt-200">
+                                <div class="o-data-table--header g-wrapper">
+                                    <div class="g-cell">Price Range</div>
+                                    <div class="g-cell"></div>
+                                    <div class="g-cell">Bid Increment</div>
+                                </div>
+                                <ul class="o-data-table--body">
+                                    <li class="o-data-table--row g-wrapper" v-for="increment in increments">
+                                        <div class="g-cell CCY t-bold">{{ increment.from }}</div>
+                                        <div class="g-cell"> to <span class="CCY t-bold">{{ increment.upto }}</span></div>
+                                        <div class="g-cell CCY h-color-brand t-bold">{{ increment.increment }}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                        <div class="c-modal--footer h-ta-center">
+                            
+                            <button class="o-button__blank t-link" v-on:click="toggleOffIncrementMaxBidVisible">Cancel</button>
+                
+                        </div>
+                    </div>
+                
+                </div>
+        <footer></footer>
+                        
+                        <div>
+                            <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
+                            <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
+                        </div>
+                        
+                        <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
+                        
+                            <div class="c-modal--content">
+                                <div class="c-modal--header">
+                                    <h3 class="t-h3">Manage your notifications for this event</h3>
+                                </div>
+                                <div class="c-modal--body">
+                        
+                                    <p>You can receive email notifications for items you have bid on in this event. These alerts will inform you of the following conditions.</p>
+                                    <ol>
+                                        <li>You have been outbid on an item that you were high bidder on</li>
+                                        <li>You have won an item</li>
+                                        <li>Bidding opens on an item you are interested in</li>
+                                    </ol>
+                                    <div class="o-message__info h-mb-100">We don't send notifications during the last five minutes of bidding</div>
+                                    <hr class="o-hr h-mb-200">
+                                    <label for="" class="t-field-label">Enter your email address</label>
+                                    <input type="text" class="o-input--text h-mb-100" placeholder="eg. name@email.com">
+                        
+                                </div>
+                                <div class="c-modal--footer">
+                        
+                                    <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible">I don't want any notifications</button>
+                                    <button class="o-button__primary" v-on:click="toggleManageAlertsVisible">Activate Notifications</button>
+                        
+                                </div>
                             </div>
                         
-                            <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
-                                Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
-                                <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
-                            </div>
                         </div>
-                        <div class="o-data-table h-mt-200">
-                                                    <div class="o-data-table--header">Bid History</div>
-                                                    <ul class="o-data-table--body">
-                                                        <li class="o-data-table--row g-wrapper" v-for="bid in lot.bids">
-                                                            <div class="g-cell">{{ bid.bidder }}</div>
-                                                            <div class="g-cell CCY">{{ bid.bid }}</div>
-                                                            <div class="g-cell g-cell__half">{{ bid.time | calendarTime }}</div>
-                                                        </li>
-                                                    </ul>
-                                                </div> 
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <footer></footer>
-        
-        <div>
-            <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
-            <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
-        </div>
-        
-        <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
-        
-            <div class="c-modal--content">
-                <div class="c-modal--header">
-                    <h3 class="t-h3">Manage your notifications for this event</h3>
-                </div>
-                <div class="c-modal--body">
-        
-                    <p>You can receive email notifications for items you have bid on in this event. These alerts will inform you of the following conditions.</p>
-                    <ol>
-                        <li>You have been outbid on an item that you were high bidder on</li>
-                        <li>You have won an item</li>
-                        <li>Bidding opens on an item you are interested in</li>
-                    </ol>
-                    <div class="o-message__info h-mb-100">We don't send notifications during the last five minutes of bidding</div>
-                    <hr class="o-hr h-mb-200">
-                    <label for="" class="t-field-label">Enter your email address</label>
-                    <input type="text" class="o-input--text h-mb-100" placeholder="eg. name@email.com">
-        
-                </div>
-                <div class="c-modal--footer">
-        
-                    <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible">I don't want any notifications</button>
-                    <button class="o-button__primary" v-on:click="toggleManageAlertsVisible">Activate Notifications</button>
-        
-                </div>
-            </div>
-        
-        </div>
-        
-        
-        <div class="c-modal" v-bind:class="{ 's-visible': pausedMessageVisible }">
-           
-            <div class="c-modal--content">
-                <div class="c-modal--header">
-                    <div class="o-message__error h-mb-200">
-                        <span class="t-h3 t-bold">The Timed Auction has been paused</span>
-                    </div>
-                </div>
-                <div class="c-modal--body">
-        
-                        Due to technical difficulties the Timed Auction has been temporarily paused. All unsold items will have their closing times extended. No lots will be sold during this pause. Please check back regularly as the Timed Auction will resume once the issue has been resolved.
-        
-                </div>
-                <div class="c-modal--footer">
-        
-                    <button class="o-button__primary" v-on:click="togglePausedMessageVisible">Got It</button>
-        
-                </div>
-            </div>
-        
-        </div>
+                        
+                        
+                        <div class="c-modal" v-bind:class="{ 's-visible': pausedMessageVisible }">
+                           
+                            <div class="c-modal--content">
+                                <div class="c-modal--header">
+                                    <div class="o-message__error h-mb-200">
+                                        <span class="t-h3 t-bold">The Timed Auction has been paused</span>
+                                    </div>
+                                </div>
+                                <div class="c-modal--body">
+                        
+                                        Due to technical difficulties the Timed Auction has been temporarily paused. All unsold items will have their closing times extended. No lots will be sold during this pause. Please check back regularly as the Timed Auction will resume once the issue has been resolved.
+                        
+                                </div>
+                                <div class="c-modal--footer">
+                        
+                                    <button class="o-button__primary" v-on:click="togglePausedMessageVisible">Got It</button>
+                        
+                                </div>
+                            </div>
+                        
+                        </div>
 
     </div>
     <script src="https://unpkg.com/vue"></script>

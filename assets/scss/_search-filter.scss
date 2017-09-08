@@ -8,6 +8,28 @@
 
 .c-search-filter--filter{
     background-color: palette(grey,1);
-    padding: spacing(xx-small) spacing(large);
     position: relative;
+    padding: spacing(xx-small) spacing(medium);
+
+    @include breakpoint(medium){
+        padding: spacing(xx-small) spacing(large);
+    }
 }
+
+    // #o-search-filter--visibility-toggle{
+    //     appearance: none;
+
+    //     & + label{
+    //         display: block;
+    //         margin: 0 spacing(medium) spacing(x-small);
+    //     }
+
+    //     &:checked + label div{
+    //         background-color: palette(blue);
+    //         color: white;
+    //     }
+
+    //     &:checked ~ .c-search-filter--search{
+    //         display: block;
+    //     }
+    // }

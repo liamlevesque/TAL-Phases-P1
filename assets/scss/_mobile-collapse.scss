@@ -1,0 +1,32 @@
+[id^="o-mobile-collapse--toggle"]{
+    appearance: none;
+
+    & + label{
+        display: block;
+        text-align: center;
+        margin: 0 spacing(medium) spacing(x-small);
+    }
+
+    &:checked + label div{
+        background-color: palette(blue);
+        color: white;
+    }
+
+    &:checked ~ [class^="o-mobile-collapse--container"]{
+        display: block;
+    }
+}
+
+    .o-mobile-collapse--container, [class^="o-mobile-collapse--container"]{
+        @include breakpoint(medmax){
+            display: none;
+        }
+    }
+    
+    .o-mobile-collapse--container__wrapped{
+        @include breakpoint(medmax){
+            text-align: left;
+            border: 1px solid palette(grey,2);
+            padding: spacing(small);
+        }
+    }

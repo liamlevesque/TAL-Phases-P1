@@ -1,5 +1,7 @@
 <div class="c-search-filter">
-    <div class="c-search-filter--search g-wrapper">
+    <input id="o-mobile-collapse--toggle__search" class="h-hide-desktop" type="checkbox">
+    <label for="o-mobile-collapse--toggle__search" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-search h-mr-100"></i>Search lots</div></label>
+    <div class="o-mobile-collapse--container c-search-filter--search g-wrapper">
         <div class="g-cell g-wrapper">
             <div class="h-mr-100 h-ta-right">
                 <div>
@@ -28,7 +30,7 @@
         </div>
     </div>
     <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
-        <div class="g-cell">
+        <div class="g-cell h-hide-mobile">
             <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
             <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
         </div>
@@ -39,7 +41,7 @@
                 <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>All Lots</div></label>
             </div>
         </div>
-        <div class="g-cell">
+        <div class="g-cell h-hide-mobile">
             <label for="" class="t-field-label">Sort by:</label>
             <select class="o-input--select__inline">
                 <option value="">Closing Time</option>
