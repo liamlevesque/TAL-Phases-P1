@@ -63,6 +63,9 @@
 
         .c-lot--highBid{
             color: palette(brand);
+            @include breakpoint(medmax){
+                margin-top: spacing(x-small);
+            }
 
             &.s-high-bidder{
                 color: palette(green);

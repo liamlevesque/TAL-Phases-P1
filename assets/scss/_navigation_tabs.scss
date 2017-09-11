@@ -57,13 +57,14 @@
     .c-nav-tabs__mobile--more-menu{
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         width: 100%;
+        max-width: 480px;
         background-color: white;
         padding: spacing(medium) spacing(small) spacing(large);
         z-index: -1;
         transition: $transition;
-        border-top: 1px solid palette(grey,2);
+        border: 1px solid palette(grey,2);
         
         &.s-shown{
             transform: translateY(-100%);

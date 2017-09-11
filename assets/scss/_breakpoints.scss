@@ -17,10 +17,10 @@
     @media (min-width: 48em) and (max-width: 64em) { @content; }
   }
   @else if $point == medium {
-    @media (min-width: 64em) { @content; }
+    @media (min-width: 63em) { @content; }
   }
   @else if $point == medmax {
-    @media (max-width: 64em) { @content; }
+    @media (max-width: 63em) { @content; }
   }
   @else if $point == med-lg-max {
     @media (max-width: 64em) { @content; }
