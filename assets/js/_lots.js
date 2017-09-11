@@ -791,7 +791,7 @@ const lotlist = [
 			"notes":'',
 			"group": [],
 			"video":false,
-			"status" : "notinyard",
+			"status" : null,
 			"description" : "Caterpillar Q/C 48 In. Forks",
 			"photo" : "assets/img/asset12-1.jpg",
 			"photos": [
@@ -1493,7 +1493,7 @@ const lotlist = [
 			"notes":'',
 			"group": [],
 			"video":false,
-			"status" : null,
+			"status" : "notinyard",
 			"description" : "2014 Allmand Bros. PAL1250 Light Tower",
 			"photo" : "assets/img/asset3-1.jpg",
 			"photos": [

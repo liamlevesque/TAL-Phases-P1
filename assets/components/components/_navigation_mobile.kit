@@ -1,0 +1,47 @@
+<nav class="c-nav-tabs__mobile h-hide-desktop">
+    <div class="c-nav-tabs__mobile--more-menu" v-bind:class="{'s-shown':mobileMoreMenuVisible}">
+        <div class="h-mb-50 g-wrapper t-lh-300">
+            <div class="g-cell">
+                <a class="t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</a>
+            </div>
+            <div>
+                <a class="t-link" v-on:click="gotoPage('help')">Help</a>
+            </div>
+        </div>
+
+        <!-- @include '/assets/components/components/header_language-select' -->	
+        
+        <div class="h-mt-50 g-wrapper">
+            <div class="g-cell">
+                <label for="" class="t-field-label">Bidder No.</label>
+                <span class="t-h3 t-bold h-mr-200">1042</span>
+            </div>
+            <div>
+                <button class="o-button__secondary">Sign Out</button>
+            </div>
+        </div>
+    </div>
+    <ul class="g-wrapper c-nav-tabs__mobile--tab-group">
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+            <i class="icon-sold"></i>
+            <span class="t-mobile-label">All Lots</span>
+        </li>
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+            <i class="icon-eye"></i>
+            <span class="t-mobile-label">Watching & Bidding</span>
+        </li>
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+            <i class="icon-eye"></i>
+            <span class="t-mobile-label">Choice Groups</span>
+        </li>
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+            <i class="icon-cart"></i>
+            <span class="t-mobile-label">Purchases</span>
+        </li>
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="toggleMobileMoreMenuVisible" v-bind:class="{'s-active' : mobileMoreMenuVisible}">
+            <i class="icon-more_horiz"></i>
+            <span class="t-mobile-label">More</span>
+        </li>
+    </ul>
+    
+</nav>

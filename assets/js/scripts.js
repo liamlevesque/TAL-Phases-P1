@@ -16,6 +16,7 @@ const tal = {
     categories: categories,
     lots: lotlist,
     watchedLots: ['5001','5022', '5028','5031','5042','5045'],
+    mobileMoreMenuVisible: false,
 
     selectedLot: 0,
     confirmPlaceBidVisible: false,
@@ -219,6 +220,9 @@ var app = new Vue({
       },
       togglePausedState: function(){
         this.sale.paused = !this.sale.paused;
+      },
+      toggleMobileMoreMenuVisible: function(){
+        this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
       },
 
 

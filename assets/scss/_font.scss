@@ -25,6 +25,7 @@ $fontsizes: (
     300: 1.5rem,
     200: 1.125rem,
     100: 1rem,
+    50: 0.9rem,
 );
 
 @function fontsize($fontsize) {
@@ -136,6 +137,24 @@ a{
     line-height: $input-height;
   }
 
+  .t-mobile-label{
+    display: block;
+    font-size: fontsize(50);
+    line-height: 0.9rem;
+    margin-bottom: spacing(x-small);
+  }
+
+  .t-field-label__mobile-to-desktop{
+    @include breakpoint(medmax){
+      display: block;
+      font-size: fontsize(50);
+      line-height: 0.9rem;
+      margin-bottom: spacing(x-small);
+    }
+    @include breakpoint(medium){
+      line-height: $input-height;
+    }
+  }
 
 @mixin ellipsize{
     overflow: hidden;

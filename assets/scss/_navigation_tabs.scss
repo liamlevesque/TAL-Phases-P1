@@ -24,6 +24,51 @@
         }
     }
 
+.c-nav-tabs__mobile{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+    .c-nav-tabs__mobile--tab-group{
+        background-color: palette(grey,1);
+    }
+
+    .c-nav-tabs__mobile--tab{
+        text-align: center;
+        padding: spacing(xx-small) spacing(x-small) 0;
+        color: palette(grey,4);
+
+        &.s-active{
+            color: palette(brand);
+        }
+
+        i{
+            display: block;
+            font-size: 18px;
+            margin-bottom: spacing(x-small);
+        }
+    }
+
+    .c-nav-tabs__mobile--more-menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: spacing(medium) spacing(small) spacing(large);
+        z-index: -1;
+        transition: $transition;
+        border-top: 1px solid palette(grey,2);
+        
+        &.s-shown{
+            transform: translateY(-100%);
+        }
+    }
+
+
 
 .c-navigation__tertiary{
     background-color: palette(grey);

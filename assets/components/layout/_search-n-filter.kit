@@ -3,7 +3,7 @@
     <label for="o-mobile-collapse--toggle__search" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-search h-mr-100"></i>Search lots</div></label>
     <div class="o-mobile-collapse--container c-search-filter--search g-wrapper">
         <div class="g-cell g-wrapper">
-            <div class="h-mr-100 h-ta-right">
+            <div class="h-mr-100 h-ta-right h-hide-mobile">
                 <div>
                     <label for="" class="t-field-label">Keyword Search:</label>
                 </div>
@@ -13,20 +13,26 @@
             </div>
             <div>
                 <div>
-                    <input type="text" class="o-input--text__inline" placeholder="ie. gen set">
-                    <button class="o-button__primary" v-on:click="gotoPage('search-results')">Search</button>
+                    <label for="" class="t-mobile-label h-hide-desktop">Keyword Search:</label>
+                    <div class="g-wrapper">
+                        <input type="text" class="o-input--text__inline g-cell" placeholder="ie. gen set">
+                        <button class="o-button__primary" v-on:click="gotoPage('search-results')">Search</button>
+                    </div>
                 </div>
                 <div class="h-mt-100">
-                    <select name="" id="" class="o-input--select__inline">
+                    <label for="" class="t-mobile-label h-hide-desktop">Filter by Category:</label>
+                    <select name="" id="" class="o-input--select">
                         <option value="" v-for="category in categories">{{category.name}}</option>
                     </select>
                 </div>
             </div>
         </div>
         <div class="">
-            <label for="" class="t-field-label">Lot Range:</label>
+            <div class="h-mt-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+            <label for="" class="t-field-label__mobile-to-desktop">Lot Range:</label>
             <input type="text" class="o-input--text__small" placeholder="from"> - <input type="text" class="o-input--text__small" placeholder="to">
             <button class="o-button__primary" v-on:click="gotoPage('search-results')">Go</button>
+            <div class="h-mb-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
         </div>
     </div>
     <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">

@@ -29,7 +29,7 @@
                 </div>	
             </div>
            
-            <div class="c-lot-details" v-for="(lot, index) in findOneLot(55)">
+            <div class="c-lot-details" v-for="(lot, index) in findOneLot(51)">
                 
                 <div class="g-wrapper">
                     <div class="g-cell g-cell__two-thirds g-mob--full">
@@ -46,6 +46,7 @@
                             </div>
                             <div class="g-cell c-lot-details--details g-mob--full">
                                 <div class="h-hide-desktop t-h2 t-bold h-mb-100 h-mt-100">
+                                        {{ lot.lotNumber }}
                                     {{ lot.description }}
                                 </div>
                                 <!-- @include '/assets/components/components/lot_text-fields' -->

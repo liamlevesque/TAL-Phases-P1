@@ -11,10 +11,12 @@
         <div class="g-cell g-mob--full g-mob-order--first">
             <a class="t-link o-navigation-link"><<</a>|
             <a class="t-link o-navigation-link">Previous</a>|
-            <a class="t-link o-navigation-link s-active">1</a>|
-            <a class="t-link o-navigation-link">2</a>|
-            <a class="t-link o-navigation-link">3</a>|
-            <a class="t-link o-navigation-link">4</a>|
+            <span class="h-hide-mobile">
+                <a class="t-link o-navigation-link s-active">1</a>|
+                <a class="t-link o-navigation-link">2</a>|
+                <a class="t-link o-navigation-link">3</a>|
+                <a class="t-link o-navigation-link">4</a>|
+            </span>
             <a class="t-link o-navigation-link">Next</a>|
             <a class="t-link o-navigation-link">>></a>
         </div>
@@ -28,6 +30,9 @@
     <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
     <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
 </div>
+
+<!-- @include '/assets/components/components/navigation_mobile' -->
+
 <!-- @include '/assets/components/modals/manage-alerts' -->
 <!-- @include '/assets/components/modals/auction-paused' -->
 <!-- @include '/assets/components/components/auction-paused' --> 

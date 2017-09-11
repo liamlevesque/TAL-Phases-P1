@@ -145,6 +145,12 @@
 
         .c-lot--bid-buttons{
             @include breakpoint(medmax){
+                display: none; 
+                
+                .c-lot-details &{
+                    display: block;
+                }
+
                 padding: spacing(xx-small) spacing(medium);
                 position: fixed;
                 bottom: 0;

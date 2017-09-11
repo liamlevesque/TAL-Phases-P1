@@ -1,14 +1,13 @@
 <div class="c-choice-group-view" v-for="(group,index) in choiceGroups"> 
     <div class="c-choice-group--header">
         <div class="g-wrapper">
-            <div class="">
+            <div class="g-cell">
                 <h3 class="t-h3">Group {{index + 1}} - you are outbid on none</h3>
             </div>
-            <div class="g-cell g-mob--full h-ta-right">
-                <label for="" class="t-field-label">Maximum Bid:</label>
-                <span class="CCY t-bold h-mr-100">{{ group.maxbid }}</span>
+            <div class="g-mob--full">
+                <label for="" class="t-field-label__mobile-to-desktop">Maximum Bid:<span class="CCY t-bold h-mr-100">{{ group.maxbid }}</span></label>
                 <input type="text" class="o-input--text__inline" placeholder="enter maximum bid">
-                <button class="o-button__primary">Change Maximum Bid</button>
+                <button class="o-button__primary">Change <span class="h-hide-mobile">Maximum</span> Bid</button>
             </div>
         </div>
         <hr class="o-hr h-mb-200"/>

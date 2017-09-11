@@ -41,18 +41,18 @@
                     <div class="t-bold">$ USD</div>
                 </div>
         
-                <div class="g-cell h-ta-right g-mob--full">
-                    <input id="o-mobile-collapse--toggle" class="h-hide-desktop" type="checkbox">
-                    <label for="o-mobile-collapse--toggle" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-settings"></i>Settings and Profile</div></label>
+                <div class="g-cell h-ta-right h-hide-mobile">
                     
-                    <div class="o-mobile-collapse--container__wrapped">
-                        <div class="h-mb-50">
-                            <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
-                            <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
-                        </div>
+                    <div class="h-mb-50">
+                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                        <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
+                    </div>
         
-                         <div class="">
-                            <label for="" class="t-field-label">Change Language</label>
+                     <div class="g-wrapper">
+                        <div class="g-cell">
+                            <label for="" class="t-field-label h-mr-100">Change Language</label>
+                        </div>
+                        <div>
                             <select name="" id="" class="o-input--select__inline">
                                 <option value="">English</option>
                                 <option value="">Deutsch</option>
@@ -64,13 +64,13 @@
                                 <option value="">Italiano</option>
                                 <option value="">Nederlands</option>
                             </select>
-                        </div>	
-                        
-                        <div class="h-mt-50">
-                            <label for="" class="t-field-label">Bidder No.</label>
-                            <span class="t-h3 t-bold h-mr-200">1042</span>
-                            <button class="o-button__secondary">Sign Out</button>
                         </div>
+                    </div>	
+                    
+                    <div class="h-mt-50">
+                        <label for="" class="t-field-label">Bidder No.</label>
+                        <span class="t-h3 t-bold h-mr-200">1042</span>
+                        <button class="o-button__secondary">Sign Out</button>
                     </div>
         
                 </div>
@@ -91,7 +91,7 @@
         <div class="l-main-container"> 
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
-                <nav class="c-nav-tabs">
+                <nav class="c-nav-tabs h-hide-mobile">
                     <ul class="g-wrapper c-nav-tabs--tab-group">
                         <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
                             All Listings
@@ -112,7 +112,7 @@
                                     <label for="o-mobile-collapse--toggle__search" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-search h-mr-100"></i>Search lots</div></label>
                                     <div class="o-mobile-collapse--container c-search-filter--search g-wrapper">
                                         <div class="g-cell g-wrapper">
-                                            <div class="h-mr-100 h-ta-right">
+                                            <div class="h-mr-100 h-ta-right h-hide-mobile">
                                                 <div>
                                                     <label for="" class="t-field-label">Keyword Search:</label>
                                                 </div>
@@ -122,20 +122,26 @@
                                             </div>
                                             <div>
                                                 <div>
-                                                    <input type="text" class="o-input--text__inline" placeholder="ie. gen set">
-                                                    <button class="o-button__primary" v-on:click="gotoPage('search-results')">Search</button>
+                                                    <label for="" class="t-mobile-label h-hide-desktop">Keyword Search:</label>
+                                                    <div class="g-wrapper">
+                                                        <input type="text" class="o-input--text__inline g-cell" placeholder="ie. gen set">
+                                                        <button class="o-button__primary" v-on:click="gotoPage('search-results')">Search</button>
+                                                    </div>
                                                 </div>
                                                 <div class="h-mt-100">
-                                                    <select name="" id="" class="o-input--select__inline">
+                                                    <label for="" class="t-mobile-label h-hide-desktop">Filter by Category:</label>
+                                                    <select name="" id="" class="o-input--select">
                                                         <option value="" v-for="category in categories">{{category.name}}</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="">
-                                            <label for="" class="t-field-label">Lot Range:</label>
+                                            <div class="h-mt-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+                                            <label for="" class="t-field-label__mobile-to-desktop">Lot Range:</label>
                                             <input type="text" class="o-input--text__small" placeholder="from"> - <input type="text" class="o-input--text__small" placeholder="to">
                                             <button class="o-button__primary" v-on:click="gotoPage('search-results')">Go</button>
+                                            <div class="h-mb-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
                                         </div>
                                     </div>
                                     <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
@@ -266,17 +272,36 @@
                                 </div>
                             </div>
                             
+                            
+                                    <div class="c-lot--bid-buttons" v-if="lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
+                                        <div class="g-wrapper">
+                                            <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
+                                            <div class="g-cell">
+                                                <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
+                                                    <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
+                                                    <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
+                                            <div class="h-ta-center">- OR -</div>
+                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
+                                        </div>
+                                        <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
+                                            <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
+                                        </div>
+                                    </div>  
                             <div class="c-lot--messages">
-                                        <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
-                                            You selected and bid on this lot in a choice group.
-                                            <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
-                                        </div>
-                                    
-                                        <div class="o-message__info" v-if="lot.status === 'not in yard'"><!-- IF NOT YET IN YARD -->
-                                            Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
-                                            <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
-                                        </div>
-                                    </div>
+                                                <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                    You selected and bid on this lot in a choice group.
+                                                    <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
+                                                </div>
+                                            
+                                                <div class="o-message__info" v-if="lot.status === 'notinyard'"><!-- IF NOT YET IN YARD -->
+                                                    Bidding will open when this item arrives in the yard. Set an alert to be notified when bidding opens.
+                                                    <br><a href="" class="t-link__message">Alert me when bidding starts for this item</a>
+                                                </div>
+                                            </div>
                         </div>
                     </div>
                 </div>
@@ -304,10 +329,12 @@
                 <div class="g-cell g-mob--full g-mob-order--first">
                     <a class="t-link o-navigation-link"><<</a>|
                     <a class="t-link o-navigation-link">Previous</a>|
-                    <a class="t-link o-navigation-link s-active">1</a>|
-                    <a class="t-link o-navigation-link">2</a>|
-                    <a class="t-link o-navigation-link">3</a>|
-                    <a class="t-link o-navigation-link">4</a>|
+                    <span class="h-hide-mobile">
+                        <a class="t-link o-navigation-link s-active">1</a>|
+                        <a class="t-link o-navigation-link">2</a>|
+                        <a class="t-link o-navigation-link">3</a>|
+                        <a class="t-link o-navigation-link">4</a>|
+                    </span>
                     <a class="t-link o-navigation-link">Next</a>|
                     <a class="t-link o-navigation-link">>></a>
                 </div>
@@ -321,6 +348,72 @@
             <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
             <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
         </div>
+        
+        <nav class="c-nav-tabs__mobile h-hide-desktop">
+            <div class="c-nav-tabs__mobile--more-menu" v-bind:class="{'s-shown':mobileMoreMenuVisible}">
+                <div class="h-mb-50 g-wrapper t-lh-300">
+                    <div class="g-cell">
+                        <a class="t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</a>
+                    </div>
+                    <div>
+                        <a class="t-link" v-on:click="gotoPage('help')">Help</a>
+                    </div>
+                </div>
+        
+                 <div class="g-wrapper">
+                    <div class="g-cell">
+                        <label for="" class="t-field-label h-mr-100">Change Language</label>
+                    </div>
+                    <div>
+                        <select name="" id="" class="o-input--select__inline">
+                            <option value="">English</option>
+                            <option value="">Deutsch</option>
+                            <option value="">Fran&ccedil;ais - Canada</option>
+                            <option value="">Fran&ccedil;ais - France</option>
+                            <option value="">Espa&ntilde;ol - M&eacute;xico</option>
+                            <option value="">Espa&ntilde;ol - Espa&ntilde;a</option>
+                            <option value="">简体汉字</option>
+                            <option value="">Italiano</option>
+                            <option value="">Nederlands</option>
+                        </select>
+                    </div>
+                </div>	
+                
+                <div class="h-mt-50 g-wrapper">
+                    <div class="g-cell">
+                        <label for="" class="t-field-label">Bidder No.</label>
+                        <span class="t-h3 t-bold h-mr-200">1042</span>
+                    </div>
+                    <div>
+                        <button class="o-button__secondary">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="g-wrapper c-nav-tabs__mobile--tab-group">
+                <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                    <i class="icon-sold"></i>
+                    <span class="t-mobile-label">All Lots</span>
+                </li>
+                <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                    <i class="icon-eye"></i>
+                    <span class="t-mobile-label">Watching & Bidding</span>
+                </li>
+                <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                    <i class="icon-eye"></i>
+                    <span class="t-mobile-label">Choice Groups</span>
+                </li>
+                <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                    <i class="icon-cart"></i>
+                    <span class="t-mobile-label">Purchases</span>
+                </li>
+                <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="toggleMobileMoreMenuVisible" v-bind:class="{'s-active' : mobileMoreMenuVisible}">
+                    <i class="icon-more_horiz"></i>
+                    <span class="t-mobile-label">More</span>
+                </li>
+            </ul>
+            
+        </nav>
+        
         <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">
         
             <div class="c-modal--content">

@@ -715,7 +715,7 @@ var lotlist = [{
 	"notes": '',
 	"group": [],
 	"video": false,
-	"status": "notinyard",
+	"status": null,
 	"description": "Caterpillar Q/C 48 In. Forks",
 	"photo": "assets/img/asset12-1.jpg",
 	"photos": [{ "src": "assets/img/asset12-1.jpg", "disabled": false }, { "src": "assets/img/asset12-2.jpg", "disabled": false }, { "src": "assets/img/asset12-3.jpg", "disabled": false }, { "src": "assets/img/asset12-4.jpg", "disabled": false }],
@@ -1290,7 +1290,7 @@ var lotlist = [{
 	"notes": '',
 	"group": [],
 	"video": false,
-	"status": null,
+	"status": "notinyard",
 	"description": "2014 Allmand Bros. PAL1250 Light Tower",
 	"photo": "assets/img/asset3-1.jpg",
 	"photos": [{ "src": "assets/img/asset3-1.jpg", "disabled": false }, { "src": "assets/img/asset3-2.jpg", "disabled": false }, { "src": "assets/img/asset3-3.jpg", "disabled": false }, { "src": "assets/img/asset3-4.jpg", "disabled": false }],
@@ -3753,6 +3753,7 @@ var tal = {
   categories: categories,
   lots: lotlist,
   watchedLots: ['5001', '5022', '5028', '5031', '5042', '5045'],
+  mobileMoreMenuVisible: false,
 
   selectedLot: 0,
   confirmPlaceBidVisible: false,
@@ -3955,6 +3956,9 @@ var app = new Vue({
     },
     togglePausedState: function togglePausedState() {
       this.sale.paused = !this.sale.paused;
+    },
+    toggleMobileMoreMenuVisible: function toggleMobileMoreMenuVisible() {
+      this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
     },
 
     emptyPurchases: function emptyPurchases() {
