@@ -1175,7 +1175,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 [id^="o-mobile-collapse--toggle"] {
   -webkit-appearance: none;
      -moz-appearance: none;
-          appearance: none; }
+          appearance: none;
+  display: none; }
   [id^="o-mobile-collapse--toggle"] + label {
     display: block;
     text-align: center;
@@ -1622,7 +1623,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     margin-left: 20px; }
 
 .c-search-filter {
-  background-color: white; }
+  background-color: #F0F0F0;
+  padding-top: 10px; }
+  @media (min-width: 64em) {
+    .c-search-filter {
+      padding-top: 0;
+      background-color: white; } }
 
 .c-search-filter--search {
   padding: 5px 30px; }
@@ -1725,10 +1731,23 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .o-faq-list__secondary li:not(:last-child) {
     margin-bottom: 20px; }
 
+@media (max-width: 64em) {
+  .o-lot-listings {
+    background-color: #F0F0F0;
+    padding: 10px; } }
+
 .c-lot-listing {
   padding: 20px 0; }
-  .c-lot-listing:not(:last-child) {
-    border-bottom: 1px dotted #CCCCCC; }
+  @media (max-width: 64em) {
+    .c-lot-listing {
+      margin-bottom: 10px;
+      background-color: white;
+      -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+              box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+      padding: 15px 0; } }
+  @media (min-width: 64em) {
+    .c-lot-listing:not(:last-child) {
+      border-bottom: 1px dotted #CCCCCC; } }
 
 @media (max-width: 64em) {
   .c-lot--details-wrapper {
@@ -1865,15 +1884,21 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .c-choice-group-view {
   border: 1px solid #CCCCCC;
+  background-color: #F0F0F0;
   margin-bottom: 20px; }
+  @media (max-width: 64em) {
+    .c-choice-group-view {
+      margin-top: 15px; } }
 
 .c-choice-group--header {
   background-color: #F0F0F0;
   padding: 20px; }
 
-@media (min-width: 64em) {
-  .c-choice-group--body {
-    padding: 0 20px; } }
+.c-choice-group--body {
+  padding: 0 10px; }
+  @media (min-width: 64em) {
+    .c-choice-group--body {
+      padding: 0 20px; } }
 
 .l-header {
   padding: 10px; }

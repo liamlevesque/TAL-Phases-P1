@@ -21,8 +21,10 @@
                 <!-- @include '/assets/components/components/navigation_tabs' -->	
                 <!-- @include '/assets/components/layout/search-n-filter' -->	
             </div>
-            <div v-for="(lot, index) in lots" class="c-lot-listing"> 
-                <!-- @include '/assets/components/components/lot_item' -->
+            <div class="o-lot-listings">
+                <div v-for="(lot, index) in lots" class="c-lot-listing"> 
+                    <!-- @include '/assets/components/components/lot_item' -->
+                </div>
             </div>
             
         </div> 

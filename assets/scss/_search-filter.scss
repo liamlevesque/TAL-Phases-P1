@@ -1,5 +1,11 @@
 .c-search-filter{
-    background-color: white;
+    background-color: palette(grey,1);
+    padding-top: spacing(x-small);
+
+    @include breakpoint(medium){
+        padding-top: 0;
+        background-color: white;
+    }
 }
 
 .c-search-filter--search{

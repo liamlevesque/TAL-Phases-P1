@@ -1,8 +1,24 @@
+.o-lot-listings{
+    @include breakpoint(medmax){
+        background-color: palette(grey,1);
+        padding: spacing(x-small);
+    }
+}
+
 .c-lot-listing{
     padding: spacing(medium) 0;
 
+    @include breakpoint(medmax){
+        margin-bottom: spacing(x-small);
+        background-color: white;
+        box-shadow: $ritchie-shadow;
+        padding: spacing(small) 0;
+    }
+
     &:not(:last-child){
-        border-bottom: $ritchie-border;
+        @include breakpoint(medium){
+            border-bottom: $ritchie-border;
+        }
     }
 }
 

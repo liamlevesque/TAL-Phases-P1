@@ -1,5 +1,6 @@
 [id^="o-mobile-collapse--toggle"]{
     appearance: none;
+    display: none;
 
     & + label{
         display: block;

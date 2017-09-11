@@ -1,5 +1,10 @@
 .c-choice-group-view{
+    @include breakpoint(medmax){
+        margin-top: spacing(small);
+    }
+    
     border: 1px solid palette(grey,2);
+    background-color: palette(grey,1);
     margin-bottom: spacing(medium);
 }
 
@@ -9,6 +14,8 @@
     }
 
     .c-choice-group--body{
+        padding: 0 spacing(x-small);
+
         @include breakpoint(medium){
             padding: 0 spacing(medium);
         }

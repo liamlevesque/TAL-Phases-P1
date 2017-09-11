@@ -129,7 +129,7 @@
                 </div>
             </div>
             
-            <div v-if="watchedLots.length > 0">
+            <div class="o-lot-listings" v-if="watchedLots.length > 0">
                 <div v-for="lot in lotsImWatching" class="c-lot-listing"> 
                     <div class="g-wrapper">
                         <div class="h-hide-mobile" v-if="creatingChoiceGroup">
@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                     <div class="g-cell">
-                                        <label for="" class="t-inline-label">Bidding Closes:</label>
+                                        <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
                                         <span class="t-h4">{{ lot.closes | countdownTime }}</span>
                                     </div>
                                     <div>({{ lot.closes | calendarTime }})</div>
