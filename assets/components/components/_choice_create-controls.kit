@@ -1,5 +1,5 @@
 <div class="c-navigation__tertiary h-mb-0" v-if="creatingChoiceGroup">
-    <div class="g-wrapper__gutters g--center">
+    <div class="g-wrapper__gutters">
         <div class="g-cell__no-stretch">
             <label class="o-input--checkbox">
                 <input type="checkbox">
@@ -9,14 +9,15 @@
             
         </div>
         <div class="g-cell">
-            <label for="" class="t-field-label">Lots Selected:</label>
+            <label for="" class="t-field-label__mobile-to-desktop">Lots Selected:</label>
             <span class="t-h4 h-color-brand">
                 <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
             </span>
         </div>
-        <div class="g-cell__no-stretch">
+        <div class="g-cell__no-stretch g-mob--full h-ta-right">
+            <div class="h-hide-desktop h-mt-100"><!--Add some padding above for mobile view--></div>
             <button class="o-button__secondary h-mr-50" v-on:click="toggleCreateChoiceGroup">Cancel</button>
-            <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0">Continue Creating Choice Group</button>
+            <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0"><span class="h-hide-mobile">Continue Creating Choice Group</span><span class="h-hide-desktop">Create Group</span></span></button>
         </div>
     </div>
 </div>

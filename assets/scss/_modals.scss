@@ -58,6 +58,12 @@
 			}
 		}
 
+		.c-modal--step{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
 		.c-modal--header{
 			padding: spacing(large);
 			padding-bottom: 0;
@@ -71,12 +77,13 @@
 		.c-modal--footer{
 			height: auto;
 			margin-top: auto;
-			padding: spacing(large);
+			padding: spacing(small);
 			position: relative;
 			text-align: center;
 
 			@include breakpoint(medium){
 				text-align: right;
+				padding: spacing(large);
 			}
 
 			button:not(:first-child){

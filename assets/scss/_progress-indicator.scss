@@ -54,36 +54,71 @@
     $progress-bar-background-width: 20px;
     $progress-bar-foreground-width: 12px;
 
+
+    $progress-step-size_mobile: 32px;
+    $progress-bar-background-width_mobile: 12px;
+    $progress-bar-foreground-width_mobile: 6px;
+
         .o-progress--bar{
             background-color: palette(grey,2);
             position: absolute;
-            top: $progress-step-size/2 - $progress-bar-background-width/2;
+            top: $progress-step-size_mobile/2 - $progress-bar-background-width_mobile/2;
             left: 0;
             right: 0;
-            height: $progress-bar-background-width;
-            z-index: -1;
+            height: $progress-bar-background-width_mobile;
+            z-index: 0;
+
+            @include breakpoint(medium){
+                top: $progress-step-size/2 - $progress-bar-background-width/2;
+                height: $progress-bar-background-width;
+            }
         }
             .o-progress--indicator{
                 position: absolute;
-                top: ($progress-bar-background-width - $progress-bar-foreground-width)/2;
-                height: $progress-bar-foreground-width; 
+                top: ($progress-bar-background-width_mobile - $progress-bar-foreground-width_mobile)/2;
+                height: $progress-bar-foreground-width_mobile; 
                 left: 0;
                 right: 0;
                 background-color: palette(grey,2);
+
+                @include breakpoint(medium){
+                    top: ($progress-bar-background-width - $progress-bar-foreground-width)/2;
+                    height: $progress-bar-foreground-width; 
+                }
             }
 
         .o-progress--number{
-            width: $progress-step-size;
-            height: $progress-step-size;
+            width: $progress-step-size_mobile;
+            height: $progress-step-size_mobile;
             border-radius: 50%;
             display: inline-block;
             
             background-color: palette(grey,2);
             color: palette(grey);
             text-align: center;
-            line-height: $progress-step-size;
+            line-height: $progress-step-size_mobile;
+            position: relative;
+            z-index: 1;
+            
+            @include breakpoint(medium){
+                width: $progress-step-size;
+                height: $progress-step-size;
+                line-height: $progress-step-size;
+            }
         }
 
         .o-progress--label{
+            @include breakpoint(medmax){
+                position: fixed;
+                left: 0;
+                right: 0;
+                text-align: center;
+                display: none;
+
+                .s-current &{
+                    display: block;
+                }
+            }
+
             margin-top: spacing(x-small);
         }

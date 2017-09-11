@@ -3,8 +3,9 @@
     <div class="c-modal--content">
         <div class="c-modal--header">
             <h3 class="t-h3">Create a Choice Group</h3>
+            <!-- @include '/assets/components/components/choice_create-progress-indicator' -->	
         </div>
-        <!-- @include '/assets/components/components/choice_create-progress-indicator' -->	
+        
         <div class="c-modal--step" v-if="choiceProgress === 1">
             <div class="c-modal--body">
                 <p>You have selected {{ tempChoiceGroup.length }} lots to bid on in this choice group.</p>
@@ -94,7 +95,7 @@
 
                 <button class="o-button__blank t-link" v-on:click="toggleCompleteChoiceGroupModalVisible">Cancel</button>
                 <button class="o-button__secondary" v-on:click="setChoiceProgress(3)">Back</button>
-                <button class="o-button__primary" v-on:click="finishChoiceGroup()">Finish Choice Group</button>
+                <button class="o-button__primary" v-on:click="finishChoiceGroup()">Finish <span class="h-hide-mobile">Choice Group</span></button>
 
             </div>
         </div>

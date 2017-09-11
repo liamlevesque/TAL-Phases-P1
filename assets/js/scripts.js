@@ -224,6 +224,10 @@ var app = new Vue({
       toggleMobileMoreMenuVisible: function(){
         this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
       },
+      createOrAddToChoiceGroup: function(lotNumber){
+        if(!this.creatingChoiceGroup) this.creatingChoiceGroup = true;
+        if(this.tempChoiceGroup.indexOf(lotNumber) < 0)this.tempChoiceGroup.push(lotNumber);
+      },
 
 
       emptyPurchases: function(){

@@ -3960,6 +3960,10 @@ var app = new Vue({
     toggleMobileMoreMenuVisible: function toggleMobileMoreMenuVisible() {
       this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
     },
+    createOrAddToChoiceGroup: function createOrAddToChoiceGroup(lotNumber) {
+      if (!this.creatingChoiceGroup) this.creatingChoiceGroup = true;
+      if (this.tempChoiceGroup.indexOf(lotNumber) < 0) this.tempChoiceGroup.push(lotNumber);
+    },
 
     emptyPurchases: function emptyPurchases() {
       this.purchasedLots = [];

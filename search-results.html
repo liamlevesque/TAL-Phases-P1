@@ -167,7 +167,7 @@
                                         </div>
                                     </div>
                                     <div class="c-navigation__tertiary h-mb-0" v-if="creatingChoiceGroup">
-                                        <div class="g-wrapper__gutters g--center">
+                                        <div class="g-wrapper__gutters">
                                             <div class="g-cell__no-stretch">
                                                 <label class="o-input--checkbox">
                                                     <input type="checkbox">
@@ -177,14 +177,15 @@
                                                 
                                             </div>
                                             <div class="g-cell">
-                                                <label for="" class="t-field-label">Lots Selected:</label>
+                                                <label for="" class="t-field-label__mobile-to-desktop">Lots Selected:</label>
                                                 <span class="t-h4 h-color-brand">
                                                     <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
                                                 </span>
                                             </div>
-                                            <div class="g-cell__no-stretch">
+                                            <div class="g-cell__no-stretch g-mob--full h-ta-right">
+                                                <div class="h-hide-desktop h-mt-100"><!--Add some padding above for mobile view--></div>
                                                 <button class="o-button__secondary h-mr-50" v-on:click="toggleCreateChoiceGroup">Cancel</button>
-                                                <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0">Continue Creating Choice Group</button>
+                                                <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0"><span class="h-hide-mobile">Continue Creating Choice Group</span><span class="h-hide-desktop">Create Group</span></span></button>
                                             </div>
                                         </div>
                                     </div>	
@@ -193,8 +194,8 @@
                                 
                                 
                 <div class="c-navigation__tertiary g-wrapper">
-                    <button class="o-button__tertiary" v-on:click="gotoPage('index')"><i class="icon-arrow-left h-mr-50"></i> Back</button>
-                    <div v-if="searchResults.length > 0" class="g-cell t-h2 t-lh-300 h-color-white h-ml-200"><span class="t-bold">{{ searchResults.length }} Results</span> found for: <span class="t-bold">Attachments - Skid Steer</span></div>
+                    <button class="o-button__tertiary" v-on:click="gotoPage('index')"><i class="icon-arrow-left"></i><span class="h-hide-mobile h-ml-50"> Back</span></button>
+                    <div v-if="searchResults.length > 0" class="g-cell t-h2 t-lh-300 h-color-white h-ml-200"><span class="h-hide-mobile"><span class="t-bold">{{ searchResults.length }} Results</span> found for: </span><span class="t-bold">"Caterpillar"</span></div>
                     <div v-else class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200">0 Results found</div>
                 </div>	
             </div>            
@@ -217,6 +218,7 @@
                                         </div>
                                         <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                     </a>
+                                    <button class="o-button__icon-toggle h-hide-desktop" v-on:click="createOrAddToChoiceGroup(lot.lotNumber)" v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}"><i class="icon-plus"></i>Add to group</button>
                                 </div>
                                 <div class="g-cell g-cell__two-thirds c-lot--lot-details">
                                     <a href="lot-details.html">
@@ -275,7 +277,7 @@
                             
                                     <div class="c-lot--bid-buttons" v-if="lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
                                         <div class="g-wrapper">
-                                            <div class="g-cell"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
+                                            <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
                                             <div class="g-cell">
                                                 <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
                                                     <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->

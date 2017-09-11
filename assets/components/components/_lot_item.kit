@@ -14,6 +14,7 @@
                     </div>
                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                 </a>
+                <button class="o-button__icon-toggle h-hide-desktop" v-on:click="createOrAddToChoiceGroup(lot.lotNumber)" v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}"><i class="icon-plus"></i>Add to group</button>
             </div>
             <div class="g-cell g-cell__two-thirds c-lot--lot-details">
                 <a href="lot-details.html">

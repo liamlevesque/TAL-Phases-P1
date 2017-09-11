@@ -34,6 +34,8 @@
 
     .c-nav-tabs__mobile--tab-group{
         background-color: palette(grey,1);
+        box-shadow: $ritchie-shadow;
+        //border-top: 1px solid palette(grey,2);
     }
 
     .c-nav-tabs__mobile--tab{

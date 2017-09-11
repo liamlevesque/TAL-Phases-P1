@@ -58,6 +58,13 @@ $gutters: spacing(large);
     }
   }
 
+  .g-mob--third{
+    @include breakpoint(medmax){
+      flex: none !important;
+      width: 33vw;
+    }
+  }
+
 .g-cell__no-stretch{
   flex: none;
 }

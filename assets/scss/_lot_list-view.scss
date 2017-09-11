@@ -47,12 +47,17 @@
     }
     
     .c-lot--bid-and-closing{
-        padding: spacing(small) 0;
+        @include breakpoint(medium){
+            padding: spacing(small) 0;
+        }
 
         &>div+div{
-            border-top: $ritchie-border;
-            margin-top: spacing(small);
             padding-top: spacing(small);
+
+            @include breakpoint(medium){
+                border-top: $ritchie-border;
+                margin-top: spacing(small);        
+            }
         } //If there is both boxes show the border between them
     }
 

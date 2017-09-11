@@ -53,9 +53,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 }
 
 .c-input--hint{
-	background-color: palette(grey,1);
-	border: 1px solid palette(grey,2);
-	padding: spacing(xx-small);
 	margin-top: spacing(xx-small);
 	text-align: center;
+
+	@include breakpoint(medium){
+		padding: spacing(xx-small);
+		background-color: palette(grey,1);
+		border: 1px solid palette(grey,2);
+	}
 }
