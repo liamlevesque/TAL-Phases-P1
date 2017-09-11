@@ -73,10 +73,17 @@
 			margin-top: auto;
 			padding: spacing(large);
 			position: relative;
-			text-align: right;
+			text-align: center;
 
-			button{
-				margin-left: spacing(medium);
+			@include breakpoint(medium){
+				text-align: right;
+			}
+
+			button:not(:first-child){
+				@include breakpoint(medium){
+					margin-left: spacing(medium);
+				}
+				margin-top: spacing(small);
 			}
 		}
 

@@ -1618,9 +1618,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   margin-top: auto;
   padding: 30px;
   position: relative;
-  text-align: right; }
-  .c-modal--footer button {
-    margin-left: 20px; }
+  text-align: center; }
+  @media (min-width: 64em) {
+    .c-modal--footer {
+      text-align: right; } }
+  .c-modal--footer button:not(:first-child) {
+    margin-top: 15px; }
+    @media (min-width: 64em) {
+      .c-modal--footer button:not(:first-child) {
+        margin-left: 20px; } }
 
 .c-search-filter {
   background-color: #F0F0F0;
