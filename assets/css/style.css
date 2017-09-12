@@ -670,8 +670,8 @@ a {
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?lwbcwc");
-  src: url("../fonts/ritchie-icons.eot?lwbcwc#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?lwbcwc") format("truetype"), url("../fonts/ritchie-icons.woff?lwbcwc") format("woff"), url("../fonts/ritchie-icons.svg?lwbcwc#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?z5b68m");
+  src: url("../fonts/ritchie-icons.eot?z5b68m#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?z5b68m") format("truetype"), url("../fonts/ritchie-icons.woff?z5b68m") format("woff"), url("../fonts/ritchie-icons.svg?z5b68m#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -691,6 +691,12 @@ a {
 .i-size-med {
   font-size: 20px;
   vertical-align: middle; }
+
+.icon-group-add:before {
+  content: "\e92a"; }
+
+.icon-group:before {
+  content: "\e91c"; }
 
 .icon-correct:before, .o-message__success:before {
   content: "\e908"; }
