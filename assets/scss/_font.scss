@@ -26,6 +26,7 @@ $fontsizes: (
     200: 1.125rem,
     100: 1rem,
     50: 0.9rem,
+    30: 0.7rem,
 );
 
 @function fontsize($fontsize) {
@@ -90,11 +91,10 @@ h1, h2, h3, h4, h5 {
   }
 
   .t-h4{
-    font-size: fontsize(30);
     font-weight: 700;
 
     @include breakpoint(small){
-       font-size: fontsize(80);
+       
     }
   }
 

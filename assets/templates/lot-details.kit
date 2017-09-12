@@ -29,7 +29,7 @@
                 </div>	
             </div>
            
-            <div class="c-lot-details" v-for="(lot, index) in findOneLot(51)">
+            <div class="c-lot-details" v-for="(lot, index) in findOneLot()">
                 
                 <div class="g-wrapper">
                     <div class="g-cell g-cell__two-thirds g-mob--full">
@@ -44,13 +44,16 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="g-cell c-lot-details--details g-mob--full">
-                                <div class="h-hide-desktop t-h2 t-bold h-mb-100 h-mt-100">
+                            <div class="g-cell c-lot-details--details g-mob--full g-mob-wrapper">
+                                <div class="h-hide-desktop g-cell__full g-mob--full g-mob-order--first t-h2 t-bold h-mb-100 h-mt-100">
                                      {{ lot.description }}
                                 </div>
-                                <!-- @include '/assets/components/components/lot_text-fields' -->
-                                <hr class="o-hr h-mb-200">
-                                <!-- @include '/assets/components/components/watch-button' -->
+                                <div class="g-mob--full g-cell__full g-mob-order--last c-lot-detail--text-fields">
+                                    <!-- @include '/assets/components/components/lot_text-fields' -->
+                                </div>
+                                <div class="g-mob--full g-cell__full g-mob-order--first c-lot-details--watch-area">
+                                    <!-- @include '/assets/components/components/watch-button' -->
+                                </div>
                             </div>
                         </div>
                     </div>

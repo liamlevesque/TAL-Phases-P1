@@ -97,3 +97,21 @@ $button-padding: 25px;
         background-color: palette(blue);
     }
 }
+
+    .o-button__mobile-toggle{
+        @include breakpoint(medmax){
+            border: none;
+            width: 100%;
+            text-align: center;
+            color: palette(grey,3);
+
+            &:focus,&:hover{
+                box-shadow: none;
+            }
+
+            &.s-active{
+                color: palette(brand);
+                background-color: white;
+            }
+        }
+    }

@@ -181,7 +181,7 @@
                                                 <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-inline-label">Usage:</label>{{ lot.usage }}</p>
                                                 <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-inline-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                                 <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-inline-label">Comes With:</label>{{ lot.notes }}</p>
-                                                <div class="h-hide-mobile"><button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                                                <div class="h-hide-mobile"><button class="o-button__icon-toggle o-button__mobile-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                                                         <i class="icon-eye"></i>
                                                                         <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
                                                                         <span v-else>Watch this lot</span>
@@ -195,8 +195,8 @@
                                     
                                     <div v-if="lot.status === 'sold'">
                                         <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
-                                        <h3 class="h-mt-100" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
-                                        <h3 class="h-mt-100" v-else>Bidding is closed for this item</h3>
+                                        <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
+                                        <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
                                     </div>
                                     <div v-else>
                                         <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
@@ -209,7 +209,7 @@
                                                 <label for="" class="t-inline-label">High Bidder:</label>
                                                 <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                             </div>
-                                            <div class="g-cell h-t-a-right">
+                                            <div class="">
                                                 <label for="" class="t-inline-label">Bid:</label>
                                                 <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
                                             </div>
@@ -324,7 +324,7 @@
                                                                 <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-inline-label">Usage:</label>{{ lot.usage }}</p>
                                                                 <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-inline-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                                                 <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-inline-label">Comes With:</label>{{ lot.notes }}</p>
-                                                                <div class="h-hide-mobile"><button class="o-button__icon-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
+                                                                <div class="h-hide-mobile"><button class="o-button__icon-toggle o-button__mobile-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                                                                         <i class="icon-eye"></i>
                                                                                         <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>
                                                                                         <span v-else>Watch this lot</span>
@@ -338,8 +338,8 @@
                                                     
                                                     <div v-if="lot.status === 'sold'">
                                                         <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
-                                                        <h3 class="h-mt-100" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
-                                                        <h3 class="h-mt-100" v-else>Bidding is closed for this item</h3>
+                                                        <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
+                                                        <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
                                                     </div>
                                                     <div v-else>
                                                         <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
@@ -352,7 +352,7 @@
                                                                 <label for="" class="t-inline-label">High Bidder:</label>
                                                                 <span class="t-h3 t-bold">{{ !lot.bids[0]? '' : lot.bids[0].bidder === bidder.number ? 'You!' : lot.bids[0].bidder }}</span>
                                                             </div>
-                                                            <div class="g-cell h-t-a-right">
+                                                            <div class="">
                                                                 <label for="" class="t-inline-label">Bid:</label>
                                                                 <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
                                                             </div>
@@ -495,23 +495,23 @@
             <ul class="g-wrapper c-nav-tabs__mobile--tab-group">
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
                     <i class="icon-sold"></i>
-                    <span class="t-mobile-label">All Lots</span>
+                    <span>All Lots</span>
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
                     <i class="icon-eye"></i>
-                    <span class="t-mobile-label">Watching & Bidding</span>
+                    <span>Watch & Bid</span>
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
                     <i class="icon-eye"></i>
-                    <span class="t-mobile-label">Choice Groups</span>
+                    <span>Group Bids</span>
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
                     <i class="icon-cart"></i>
-                    <span class="t-mobile-label">Purchases</span>
+                    <span>Purchases</span>
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="toggleMobileMoreMenuVisible" v-bind:class="{'s-active' : mobileMoreMenuVisible}">
                     <i class="icon-more_horiz"></i>
-                    <span class="t-mobile-label">More</span>
+                    <span>More</span>
                 </li>
             </ul>
             

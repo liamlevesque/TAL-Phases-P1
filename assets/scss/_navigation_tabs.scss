@@ -40,7 +40,7 @@
 
     .c-nav-tabs__mobile--tab{
         text-align: center;
-        padding: spacing(xx-small) spacing(x-small) 0;
+        padding: spacing(x-small) spacing(x-small) 0;
         color: palette(grey,4);
 
         &.s-active{
@@ -50,7 +50,12 @@
         i{
             display: block;
             font-size: 18px;
-            margin-bottom: spacing(x-small);
+            margin-bottom: spacing(xx-small);
+        }
+
+        span{
+            font-size: fontsize(30);
+            line-height: 0.7rem;
         }
     }
 

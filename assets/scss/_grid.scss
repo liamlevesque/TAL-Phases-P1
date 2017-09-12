@@ -1,11 +1,21 @@
 $gutters: spacing(large);
 
-.g-wrapper, [class^="g-wrapper"]{
+.g-wrapper, [class*="g-wrapper"]{
   display: flex;
   @include breakpoint(medmax){
     flex-wrap: wrap;
   }
 }
+  .g-wrapper__wrap{
+    flex-wrap: wrap;
+  }
+
+  .g-mob-wrapper{
+    @include breakpoint(medmax){
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 
   /* With gutters */
   .g-wrapper__gutters {
@@ -103,6 +113,13 @@ $gutters: spacing(large);
   @include breakpoint(medium){
     flex: none!important;  
     width: 66%!important;
+  }
+}
+
+.g-cell__full{
+  @include breakpoint(medium){
+    flex: none!important;  
+    width: 100%!important;
   }
 }
 

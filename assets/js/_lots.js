@@ -636,7 +636,7 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5023",
-			"bids": [],
+			"bids": [{bid: 100, bidder: "12221", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
 			"maxBid":{bid: 0,bidder: null},
 			"category": 'Attachments - Equipment',
 			"watching": [],
@@ -665,7 +665,7 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5024",
-			"bids": [],
+			"bids": [{bid: 100, bidder: "12221", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
 			"maxBid":{bid: 0,bidder: null},
 			"category": 'Attachments - Equipment',
 			"watching": [],
@@ -694,7 +694,7 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5025",
-			"bids": [],
+			"bids": [{bid: 100, bidder: "12221", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
 			"maxBid":{bid: 0,bidder: null},
 			"category": 'Attachments - Equipment',
 			"watching": [],
@@ -723,7 +723,7 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5026",
-			"bids": [],
+			"bids": [{bid: 100, bidder: "12221", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
 			"maxBid":{bid: 0,bidder: null},
 			"category": 'Attachments - Equipment',
 			"watching": [],

@@ -12,7 +12,7 @@
         margin-bottom: spacing(x-small);
         background-color: white;
         box-shadow: $ritchie-shadow;
-        padding: spacing(small) 0;
+        padding: spacing(small) 0 0;
     }
 
     &:not(:last-child){
@@ -47,6 +47,8 @@
     }
     
     .c-lot--bid-and-closing{
+        padding: spacing(small);
+
         @include breakpoint(medium){
             padding: spacing(small) 0;
         }
@@ -61,25 +63,45 @@
         } //If there is both boxes show the border between them
     }
 
+        .c-lot--bidding{
+            @include breakpoint(medmax){
+                background-color: palette(grey,1);
+                padding: 0 spacing(small);
+
+                [class*="o-message"]{
+                    margin: 0 -1*spacing(small);
+                }
+            }
+        }
+
+
         .c-lot--highBid{
             color: palette(brand);
-            @include breakpoint(medmax){
-                margin-top: spacing(x-small);
-            }
 
             &.s-high-bidder{
                 color: palette(green);
             }
         }
 
+        .c-lot--sold-notice{
+            padding: spacing(x-small) 0 0;
+            margin-bottom: 0;
+            
+        }
+
 .c-lot-details{
-    background-color: palette(grey,1);
+    @include breakpoint(medmax){
+        background-color: palette(grey,1);
+    }
 }
 
     .c-lot-details--bidding, .c-lot-details--photo-area, .c-lot-details--details{
-        background-color: white;
-        border-top: 1px solid palette(grey,2);
-        border-bottom: 1px solid palette(grey,2);
+        
+        @include breakpoint(medmax){
+            background-color: white;
+            border-top: 1px solid palette(grey,2);
+            border-bottom: 1px solid palette(grey,2);
+        }
     }
 
 .c-lot-details--photo-area{
@@ -142,30 +164,63 @@
         }
 
         .c-lot-details--details{
-            padding: 0 20px;
+            padding: 0 spacing(medium);
 
             @include breakpoint(medmax){
-                margin-top: spacing(medium);
-                margin-bottom: spacing(medium);
+                margin-top: spacing(small);
+                margin-bottom: spacing(small);
+                padding: 0 spacing(small);
                 padding-bottom: spacing(medium);
             }
 
         }
 
+            .c-lot-detail--text-fields{
+                @include breakpoint(medium){
+                    margin-top: spacing(small);
+                }
+            }
+
+            .c-lot-details--watch-area{
+                @include breakpoint(medmax){
+                    border-top: 1px solid palette(grey,1);
+                    border-bottom: 1px solid palette(grey,1);
+                    padding: spacing(x-small);
+                    margin-bottom: spacing(medium);
+                }
+        
+                @include breakpoint(medium){
+                    border-top: $ritchie-border;
+                    padding-top: spacing(medium);
+                    margin-top: spacing(small);
+                }
+            }
+
 
         .c-lot-details--bidding{
             @include breakpoint(medmax){
-                padding: spacing(medium);
+                padding: spacing(small);
+                padding-top: 0;
                 margin-bottom: 200px;
+
+                [class*="o-message"]{
+                    margin: 0 -1*spacing(small);
+                }
             }
         }
 
-        .c-lot--bidding{
-            @include breakpoint(medmax){
-                padding: spacing(medium);
-                padding-bottom: 0;
+            .c-lot--bid-and-closing{
+                padding: spacing(small) 0;
+        
+                &>div+div{
+                    padding-top: spacing(small);
+        
+                    @include breakpoint(medium){
+                        border-top: $ritchie-border;
+                        margin-top: spacing(small);        
+                    }
+                } //If there is both boxes show the border between them
             }
-        }
 
         .c-lot--bid-buttons{
             @include breakpoint(medmax){

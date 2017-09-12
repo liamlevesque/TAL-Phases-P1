@@ -246,9 +246,11 @@ var app = new Vue({
   computed:{
       findOneLot: function(){
         let context = this;
-        return function(number){
+        return function(){
             let thislot = [];
-            thislot.push(context.lots[number]);
+            let desiredLot = parseInt(window.location.hash.split('#')[1]);
+            desiredLot = desiredLot > 0 ? desiredLot : 0; 
+            thislot.push(context.lots[desiredLot]);
             return thislot;
         }
       },
