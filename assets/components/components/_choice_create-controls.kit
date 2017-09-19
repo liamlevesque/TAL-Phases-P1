@@ -1,7 +1,12 @@
 <div class="c-navigation__tertiary h-mb-0" v-if="creatingChoiceGroup">
     <div class="g-wrapper__gutters">
         <div class="g-cell__no-stretch">
-            <label class="o-input--checkbox">
+            <label class="o-input--checkbox" v-if="tempChoiceGroup.length >= groupMaximumLots">
+                    <input type="checkbox" v-on:change="tempChoiceGroup = []" checked>
+                    <span class="o-input--checksymbol"></span>
+                    <span for="lotSelectAll" class="t-field-label c-white">Deselect All</span>
+            </label>
+            <label class="o-input--checkbox" v-else>
                 <input type="checkbox">
                 <span class="o-input--checksymbol"></span>
                 <span for="lotSelectAll" class="t-field-label c-white">Select All</span>
@@ -23,4 +28,4 @@
         </div>
     </div>
 </div>
-<div v-if="tempChoiceGroup.length >= groupMaximumLots" class="o-message__info">You have selected the maximum of {{ groupMaximumLots }} lots that can be contained in a choice group!</div>
+<div v-if="tempChoiceGroup.length >= groupMaximumLots" class="o-message__warning">You have selected the maximum of {{ groupMaximumLots }} lots that can be contained in a choice group!</div>

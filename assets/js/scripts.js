@@ -24,7 +24,7 @@ const tal = {
   invalidMaxBidVisible: false,
   offIncrementMaxBidVisible: false,
 
-  groupMaximumLots: 5,
+  groupMaximumLots: 20,
   creatingChoiceGroup: false,
   tempChoiceGroup: [],
   choiceProgress: 1,
