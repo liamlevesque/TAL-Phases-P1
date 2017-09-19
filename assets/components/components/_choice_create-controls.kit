@@ -6,18 +6,21 @@
                 <span class="o-input--checksymbol"></span>
                 <span for="lotSelectAll" class="t-field-label c-white">Select All</span>
             </label>
-            
+
         </div>
         <div class="g-cell">
-            <label for="" class="t-field-label__mobile-to-desktop">Lots Selected:</label>
+            <label for="" class="t-field-label__mobile-to-desktop">{{ tempChoiceGroup.length }} Lots Selected:</label>
             <span class="t-h4 h-color-brand">
                 <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
             </span>
         </div>
         <div class="g-cell__no-stretch g-mob--full h-ta-right">
-            <div class="h-hide-desktop h-mt-100"><!--Add some padding above for mobile view--></div>
+            <div class="h-hide-desktop h-mt-100">
+                <!--Add some padding above for mobile view-->
+            </div>
             <button class="o-button__secondary h-mr-50" v-on:click="toggleCreateChoiceGroup">Cancel</button>
             <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0"><span class="h-hide-mobile">Continue Creating Choice Group</span><span class="h-hide-desktop">Create Group</span></span></button>
         </div>
     </div>
 </div>
+<div v-if="tempChoiceGroup.length >= groupMaximumLots" class="o-message__info">You have selected the maximum of {{ groupMaximumLots }} lots that can be contained in a choice group!</div>

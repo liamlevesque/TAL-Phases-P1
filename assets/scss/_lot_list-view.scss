@@ -1,259 +1,257 @@
-.o-lot-listings{
-    @include breakpoint(medmax){
-        background-color: palette(grey,1);
-        padding: spacing(x-small);
-    }
+.o-lot-listings {
+  @include breakpoint(medmax) {
+    background-color: palette(grey, 1);
+    padding: spacing(x-small);
+  }
 }
 
-.c-lot-listing{
-    padding: spacing(medium) 0;
+.c-lot-listing {
+  padding: spacing(medium) 0;
 
-    @include breakpoint(medmax){
-        margin-bottom: spacing(x-small);
-        background-color: white;
-        box-shadow: $ritchie-shadow;
-        padding: spacing(small) 0 0;
-    }
+  @include breakpoint(medmax) {
+    margin-bottom: spacing(x-small);
+    background-color: white;
+    box-shadow: $ritchie-shadow;
+    padding: spacing(small) 0 0;
+  }
 
-    &:not(:last-child){
-        @include breakpoint(medium){
-            border-bottom: $ritchie-border;
-        }
+  &:not(:last-child) {
+    @include breakpoint(medium) {
+      border-bottom: $ritchie-border;
     }
+  }
 }
 
-.c-lot--details-wrapper{
-    @include breakpoint(medmax){
-        padding: 0 spacing(medium);
-    }
+.c-lot--details-wrapper {
+  @include breakpoint(medmax) {
+    padding: 0 spacing(medium);
+  }
 }
 
-    .c-lot--lot-photo{
-        width: 100%;
-        max-width: 100%;
-        display: block;
-    }
-
-    .c-lot--lot-number{
-        margin-top: spacing(small);
-    }
-
-    .c-lot--lot-details{
-        padding: 0 spacing(medium);
-
-        @include breakpoint(medmax){
-            padding-right: 0;
-        }
-    }
-    
-    .c-lot--bid-and-closing{
-        padding: spacing(small);
-
-        @include breakpoint(medium){
-            padding: spacing(small) 0;
-        }
-
-        &>div+div{
-            padding-top: spacing(small);
-
-            @include breakpoint(medium){
-                border-top: $ritchie-border;
-                margin-top: spacing(small);        
-            }
-        } //If there is both boxes show the border between them
-    }
-
-        .c-lot--bidding{
-            @include breakpoint(medmax){
-                background-color: palette(grey,1);
-                padding: 0 spacing(small);
-
-                [class*="o-message"]{
-                    margin: 0 -1*spacing(small);
-                }
-            }
-        }
-
-
-        .c-lot--highBid{
-            color: palette(brand);
-
-            &.s-high-bidder{
-                color: palette(green);
-            }
-        }
-
-        .c-lot--sold-notice{
-            padding: spacing(x-small) 0 0;
-            margin-bottom: 0;
-            
-        }
-
-.c-lot-details{
-    @include breakpoint(medmax){
-        background-color: palette(grey,1);
-    }
+.c-lot--lot-photo {
+  width: 100%;
+  max-width: 100%;
+  display: block;
 }
 
-    .c-lot-details--bidding, .c-lot-details--photo-area, .c-lot-details--details{
-        
-        @include breakpoint(medmax){
-            background-color: white;
-            border-top: 1px solid palette(grey,2);
-            border-bottom: 1px solid palette(grey,2);
-        }
-    }
-
-.c-lot-details--photo-area{
-   @include breakpoint(medium){
-       max-width: 400px;
-   }
+.c-lot--lot-number {
+  margin-top: spacing(small);
 }
 
-    .c-lot-details--lot-photo{
-        position: relative;
-        height: 0;
-        padding-bottom: 75%; //To make it always 4:3 sized, even when image is loading
-        background-color: palette(grey,1);
-        margin-bottom: spacing(x-small);
+.c-lot--lot-details {
+  padding: 0 spacing(medium);
 
-        @include breakpoint(medium){
-            margin-bottom: spacing(medium);
-        }
+  @include breakpoint(medmax) {
+    padding-right: 0;
+  }
+}
 
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: 1;
-        }
+.c-lot--bid-and-closing {
+  padding: spacing(small);
+
+  @include breakpoint(medium) {
+    padding: spacing(small) 0;
+  }
+
+  & > div + div {
+    padding-top: spacing(small);
+
+    @include breakpoint(medium) {
+      border-top: $ritchie-border;
+      margin-top: spacing(small);
+    }
+  } //If there is both boxes show the border between them
+}
+
+.c-lot--bidding {
+  @include breakpoint(medmax) {
+    background-color: palette(grey, 1);
+    padding: 0 spacing(small);
+
+    [class*="o-message"] {
+      margin: 0 -1*spacing(small);
+    }
+  }
+}
+
+.c-lot--highBid {
+  color: palette(brand);
+
+  &.s-high-bidder {
+    color: palette(green);
+  }
+}
+
+.c-lot--sold-notice {
+  padding: spacing(x-small) 0 0;
+  margin-bottom: 0;
+}
+
+.c-lot-details {
+  @include breakpoint(medmax) {
+    background-color: palette(grey, 1);
+  }
+}
+
+.c-lot-details--bidding,
+.c-lot-details--photo-area,
+.c-lot-details--details {
+  @include breakpoint(medmax) {
+    background-color: white;
+    border-top: 1px solid palette(grey, 2);
+    border-bottom: 1px solid palette(grey, 2);
+  }
+}
+
+.c-lot-details--photo-area {
+  @include breakpoint(medium) {
+    max-width: 400px;
+  }
+}
+
+.c-lot-details--lot-photo {
+  position: relative;
+  height: 0;
+  padding-bottom: 75%; //To make it always 4:3 sized, even when image is loading
+  background-color: palette(grey, 1);
+  margin-bottom: spacing(x-small);
+
+  @include breakpoint(medium) {
+    margin-bottom: spacing(medium);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.c-lot-details--lot-thumbnails {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+
+  @include breakpoint(medium) {
+    flex-wrap: wrap;
+  }
+}
+
+.c-lot-details--lot-thumbnail {
+  width: 32%;
+  margin-bottom: spacing(x-small);
+  cursor: pointer;
+  transition: $transition;
+
+  @include breakpoint(medmax) {
+    min-width: 30%;
+    margin-right: spacing(x-small);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.s-active {
+    box-shadow: 0 0 0 5px palette(blue);
+    transform: scale(0.9);
+  }
+}
+
+.c-lot-details--details {
+  padding: 0 spacing(medium);
+
+  @include breakpoint(medmax) {
+    margin-top: spacing(small);
+    margin-bottom: spacing(small);
+    padding: 0 spacing(small);
+    padding-bottom: spacing(medium);
+  }
+}
+
+.c-lot-detail--text-fields {
+  @include breakpoint(medium) {
+    margin-top: spacing(small);
+  }
+}
+
+.c-lot-details--watch-area {
+  @include breakpoint(medmax) {
+    border-top: 1px solid palette(grey, 1);
+    border-bottom: 1px solid palette(grey, 1);
+    padding: spacing(x-small);
+    margin-bottom: spacing(medium);
+  }
+
+  @include breakpoint(medium) {
+    border-top: $ritchie-border;
+    padding-top: spacing(medium);
+    margin-top: spacing(small);
+  }
+}
+
+.c-lot-details--bidding {
+  @include breakpoint(medmax) {
+    padding: spacing(small);
+    padding-top: 0;
+    margin-bottom: 200px;
+
+    [class*="o-message"] {
+      margin: 0 -1*spacing(small);
+    }
+  }
+}
+
+.c-lot--bid-and-closing {
+  padding: spacing(small) 0;
+
+  & > div + div {
+    padding-top: spacing(small);
+
+    @include breakpoint(medium) {
+      border-top: $ritchie-border;
+      margin-top: spacing(small);
+    }
+  } //If there is both boxes show the border between them
+}
+
+.c-lot--bid-buttons {
+  @include breakpoint(medmax) {
+    display: none;
+
+    .c-lot-details & {
+      display: block;
     }
 
-    .c-lot-details--lot-thumbnails{
-        display: flex;
-        justify-content: space-between;
-        overflow-x: auto;
-        
-        @include breakpoint(medium){
-            flex-wrap: wrap;
-        }
+    padding: spacing(xx-small) spacing(medium);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+
+    &:before {
+      position: absolute;
+      top: -49px;
+      left: 0;
+      right: 0;
+      height: 50px;
+      content: "";
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 255)
+      );
     }
+  }
+}
 
-        .c-lot-details--lot-thumbnail{
-            width: 32%;
-            margin-bottom: spacing(x-small);
-            cursor: pointer;
-            transition: $transition;
-
-            @include breakpoint(medmax){
-                min-width: 30%;
-                margin-right: spacing(x-small);
-            }
-
-            img{
-                display: block;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            &.s-active{
-                box-shadow: 0 0 0 5px palette(blue);
-                transform: scale(0.9);
-            }
-        }
-
-        .c-lot-details--details{
-            padding: 0 spacing(medium);
-
-            @include breakpoint(medmax){
-                margin-top: spacing(small);
-                margin-bottom: spacing(small);
-                padding: 0 spacing(small);
-                padding-bottom: spacing(medium);
-            }
-
-        }
-
-            .c-lot-detail--text-fields{
-                @include breakpoint(medium){
-                    margin-top: spacing(small);
-                }
-            }
-
-            .c-lot-details--watch-area{
-                @include breakpoint(medmax){
-                    border-top: 1px solid palette(grey,1);
-                    border-bottom: 1px solid palette(grey,1);
-                    padding: spacing(x-small);
-                    margin-bottom: spacing(medium);
-                }
-        
-                @include breakpoint(medium){
-                    border-top: $ritchie-border;
-                    padding-top: spacing(medium);
-                    margin-top: spacing(small);
-                }
-            }
-
-
-        .c-lot-details--bidding{
-            @include breakpoint(medmax){
-                padding: spacing(small);
-                padding-top: 0;
-                margin-bottom: 200px;
-
-                [class*="o-message"]{
-                    margin: 0 -1*spacing(small);
-                }
-            }
-        }
-
-            .c-lot--bid-and-closing{
-                padding: spacing(small) 0;
-        
-                &>div+div{
-                    padding-top: spacing(small);
-        
-                    @include breakpoint(medium){
-                        border-top: $ritchie-border;
-                        margin-top: spacing(small);        
-                    }
-                } //If there is both boxes show the border between them
-            }
-
-        .c-lot--bid-buttons{
-            @include breakpoint(medmax){
-                display: none; 
-                
-                .c-lot-details &{
-                    display: block;
-                }
-
-                padding: spacing(xx-small) spacing(medium);
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: white;
-
-                &:before{
-                    position: absolute;
-                    top: -49px;
-                    left: 0;
-                    right: 0;
-                    height: 50px;
-                    content: '';
-                    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,255));
-                }
-            }
-        }
-
-
-        .c-lot--messages__choice-group{
-            .c-choice-group--body & {
-                display: none;
-            }
-        }
-
-        
+.c-lot--messages__choice-group {
+  .c-choice-group--body & {
+    display: none;
+  }
+}

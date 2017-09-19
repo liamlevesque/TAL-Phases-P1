@@ -413,12 +413,14 @@ ul {
   border: none;
   border-bottom: 1px dotted #CCCCCC; }
 
-.g-wrapper, [class*="g-wrapper"] {
+.g-wrapper,
+[class*="g-wrapper"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
   @media (max-width: 63em) {
-    .g-wrapper, [class*="g-wrapper"] {
+    .g-wrapper,
+    [class*="g-wrapper"] {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; } }
 
@@ -440,7 +442,8 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  .g-wrapper__gutters > .g-cell, .g-wrapper__gutters > [class^="g-cell"] {
+  .g-wrapper__gutters > .g-cell,
+  .g-wrapper__gutters > [class^="g-cell"] {
     padding-left: 30px; }
 
 .g-wrapper__centered-element .g-cell:first-child {
@@ -551,7 +554,7 @@ ul {
             order: 2; } }
 
 body {
-  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
   font-size: 16px;
   line-height: 1.52rem;
   -webkit-font-smoothing: antialiased; }
@@ -582,7 +585,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em; }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin-top: 0;
   color: black;
   text-decoration: none;
@@ -617,12 +624,16 @@ a {
     outline: none;
     color: inherit; }
 
-.t-link, a.t-link {
+.t-link,
+a.t-link {
   text-decoration: none;
   color: #20579E; }
-  .t-link:hover, .t-link:active, a.t-link:hover, a.t-link:active {
+  .t-link:hover, .t-link:active,
+  a.t-link:hover,
+  a.t-link:active {
     text-decoration: underline; }
-  .t-link:focus, a.t-link:focus {
+  .t-link:focus,
+  a.t-link:focus {
     outline: default; }
 
 .t-link__message {
@@ -630,7 +641,8 @@ a {
   text-decoration: underline;
   cursor: pointer; }
 
-.t-field-label, .t-lh-300 {
+.t-field-label,
+.t-lh-300 {
   line-height: 40px; }
 
 .t-mobile-label {
@@ -669,15 +681,16 @@ a {
   font-size: 48px; }
 
 @font-face {
-  font-family: 'ritchie-icons';
+  font-family: "ritchie-icons";
   src: url("../fonts/ritchie-icons.eot?z5b68m");
   src: url("../fonts/ritchie-icons.eot?z5b68m#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?z5b68m") format("truetype"), url("../fonts/ritchie-icons.woff?z5b68m") format("woff"), url("../fonts/ritchie-icons.svg?z5b68m#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'ritchie-icons' !important;
+  font-family: "ritchie-icons" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -1485,7 +1498,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding-left: 52px;
   border: 1px solid transparent; }
   [class^="o-message"]:before {
-    font-family: 'ritchie-icons' !important;
+    font-family: "ritchie-icons" !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -1896,7 +1909,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     background-color: #F0F0F0; } }
 
 @media (max-width: 63em) {
-  .c-lot-details--bidding, .c-lot-details--photo-area, .c-lot-details--details {
+  .c-lot-details--bidding,
+  .c-lot-details--photo-area,
+  .c-lot-details--details {
     background-color: white;
     border-top: 1px solid #CCCCCC;
     border-bottom: 1px solid #CCCCCC; } }
@@ -2014,7 +2029,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
       left: 0;
       right: 0;
       height: 50px;
-      content: '';
+      content: "";
       background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
       background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white); } }
 

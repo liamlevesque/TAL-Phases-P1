@@ -1,7 +1,7 @@
 <div class="g-wrapper">
     <div class="h-hide-mobile" v-if="creatingChoiceGroup">
         <label class="o-input--checkbox">
-            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number>
+            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
             <span class="o-input--checksymbol"></span>
         </label>
     </div>
@@ -14,7 +14,8 @@
                     </div>
                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                 </a>
-                <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" v-on:click="createOrAddToChoiceGroup(lot.lotNumber)" v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}"><i class="icon-group-add icon-size--xlarge h-mr-0"></i></button>
+                <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
+                    v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}"><i class="icon-group-add icon-size--xlarge h-mr-0"></i></button>
             </div>
             <div class="g-cell g-cell__two-thirds c-lot--lot-details">
                 <a href="lot-details.html">
@@ -22,9 +23,11 @@
                 </a>
                 <div class="">
                     <!-- @include '/assets/components/components/lot_text-fields' -->
-                    <div class="h-hide-mobile"><!-- @include '/assets/components/components/watch-button' --></div>
-                </div> 
-                
+                    <div class="h-hide-mobile">
+                        <!-- @include '/assets/components/components/watch-button' -->
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

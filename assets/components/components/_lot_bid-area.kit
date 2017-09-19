@@ -1,12 +1,15 @@
-
 <div v-if="lot.status === 'sold'">
-    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div> <!-- IF YOU WERE OUTBID -->
-    <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3><!-- IF ITEM SOLD -->
+    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div>
+    <!-- IF YOU WERE OUTBID -->
+    <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3>
+    <!-- IF ITEM SOLD -->
     <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
 </div>
 <div v-else>
-    <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div> <!-- IF YOU WERE OUTBID -->
-    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div> <!-- IF YOU WERE OUTBID -->
+    <!-- IF YOU WERE OUTBID -->
+    <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div>
+    <!-- IF YOU ARE HIGH BIDDER -->
+    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div>
 </div>
 
 <div class="c-lot--bid-and-closing">

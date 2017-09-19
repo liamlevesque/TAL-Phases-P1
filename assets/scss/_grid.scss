@@ -1,81 +1,81 @@
 $gutters: spacing(large);
 
-.g-wrapper, [class*="g-wrapper"]{
+.g-wrapper,
+[class*="g-wrapper"] {
   display: flex;
-  @include breakpoint(medmax){
+  @include breakpoint(medmax) {
     flex-wrap: wrap;
   }
 }
-  .g-wrapper__wrap{
+.g-wrapper__wrap {
+  flex-wrap: wrap;
+}
+
+.g-mob-wrapper {
+  @include breakpoint(medmax) {
+    display: flex;
     flex-wrap: wrap;
   }
+}
 
-  .g-mob-wrapper{
-    @include breakpoint(medmax){
-      display: flex;
-      flex-wrap: wrap;
+/* With gutters */
+.g-wrapper__gutters {
+  margin-left: -$gutters;
+  display: flex;
+
+  & > .g-cell,
+  & > [class^="g-cell"] {
+    padding-left: $gutters;
+  }
+}
+
+.g-wrapper__centered-element {
+  .g-cell {
+    &:first-child {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      flex: none;
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    @include breakpoint(medmax) {
+      text-align: center !important;
     }
   }
-
-  /* With gutters */
-  .g-wrapper__gutters {
-    margin-left: -$gutters;
-    display: flex;
-    
-    &> .g-cell, &> [class^="g-cell"] {
-      padding-left: $gutters;
-    }
-  }
-
-  .g-wrapper__centered-element{
-    .g-cell{
-      &:first-child{
-        text-align: left;
-      }
-
-      &:nth-child(2){
-        flex: none;
-        text-align: center;
-      }
-
-      &:last-child{
-        text-align: right;
-      }
-
-            
-      @include breakpoint(medmax){
-        text-align: center !important;  
-      }
-    }
-  }
+}
 
 .g-cell {
-  
-    flex: 1;
+  flex: 1;
 }
 
-  .g-mob--full{
-    @include breakpoint(medmax){
-      width: 100%;
-      min-width: 100%;
-    }
+.g-mob--full {
+  @include breakpoint(medmax) {
+    width: 100%;
+    min-width: 100%;
   }
+}
 
-  .g-mob--quarter{
-    @include breakpoint(medmax){
-      flex: none !important;
-      width: 25vw;
-    }
+.g-mob--quarter {
+  @include breakpoint(medmax) {
+    flex: none !important;
+    width: 25vw;
   }
+}
 
-  .g-mob--third{
-    @include breakpoint(medmax){
-      flex: none !important;
-      width: 33vw;
-    }
+.g-mob--third {
+  @include breakpoint(medmax) {
+    flex: none !important;
+    width: 33vw;
   }
+}
 
-.g-cell__no-stretch{
+.g-cell__no-stretch {
   flex: none;
 }
 
@@ -101,37 +101,35 @@ $gutters: spacing(large);
   align-self: center;
 }
 
-
-.g-cell__half{
-  @include breakpoint(medium){
-    flex: none!important;  
-    width: 50%!important;
+.g-cell__half {
+  @include breakpoint(medium) {
+    flex: none !important;
+    width: 50% !important;
   }
 }
 
-.g-cell__two-thirds{
-  @include breakpoint(medium){
-    flex: none!important;  
-    width: 66%!important;
+.g-cell__two-thirds {
+  @include breakpoint(medium) {
+    flex: none !important;
+    width: 66% !important;
   }
 }
 
-.g-cell__full{
-  @include breakpoint(medium){
-    flex: none!important;  
-    width: 100%!important;
+.g-cell__full {
+  @include breakpoint(medium) {
+    flex: none !important;
+    width: 100% !important;
   }
 }
 
-
-.g-mob-order--first{
-  @include breakpoint(medmax){
+.g-mob-order--first {
+  @include breakpoint(medmax) {
     order: 1;
   }
 }
 
-.g-mob-order--last{
-  @include breakpoint(medmax){
+.g-mob-order--last {
+  @include breakpoint(medmax) {
     order: 2;
   }
 }

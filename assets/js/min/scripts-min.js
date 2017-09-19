@@ -3748,11 +3748,11 @@ var tal = {
   preSoldOffset: 20,
   closeInterval: 30,
   bidder: {
-    number: '12345'
+    number: "12345"
   },
   categories: categories,
   lots: lotlist,
-  watchedLots: ['5001', '5022', '5028', '5031', '5042', '5045'],
+  watchedLots: ["5001", "5022", "5028", "5031", "5042", "5045"],
   mobileMoreMenuVisible: false,
 
   selectedLot: 0,
@@ -3761,13 +3761,14 @@ var tal = {
   invalidMaxBidVisible: false,
   offIncrementMaxBidVisible: false,
 
+  groupMaximumLots: 5,
   creatingChoiceGroup: false,
   tempChoiceGroup: [],
   choiceProgress: 1,
   completeChoiceGroupModalVisible: false,
   choiceGroups: [{
-    uid: '123456',
-    type: 'group',
+    uid: "123456",
+    type: "group",
     lots: ["5099", "5100", "5101", "5102"],
     quantity: 2,
     maxbid: 100
@@ -3785,42 +3786,42 @@ var tal = {
   pausedMessageVisible: false
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   for (var i = 0; i < tal.lots.length; i++) {
-    tal.lots[i].closes = moment().add((i - tal.preSoldOffset) * tal.closeInterval, 'seconds');
-  };
+    tal.lots[i].closes = moment().add((i - tal.preSoldOffset) * tal.closeInterval, "seconds");
+  }
 
   var waypoint = new Waypoint({
-    element: document.querySelector('.js--nav-pin-waypoint'),
+    element: document.querySelector(".js--nav-pin-waypoint"),
     handler: function handler(direction) {
-      var body = document.querySelector('body');
-      if (direction === 'down') {
-        body.classList.add('s-pin-nav');
-        var headerheight = document.querySelector('.js--pinned-header').offsetHeight;
-        document.querySelector('.js--nav-pin-waypoint').style.height = headerheight + 'px';
+      var body = document.querySelector("body");
+      if (direction === "down") {
+        body.classList.add("s-pin-nav");
+        var headerheight = document.querySelector(".js--pinned-header").offsetHeight;
+        document.querySelector(".js--nav-pin-waypoint").style.height = headerheight + "px";
         //document.querySelector('body').scrollTop -= headerheight;
       } else {
-        body.classList.remove('s-pin-nav');
-        document.querySelector('.js--nav-pin-waypoint').style.height = '0px';
+        body.classList.remove("s-pin-nav");
+        document.querySelector(".js--nav-pin-waypoint").style.height = "0px";
       }
     }
   });
 }, false);
 
 var app = new Vue({
-  el: '.js--tal',
+  el: ".js--tal",
   data: tal,
   methods: {
     isSold: function isSold(status) {
-      if (status === 'sold') return true;
+      if (status === "sold") return true;
       return false;
     },
     userIsHighBidder: function userIsHighBidder(bids) {
-      if (typeof bids[0] != 'undefined' && bids[0].bidder === this.bidder.number) return true;
+      if (typeof bids[0] != "undefined" && bids[0].bidder === this.bidder.number) return true;
       return false;
     },
     userWasOutbid: function userWasOutbid(bids) {
-      if (typeof bids[0] === 'undefined') return false;
+      if (typeof bids[0] === "undefined") return false;
       if (bids[0].bidder === this.bidder.number) return false;
       for (var i = 1; i < bids.length; i++) {
         if (bids[i].bidder === this.bidder.number) return true;
@@ -3846,7 +3847,7 @@ var app = new Vue({
 
     isActivePage: function isActivePage(path) {
       return {
-        's-active': window.location.pathname.split('/').pop() === path
+        "s-active": window.location.pathname.split("/").pop() === path
       };
     },
     placeBid: function placeBid(lot) {
@@ -3869,7 +3870,7 @@ var app = new Vue({
     completeBid: function completeBid() {
       this.confirmPlaceBidVisible = false;
       this.watchLot(this.selectedLot, false);
-      this.pricedBid(this.selectedLot, 'quick', this.bidder.number, 5);
+      this.pricedBid(this.selectedLot, "quick", this.bidder.number, 5);
     },
     watchLot: function watchLot(lot, removeIfExists) {
       if (this.watchedLots.indexOf(lot.lotNumber) < 0) {
@@ -3882,7 +3883,7 @@ var app = new Vue({
     completeMaxBid: function completeMaxBid() {
       this.confirmPlaceMaxBidVisible = false;
       this.watchLot(this.selectedLot, false);
-      this.pricedBid(this.selectedLot, 'max', this.bidder.number, 5);
+      this.pricedBid(this.selectedLot, "max", this.bidder.number, 5);
       this.selectedLot.maxBid.bid = this.selectedLot.tempMaxBid;
       this.selectedLot.maxBid.bidder = this.bidder.number;
     },
@@ -3915,8 +3916,8 @@ var app = new Vue({
     },
     progressClasses: function progressClasses(step) {
       return {
-        's-current': this.choiceProgress === step,
-        's-complete': this.choiceProgress > step
+        "s-current": this.choiceProgress === step,
+        "s-complete": this.choiceProgress > step
       };
     },
     setChoiceProgress: function setChoiceProgress(step) {
@@ -3925,7 +3926,7 @@ var app = new Vue({
     finishChoiceGroup: function finishChoiceGroup() {
       var newGroup = {
         uid: new Date().toJSON(),
-        type: 'group',
+        type: "group",
         lots: this.tempChoiceGroup,
         quantity: this.tempChoiceGroup.length,
         maxbid: 100
@@ -3949,7 +3950,7 @@ var app = new Vue({
       this.activeThumbnail = index;
     },
     nextIncrement: function nextIncrement(lot) {
-      return (lot.bids.length > 0 ? lot.bids[0].bid + 5 : '5') + ' USD or higher';
+      return (lot.bids.length > 0 ? lot.bids[0].bid + 5 : "5") + " USD or higher";
     },
     togglePausedMessageVisible: function togglePausedMessageVisible() {
       this.pausedMessageVisible = !this.pausedMessageVisible;
@@ -3983,7 +3984,7 @@ var app = new Vue({
       var context = this;
       return function () {
         var thislot = [];
-        var desiredLot = parseInt(window.location.hash.split('#')[1]);
+        var desiredLot = parseInt(window.location.hash.split("#")[1]);
         desiredLot = desiredLot > 0 ? desiredLot : 0;
         thislot.push(context.lots[desiredLot]);
         return thislot;
@@ -4013,19 +4014,19 @@ var app = new Vue({
   },
   filters: {
     returnFirstItem: function returnFirstItem(value) {
-      if (!value) return '';
+      if (!value) return "";
       return value[0];
     },
     calendarTime: function calendarTime(time) {
-      if (!time) return '';
+      if (!time) return "";
       return moment(new Date(time)).calendar();
     },
     countdownTime: function countdownTime(closes) {
-      if (!closes) return '';
+      if (!closes) return "";
       var now = moment();
       var end = moment(closes);
       var span = moment.duration(end - now);
-      return span.days() + 'd ' + span.hours() + 'h ' + span.minutes() + 'm ' + span.seconds() + 's';
+      return span.days() + "d " + span.hours() + "h " + span.minutes() + "m " + span.seconds() + "s";
     }
   }
 });
