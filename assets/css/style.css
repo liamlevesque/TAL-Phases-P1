@@ -1123,6 +1123,10 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: white;' transform='translate(-4 -8.5)'/></svg>"); }
   .o-input--select__categories:hover {
     background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #E87511;' transform='translate(-4 -8.5)'/></svg>"); }
+  @media (max-width: 63em) {
+    .o-input--select__categories {
+      min-width: 100%;
+      margin-bottom: 15px; } }
 
 .o-input--text, [class^="o-input--text_"] {
   -webkit-appearance: none;
@@ -1778,7 +1782,10 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
       background-color: white; } }
 
 .c-search-filter--search {
-  padding: 5px 30px; }
+  padding: 10px 0; }
+  @media (min-width: 80em) {
+    .c-search-filter--search {
+      padding: 15px 0; } }
 
 .c-search-filter--filter {
   background-color: #F0F0F0;
@@ -2101,7 +2108,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .l-header {
   padding: 10px;
-  max-width: 1200px;
+  max-width: 80em;
   margin: 0 auto; }
   @media (min-width: 63em) {
     .l-header {
@@ -2126,7 +2133,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding-right: 100px; }
 
 .l-main-container {
-  max-width: 1200px;
+  max-width: 80em;
   margin: 0 auto; }
   @media (min-width: 63em) {
     .l-main-container {
@@ -2163,7 +2170,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
       padding: 0 30px; } }
 
 .l-pin-header-inner {
-  max-width: 1200px;
+  max-width: 80em;
   margin: 0 auto; }
 
 /*******************

@@ -14,11 +14,12 @@
 
         </div>
         <div class="g-cell">
-            <label for="" class="t-field-label__mobile-to-desktop">{{ tempChoiceGroup.length }} Lots Selected:</label>
+            <label for="" class="t-field-label__mobile-to-desktop">{{ tempChoiceGroup.length }} Lot<span v-if="tempChoiceGroup.length === 0 || tempChoiceGroup.length >= 2">s</span> Selected:</label>
             <span class="t-h4 h-color-brand">
                 <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
             </span>
-            <span class="t-faint" v-if="tempChoiceGroup.length < 2">Select at least two lots to continue building a choice group</span>
+            <span class="t-faint" v-if="tempChoiceGroup.length === 0">Select at least two lots to continue building a choice group</span>
+            <span class="t-faint" v-if="tempChoiceGroup.length === 1">Great! Pick one more lot to continue building a choice group!</span>
         </div>
         <div class="g-cell__no-stretch g-mob--full h-ta-right">
             <div class="h-hide-desktop h-mt-100">
