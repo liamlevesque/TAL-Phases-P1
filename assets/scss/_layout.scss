@@ -1,5 +1,14 @@
+$max-width: 1200px;
+
+@mixin center-content{
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
 .l-header{
     padding: spacing(x-small);
+    @include center-content;
+
     @include breakpoint(medium){
         padding: spacing(large);
         padding-bottom: spacing(small);
@@ -29,6 +38,8 @@
     }
 
 .l-main-container{
+    @include center-content;
+    
     @include breakpoint(medium){
         padding: 0 spacing(large);
     }
@@ -68,8 +79,13 @@
         width: 100vw;
         z-index: 100;
         
-        @include breakpoint(medium){
-            padding: 0 spacing(large);
+        .l-pin-header-inner{
+            @include breakpoint(medium){
+                padding: 0 spacing(large);
+            }
         }
     }
 }
+    .l-pin-header-inner{
+        @include center-content;
+    }

@@ -31,4 +31,17 @@
     .o-input--select__inline{
         width: auto;
         display: inline-block;
-    }
+	}
+	
+	.o-input--select__categories{
+		max-width: 150px;
+		border-color: palette(grey);
+		background-color: palette(grey);
+		color: white;
+		font-weight: 700;
+		background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: white;' transform='translate(-4 -8.5)'/></svg>");
+
+		&:hover{
+			background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(brand)};' transform='translate(-4 -8.5)'/></svg>");
+		}
+	}

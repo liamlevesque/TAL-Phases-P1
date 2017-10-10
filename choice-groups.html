@@ -91,28 +91,30 @@
         <div class="l-main-container"> 
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
-                <nav class="c-nav-tabs h-hide-mobile">
-                    <ul class="g-wrapper c-nav-tabs--tab-group">
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
-                            All Listings
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
-                            Watching & Bidding
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
-                            My Choice Groups
-                        </li>
-                        <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
-                            My Purchases
-                        </li>
-                    </ul>
-                </nav>
-                <div class="c-navigation__tertiary g-wrapper">
-                    <div class="g-cell t-h3 t-lh-300 h-color-white t-bold">
-                        {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
-                    </div>
-                    <div class="g-cell h-ta-right">
-                        <button class="o-button__tertiary">Create <span class="h-hide-mobile"> a choice group</span><span class="h-hide-desktop"> new</span></button>
+                <div class="l-pin-header-inner">
+                    <nav class="c-nav-tabs h-hide-mobile">
+                        <ul class="g-wrapper c-nav-tabs--tab-group">
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                                All Listings
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                                Watching & Bidding
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                                My Choice Groups
+                            </li>
+                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                                My Purchases
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="c-navigation__tertiary g-wrapper">
+                        <div class="g-cell t-h3 t-lh-300 h-color-white t-bold">
+                            {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
+                        </div>
+                        <div class="g-cell h-ta-right">
+                            <button class="o-button__tertiary">Create <span class="h-hide-mobile"> a choice group</span><span class="h-hide-desktop"> new</span></button>
+                        </div>
                     </div>
                 </div>
             </div>

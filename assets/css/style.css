@@ -1028,6 +1028,10 @@ a.t-link {
       color: #E87511;
       background-color: white; } }
 
+.o-button__input-buddy {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
 input {
   outline: none; }
   input:focus, input:active {
@@ -1088,6 +1092,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
             box-shadow: 0 0 2px 2px #E50000; }
   .o-input--select[readonly], [class^="o-input--select"][readonly] {
     background-color: #F0F0F0; }
+  .o-input--select::-webkit-input-placeholder, [class^="o-input--select"]::-webkit-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--select:-ms-input-placeholder, [class^="o-input--select"]:-ms-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--select::placeholder, [class^="o-input--select"]::placeholder {
+    font-style: italic;
+    color: #999999; }
   .o-input--select:focus, [class^="o-input--select"]:focus {
     outline: none; }
   .o-input--select:hover, [class^="o-input--select"]:hover {
@@ -1100,6 +1113,16 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .o-input--select__inline {
   width: auto;
   display: inline-block; }
+
+.o-input--select__categories {
+  max-width: 150px;
+  border-color: #3F3F3F;
+  background-color: #3F3F3F;
+  color: white;
+  font-weight: 700;
+  background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: white;' transform='translate(-4 -8.5)'/></svg>"); }
+  .o-input--select__categories:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #E87511;' transform='translate(-4 -8.5)'/></svg>"); }
 
 .o-input--text, [class^="o-input--text_"] {
   -webkit-appearance: none;
@@ -1122,6 +1145,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
             box-shadow: 0 0 2px 2px #E50000; }
   .o-input--text[readonly], [class^="o-input--text_"][readonly] {
     background-color: #F0F0F0; }
+  .o-input--text::-webkit-input-placeholder, [class^="o-input--text_"]::-webkit-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--text:-ms-input-placeholder, [class^="o-input--text_"]:-ms-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--text::placeholder, [class^="o-input--text_"]::placeholder {
+    font-style: italic;
+    color: #999999; }
 
 .o-input--text__small {
   display: inline-block;
@@ -1150,6 +1182,18 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
             box-shadow: 0 0 2px 2px #E50000; }
   .o-input--text__inline[readonly] {
     background-color: #F0F0F0; }
+  .o-input--text__inline::-webkit-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--text__inline:-ms-input-placeholder {
+    font-style: italic;
+    color: #999999; }
+  .o-input--text__inline::placeholder {
+    font-style: italic;
+    color: #999999; }
+
+.o-input--text__search {
+  width: 300px; }
 
 .o-input--toggle-group, [class^="o-input--toggle-group"] {
   display: -webkit-box;
@@ -2056,7 +2100,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
       background-color: white; } }
 
 .l-header {
-  padding: 10px; }
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto; }
   @media (min-width: 63em) {
     .l-header {
       padding: 30px;
@@ -2079,9 +2125,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding-top: 5px;
   padding-right: 100px; }
 
-@media (min-width: 63em) {
-  .l-main-container {
-    padding: 0 30px; } }
+.l-main-container {
+  max-width: 1200px;
+  margin: 0 auto; }
+  @media (min-width: 63em) {
+    .l-main-container {
+      padding: 0 30px; } }
 
 .l-container__narrow {
   margin: 0 auto;
@@ -2110,8 +2159,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   width: 100vw;
   z-index: 100; }
   @media (min-width: 63em) {
-    .s-pin-nav .l-pin-header-wrapper {
+    .s-pin-nav .l-pin-header-wrapper .l-pin-header-inner {
       padding: 0 30px; } }
+
+.l-pin-header-inner {
+  max-width: 1200px;
+  margin: 0 auto; }
 
 /*******************
 	HELPER CLASSES

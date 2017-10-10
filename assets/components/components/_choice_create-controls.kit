@@ -18,13 +18,14 @@
             <span class="t-h4 h-color-brand">
                 <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
             </span>
+            <span class="t-faint" v-if="tempChoiceGroup.length < 2">Select at least two lots to continue building a choice group</span>
         </div>
         <div class="g-cell__no-stretch g-mob--full h-ta-right">
             <div class="h-hide-desktop h-mt-100">
                 <!--Add some padding above for mobile view-->
             </div>
+            <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-if="tempChoiceGroup.length >= 2"><span class="h-hide-mobile">Continue Creating Choice Group</span><span class="h-hide-desktop">Create Group</span></span></button>
             <button class="o-button__secondary h-mr-50" v-on:click="toggleCreateChoiceGroup">Cancel</button>
-            <button class="o-button__tertiary" v-on:click="toggleCompleteChoiceGroupModalVisible" v-bind:disabled="tempChoiceGroup.length === 0"><span class="h-hide-mobile">Continue Creating Choice Group</span><span class="h-hide-desktop">Create Group</span></span></button>
         </div>
     </div>
 </div>

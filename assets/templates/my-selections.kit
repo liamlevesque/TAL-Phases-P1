@@ -17,27 +17,30 @@
         <div class="l-main-container"> 
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
-                <!-- @include '/assets/components/components/navigation_tabs' -->
-                <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
-                    <div class="g-cell">
-                    </div>
-                    <div class="g-cell g-mob--full h-ta-center">
-                        <div class="o-input--toggle-group__inline">
-                            <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Upcoming Lots</div></label>
-                            <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
-                            <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>All Lots</div></label>
+                <div class="l-pin-header-inner">
+                    <!-- @include '/assets/components/components/navigation_tabs' -->
+                    <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
+                        <div class="g-cell">
+                        </div>
+                        <div class="g-cell g-mob--full h-ta-center">
+                            <div class="o-input--toggle-group__inline">
+                                <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Upcoming Lots</div></label>
+                                <label class="o-input--toggle"><input type="radio" name="lotstatus"><div>Sold Lots</div></label>
+                                <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>All Lots</div></label>
+                            </div>
+                        </div>
+                        <div class="g-cell h-hide-mobile">
+                            <label for="" class="t-field-label">Sort by:</label>
+                            <select class="o-input--select__inline">
+                                <option value="">Closing Time</option>
+                                <option value="">Closing Time</option>
+                                <option value="">Closing Time</option>
+                                <option value="">Closing Time</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="g-cell h-hide-mobile">
-                        <label for="" class="t-field-label">Sort by:</label>
-                        <select class="o-input--select__inline">
-                            <option value="">Closing Time</option>
-                            <option value="">Closing Time</option>
-                            <option value="">Closing Time</option>
-                            <option value="">Closing Time</option>
-                        </select>
-                    </div>
                 </div>
+                
             </div>
             
             <div class="o-lot-listings" v-if="watchedLots.length > 0">

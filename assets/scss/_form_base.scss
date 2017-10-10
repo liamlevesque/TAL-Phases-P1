@@ -50,6 +50,11 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 		background-color: palette(grey,1);
 	}
 
+	&::placeholder{
+		font-style: italic;
+		color: palette(grey,3)
+	}
+
 }
 
 .c-input--hint{
