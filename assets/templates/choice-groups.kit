@@ -18,7 +18,10 @@
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
                 <div class="l-pin-header-inner">
-                    <!-- @include '/assets/components/components/navigation_tabs' -->
+                    <div class="l-scroll-revealable-header" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
+                        <!-- @include '/assets/components/components/navigation_tabs' -->
+                    </div>
+
                     <div class="c-navigation__tertiary g-wrapper">
                         <div class="g-cell t-h3 t-lh-300 h-color-white t-bold">
                             {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>

@@ -14,6 +14,7 @@ $max-width: 80em;
         padding-bottom: spacing(small);
     }
 }
+
     .logo{
         width: 60px;
     }
@@ -88,4 +89,14 @@ $max-width: 80em;
 }
     .l-pin-header-inner{
         @include center-content;
+    }
+
+    .l-scroll-revealable-header{
+        overflow: hidden;
+        max-height: 200px;
+        transition: $transition;
+        
+        .s-pin-nav &.s-showWholeHeader{
+            max-height: 0;
+        }
     }

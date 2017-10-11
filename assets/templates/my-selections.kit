@@ -18,7 +18,10 @@
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
                 <div class="l-pin-header-inner">
-                    <!-- @include '/assets/components/components/navigation_tabs' -->
+                    <div class="l-scroll-revealable-header" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
+                        <!-- @include '/assets/components/components/navigation_tabs' -->
+                    </div>
+
                     <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
                         <div class="g-cell">
                         </div>

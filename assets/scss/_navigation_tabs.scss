@@ -76,16 +76,20 @@
   }
 }
 
-.c-navigation__tertiary {
+.c-navigation__tertiary, .c-navigation__choice-create {
   background-color: palette(grey);
   color: white;
   padding: spacing(xx-small);
 
   @include breakpoint(medium) {
-    margin-bottom: spacing(medium);
+    //margin-bottom: spacing(medium);
     padding: spacing(xx-small) spacing(medium);
   }
 }
+
+  .c-navigation__choice-create{
+    border-top: 1px solid palette(grey,4);
+  }
 
 .o-navigation--pagination {
   border-top: $ritchie-border;

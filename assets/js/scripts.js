@@ -1,3 +1,4 @@
+
 const tal = {
   sale: {
     name: "Orlando, FL, USA",
@@ -48,7 +49,9 @@ const tal = {
 
   activeThumbnail: 0,
 
-  pausedMessageVisible: false
+  pausedMessageVisible: false,
+
+  showSecondaryHeader: true,
 };
 
 document.addEventListener(
@@ -119,7 +122,7 @@ var app = new Vue({
     disableNumberInputScroll: function(e) {
       e.preventDefault();
     },
-    gotoPage(page) {
+    gotoPage: function(page) {
       window.location = page + ".html";
     },
     isActivePage: function(path) {
@@ -257,7 +260,11 @@ var app = new Vue({
     },
     emptySearch: function() {
       this.searchResults = [];
+    },
+    toggleViewerMode: function(){
+      this.bidder.number = null; 
     }
+
   },
   computed: {
     findOneLot: function() {

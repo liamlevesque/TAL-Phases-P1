@@ -123,6 +123,12 @@
 		"oAP": "\/assets\/components\/components\/_watch-button.html",
 		"oF": 0
 		},
+	"\/assets\/components\/layout\/_filter.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/layout\/_filter.html",
+		"oF": 0
+		},
 	"\/assets\/components\/layout\/_footer.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -157,6 +163,12 @@
 		"ft": 2048,
 		"oA": 1,
 		"oAP": "\/assets\/components\/layout\/_search-n-filter.html",
+		"oF": 0
+		},
+	"\/assets\/components\/layout\/_search.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/layout\/_search.html",
 		"oF": 0
 		},
 	"\/assets\/components\/layout\/_subheader.kit": {
@@ -766,6 +778,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/assets\/js\/_scrollHideHeader.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/js\/min\/_scrollHideHeader-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/min\/moment-with-locales.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -792,7 +814,7 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/assets\/js\/min\/scripts-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 1,
 		"tS": 1
 		},
@@ -12251,6 +12273,12 @@
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/noframework.waypoints.min.js",
 			"position": 3,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_scrollHideHeader.js",
+			"position": 4,
 			"type": 0
 			}
 		]

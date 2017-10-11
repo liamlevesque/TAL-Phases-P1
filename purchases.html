@@ -67,10 +67,14 @@
                         </div>
                     </div>	
                     
-                    <div class="h-mt-50">
+                    <div class="h-mt-50" v-if="bidder.number != null">
                         <label for="" class="t-field-label">Bidder No.</label>
                         <span class="t-h3 t-bold h-mr-200">1042</span>
                         <button class="o-button__secondary">Sign Out</button>
+                    </div>
+        
+                    <div class="h-mt-50" v-if="bidder.number === null">
+                        <button class="o-button__primary">Sign In to Bid</button>
                     </div>
         
                 </div>

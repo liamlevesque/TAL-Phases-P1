@@ -1854,14 +1854,16 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%); }
 
-.c-navigation__tertiary {
+.c-navigation__tertiary, .c-navigation__choice-create {
   background-color: #3F3F3F;
   color: white;
   padding: 5px; }
   @media (min-width: 63em) {
-    .c-navigation__tertiary {
-      margin-bottom: 20px;
+    .c-navigation__tertiary, .c-navigation__choice-create {
       padding: 5px 20px; } }
+
+.c-navigation__choice-create {
+  border-top: 1px solid #797979; }
 
 .o-navigation--pagination {
   border-top: 1px dotted #CCCCCC;
@@ -2172,6 +2174,14 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .l-pin-header-inner {
   max-width: 80em;
   margin: 0 auto; }
+
+.l-scroll-revealable-header {
+  overflow: hidden;
+  max-height: 200px;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .s-pin-nav .l-scroll-revealable-header.s-showWholeHeader {
+    max-height: 0; }
 
 /*******************
 	HELPER CLASSES

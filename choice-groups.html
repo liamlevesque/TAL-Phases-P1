@@ -67,10 +67,14 @@
                         </div>
                     </div>	
                     
-                    <div class="h-mt-50">
+                    <div class="h-mt-50" v-if="bidder.number != null">
                         <label for="" class="t-field-label">Bidder No.</label>
                         <span class="t-h3 t-bold h-mr-200">1042</span>
                         <button class="o-button__secondary">Sign Out</button>
+                    </div>
+        
+                    <div class="h-mt-50" v-if="bidder.number === null">
+                        <button class="o-button__primary">Sign In to Bid</button>
                     </div>
         
                 </div>
@@ -92,22 +96,25 @@
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
                 <div class="l-pin-header-inner">
-                    <nav class="c-nav-tabs h-hide-mobile">
-                        <ul class="g-wrapper c-nav-tabs--tab-group">
-                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
-                                All Listings
-                            </li>
-                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
-                                Watching & Bidding
-                            </li>
-                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
-                                My Choice Groups
-                            </li>
-                            <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
-                                My Purchases
-                            </li>
-                        </ul>
-                    </nav>
+                    <div class="l-scroll-revealable-header" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
+                        <nav class="c-nav-tabs h-hide-mobile">
+                            <ul class="g-wrapper c-nav-tabs--tab-group">
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                                    All Listings
+                                </li>
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                                    Watching & Bidding
+                                </li>
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                                    My Choice Groups
+                                </li>
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                                    My Purchases
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
                     <div class="c-navigation__tertiary g-wrapper">
                         <div class="g-cell t-h3 t-lh-300 h-color-white t-bold">
                             {{ choiceGroups.length > 1 ? choiceGroups.length + ' Choice Groups' : choiceGroups.length === 1 ? '1 Choice Group' : 'No Choice Groups Created Yet'}}</span>
@@ -462,6 +469,7 @@
         <div>
             <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
             <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
+            <button v-on:click="toggleViewerMode">Toggle Viewer Mode</button>
         </div>
         
         <nav class="c-nav-tabs__mobile h-hide-desktop">
