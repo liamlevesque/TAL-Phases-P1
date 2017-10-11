@@ -45,7 +45,7 @@
                 <div class="g-cell h-ta-right h-hide-mobile">
                     
                     <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                        <button class="o-button__blank t-link" v-if="bidder.number != null" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
                         <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
                     </div>
         
@@ -98,7 +98,7 @@
             <div class="l-pin-header-wrapper js--pinned-header">
                 <div class="l-pin-header-inner">
                     <div class="l-scroll-revealable-header" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
-                        <nav class="c-nav-tabs h-hide-mobile">
+                        <nav class="c-nav-tabs h-hide-mobile" v-if="bidder.number != null">
                             <ul class="g-wrapper c-nav-tabs--tab-group">
                                 <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
                                     All Listings
@@ -161,10 +161,11 @@
                     </div>
                     <div class="c-search-filter">
                        <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
-                            <div class="g-cell h-hide-mobile">
+                            <div class="g-cell h-hide-mobile" v-if="bidder.number != null">
                                 <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
                                 <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
                             </div>
+                            <div class="g-cell h-hide-mobile" v-if="bidder.number === null"><!--HOLD SPACE IN VIEWER MODE--></div>
                             <div class="g-cell g-mob--full h-ta-center">
                                 <div class="o-input--toggle-group__inline">
                                     <label class="o-input--toggle"><input type="radio" name="lotstatus" checked><div>Upcoming Lots</div></label>
@@ -230,17 +231,21 @@
                         <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
                             <div class="g-wrapper">
                                 <div class="g-cell g-mob--quarter">
-                                    <a href="lot-details.html">
+                                    <a v-bind:href="'lot-details.html#' + index">
                                         <div class="c-lot-details--lot-photo">
                                             <img v-bind:src="lot.photos[0].src" alt="">
                                         </div>
                                         <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                     </a>
-                                    <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
-                                        v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}"><i class="icon-group-add icon-size--xlarge h-mr-0"></i></button>
+                                    <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
+                                            v-if="bidder.number != null" 
+                                            v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
+                                            v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}">
+                                            <i class="icon-group-add icon-size--xlarge h-mr-0"></i>
+                                    </button>
                                 </div>
                                 <div class="g-cell g-cell__two-thirds c-lot--lot-details">
-                                    <a href="lot-details.html">
+                                    <a v-bind:href="'lot-details.html#' + index">
                                         <h3 class="t-h3 t-link">{{ lot.description }}</h3>
                                     </a>
                                     <div class="">
@@ -298,11 +303,11 @@
                                 </div>
                             </div>
                             
-                                    <div class="c-lot--bid-buttons" v-if="lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
+                                    <div class="c-lot--bid-buttons" v-if="bidder.number != null && lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
                                         <div class="g-wrapper">
                                             <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
                                             <div class="g-cell">
-                                                <button class="o-button__primary h-width-100" v-on:click="placeMaxBid(lot)">
+                                                <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)">
                                                     <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
                                                     <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
                                                 </button>
@@ -315,7 +320,11 @@
                                         <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
                                             <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
                                         </div>
-                                    </div>  
+                                    </div> 
+                                    
+                                    <div class="c-lot--bid-buttons" v-if="bidder.number === null">
+                                        <button class="o-button__primary">Sign in to bid on this item!</button>
+                                    </div>
                             <div class="c-lot--messages">
                                                 <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                     You selected and bid on this lot in a choice group.

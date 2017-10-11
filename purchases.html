@@ -44,7 +44,7 @@
                 <div class="g-cell h-ta-right h-hide-mobile">
                     
                     <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                        <button class="o-button__blank t-link" v-if="bidder.number != null" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
                         <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
                     </div>
         
@@ -96,7 +96,7 @@
             <div class="js--nav-pin-waypoint"></div>
             <div class="l-pin-header-wrapper js--pinned-header">
                 <div class="l-pin-header-inner">
-                    <nav class="c-nav-tabs h-hide-mobile">
+                    <nav class="c-nav-tabs h-hide-mobile" v-if="bidder.number != null">
                         <ul class="g-wrapper c-nav-tabs--tab-group">
                             <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
                                 All Listings
@@ -156,6 +156,7 @@
         <div>
             <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
             <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
+            <button v-on:click="toggleViewerMode">Toggle Viewer Mode</button>
         </div>
         
         <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">

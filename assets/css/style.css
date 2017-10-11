@@ -1957,9 +1957,11 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   padding: 10px 0 0;
   margin-bottom: 0; }
 
-@media (max-width: 63em) {
-  .c-lot-details {
-    background-color: #F0F0F0; } }
+.c-lot-details {
+  margin-top: 20px; }
+  @media (max-width: 63em) {
+    .c-lot-details {
+      background-color: #F0F0F0; } }
 
 @media (max-width: 63em) {
   .c-lot-details--bidding,

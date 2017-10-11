@@ -45,7 +45,7 @@
                 <div class="g-cell h-ta-right h-hide-mobile">
                     
                     <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                        <button class="o-button__blank t-link" v-if="bidder.number != null" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
                         <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
                     </div>
         
@@ -304,6 +304,7 @@
         <div>
             <button v-on:click="togglePausedState">Pause/Unpause Auction</button>
             <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
+            <button v-on:click="toggleViewerMode">Toggle Viewer Mode</button>
         </div>
         
         <div class="c-modal" v-bind:class="{ 's-visible': manageAlertsVisible }">

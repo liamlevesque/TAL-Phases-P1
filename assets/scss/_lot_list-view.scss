@@ -88,6 +88,8 @@
 }
 
 .c-lot-details {
+  margin-top: spacing(medium);
+  
   @include breakpoint(medmax) {
     background-color: palette(grey, 1);
   }

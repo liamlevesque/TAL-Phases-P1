@@ -4018,7 +4018,7 @@ var app = new Vue({
       this.searchResults = [];
     },
     toggleViewerMode: function toggleViewerMode() {
-      this.bidder.number = null;
+      this.bidder.number = this.bidder.number != null ? null : '12345';
     }
 
   },
