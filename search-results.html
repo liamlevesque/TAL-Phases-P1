@@ -258,7 +258,7 @@
                                         <p class="o-field-and-value" v-if="lot.usage"><label for="" class="t-inline-label">Usage:</label>{{ lot.usage }}</p>
                                         <p class="o-field-and-value" v-if="lot.comeswith"><label for="" class="t-inline-label">Catalog Notes:</label>{{ lot.comeswith }}</p>
                                         <p class="o-field-and-value" v-if="lot.notes"><label for="" class="t-inline-label">Comes With:</label>{{ lot.notes }}</p>
-                                        <div class="h-hide-mobile">
+                                        <div class="h-hide-mobile" v-if="bidder.number != null">
                                             <button class="o-button__icon-toggle o-button__mobile-toggle" v-on:click="toggleWatchStatus(lot)" v-bind:class="{ 's-active': watchedLots.indexOf(lot.lotNumber) >= 0}">
                                                 <i class="icon-eye"></i>
                                                 <span v-if="watchedLots.indexOf(lot.lotNumber) >= 0">Watching</span>

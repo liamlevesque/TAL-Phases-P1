@@ -53,7 +53,7 @@
                                 <div class="g-mob--full g-cell__full g-mob-order--last c-lot-detail--text-fields">
                                     <!-- @include '/assets/components/components/lot_text-fields' -->
                                 </div>
-                                <div class="g-mob--full g-cell__full g-mob-order--first c-lot-details--watch-area">
+                                <div class="g-mob--full g-cell__full g-mob-order--first c-lot-details--watch-area" v-if="bidder.number != null">
                                     <!-- @include '/assets/components/components/watch-button' -->
                                 </div>
                             </div>
