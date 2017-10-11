@@ -16,3 +16,39 @@
 	.o-input--text__search{
 		width: 300px;
 	}
+
+	.o-input--text__combined{
+		display: flex;
+		padding: 0;
+		width: auto;
+
+		@include breakpoint(medium){
+			margin-left: spacing(small);
+		}
+
+		&:focus, &:hover{
+			outline: none;
+			box-shadow: none;
+		}
+
+		input{
+			flex: 1;
+			@include textinput;
+			border: none;
+			height: $input-height - 2px;
+			
+			z-index: 1;
+
+			@include breakpoint(medium){
+				max-width: 100px;
+				//background-color: palette(grey,1);
+			}
+		}
+
+		span{
+			border: none;
+			padding: 0 spacing(x-small);
+			line-height: $input-height;
+			font-size: 20px;
+		}
+	}

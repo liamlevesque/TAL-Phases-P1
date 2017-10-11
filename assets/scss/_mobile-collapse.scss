@@ -18,6 +18,10 @@
     }
 }
 
+    #o-mobile-collapse--toggle__search+label{
+        margin: 0;
+    }
+
     .o-mobile-collapse--container, [class^="o-mobile-collapse--container"]{
         @include breakpoint(medmax){
             display: none;

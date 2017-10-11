@@ -92,11 +92,13 @@ $max-width: 80em;
     }
 
     .l-scroll-revealable-header{
-        overflow: hidden;
-        max-height: 200px;
-        transition: $transition;
-        
-        .s-pin-nav &.s-showWholeHeader{
-            max-height: 0;
+        @include breakpoint(medium){
+            overflow: hidden;
+            max-height: 200px;
+            transition: $transition;
+            
+            .s-pin-nav &.s-showWholeHeader{
+                max-height: 0;
+            }
         }
     }

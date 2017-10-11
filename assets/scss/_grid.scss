@@ -18,6 +18,14 @@ $gutters: spacing(large);
   }
 }
 
+.g-desktop-wrapper {
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
 /* With gutters */
 .g-wrapper__gutters {
   margin-left: -$gutters;

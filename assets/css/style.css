@@ -436,6 +436,14 @@ ul {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
 
+@media (min-width: 63em) {
+  .g-desktop-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+
 /* With gutters */
 .g-wrapper__gutters {
   margin-left: -30px;
@@ -1199,6 +1207,64 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .o-input--text__search {
   width: 300px; }
 
+.o-input--text__combined {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  width: auto; }
+  @media (min-width: 63em) {
+    .o-input--text__combined {
+      margin-left: 15px; } }
+  .o-input--text__combined:focus, .o-input--text__combined:hover {
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  .o-input--text__combined input {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    height: 40px;
+    width: 100%;
+    display: block;
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    border-radius: 0;
+    padding: 10px;
+    position: relative;
+    font-size: 1rem;
+    border: none;
+    height: 38px;
+    z-index: 1; }
+    .o-input--text__combined input:hover, .o-input--text__combined input:focus {
+      -webkit-box-shadow: 0 0 3px 3px #D2ECFA;
+              box-shadow: 0 0 3px 3px #D2ECFA; }
+    .o-input--text__combined input.invalid, .o-input--text__combined input.s-error, .o-input--text__combined input[invalid] {
+      -webkit-box-shadow: 0 0 2px 2px #E50000;
+              box-shadow: 0 0 2px 2px #E50000; }
+    .o-input--text__combined input[readonly] {
+      background-color: #F0F0F0; }
+    .o-input--text__combined input::-webkit-input-placeholder {
+      font-style: italic;
+      color: #999999; }
+    .o-input--text__combined input:-ms-input-placeholder {
+      font-style: italic;
+      color: #999999; }
+    .o-input--text__combined input::placeholder {
+      font-style: italic;
+      color: #999999; }
+    @media (min-width: 63em) {
+      .o-input--text__combined input {
+        max-width: 100px; } }
+  .o-input--text__combined span {
+    border: none;
+    padding: 0 10px;
+    line-height: 40px;
+    font-size: 20px; }
+
 .o-input--toggle-group, [class^="o-input--toggle-group"] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1294,6 +1360,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     color: white; }
   [id^="o-mobile-collapse--toggle"]:checked ~ [class^="o-mobile-collapse--container"] {
     display: block; }
+
+#o-mobile-collapse--toggle__search + label {
+  margin: 0; }
 
 @media (max-width: 63em) {
   .o-mobile-collapse--container, [class^="o-mobile-collapse--container"] {
@@ -1775,9 +1844,11 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .c-search-filter {
   background-color: #F0F0F0;
+  padding: 0 20px;
   padding-top: 10px; }
   @media (min-width: 63em) {
     .c-search-filter {
+      padding: 0;
       padding-top: 0;
       background-color: white; } }
 
@@ -1790,7 +1861,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .c-search-filter--filter {
   background-color: #F0F0F0;
   position: relative;
-  padding: 5px 20px; }
+  padding: 5px 0 10px; }
   @media (min-width: 63em) {
     .c-search-filter--filter {
       padding: 5px 30px; } }
@@ -2177,13 +2248,14 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   max-width: 80em;
   margin: 0 auto; }
 
-.l-scroll-revealable-header {
-  overflow: hidden;
-  max-height: 200px;
-  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-  .s-pin-nav .l-scroll-revealable-header.s-showWholeHeader {
-    max-height: 0; }
+@media (min-width: 63em) {
+  .l-scroll-revealable-header {
+    overflow: hidden;
+    max-height: 200px;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+    .s-pin-nav .l-scroll-revealable-header.s-showWholeHeader {
+      max-height: 0; } }
 
 /*******************
 	HELPER CLASSES

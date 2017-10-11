@@ -146,11 +146,17 @@
                                                                 </div> -->
                                                             </div>
                                                         </div>
-                                                        <div class="">
+                                                        <div class="g-desktop-wrapper">
                                                             <div class="h-mt-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
                                                             <label for="" class="t-field-label__mobile-to-desktop">Lot Range:</label>
-                                                            <input type="text" class="o-input--text__small" placeholder="from"> - <input type="text" class="o-input--text__small" placeholder="to">
-                                                            <button class="o-button__primary" v-on:click="gotoPage('search-results')">Go</button>
+                                                            <div class="g-wrapper">
+                                                                <div class="o-input--text__combined g-cell">
+                                                                    <input type="text" placeholder="from lot">
+                                                                    <span>-</span>
+                                                                    <input type="text" placeholder="to lot">
+                                                                </div>
+                                                                <button class="o-button__primary o-button__input-buddy" v-on:click="gotoPage('search-results')">Go</button>
+                                                            </div>
                                                             <div class="h-mb-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
                                                         </div>
                                                     </div>
