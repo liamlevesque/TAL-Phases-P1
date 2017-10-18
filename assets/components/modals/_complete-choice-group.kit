@@ -13,7 +13,7 @@
                     <div class="o-data-table--header">Your Selected Lots</div>
                     <ul class="o-data-table--body">
                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                            <div class="g-cell">Lot {{ choicelot }} - Short description here</div>
+                            <div class="g-cell h-t-ellipsize h-mr-100">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
                             <div class="g-cell__no-stretch h-color-error"><i class="icon-trash"></i> Remove</div>
                         </li>
                     </ul>
@@ -86,7 +86,31 @@
                     <div class="o-data-table--header">Your Selected Lots</div>
                     <ul class="o-data-table--body">
                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                            <div class="g-cell">Lot {{ choicelot }} - Short Description goes here</div>
+                            <div class="g-cell h-t-ellipsize h-mr-100">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="c-modal--footer">
+
+                <button class="o-button__blank t-link" v-on:click="toggleCompleteChoiceGroupModalVisible">Cancel</button>
+                <button class="o-button__secondary" v-on:click="setChoiceProgress(3)">Back</button>
+                <button class="o-button__primary" v-on:click="finishChoiceGroup()">Finish <span class="h-hide-mobile">Choice Group</span></button>
+
+            </div>
+        </div>
+
+        <div class="c-modal--step" v-if="choiceProgress === 5">
+            <div class="c-modal--body">
+                <div class="o-message__warning h-mb-100">Uh Oh! Some of the lots in your bid are no longer available!</div>
+                <p>If you choose to create the group, the lots  in red won't be included. Otherwise, click 'Cancel' to start again.</p>
+                <hr class="o-hr h-mb-100"/>
+                <div class="o-data-table h-mt-200 h-mb-200">
+                    <div class="o-data-table--header">Your Selected Lots</div>
+                    <ul class="o-data-table--body">
+                        <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup" v-bind:class="{'h-color-error': choicelot.status}">
+                            <div class="g-cell h-t-ellipsize h-mr-100" v-bind:class="{'h-t-strikethrough':choicelot.status}">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
+                            <div class="t-bold">{{ choicelot.status === 'notinyard'? 'Not In Yard' : '' }}</div>
                         </li>
                     </ul>
                 </div>

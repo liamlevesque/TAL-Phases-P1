@@ -3801,6 +3801,7 @@ var tal = {
 
   groupMaximumLots: 20,
   creatingChoiceGroup: false,
+  tempChoiceGroupArray: [],
   tempChoiceGroup: [],
   choiceProgress: 1,
   completeChoiceGroupModalVisible: false,
@@ -3953,6 +3954,14 @@ var app = new Vue({
     toggleCompleteChoiceGroupModalVisible: function toggleCompleteChoiceGroupModalVisible() {
       this.completeChoiceGroupModalVisible = !this.completeChoiceGroupModalVisible;
     },
+    updateChoiceGroup: function updateChoiceGroup() {
+      var _this = this;
+
+      this.tempChoiceGroup = [];
+      this.tempChoiceGroupArray.map(function (key) {
+        return _this.tempChoiceGroup.push(_this.lots[key]);
+      });
+    },
     progressClasses: function progressClasses(step) {
       return {
         "s-current": this.choiceProgress === step,
@@ -3963,6 +3972,14 @@ var app = new Vue({
       this.choiceProgress = step;
     },
     finishChoiceGroup: function finishChoiceGroup() {
+      for (var i = 0; i < this.tempChoiceGroup.length; i++) {
+        console.log(this.tempChoiceGroup[i].status);
+        if (this.tempChoiceGroup[i].status === 'notinyard') {
+          this.choiceProgress = 5;
+          return;
+        }
+      }
+
       var newGroup = {
         uid: new Date().toJSON(),
         type: "group",
@@ -4000,9 +4017,9 @@ var app = new Vue({
     toggleMobileMoreMenuVisible: function toggleMobileMoreMenuVisible() {
       this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
     },
-    createOrAddToChoiceGroup: function createOrAddToChoiceGroup(lotNumber) {
+    createOrAddToChoiceGroup: function createOrAddToChoiceGroup(lot) {
       if (!this.creatingChoiceGroup) this.creatingChoiceGroup = true;
-      if (this.tempChoiceGroup.indexOf(lotNumber) < 0) this.tempChoiceGroup.push(lotNumber);
+      if (this.tempChoiceGroup.indexOf(lot) < 0) this.tempChoiceGroup.push(lot);
     },
 
     emptyPurchases: function emptyPurchases() {
@@ -4034,24 +4051,24 @@ var app = new Vue({
       };
     },
     lotsImWatching: function lotsImWatching() {
-      var _this = this;
-
-      return this.lots.filter(function (lot) {
-        return _this.watchedLots.indexOf(lot.lotNumber) >= 0;
-      });
-    },
-    lotsIveWon: function lotsIveWon() {
       var _this2 = this;
 
       return this.lots.filter(function (lot) {
-        return _this2.purchasedLots.indexOf(lot.lotNumber) >= 0;
+        return _this2.watchedLots.indexOf(lot.lotNumber) >= 0;
       });
     },
-    searchedLots: function searchedLots() {
+    lotsIveWon: function lotsIveWon() {
       var _this3 = this;
 
       return this.lots.filter(function (lot) {
-        return _this3.searchResults.indexOf(lot.lotNumber) >= 0;
+        return _this3.purchasedLots.indexOf(lot.lotNumber) >= 0;
+      });
+    },
+    searchedLots: function searchedLots() {
+      var _this4 = this;
+
+      return this.lots.filter(function (lot) {
+        return _this4.searchResults.indexOf(lot.lotNumber) >= 0;
       });
     }
   },

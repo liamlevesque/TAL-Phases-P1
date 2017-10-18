@@ -208,7 +208,7 @@
                                                 <div class="g-cell">
                                                     <label for="" class="t-field-label__mobile-to-desktop">{{ tempChoiceGroup.length }} Lot<span v-if="tempChoiceGroup.length === 0 || tempChoiceGroup.length >= 2">s</span> Selected:</label>
                                                     <span class="t-h4 h-color-brand">
-                                                        <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
+                                                        <span v-for="choice in tempChoiceGroup">{{ choice.lotNumber }}, </span>
                                                     </span>
                                                     <span class="t-faint" v-if="tempChoiceGroup.length === 0">Select at least two lots to continue building a choice group</span>
                                                     <span class="t-faint" v-if="tempChoiceGroup.length === 1">Great! Pick one more lot to continue building a choice group!</span>
@@ -230,7 +230,7 @@
                     <div class="g-wrapper">
                         <div class="h-hide-mobile" v-if="creatingChoiceGroup">
                             <label class="o-input--checkbox">
-                                <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
+                                <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
                                 <span class="o-input--checksymbol"></span>
                             </label>
                         </div>
@@ -245,7 +245,7 @@
                                     </a>
                                     <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                                             v-if="bidder.number != null" 
-                                            v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
+                                            v-on:click="createOrAddToChoiceGroup(lot)"
                                             v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}">
                                             <i class="icon-group-add icon-size--xlarge h-mr-0"></i>
                                     </button>
@@ -659,7 +659,7 @@
                                                     <div class="o-data-table--header">Your Selected Lots</div>
                                                     <ul class="o-data-table--body">
                                                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                                                            <div class="g-cell">Lot {{ choicelot }} - Short description here</div>
+                                                            <div class="g-cell h-t-ellipsize h-mr-100">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
                                                             <div class="g-cell__no-stretch h-color-error"><i class="icon-trash"></i> Remove</div>
                                                         </li>
                                                     </ul>
@@ -732,7 +732,31 @@
                                                     <div class="o-data-table--header">Your Selected Lots</div>
                                                     <ul class="o-data-table--body">
                                                         <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup">
-                                                            <div class="g-cell">Lot {{ choicelot }} - Short Description goes here</div>
+                                                            <div class="g-cell h-t-ellipsize h-mr-100">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="c-modal--footer">
+                                
+                                                <button class="o-button__blank t-link" v-on:click="toggleCompleteChoiceGroupModalVisible">Cancel</button>
+                                                <button class="o-button__secondary" v-on:click="setChoiceProgress(3)">Back</button>
+                                                <button class="o-button__primary" v-on:click="finishChoiceGroup()">Finish <span class="h-hide-mobile">Choice Group</span></button>
+                                
+                                            </div>
+                                        </div>
+                                
+                                        <div class="c-modal--step" v-if="choiceProgress === 5">
+                                            <div class="c-modal--body">
+                                                <div class="o-message__warning h-mb-100">Uh Oh! Some of the lots in your bid are no longer available!</div>
+                                                <p>If you choose to create the group, the lots  in red won't be included. Otherwise, click 'Cancel' to start again.</p>
+                                                <hr class="o-hr h-mb-100"/>
+                                                <div class="o-data-table h-mt-200 h-mb-200">
+                                                    <div class="o-data-table--header">Your Selected Lots</div>
+                                                    <ul class="o-data-table--body">
+                                                        <li class="o-data-table--row g-wrapper" v-for="choicelot in tempChoiceGroup" v-bind:class="{'h-color-error': choicelot.status}">
+                                                            <div class="g-cell h-t-ellipsize h-mr-100" v-bind:class="{'h-t-strikethrough':choicelot.status}">Lot {{ choicelot.lotNumber }} - {{ choicelot.description }}</div>
+                                                            <div class="t-bold">{{ choicelot.status === 'notinyard'? 'Not In Yard' : '' }}</div>
                                                         </li>
                                                     </ul>
                                                 </div>

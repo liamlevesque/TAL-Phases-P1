@@ -1,7 +1,7 @@
 <div class="g-wrapper">
     <div class="h-hide-mobile" v-if="creatingChoiceGroup">
         <label class="o-input--checkbox">
-            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
+            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
             <span class="o-input--checksymbol"></span>
         </label>
     </div>
@@ -16,7 +16,7 @@
                 </a>
                 <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                         v-if="bidder.number != null" 
-                        v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
+                        v-on:click="createOrAddToChoiceGroup(lot)"
                         v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}">
                         <i class="icon-group-add icon-size--xlarge h-mr-0"></i>
                 </button>

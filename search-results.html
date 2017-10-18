@@ -212,7 +212,7 @@
                             <div class="g-cell">
                                 <label for="" class="t-field-label__mobile-to-desktop">{{ tempChoiceGroup.length }} Lot<span v-if="tempChoiceGroup.length === 0 || tempChoiceGroup.length >= 2">s</span> Selected:</label>
                                 <span class="t-h4 h-color-brand">
-                                    <span v-for="choice in tempChoiceGroup">{{ choice }}, </span>
+                                    <span v-for="choice in tempChoiceGroup">{{ choice.lotNumber }}, </span>
                                 </span>
                                 <span class="t-faint" v-if="tempChoiceGroup.length === 0">Select at least two lots to continue building a choice group</span>
                                 <span class="t-faint" v-if="tempChoiceGroup.length === 1">Great! Pick one more lot to continue building a choice group!</span>
@@ -235,7 +235,7 @@
                     <div class="g-wrapper">
                         <div class="h-hide-mobile" v-if="creatingChoiceGroup">
                             <label class="o-input--checkbox">
-                                <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="lot.lotNumber" v-model="tempChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
+                                <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
                                 <span class="o-input--checksymbol"></span>
                             </label>
                         </div>
@@ -250,7 +250,7 @@
                                     </a>
                                     <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                                             v-if="bidder.number != null" 
-                                            v-on:click="createOrAddToChoiceGroup(lot.lotNumber)"
+                                            v-on:click="createOrAddToChoiceGroup(lot)"
                                             v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}">
                                             <i class="icon-group-add icon-size--xlarge h-mr-0"></i>
                                     </button>

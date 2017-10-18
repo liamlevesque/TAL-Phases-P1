@@ -27,6 +27,7 @@ const tal = {
 
   groupMaximumLots: 20,
   creatingChoiceGroup: false,
+  tempChoiceGroupArray: [],
   tempChoiceGroup: [],
   choiceProgress: 1,
   completeChoiceGroupModalVisible: false,
@@ -196,6 +197,10 @@ var app = new Vue({
       this.completeChoiceGroupModalVisible = !this
         .completeChoiceGroupModalVisible;
     },
+    updateChoiceGroup: function(){
+      this.tempChoiceGroup = [];
+      this.tempChoiceGroupArray.map( key => this.tempChoiceGroup.push(this.lots[key]))
+    },
     progressClasses: function(step) {
       return {
         "s-current": this.choiceProgress === step,
@@ -206,6 +211,14 @@ var app = new Vue({
       this.choiceProgress = step;
     },
     finishChoiceGroup: function() {
+      for(let i = 0; i < this.tempChoiceGroup.length; i++){
+        console.log(this.tempChoiceGroup[i].status);
+        if(this.tempChoiceGroup[i].status === 'notinyard'){
+          this.choiceProgress = 5;
+          return;
+        }
+      }
+
       let newGroup = {
         uid: new Date().toJSON(),
         type: "group",
@@ -243,10 +256,10 @@ var app = new Vue({
     toggleMobileMoreMenuVisible: function() {
       this.mobileMoreMenuVisible = !this.mobileMoreMenuVisible;
     },
-    createOrAddToChoiceGroup: function(lotNumber) {
+    createOrAddToChoiceGroup: function(lot) {
       if (!this.creatingChoiceGroup) this.creatingChoiceGroup = true;
-      if (this.tempChoiceGroup.indexOf(lotNumber) < 0)
-        this.tempChoiceGroup.push(lotNumber);
+      if (this.tempChoiceGroup.indexOf(lot) < 0)
+        this.tempChoiceGroup.push(lot); 
     },
 
     emptyPurchases: function() {

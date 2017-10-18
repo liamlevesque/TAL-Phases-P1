@@ -49,6 +49,10 @@
 		@include ellipsize;
 	}
 
+	.h-t-strikethrough{
+		text-decoration: line-through;
+	}
+
 	.h-valign{
 		@include vert-align;
 		position: absolute;
