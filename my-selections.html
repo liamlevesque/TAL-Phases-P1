@@ -99,20 +99,52 @@
                     <div class="l-scroll-revealable-header" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
                         <nav class="c-nav-tabs h-hide-mobile" v-if="bidder.number != null">
                             <ul class="g-wrapper c-nav-tabs--tab-group">
-                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('index')" v-bind:class="isActivePage(['index.html','','lot-details.html','search-results.html'])">
                                     All Listings
                                 </li>
-                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage(['my-selections.html','search-results-watching.html'])">
                                     Watching & Bidding
                                 </li>
-                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage(['choice-groups.html'])">
                                     My Choice Groups
                                 </li>
-                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                                <li class="g-cell c-nav-tabs--tab t-h3" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage(['purchases.html'])">
                                     My Purchases
                                 </li>
                             </ul>
                         </nav>
+                        <div class="c-search-filter">
+                                                    <input id="o-mobile-collapse--toggle__search" class="h-hide-desktop" type="checkbox">
+                                                    <label for="o-mobile-collapse--toggle__search" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-search h-mr-100"></i>Search lots</div></label>
+                                                    <div class="o-mobile-collapse--container c-search-filter--search g-wrapper">
+                                                        <div class="g-cell g-wrapper">
+                                                            <div>
+                                                                <div>
+                                                                    <div class="g-wrapper">
+                                                                        <label for="" class="t-field-label__mobile-to-desktop h-mr-100">Search:</label>
+                                                                        <input type="text" class="o-input--text__search g-cell" placeholder="Search watching & bidding">
+                                                                        <button class="o-button__primary o-button__input-buddy" v-on:click="gotoPage('search-results-watching')">Search</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="g-desktop-wrapper">
+                                                            <div class="h-mt-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+                                                            <label for="" class="t-field-label__mobile-to-desktop">Lot Range:</label>
+                                                            <div class="g-wrapper">
+                                                                <div class="o-input--text__combined g-cell">
+                                                                    <input type="text" placeholder="from lot">
+                                                                    <span>to</span>
+                                                                    <input type="text" placeholder="(optional)">
+                                                                </div>
+                                                                <button class="o-button__primary o-button__input-buddy" v-on:click="gotoPage('search-results')">Go</button>
+                                                            </div>
+                                                            <div class="h-mb-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
                     </div>
 
                     <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
@@ -140,7 +172,7 @@
             </div>
             
             <div class="o-lot-listings" v-if="watchedLots.length > 0">
-                <div v-for="lot in lotsImWatching" class="c-lot-listing"> 
+                <div v-for="(lot,index) in lotsImWatching" class="c-lot-listing"> 
                     <div class="g-wrapper">
                         <div class="h-hide-mobile" v-if="creatingChoiceGroup">
                             <label class="o-input--checkbox">
@@ -217,15 +249,17 @@
                                 <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                     <div class="g-cell">
                                         <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                                        <span class="t-h4">{{ lot.closes | countdownTime }}</span>
+                                        <span class="t-h4" v-show="!closingSoon(lot)">{{ countdown(lot) }}</span>
+                                        <span class="t-h4 h-color-error" v-show="closingSoon(lot)">Closing Soon!</span>
                                     </div>
-                                    <div>({{ lot.closes | calendarTime }})</div>
+                                    <div v-if="!closingSoon(lot)">({{ lot.closes | calendarTime }})</div>
+                                    <div v-if="lot.extended" class="t-faint">Time Extended</div>
                                 </div>
                             </div>
                             
                                     <div class="c-lot--bid-buttons" v-if="bidder.number != null && lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
                                         <div class="g-wrapper">
-                                            <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot)"></div>
+                                            <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot) + ' USD or higher'"></div>
                                             <div class="g-cell">
                                                 <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)">
                                                     <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->

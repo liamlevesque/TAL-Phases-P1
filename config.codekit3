@@ -171,6 +171,12 @@
 		"oAP": "\/assets\/components\/layout\/_search.html",
 		"oF": 0
 		},
+	"\/assets\/components\/layout\/_search__watching.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/layout\/_search__watching.html",
+		"oF": 0
+		},
 	"\/assets\/components\/layout\/_subheader.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -1254,6 +1260,12 @@
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/purchases.html",
+		"oF": 2
+		},
+	"\/assets\/templates\/search-results-watching.kit": {
+		"ft": 2048,
+		"oA": 0,
+		"oAP": "\/search-results-watching.html",
 		"oF": 2
 		},
 	"\/assets\/templates\/search-results.kit": {

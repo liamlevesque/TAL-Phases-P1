@@ -2032,6 +2032,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   margin-top: 20px; }
   @media (max-width: 63em) {
     .c-lot-details {
+      margin-top: 0;
       background-color: #F0F0F0; } }
 
 @media (max-width: 63em) {

@@ -3784,7 +3784,8 @@ var tal = {
     paused: false
   },
   preSoldOffset: 20,
-  closeInterval: 30,
+  closeInterval: 15,
+  currentTime: moment(),
   bidder: {
     number: "12345"
   },
@@ -3831,6 +3832,10 @@ document.addEventListener("DOMContentLoaded", function () {
   for (var i = 0; i < tal.lots.length; i++) {
     tal.lots[i].closes = moment().add((i - tal.preSoldOffset) * tal.closeInterval, "seconds");
   }
+
+  setInterval(function () {
+    app.currentTime = moment();
+  }, 1000);
 
   var waypoint = new Waypoint({
     element: document.querySelector(".js--nav-pin-waypoint"),
@@ -3885,10 +3890,12 @@ var app = new Vue({
     gotoPage: function gotoPage(page) {
       window.location = page + ".html";
     },
-    isActivePage: function isActivePage(path) {
-      return {
-        "s-active": window.location.pathname.split("/").pop() === path
-      };
+    isActivePage: function isActivePage(paths) {
+      for (var i = 0; i < paths.length; i++) {
+        if (window.location.pathname.split("/").pop() === paths[i]) return {
+          "s-active": window.location.pathname.split("/").pop() === paths[i]
+        };
+      }
     },
     placeBid: function placeBid(lot) {
       this.confirmPlaceBidVisible = true;
@@ -3930,6 +3937,10 @@ var app = new Vue({
 
     pricedBid: function pricedBid(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
+      if (lot.extended || this.closingSoon(lot)) {
+        lot.closes = moment(lot.closes).add(2, 'minutes');
+        lot.extended = true;
+      }
     },
 
     buildBid: function buildBid(bidder, amt, type) {
@@ -4006,7 +4017,7 @@ var app = new Vue({
       this.activeThumbnail = index;
     },
     nextIncrement: function nextIncrement(lot) {
-      return (lot.bids.length > 0 ? lot.bids[0].bid + 5 : "5") + " USD or higher";
+      return lot.bids.length > 0 ? lot.bids[0].bid + 5 : "5";
     },
     togglePausedMessageVisible: function togglePausedMessageVisible() {
       this.pausedMessageVisible = !this.pausedMessageVisible;
@@ -4036,6 +4047,25 @@ var app = new Vue({
     },
     toggleViewerMode: function toggleViewerMode() {
       this.bidder.number = this.bidder.number != null ? null : '12345';
+    },
+
+    countdown: function countdown(lot) {
+      var span = moment.duration(lot.closes - this.currentTime);
+      //let extendedSpan = moment.duration(lot.extendedClose - this.currentTime);
+
+      if (span.seconds() < 0) {
+        lot.status = 'sold';
+      }
+      return span.days() + "d " + span.hours() + "h " + span.minutes() + "m " + span.seconds() + "s";
+    },
+
+    closingSoon: function closingSoon(lot) {
+      if (lot.extended) return true;
+      var now = moment();
+      var end = moment(lot.closes);
+      var span = moment.duration(end - now);
+      if (span.days() === 0 && span.hours() === 0 && span.minutes() < 2) return true;
+      return false;
     }
 
   },

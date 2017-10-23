@@ -1,0 +1,32 @@
+<div class="c-search-filter">
+    <input id="o-mobile-collapse--toggle__search" class="h-hide-desktop" type="checkbox">
+    <label for="o-mobile-collapse--toggle__search" class="h-hide-desktop"><div class="o-button__icon-toggle"><i class="icon-search h-mr-100"></i>Search lots</div></label>
+    <div class="o-mobile-collapse--container c-search-filter--search g-wrapper">
+        <div class="g-cell g-wrapper">
+            <div>
+                <div>
+                    <div class="g-wrapper">
+                        <label for="" class="t-field-label__mobile-to-desktop h-mr-100">Search:</label>
+                        <input type="text" class="o-input--text__search g-cell" placeholder="Search watching & bidding">
+                        <button class="o-button__primary o-button__input-buddy" v-on:click="gotoPage('search-results-watching')">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-desktop-wrapper">
+            <div class="h-mt-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+            <label for="" class="t-field-label__mobile-to-desktop">Lot Range:</label>
+            <div class="g-wrapper">
+                <div class="o-input--text__combined g-cell">
+                    <input type="text" placeholder="from lot">
+                    <span>to</span>
+                    <input type="text" placeholder="(optional)">
+                </div>
+                <button class="o-button__primary o-button__input-buddy" v-on:click="gotoPage('search-results')">Go</button>
+            </div>
+            <div class="h-mb-100 h-hide-desktop"><!-- a little padding in the mobile view --></div>
+        </div>
+    </div>
+    
+    
+</div>
