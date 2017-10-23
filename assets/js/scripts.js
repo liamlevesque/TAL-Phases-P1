@@ -10,7 +10,7 @@ const tal = {
     paused: false
   },
   preSoldOffset: 20,
-  closeInterval: 15,
+  closeInterval: 30,
   currentTime: moment(),
   bidder: {
     number: "12345"
@@ -66,9 +66,9 @@ document.addEventListener(
       );
     }
 
-    setInterval(function(){
-      app.currentTime = moment();
-    },1000);
+    // setInterval(function(){
+    //   app.currentTime = moment();
+    // },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -180,10 +180,10 @@ var app = new Vue({
 
     pricedBid: function(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
-      if(lot.extended || this.closingSoon(lot)){
-        lot.closes = moment(lot.closes).add(2,'minutes');
-        lot.extended = true;
-      } 
+      // if(lot.extended || this.closingSoon(lot)){
+      //   lot.closes = moment(lot.closes).add(2,'minutes');
+      //   lot.extended = true;
+      // } 
     },
 
     buildBid: function(bidder, amt, type) {

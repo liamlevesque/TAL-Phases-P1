@@ -303,11 +303,9 @@
                                 <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                     <div class="g-cell">
                                         <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                                        <span class="t-h4" v-show="!closingSoon(lot)">{{ countdown(lot) }}</span>
-                                        <span class="t-h4 h-color-error" v-show="closingSoon(lot)">Closing Soon!</span>
+                                        <span class="t-h4">{{ lot.closes | countdownTime }}</span>
                                     </div>
-                                    <div v-if="!closingSoon(lot)">({{ lot.closes | calendarTime }})</div>
-                                    <div v-if="lot.extended" class="t-faint">Time Extended</div>
+                                    <div>({{ lot.closes | calendarTime }})</div>
                                 </div>
                             </div>
                             
