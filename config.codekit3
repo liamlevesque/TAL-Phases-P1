@@ -57,12 +57,6 @@
 		"oAP": "\/assets\/components\/components\/_increment-table.html",
 		"oF": 0
 		},
-	"\/assets\/components\/components\/_lot_bid-area.kit": {
-		"ft": 2048,
-		"oA": 1,
-		"oAP": "\/assets\/components\/components\/_lot_bid-area.html",
-		"oF": 0
-		},
 	"\/assets\/components\/components\/_lot_bid-buttons.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -803,26 +797,6 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"\/assets\/js\/min\/scripts-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/min\/min\/scripts-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/js\/scripts.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/assets\/js\/min\/scripts-min.js",
-		"oF": 1,
-		"sC": 1,
-		"tS": 1
 		},
 	"\/assets\/scss\/_breakpoints.scss": {
 		"aP": 0,
@@ -12196,34 +12170,16 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/choice-groups.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/choice-groups.html",
-		"oF": 0
-		},
 	"\/help.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/help.html",
 		"oF": 0
 		},
-	"\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/index.html",
-		"oF": 0
-		},
 	"\/login.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/login.html",
-		"oF": 0
-		},
-	"\/lot-details.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/lot-details.html",
 		"oF": 0
 		},
 	"\/manifest.json": {
@@ -12233,12 +12189,6 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
-		},
-	"\/my-selections.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/my-selections.html",
-		"oF": 0
 		},
 	"\/pick-sale.html": {
 		"ft": 8192,
@@ -12251,49 +12201,11 @@
 		"oA": 2,
 		"oAP": "\/purchases.html",
 		"oF": 0
-		},
-	"\/search-results.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/search-results.html",
-		"oF": 0
 		}
 	},
 "hooks": [
 	],
 "manualImportLinks": {
-	"\/assets\/js\/scripts.js": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_categories.js",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_lots.js",
-			"position": 1,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_increments.js",
-			"position": 2,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/noframework.waypoints.min.js",
-			"position": 3,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_scrollHideHeader.js",
-			"position": 4,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"creationDate": 524509148,
