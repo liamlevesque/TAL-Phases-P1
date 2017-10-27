@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25900",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
 	"\/assets\/components\/components\/_auction-paused.kit": {
 		"ft": 2048,
 		"oA": 1,
@@ -12250,6 +12256,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/purchases.html",
+		"oF": 0
+		},
+	"\/search-results-watching.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/search-results-watching.html",
 		"oF": 0
 		},
 	"\/search-results.html": {
