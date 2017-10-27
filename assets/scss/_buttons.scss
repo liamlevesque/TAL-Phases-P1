@@ -7,6 +7,7 @@ $button-padding: 25px;
   line-height: $button-height;
   padding: 0 $button-padding;
   border: none;
+  display: inline-block;
 
   font-size: fontsize(200);
   border-radius: $default-border-radius;

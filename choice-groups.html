@@ -173,7 +173,7 @@
                                 <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
                                     <div class="g-wrapper">
                                         <div class="g-cell g-mob--quarter h-pos-relative">
-                                            <a v-bind:href="'lot-details.html#' + index">
+                                            <a v-bind:href="'lot-details.html#' + (index + 20)">
                                                 <div class="c-lot-details--lot-photo">
                                                     <img v-bind:src="lot.photos[0].src" alt="">
                                                 </div>
@@ -187,7 +187,7 @@
                                             </button>
                                         </div>
                                         <div class="g-cell g-cell__two-thirds c-lot--lot-details">
-                                            <a v-bind:href="'lot-details.html#' + index">
+                                            <a v-bind:href="'lot-details.html#' + (index + 20)">
                                                 <h3 class="t-h3 t-link">{{ lot.description }}</h3>
                                             </a>
                                             <div class="">
@@ -240,8 +240,8 @@
                                             <div class="g-cell t-h4">
                                                 {{ closingSoonString(lot) }}
                                             </div>
-                                            <div v-if="lot.extended" class="t-faint h-color-brand">
-                                                (Time Extended)
+                                            <div v-if="lot.extended" class="t-bold h-color-brand">
+                                                Time Extended
                                             </div>
                                             <svg v-if="lot.extended" class="h-abs-fill" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -283,7 +283,7 @@
                                                 <button class="o-button__primary">Sign in to bid on this item!</button>
                                             </div>
                                     <div class="c-lot--messages">
-                                                        <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                        <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                             You bid on this lot in a choice group.
                                                             <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                                                         </div>
@@ -344,7 +344,7 @@
                                                 <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
                                                     <div class="g-wrapper">
                                                         <div class="g-cell g-mob--quarter h-pos-relative">
-                                                            <a v-bind:href="'lot-details.html#' + index">
+                                                            <a v-bind:href="'lot-details.html#' + (index + 20)">
                                                                 <div class="c-lot-details--lot-photo">
                                                                     <img v-bind:src="lot.photos[0].src" alt="">
                                                                 </div>
@@ -358,7 +358,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="g-cell g-cell__two-thirds c-lot--lot-details">
-                                                            <a v-bind:href="'lot-details.html#' + index">
+                                                            <a v-bind:href="'lot-details.html#' + (index + 20)">
                                                                 <h3 class="t-h3 t-link">{{ lot.description }}</h3>
                                                             </a>
                                                             <div class="">
@@ -411,8 +411,8 @@
                                                             <div class="g-cell t-h4">
                                                                 {{ closingSoonString(lot) }}
                                                             </div>
-                                                            <div v-if="lot.extended" class="t-faint h-color-brand">
-                                                                (Time Extended)
+                                                            <div v-if="lot.extended" class="t-bold h-color-brand">
+                                                                Time Extended
                                                             </div>
                                                             <svg v-if="lot.extended" class="h-abs-fill" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -454,7 +454,7 @@
                                                                 <button class="o-button__primary">Sign in to bid on this item!</button>
                                                             </div>
                                                     <div class="c-lot--messages">
-                                                                        <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                                        <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                                             You bid on this lot in a choice group.
                                                                             <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                                                                         </div>
@@ -517,6 +517,8 @@
             <button v-on:click="togglePausedMessageVisible">Show Paused Message</button>
             <button v-on:click="toggleViewerMode">Toggle Viewer Mode</button>
             <button v-on:click="toggleOutbidMessage">Show Outbid Notification</button>
+            <button v-on:click="toggleSessionTimedOut">Show session timeout</button>
+            
         </div>
         
         <nav class="c-nav-tabs__mobile h-hide-desktop">
@@ -584,6 +586,27 @@
         
         </nav>
         
+        <div class="c-modal" v-bind:class="{ 's-visible': sessionTimedOut }">
+                
+            <div class="c-modal--content">
+                <div class="c-modal--header">
+                    <div class="o-message__error h-mb-200">
+                        <span class="t-h3 t-bold">Uh Oh! Your Timed Auction session has expired.</span>
+                    </div>
+                </div>
+                <div class="c-modal--body">
+        
+                        In order to keep bidding you'll have to sign-in again. 
+        
+                </div>
+                <div class="c-modal--footer">
+        
+                    <a class="o-button__primary" href="./login.html">Sign-In</a>
+        
+                </div>
+            </div>
+        
+        </div>
         <div class="c-notification-center" v-if="outbidMessageVisible && messages.length > 0">
             <div class="c-notification-center__header g-wrapper">
                 <div class="g-cell">

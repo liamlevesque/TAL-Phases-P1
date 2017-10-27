@@ -192,8 +192,8 @@
                                 <div class="g-cell t-h4">
                                     {{ closingSoonString(lot) }}
                                 </div>
-                                <div v-if="lot.extended" class="t-faint h-color-brand">
-                                    (Time Extended)
+                                <div v-if="lot.extended" class="t-bold h-color-brand">
+                                    Time Extended
                                 </div>
                                 <svg v-if="lot.extended" class="h-abs-fill" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -235,7 +235,7 @@
                                                     <button class="o-button__primary">Sign in to bid on this item!</button>
                                                 </div>
                         <div class="c-lot--messages">
-                                                                            <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                                            <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                                                 You bid on this lot in a choice group.
                                                                                 <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                                                                             </div>

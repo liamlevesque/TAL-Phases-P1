@@ -720,7 +720,7 @@ a.t-link {
 .icon-group-add:before {
   content: "\e92a"; }
 
-.icon-group:before {
+.icon-group:before, .o-message__choice-group:before {
   content: "\e91c"; }
 
 .icon-correct:before, .o-message__success:before {
@@ -956,6 +956,7 @@ a.t-link {
   line-height: 40px;
   padding: 0 25px;
   border: none;
+  display: inline-block;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
@@ -978,6 +979,7 @@ a.t-link {
   line-height: 40px;
   padding: 0 25px;
   border: none;
+  display: inline-block;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
@@ -1000,6 +1002,7 @@ a.t-link {
   line-height: 40px;
   padding: 0 25px;
   border: none;
+  display: inline-block;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
@@ -1022,6 +1025,7 @@ a.t-link {
   line-height: 40px;
   padding: 0 25px;
   border: none;
+  display: inline-block;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
@@ -1043,6 +1047,7 @@ a.t-link {
   line-height: 40px;
   padding: 0 25px;
   border: none;
+  display: inline-block;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
@@ -1698,6 +1703,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   border-color: #D2ECFA; }
   .o-message__info:before {
     color: #20579E; }
+
+.o-message__choice-group {
+  color: black;
+  background-color: #ECF5FB;
+  border-color: #D2ECFA; }
+  .o-message__choice-group:before {
+    color: #20579E;
+    font-size: 20px;
+    line-height: 30px; }
 
 .o-message__tal {
   color: #E87511;
