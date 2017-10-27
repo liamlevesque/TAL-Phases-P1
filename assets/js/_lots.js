@@ -1226,8 +1226,8 @@ const lotlist = [
 		},
 		{
 			"lotNumber" : "5044",
-			"bids": [],
-			"maxBid":{bid: 0,bidder: null},
+			"bids": [{bid: 100, bidder: "12345", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
+			"maxBid":{bid: 500,bidder: "12345"},
 			"category": 'Attachments - Wheel Loader',
 			"watching": [],
 			"equipid": '1234567890A',

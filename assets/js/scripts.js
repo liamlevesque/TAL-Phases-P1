@@ -24,7 +24,7 @@ const tal = {
   confirmPlaceBidVisible: false,
   confirmPlaceMaxBidVisible: false,
   invalidMaxBidVisible: false,
-  offIncrementMaxBidVisible: false,
+  offIncrementMaxBidVisible: false, 
 
   groupMaximumLots: 20,
   creatingChoiceGroup: false,
@@ -34,13 +34,13 @@ const tal = {
   completeChoiceGroupModalVisible: false,
   choiceGroups: [
     {
-      uid: "123456",
+      uid: "123456", 
       type: "group",
-      lots: ["5099", "5100", "5101", "5102"],
+      lots: ["5044", "5045", "5101", "5102"],
       quantity: 2,
       maxbid: 100
     }
-  ],
+  ], 
 
   purchasedLots: ["5001", "5004"],
   searchResults: ["5045", "5046", "5047", "5048", "5049", "5050"],

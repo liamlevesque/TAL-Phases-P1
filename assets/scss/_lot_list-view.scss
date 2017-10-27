@@ -23,6 +23,8 @@
 }
 
 .c-lot--details-wrapper {
+  position: relative;
+
   @include breakpoint(medmax) {
     padding: 0 spacing(medium);
   }

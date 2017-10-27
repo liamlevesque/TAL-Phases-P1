@@ -220,7 +220,7 @@
                                                     <button class="o-button__primary">Sign in to bid on this item!</button>
                                                 </div>
                         <div class="c-lot--messages">
-                                                                            <div class="o-message__info c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
+                                                                            <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                                                 You selected and bid on this lot in a choice group.
                                                                                 <br><span v-on:click="gotoPage('choice-groups')" class="t-link__message">Show me</span>
                                                                             </div>

@@ -716,7 +716,7 @@ a.t-link {
 .icon-group-add:before {
   content: "\e92a"; }
 
-.icon-group:before {
+.icon-group:before, .o-message__choice-group:before {
   content: "\e91c"; }
 
 .icon-correct:before, .o-message__success:before {
@@ -1649,6 +1649,15 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   .o-message__info:before {
     color: #20579E; }
 
+.o-message__choice-group {
+  color: black;
+  background-color: #ECF5FB;
+  border-color: #D2ECFA; }
+  .o-message__choice-group:before {
+    color: #20579E;
+    font-size: 20px;
+    line-height: 30px; }
+
 .o-message__error {
   color: black;
   background-color: #FDDDD9;
@@ -1982,17 +1991,31 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     .c-lot-listing:not(:last-child) {
       border-bottom: 1px dotted #CCCCCC; } }
 
-@media (max-width: 63em) {
-  .c-lot--details-wrapper {
-    padding: 0 20px; } }
+.c-lot--details-wrapper {
+  position: relative; }
+  @media (max-width: 63em) {
+    .c-lot--details-wrapper {
+      padding: 0 20px; } }
 
 .c-lot--lot-photo {
   width: 100%;
   max-width: 100%;
   display: block; }
 
-.c-lot--lot-number {
-  margin-top: 15px; }
+@media (max-width: 63em) {
+  .c-lot--lot-number {
+    margin-top: 15px; } }
+
+@media (min-width: 63em) {
+  .c-lot--lot-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1;
+    border-radius: 0 0 8px 0; } }
 
 .c-lot--lot-details {
   padding: 0 20px; }

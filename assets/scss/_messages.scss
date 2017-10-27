@@ -34,6 +34,19 @@
         }
     }
 
+    .o-message__choice-group{
+        color: black;
+        background-color: palette(blue,1);
+        border-color: palette(blue,2);
+        @extend .icon-group;
+
+        &:before{
+            color: palette(blue);
+            font-size: 20px;
+            line-height: 30px;
+        }
+    } 
+
     .o-message__error{
         color: black;
         background-color: palette(red,1);
