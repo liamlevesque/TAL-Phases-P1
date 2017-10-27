@@ -4,6 +4,12 @@ body {
   font-size: 16px;
   line-height: 1.52rem;
   -webkit-font-smoothing: antialiased;
+  
+  @include breakpoint(medmax){
+    font-family: -apple-system, Roboto, "Trebuchet MS", Verdana, sans-serif;
+  } 
+
+
 }
 
 .t-italic {
@@ -118,6 +124,7 @@ a {
 a.t-link {
   text-decoration: none;
   color: palette(blue);
+  cursor: pointer;
 
   &:hover,
   &:active {

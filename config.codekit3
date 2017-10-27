@@ -219,6 +219,12 @@
 		"oAP": "\/assets\/components\/modals\/_manage-alerts.html",
 		"oF": 0
 		},
+	"\/assets\/components\/modals\/_outbid-notification.kit": {
+		"ft": 2048,
+		"oA": 1,
+		"oAP": "\/assets\/components\/modals\/_outbid-notification.html",
+		"oF": 0
+		},
 	"\/assets\/css\/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -823,12 +829,12 @@
 	"\/assets\/js\/scripts.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/assets\/js\/min\/scripts-min.js",
 		"oF": 0,
 		"sC": 1,
-		"tS": 0
+		"tS": 1
 		},
 	"\/assets\/scss\/_breakpoints.scss": {
 		"aP": 0,
@@ -1073,6 +1079,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/css\/_lot_list-view.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/scss\/_message-center.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/_message-center.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -12274,6 +12293,38 @@
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/assets\/js\/scripts.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_categories.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_increments.js",
+			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_lots.js",
+			"position": 2,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/noframework.waypoints.min.js",
+			"position": 3,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_scrollHideHeader.js",
+			"position": 4,
+			"type": 1
+			}
+		]
 	},
 "projectAttributes": {
 	"creationDate": 524509148,

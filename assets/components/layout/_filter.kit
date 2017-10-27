@@ -1,8 +1,8 @@
 <div class="c-search-filter">
    <div class="c-search-filter--filter g-wrapper g--center g-wrapper__centered-element">
         <div class="g-cell h-hide-mobile" v-if="bidder.number != null">
-            <button class="o-button__blank t-link" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
-            <button class="o-button__blank t-link" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
+            <button class="o-button__blank o-button__narrow h-color-white" v-if="creatingChoiceGroup" v-on:click="toggleCreateChoiceGroup">Cancel choice group</button>
+            <button class="o-button__blank o-button__narrow h-color-white" v-else v-on:click="toggleCreateChoiceGroup">Create a choice group</button>
         </div>
         <div class="g-cell h-hide-mobile" v-if="bidder.number === null"><!--HOLD SPACE IN VIEWER MODE--></div>
         <div class="g-cell g-mob--full h-ta-center">
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="g-cell h-hide-mobile">
-            <label for="" class="t-field-label">Sort by:</label>
+            <label for="" class="t-field-label h-color-white">Sort by:</label>
             <select class="o-input--select__inline">
                 <option value="">Closing Time</option>
                 <option value="">Closing Time</option>

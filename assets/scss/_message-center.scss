@@ -1,0 +1,39 @@
+.c-notification-center{
+    position: fixed;
+    bottom: 0;
+    left: spacing(small);
+    width: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+    box-shadow: $ritchie-shadow;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+    .c-notification-center__header{
+        border-bottom: 1px solid palette(grey,2);
+        padding: spacing(x-small);
+        background-color: palette(grey,4);
+        color: white;
+    }
+
+    .c-notification-center__body{
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
+        max-height: 250px;
+        transition: $transition;
+
+        &.s-minimized{
+            max-height: 0;
+        }
+    }
+
+    .c-notification{
+        padding: spacing(small);
+        
+        &:not(last-child){
+            border-bottom: 1px solid palette(grey,2);
+        }
+    }

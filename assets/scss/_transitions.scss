@@ -59,6 +59,39 @@ $transition: $transition-time_1 $transition-function;
     }
 }
 
+@mixin bgwipe($color,$height:4px,$bottom:0){
+    &:before{
+        animation-name: rotateHourGlass;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        //animation-direction: alternate;
+        animation-timing-function: ease-in-out; 
+        z-index: 1;
+    }
+
+}
+
+    @keyframes rotateHourGlass{
+        0%{
+            transform: rotate(0);
+        }
+
+        25%{
+            transform: rotate(180deg);
+        }
+
+        50%{
+            transform: rotate(180deg);
+        }
+
+        75%{
+            transform: rotate(360deg);
+        }
+
+        100%{
+            transform: rotate(360deg);
+        }
+    }
 
 
     @keyframes waitingslide{

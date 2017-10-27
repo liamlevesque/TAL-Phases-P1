@@ -49,3 +49,19 @@
 		transform: translate(-50%,-50%) rotate(45deg);
 	}
 }
+
+@mixin full-width-bg($bgcolor: palette(brand), $border-bottom: none){
+  &:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background-color: $bgcolor;
+    z-index: -1;
+		border-bottom: $border-bottom;
+		transition: $transition;
+  }
+}

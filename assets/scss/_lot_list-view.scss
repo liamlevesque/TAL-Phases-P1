@@ -7,17 +7,39 @@
 
 .c-lot-listing {
   padding: spacing(medium) 0;
+  position: relative;
+  transition: $transition;
+  @include full-width-bg(white, 1px solid white);
 
   @include breakpoint(medmax) {
-    margin-bottom: spacing(x-small);
+    //margin-bottom: spacing(x-small);
     background-color: white;
-    box-shadow: $ritchie-shadow;
+    //box-shadow: $ritchie-shadow;
     padding: spacing(small) 0 0;
   }
 
   &:not(:last-child) {
     @include breakpoint(medium) {
       border-bottom: $ritchie-border;
+    }
+  }
+
+  &.s-sold{
+    opacity: 0.85;
+    border-bottom: none;
+    &:before{
+      background-color: palette(grey,1);
+      border-bottom-color: palette(grey,2);
+    }
+  }
+
+  &.s-sold-to-you{
+    
+    &:before{
+      background-color: lighten(palette(grey,1),5%);
+      border-left: 10px solid palette(green);
+      border-bottom-color: palette(green);
+      border-top: 1px solid palette(green);
     }
   }
 }
@@ -223,9 +245,9 @@
 }
 
 .c-lot--bid-and-closing {
-  padding: spacing(small) 0;
+  padding: spacing(small) 0 0;
 
-  & > div + div {
+  & .c-lot--highBid + .c-lot--closing{
     padding-top: spacing(small);
 
     @include breakpoint(medium) {
@@ -234,6 +256,70 @@
     }
   } //If there is both boxes show the border between them
 }
+
+  .lot--pulseBorder{
+    stroke-dasharray: 1000;
+    animation-name: dash;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    //animation-direction: alternate;
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 0;
+      //stroke-dasharray: 100;
+    }
+
+    50%{
+      stroke-dashoffset: 1000;
+      //stroke-dasharray: 100% 0;
+    }
+
+    50.1%{
+      stroke-dashoffset: -1000;
+    }
+
+    100%{
+      stroke-dashoffset: 0;
+      //stroke-dasharray: 100% 0;
+    }
+
+    // 100%{
+    //   stroke-dashoffset: 100%;
+    //   stroke-dasharray: 0 50%;
+    // }
+    // 0% {
+    //   stroke-dashoffset: 100%;
+    //   stroke-dasharray: 200 0;
+    // }
+
+    // 25% {
+    //   stroke-dashoffset: 50%;
+    //   stroke-dasharray: 100 20;
+    // }
+
+    // 50% {
+    //   stroke-dashoffset: 0;
+    //   stroke-dasharray: 100 20;
+    // }
+
+    // 75% {
+    //   stroke-dashoffset: 50%;
+    //   stroke-dasharray: 200 0;
+    // }
+
+    // 100% {
+    //   stroke-dashoffset: 100%;
+    //   stroke-dasharray: 200 0;
+    // }
+  }
+
+  .c-lot--closing{
+    padding-bottom: spacing(small);
+  }
 
 .c-lot--bid-buttons {
   @include breakpoint(medmax) {

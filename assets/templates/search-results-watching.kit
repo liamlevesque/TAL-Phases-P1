@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="c-navigation__tertiary g-wrapper">
-                        <button class="o-button__tertiary" v-on:click="gotoPage('my-selections')"><i class="icon-arrow-left"></i><span class="h-hide-mobile h-ml-50"> Back</span></button>
+                        <button class="o-button__primary o-button__narrow" v-on:click="gotoPage('my-selections')"><i class="icon-arrow-left"></i><span class="h-hide-mobile h-ml-50"> Back</span></button>
                         <div v-if="searchResults.length > 0" class="g-cell t-h2 t-lh-300 h-color-white h-ml-200"><span class="h-hide-mobile"><span class="t-bold">{{ lotsImWatching.length }} Lots </span>you're watching/bidding on matching: </span><span class="t-bold">"Caterpillar"</span></div>
                         <div v-else class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200">0 Results found</div>
                     </div>
@@ -52,7 +52,7 @@
             </div>            
             
             <div v-if="lotsImWatching.length > 0">
-                <div v-for="(lot,index) in lotsImWatching" class="c-lot-listing"> 
+                <div v-for="(lot,index) in lotsImWatching" class="c-lot-listing" v-bind:class="lotStatus(lot)"> 
                     <!-- @include '/assets/components/components/lot_item' -->
                 </div>
             </div>

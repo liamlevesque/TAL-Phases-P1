@@ -26,13 +26,26 @@
     <div v-else class="t-faint">
         No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
     </div>
-    <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
+    <div class="g-wrapper o-message__tal" v-if="closingSoon(lot) && lot.status != 'sold'" v-bind:class="{'s-highlight':lot.extended}">
+        <div class="g-cell t-h4">
+            {{ closingSoonString(lot) }}
+        </div>
+        <div v-if="lot.extended" class="t-faint h-color-brand">
+            (Time Extended)
+        </div>
+        <svg v-if="lot.extended" class="h-abs-fill" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect class="lot--pulseBorder" stroke="#E87722" stroke-width="3" x="1.5" y="1.5" width="415" height="45"></rect>
+            </g>
+        </svg>
+    </div>
+    <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'" v-show="!closingSoon(lot)">
         <div class="g-cell">
-            <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-            <span class="t-h4" v-show="!closingSoon(lot)">{{ countdown(lot) }}</span>
-            <span class="t-h4 h-color-error" v-show="closingSoon(lot)">Closing Soon!</span>
+            <span>
+                <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
+                <span class="t-h4">{{ countdown(lot) }}</span>
+            </span>
         </div>
         <div v-if="!closingSoon(lot)">({{ lot.closes | calendarTime }})</div>
-        <div v-if="lot.extended" class="t-faint">Time Extended</div>
     </div>
 </div>

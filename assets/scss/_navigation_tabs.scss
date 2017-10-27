@@ -1,6 +1,9 @@
 .c-nav-tabs {
   border-bottom: 1px solid palette(grey, 2);
   background-color: white;
+  position: relative;
+
+  @include full-width-bg(transparent, 1px solid palette(grey,2));  
 }
 
 // .c-nav-tabs--tab-group{
@@ -76,19 +79,29 @@
   }
 }
 
+
+
 .c-navigation__tertiary, .c-navigation__choice-create {
-  background-color: palette(grey);
+  background-color: palette(brand,dark);
   color: white;
   padding: spacing(xx-small);
+  position: relative;
 
   @include breakpoint(medium) {
     //margin-bottom: spacing(medium);
-    padding: spacing(xx-small) spacing(medium);
+    padding: spacing(xx-small) 0;
+
+    @include full-width-bg(palette(brand,dark));
   }
 }
 
   .c-navigation__choice-create{
+    background-color: palette(grey);
     border-top: 1px solid palette(grey,4);
+
+    &:before{
+      background-color: palette(grey);
+    }
   }
 
 .o-navigation--pagination {

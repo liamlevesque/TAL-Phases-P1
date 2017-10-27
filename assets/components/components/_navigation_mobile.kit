@@ -22,19 +22,19 @@
         </div>
     </div>
     <ul class="g-wrapper c-nav-tabs__mobile--tab-group">
-        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage(['index.html','','search-results.html'])">
             <i class="icon-sold"></i>
             <span>All Lots</span>
         </li>
-        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage(['my-selections.html','search-results-watching.html'])">
             <i class="icon-eye"></i>
             <span>Watch & Bid</span>
         </li>
-        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage(['choice-groups.html'])">
             <i class="icon-group"></i>
             <span>Group Bids</span>
         </li>
-        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage(['purchases.html'])">
             <i class="icon-cart"></i>
             <span>Purchases</span>
         </li>

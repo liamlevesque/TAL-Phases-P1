@@ -87,6 +87,55 @@ var categories = [{
 }];
 "use strict";
 
+var incrementTable = [{
+	from: 0,
+	upto: 99,
+	increment: 5
+}, {
+	from: 100,
+	upto: 249,
+	increment: 10
+}, {
+	from: 250,
+	upto: 499,
+	increment: 25
+}, {
+	from: 500,
+	upto: 999,
+	increment: 50
+}, {
+	from: 1000,
+	upto: 2499,
+	increment: 100
+}, {
+	from: 2500,
+	upto: 9999,
+	increment: 250
+}, {
+	from: 10000,
+	upto: 24999,
+	increment: 500
+}, {
+	from: 25000,
+	upto: 149999,
+	increment: 1000
+}, {
+	from: 150000,
+	upto: 299999,
+	increment: 2500
+}, {
+	from: 250000,
+	upto: 999999,
+	increment: 5000
+}, {
+	from: 1000000,
+	upto: 9999999,
+	increment: 10000
+}];
+
+var increments = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000];
+"use strict";
+
 var lotlist = [{
 	"lotNumber": "5001",
 	"bids": [{ bid: 100, bidder: "12345", time: "2017-08-16T22:20:58.162Z", type: 'max' }, { bid: 90, bidder: "12346", time: "2017-08-16T22:18:58.162Z", type: 'max' }],
@@ -844,7 +893,7 @@ var lotlist = [{
 }, {
 	"lotNumber": "5034",
 	"bids": [{ bid: 100, bidder: "12345", time: "2017-06-07T22:20:58.162Z", type: 'max' }],
-	"maxBid": { bid: 500, bidder: "12345" },
+	"maxBid": { bid: 0, bidder: null },
 	"category": 'Attachments - Excavator',
 	"watching": [],
 	"equipid": '1234567890A',
@@ -3443,55 +3492,6 @@ var lotlist = [{
 }];
 "use strict";
 
-var incrementTable = [{
-	from: 0,
-	upto: 99,
-	increment: 5
-}, {
-	from: 100,
-	upto: 249,
-	increment: 10
-}, {
-	from: 250,
-	upto: 499,
-	increment: 25
-}, {
-	from: 500,
-	upto: 999,
-	increment: 50
-}, {
-	from: 1000,
-	upto: 2499,
-	increment: 100
-}, {
-	from: 2500,
-	upto: 9999,
-	increment: 250
-}, {
-	from: 10000,
-	upto: 24999,
-	increment: 500
-}, {
-	from: 25000,
-	upto: 149999,
-	increment: 1000
-}, {
-	from: 150000,
-	upto: 299999,
-	increment: 2500
-}, {
-	from: 250000,
-	upto: 999999,
-	increment: 5000
-}, {
-	from: 1000000,
-	upto: 9999999,
-	increment: 10000
-}];
-
-var increments = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000];
-"use strict";
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*!
@@ -3735,44 +3735,6 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 }();
 "use strict";
 
-// Hide Header on on scroll down
-var didScroll;
-var lastScrollTop = 0;
-var delta = 20;
-
-document.addEventListener("scroll", function (event) {
-    didScroll = true;
-});
-
-setInterval(function () {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 250);
-
-function hasScrolled() {
-    var st = window.scrollY;
-
-    // Make sure they scroll more than delta
-    if (Math.abs(lastScrollTop - st) <= delta) return;
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st < lastScrollTop) {
-        // Scroll Down
-        tal.showSecondaryHeader = false;
-    } else {
-        // Scroll Up
-        //if(st + window.innerHeight < document.innerHeight) {
-        tal.showSecondaryHeader = true;
-        //}
-    }
-
-    lastScrollTop = st;
-}
-"use strict";
-
 var tal = {
   sale: {
     name: "Orlando, FL, USA",
@@ -3785,6 +3747,8 @@ var tal = {
   },
   preSoldOffset: 20,
   closeInterval: 15,
+  timeClosingSoon: 30,
+  timeGoingGoing: 10,
   currentTime: moment(),
   bidder: {
     number: "12345"
@@ -3825,7 +3789,12 @@ var tal = {
 
   pausedMessageVisible: false,
 
-  showSecondaryHeader: true
+  showSecondaryHeader: true,
+
+  outbidMessageVisible: false,
+  outbidMessageLot: lotlist[33],
+  messages: [1, 1],
+  notificationsMinimized: false
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -3937,15 +3906,16 @@ var app = new Vue({
 
     pricedBid: function pricedBid(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
-      if (lot.extended || this.closingSoon(lot)) {
-        lot.closes = moment(lot.closes).add(2, 'minutes');
+      var span = closingTime(lot.closes);
+      if (lot.extended || span.days() === 0 && span.hours() === 0 && span.minutes() < 2) {
+        lot.closes = moment().add(2, 'minutes');
         lot.extended = true;
       }
     },
 
     buildBid: function buildBid(bidder, amt, type) {
       var bid = {
-        bidder: this.bidder.number,
+        bidder: bidder,
         bid: amt,
         time: new Date().toJSON(),
         type: type
@@ -3984,8 +3954,8 @@ var app = new Vue({
     },
     finishChoiceGroup: function finishChoiceGroup() {
       for (var i = 0; i < this.tempChoiceGroup.length; i++) {
-        console.log(this.tempChoiceGroup[i].status);
-        if (this.tempChoiceGroup[i].status === 'notinyard') {
+        console.log(this.tempChoiceGroup.length);
+        if (this.tempChoiceGroup[i].status === 'notinyard' || this.tempChoiceGroup[i].status === 'sold') {
           this.choiceProgress = 5;
           return;
         }
@@ -4061,11 +4031,37 @@ var app = new Vue({
 
     closingSoon: function closingSoon(lot) {
       if (lot.extended) return true;
-      var now = moment();
-      var end = moment(lot.closes);
-      var span = moment.duration(end - now);
-      if (span.days() === 0 && span.hours() === 0 && span.minutes() < 2) return true;
+      var span = closingTime(lot.closes);
+      if (span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon) return true;
       return false;
+    },
+    closingSoonString: function closingSoonString(lot) {
+      if (!lot.closes) return "";
+      var span = closingTime(lot.closes);
+      if (span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeGoingGoing) return "Going, Going...";else if (span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon || lot.extended) return "Closing Soon!";
+      //else if() return "Closing Soon!"
+    },
+    toggleOutbidMessage: function toggleOutbidMessage() {
+      this.outbidMessageVisible = !this.outbidMessageVisible;
+      if (this.outbidMessageVisible) this.pricedBid(this.outbidMessageLot, "quick", '10005', 105);
+    },
+    navigateToLot: function navigateToLot(lotNumber) {
+      this.outbidMessageVisible = false;
+      if (document.body.scrollIntoView) {
+        var element = document.getElementById(lotNumber);
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location += "#" + lotNumber;
+      }
+    },
+    lotStatus: function lotStatus(lot) {
+      return {
+        's-sold': lot.status === 'sold',
+        's-sold-to-you': lot.status === 'sold' && lot.bids[0] && lot.bids[0].bidder === this.bidder.number
+      };
+    },
+    toggleNotificationsMinimized: function toggleNotificationsMinimized() {
+      this.notificationsMinimized = !this.notificationsMinimized;
     }
 
   },
@@ -4101,6 +4097,7 @@ var app = new Vue({
         return _this4.searchResults.indexOf(lot.lotNumber) >= 0;
       });
     }
+
   },
   filters: {
     returnFirstItem: function returnFirstItem(value) {
@@ -4113,10 +4110,53 @@ var app = new Vue({
     },
     countdownTime: function countdownTime(closes) {
       if (!closes) return "";
-      var now = moment();
-      var end = moment(closes);
-      var span = moment.duration(end - now);
+      var span = closingTime(closes);
       return span.days() + "d " + span.hours() + "h " + span.minutes() + "m " + span.seconds() + "s";
     }
+
   }
 });
+
+function closingTime(closes) {
+  var now = moment();
+  var end = moment(closes);
+  return moment.duration(end - now);
+}
+"use strict";
+
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 20;
+
+document.addEventListener("scroll", function (event) {
+    didScroll = true;
+});
+
+setInterval(function () {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = window.scrollY;
+
+    // Make sure they scroll more than delta
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st < lastScrollTop) {
+        // Scroll Down
+        tal.showSecondaryHeader = false;
+    } else {
+        // Scroll Up
+        //if(st + window.innerHeight < document.innerHeight) {
+        tal.showSecondaryHeader = true;
+        //}
+    }
+
+    lastScrollTop = st;
+}

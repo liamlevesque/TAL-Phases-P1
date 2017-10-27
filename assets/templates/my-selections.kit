@@ -48,7 +48,7 @@
             </div>
             
             <div class="o-lot-listings" v-if="watchedLots.length > 0">
-                <div v-for="(lot,index) in lotsImWatching" class="c-lot-listing"> 
+                <div v-for="(lot,index) in lotsImWatching" class="c-lot-listing" v-bind:class="lotStatus(lot)"> 
                     <!-- @include '/assets/components/components/lot_item' -->
                 </div>
             </div>
