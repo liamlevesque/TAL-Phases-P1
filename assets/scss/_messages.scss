@@ -41,13 +41,9 @@
         @extend .icon-group;
 
         &:before{
-            //background-color: palette(blue);
             color: palette(blue);
             font-size: 20px;
             line-height: 30px;
-            // text-align: center;
-            // line-height: 30px;
-            // border-radius: 50%;
         }
     }
 
