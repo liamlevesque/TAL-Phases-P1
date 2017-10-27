@@ -1,13 +1,13 @@
 <div class="g-wrapper">
     <div class="h-hide-mobile" v-if="creatingChoiceGroup">
         <label class="o-input--checkbox">
-            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
+            <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index + 20" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
             <span class="o-input--checksymbol"></span>
         </label>
     </div>
     <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
         <div class="g-wrapper">
-            <div class="g-cell g-mob--quarter">
+            <div class="g-cell g-mob--quarter h-pos-relative">
                 <a v-bind:href="'lot-details.html#' + index">
                     <div class="c-lot-details--lot-photo">
                         <img v-bind:src="lot.photos[0].src" alt="">
@@ -15,7 +15,7 @@
                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                 </a>
                 <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
-                        v-if="bidder.number != null" 
+                        v-if="bidder.number != null && lot.status != 'sold'" 
                         v-on:click="createOrAddToChoiceGroup(lot)"
                         v-bind:class="{'s-active':tempChoiceGroup.indexOf(lot.lotNumber) >= 0}">
                         <i class="icon-group-add icon-size--xlarge h-mr-0"></i>
@@ -27,14 +27,14 @@
                 </a>
                 <div class="">
                     <!-- @include '/assets/components/components/lot_text-fields' -->
-                    <div class="h-hide-mobile" v-if="bidder.number != null">
+                    <div class="h-hide-mobile" v-if="bidder.number != null & lot.status != 'sold'">
                         <!-- @include '/assets/components/components/watch-button' -->
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
+    </div> 
     <div class="c-lot--bidding g-cell g-mob--full">
         <!-- @include '/assets/components/components/lot_bid-area' -->
         <!-- @include '/assets/components/components/lot_bid-buttons' -->

@@ -44,7 +44,7 @@
                 <div class="g-cell h-ta-right h-hide-mobile">
                     
                     <div class="h-mb-50">
-                        <button class="o-button__blank t-link" v-if="bidder.number != null" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage notifications</button>
+                        <button class="o-button__blank t-link" v-if="bidder.number != null" v-on:click="toggleManageAlertsVisible" class="t-link h-mr-100">Manage Notifications</button>
                         <button class="o-button__blank t-link" v-on:click="gotoPage('help')">Help</button>
                     </div>
         
@@ -123,7 +123,7 @@
                     <p>Purchases cannot be removed from the auction site until your invoice is paid in full. Full payment is due within seven days. A storage fee may apply if purchases are not removed by the specified removal date.</p>
                     <hr class="o-hr h-mb-200"/>
                     
-                    <div class="c-navigation__tertiary g-wrapper t-h3 t-lh-300 h-color-white h-mb-0">
+                    <div class="o-data-table--header g-wrapper t-h3 t-lh-300 h-color-white h-mb-0">
                         <div class="g-cell t-bold">{{ purchasedLots.length > 1 ? purchasedLots.length + ' Lots ' : '1 Lot ' }}Purchased</div>
                         <div class="">Last updated: <span class="t-bold">1 minute ago</span></div>
                     </div>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="c-navigation__tertiary h-ta-right t-h3 t-lh-300 h-color-white h-mb-500">
+                    <div class="o-data-table--header h-ta-right t-h3 t-lh-300 h-color-white h-mb-500">
                         Subtotal: <span class="CCY t-bold">1500</span>
                     </div>
                 </div>
@@ -252,19 +252,19 @@
                         </div>
                     </div>
                     <ul class="g-wrapper c-nav-tabs__mobile--tab-group">
-                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage('index.html')">
+                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('index')" v-bind:class="isActivePage(['index.html','','search-results.html'])">
                             <i class="icon-sold"></i>
                             <span>All Lots</span>
                         </li>
-                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage('my-selections.html')">
+                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage(['my-selections.html','search-results-watching.html'])">
                             <i class="icon-eye"></i>
                             <span>Watch & Bid</span>
                         </li>
-                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage('choice-groups.html')">
+                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage(['choice-groups.html'])">
                             <i class="icon-group"></i>
                             <span>Group Bids</span>
                         </li>
-                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage('purchases.html')">
+                        <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('purchases')" v-bind:class="isActivePage(['purchases.html'])">
                             <i class="icon-cart"></i>
                             <span>Purchases</span>
                         </li>

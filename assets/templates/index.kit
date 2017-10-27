@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="o-lot-listings">
-                <div v-for="(lot, index) in lots.slice(20,45)" class="c-lot-listing"> 
+                <div v-for="(lot, index) in lots.slice(20,45)" class="c-lot-listing" v-bind:class="lotStatus(lot)" v-bind:id="lot.lotNumber"> 
                     <!-- @include '/assets/components/components/lot_item' -->
                 </div>
             </div>

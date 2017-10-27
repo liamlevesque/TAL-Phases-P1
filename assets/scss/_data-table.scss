@@ -24,3 +24,13 @@
         }
     }
 
+
+    .o-data-table--header {
+        background-color: palette(grey);
+        color: white;
+        padding: spacing(xx-small);
+      
+        @include breakpoint(medium) {
+            padding: spacing(xx-small) spacing(medium);
+        }
+      }

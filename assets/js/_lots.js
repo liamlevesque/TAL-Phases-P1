@@ -951,7 +951,7 @@ const lotlist = [
 		{
 			"lotNumber" : "5034",
 			"bids": [{bid: 100, bidder: "12345", time: "2017-06-07T22:20:58.162Z", type: 'max'}],
-			"maxBid":{bid: 500,bidder: "12345"},
+			"maxBid":{bid: 0,bidder: null},
 			"category": 'Attachments - Excavator',
 			"watching": [],
 			"equipid": '1234567890A',

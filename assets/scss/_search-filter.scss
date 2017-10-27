@@ -8,6 +8,9 @@
         padding-top: 0;
         background-color: white;
     }
+    @include breakpoint(medmax){
+        background-color: palette(brand);
+    }
 }
 
 .c-search-filter--search{
@@ -19,12 +22,14 @@
 }
 
 .c-search-filter--filter{
-    background-color: palette(grey,1);
+    background-color: palette(brand);
     position: relative;
     padding: spacing(xx-small) 0 spacing(x-small);
 
     @include breakpoint(medium){
-        padding: spacing(xx-small) spacing(large);
+        padding: spacing(xx-small) 0;
+
+        @include full-width-bg(palette(brand));
     }
 
     

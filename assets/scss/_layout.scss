@@ -72,6 +72,11 @@ $max-width: 80em;
     }
 }
 
+.l-outline-box{
+    padding: spacing(small);
+    border: 1px solid palette(grey,2);
+}
+
 .l-pin-header-wrapper{
     .s-pin-nav &{
         position: fixed;
@@ -92,6 +97,7 @@ $max-width: 80em;
     }
 
     .l-scroll-revealable-header{
+        @include full-width-bg(white);
         @include breakpoint(medium){
             overflow: hidden;
             max-height: 200px;

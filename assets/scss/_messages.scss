@@ -1,4 +1,4 @@
-[class^="o-message"]{
+[class*="o-message"]{
     position: relative;
 
     padding: spacing(small);
@@ -31,6 +31,24 @@
 
         &:before{
             color: palette(blue);
+        }
+    }
+
+    .o-message__tal{
+        color: palette(brand);
+        background-color: white;
+        border-color: transparent;
+        @extend .icon-TAL;
+
+        &:before{
+            color: palette(brand);
+        }
+
+        &.s-highlight{
+            color: black;
+            background-color: palette(brand,light);
+
+            @include bgwipe(darken(palette(brand,light),10%),100%,0);
         }
     }
 

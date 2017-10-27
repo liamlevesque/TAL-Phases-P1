@@ -11,6 +11,8 @@ const tal = {
   },
   preSoldOffset: 20,
   closeInterval: 15,
+  timeClosingSoon: 30,
+  timeGoingGoing: 10,
   currentTime: moment(),
   bidder: {
     number: "12345"
@@ -40,7 +42,7 @@ const tal = {
       quantity: 2,
       maxbid: 100
     }
-  ],
+  ], 
 
   purchasedLots: ["5001", "5004"],
   searchResults: ["5045", "5046", "5047", "5048", "5049", "5050"],
@@ -54,6 +56,11 @@ const tal = {
   pausedMessageVisible: false,
 
   showSecondaryHeader: true,
+
+  outbidMessageVisible: false,
+  outbidMessageLot: lotlist[33],
+  messages: [1,1],
+  notificationsMinimized: false,
 };
 
 document.addEventListener(
@@ -180,15 +187,16 @@ var app = new Vue({
 
     pricedBid: function(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
-      if(lot.extended || this.closingSoon(lot)){
-        lot.closes = moment(lot.closes).add(2,'minutes');
+      let span = closingTime(lot.closes);
+      if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 2 )){
+        lot.closes = moment().add(2,'minutes');
         lot.extended = true;
       } 
     },
 
     buildBid: function(bidder, amt, type) {
       let bid = {
-        bidder: this.bidder.number,
+        bidder: bidder,
         bid: amt,
         time: new Date().toJSON(),
         type: type
@@ -224,8 +232,8 @@ var app = new Vue({
     },
     finishChoiceGroup: function() {
       for(let i = 0; i < this.tempChoiceGroup.length; i++){
-        console.log(this.tempChoiceGroup[i].status);
-        if(this.tempChoiceGroup[i].status === 'notinyard'){
+        console.log(this.tempChoiceGroup.length);
+        if(this.tempChoiceGroup[i].status === 'notinyard' || this.tempChoiceGroup[i].status === 'sold'){
           this.choiceProgress = 5;
           return;
         }
@@ -310,12 +318,41 @@ var app = new Vue({
     },
     closingSoon: function(lot){
       if(lot.extended) return true;
-      let now = moment();
-      let end = moment(lot.closes);
-      let span = moment.duration(end - now);
-      if(span.days() === 0 && span.hours() === 0 && span.minutes() < 2) return true;
+      let span = closingTime(lot.closes);
+      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon) return true;
       return false;
-    }
+    },
+    closingSoonString: function(lot){
+      if (!lot.closes) return "";
+      let span = closingTime(lot.closes);
+      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeGoingGoing) return "Going, Going...";
+      else if((span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon) || lot.extended) return "Closing Soon!";
+      //else if() return "Closing Soon!"
+    },
+    toggleOutbidMessage: function(){
+      this.outbidMessageVisible = !this.outbidMessageVisible;
+      if(this.outbidMessageVisible) this.pricedBid(this.outbidMessageLot, "quick", '10005', 105);
+    },
+    navigateToLot: function(lotNumber){
+      this.outbidMessageVisible = false;
+      if(document.body.scrollIntoView){
+        let element = document.getElementById(lotNumber);
+        element.scrollIntoView({behavior: "smooth"});
+      }
+      else{
+        window.location += "#"+lotNumber;
+      }
+    },
+    lotStatus:function(lot){
+      return{
+        's-sold':lot.status === 'sold',
+        's-sold-to-you':lot.status === 'sold' && lot.bids[0] && lot.bids[0].bidder === this.bidder.number
+      }
+    },
+    toggleNotificationsMinimized: function(){
+      this.notificationsMinimized = !this.notificationsMinimized;
+    },
+
 
   },
   computed: {
@@ -343,7 +380,8 @@ var app = new Vue({
       return this.lots.filter(
         lot => this.searchResults.indexOf(lot.lotNumber) >= 0
       );
-    }
+    },
+
   },
   filters: {
     returnFirstItem: function(value) {
@@ -356,9 +394,7 @@ var app = new Vue({
     },
     countdownTime: function(closes) {
       if (!closes) return "";
-      let now = moment();
-      let end = moment(closes);
-      let span = moment.duration(end - now);
+      let span = closingTime(closes);
       return (
         span.days() +
         "d " +
@@ -369,6 +405,14 @@ var app = new Vue({
         span.seconds() +
         "s"
       );
-    }
+    },
+    
   }
 });
+
+
+function closingTime(closes){
+  let now = moment();
+  let end = moment(closes);
+  return moment.duration(end - now);
+}
