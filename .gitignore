@@ -1,4 +1,4 @@
 
 config.codekit3
-
-*.codekit3
+/bower_components/
+bower.json

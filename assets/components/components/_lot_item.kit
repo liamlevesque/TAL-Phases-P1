@@ -8,7 +8,7 @@
     <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
         <div class="g-wrapper">
             <div class="g-cell g-mob--quarter h-pos-relative">
-                <a v-bind:href="'lot-details.html#' + index">
+                <a v-bind:href="'lot-details.html#' + (index + 20)">
                     <div class="c-lot-details--lot-photo">
                         <img v-bind:src="lot.photos[0].src" alt="">
                     </div>
@@ -22,7 +22,7 @@
                 </button>
             </div>
             <div class="g-cell g-cell__two-thirds c-lot--lot-details">
-                <a v-bind:href="'lot-details.html#' + index">
+                <a v-bind:href="'lot-details.html#' + (index + 20)">
                     <h3 class="t-h3 t-link">{{ lot.description }}</h3>
                 </a>
                 <div class="">

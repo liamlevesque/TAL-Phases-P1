@@ -12,11 +12,12 @@ const tal = {
   preSoldOffset: 20,
   closeInterval: 15,
   timeClosingSoon: 30,
-  timeGoingGoing: 10,
+  timeGoingGoing: 15,
   currentTime: moment(),
   bidder: {
     number: "12345"
   },
+  sessionTimedOut: false,
   categories: categories,
   lots: lotlist,
   watchedLots: ["5001", "5022", "5028", "5031", "5042", "5045"],
@@ -38,7 +39,7 @@ const tal = {
     {
       uid: "123456",
       type: "group",
-      lots: ["5099", "5100", "5101", "5102"],
+      lots: ["5044", "5045", "5101", "5102"],
       quantity: 2,
       maxbid: 100
     }
@@ -73,9 +74,9 @@ document.addEventListener(
       );
     }
 
-    setInterval(function(){
-      app.currentTime = moment();
-    },1000);
+    // setInterval(function(){
+    //   app.currentTime = moment();
+    // },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -97,6 +98,14 @@ document.addEventListener(
   },
   false
 );
+
+Vue.use(vueDirectiveTooltip, {
+  delay: 500,
+  placement: 'top',
+  class: 'tooltip-rb',
+  triggers: ['hover','click'],
+  offset: 0
+});
 
 var app = new Vue({
   el: ".js--tal",
@@ -188,8 +197,12 @@ var app = new Vue({
     pricedBid: function(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
       let span = closingTime(lot.closes);
-      if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 2 )){
+      if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 1 )){
         lot.closes = moment().add(2,'minutes');
+        lot.extended = true;
+      } 
+      else if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 2 )){
+        lot.closes = moment().add(1,'minutes');
         lot.extended = true;
       } 
     },
@@ -352,6 +365,9 @@ var app = new Vue({
     toggleNotificationsMinimized: function(){
       this.notificationsMinimized = !this.notificationsMinimized;
     },
+    toggleSessionTimedOut: function(){
+      this.sessionTimedOut = !this.sessionTimedOut;
+    }
 
 
   },

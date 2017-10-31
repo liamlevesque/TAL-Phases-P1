@@ -72,6 +72,7 @@
   padding: spacing(medium) spacing(small) spacing(large);
   z-index: -1;
   transition: $transition;
+  backface-visibility: hidden;
   border: 1px solid palette(grey, 2);
 
   &.s-shown {

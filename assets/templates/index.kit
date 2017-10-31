@@ -4,6 +4,7 @@
 <head>
 	<link rel="manifest" href="./manifest.json">
     <title>RB TIMED AUCTION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/vue-tooltip.css">
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +39,7 @@
         <div class="l-nav--mobile-footer">
             
         </div>
-
+        <!-- @include '/assets/components/components/tooltips' --> 
         <!-- @include '/assets/components/layout/footer_paginated' -->
         <!-- @include '/assets/components/modals/confirmBid' -->
         <!-- @include '/assets/components/modals/confirmMaxBid' -->
@@ -46,6 +47,7 @@
 	</div>
     
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-directive-tooltip@latest/dist/vueDirectiveTooltip.min.js"></script>
     <script type="text/javascript" src="assets/js/min/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
 

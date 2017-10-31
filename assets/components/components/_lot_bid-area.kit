@@ -23,22 +23,38 @@
             <span class="t-h3 t-bold CCY">{{ lot.bids[0]? lot.bids[0].bid : '' }}</span>
         </div>
     </div>
-    <div v-else class="t-faint">
+    <div v-else class="t-faint c-lot--highBid">
         No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
     </div>
-    <div class="g-wrapper o-message__tal" v-if="closingSoon(lot) && lot.status != 'sold'" v-bind:class="{'s-highlight':lot.extended}">
-        <div class="g-cell t-h4">
-            {{ closingSoonString(lot) }}
+    
+    <transition name="fade">
+        <div class="h-pos-relative c-lot--closing-soon" v-if="closingSoon(lot) && lot.status != 'sold'">
+            <div class="g-wrapper o-message__tal">
+                <div class="g-cell t-h4">
+                    {{ closingSoonString(lot) }}
+                </div>
+            </div>
+            <transition name="fade">
+                <div class="g-wrapper o-message__tal s-highlight" v-if="lot.extended">
+                    <div class="g-cell t-h4">
+                        {{ closingSoonString(lot) }}
+                    </div>
+                    <div v-if="lot.extended" class="t-bold c-lot--time-extended">
+                        <span>Time Extended</span>
+                        <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
+                    </div>
+                    <!-- <div class="h-abs-fill">
+                        <svg v-if="lot.extended" class="lot--pulse-container" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect class="lot--pulseBorder" stroke="#E87722" stroke-width="3" x="1.5" y="1.5" width="415" height="45"></rect>
+                            </g>
+                        </svg>
+                    </div> -->
+                </div>
+            </transition>
         </div>
-        <div v-if="lot.extended" class="t-faint h-color-brand">
-            (Time Extended)
-        </div>
-        <svg v-if="lot.extended" class="h-abs-fill" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <rect class="lot--pulseBorder" stroke="#E87722" stroke-width="3" x="1.5" y="1.5" width="415" height="45"></rect>
-            </g>
-        </svg>
-    </div>
+    </transition>
+
     <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'" v-show="!closingSoon(lot)">
         <div class="g-cell">
             <span>

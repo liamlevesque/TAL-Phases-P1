@@ -1,5 +1,6 @@
 $icon-small: 8px;
 $icon-medium: 16px;
+$icon-ml: 20px;
 $icon-large: 24px;
 $icon-xlarge: 36px;
 $icon-xxlarge: 48px;
@@ -14,6 +15,10 @@ $icon-xxlarge: 48px;
 
 .icon-size--medium {
   font-size: $icon-medium;
+}
+
+.icon-size--ml {
+  font-size: $icon-ml;
 }
 
 .icon-size--large {
