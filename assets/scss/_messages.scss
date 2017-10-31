@@ -52,18 +52,37 @@
         background-color: white;
         border-color: transparent;
         @extend .icon-TAL;
-
+        
         &:before{
             color: palette(brand);
         }
 
         &.s-highlight{
-            color: black;
-            background-color: palette(brand,light);
+            color: white;
+            //background-color: palette(brand,light)
+            background-color: #003A70;
+            //background-color: #4B3185;
+            border-color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
-            @include bgwipe(darken(palette(brand,light),10%),100%,0);
+            //@include bgwipe(darken(palette(brand,light),10%),100%,0);
+
+            &:before{
+                content: " ";
+                background-image: url(../img/hourglass.gif);
+                background-repeat: no-repeat;
+                background-size: 115% 115%;
+                background-position: center center;
+                background-color: white;
+                border-radius: 50%;
+            }
         }
     }
+
 
     .o-message__error{
         color: black;

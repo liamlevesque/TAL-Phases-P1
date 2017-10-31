@@ -74,9 +74,9 @@ document.addEventListener(
       );
     }
 
-    setInterval(function(){
-      app.currentTime = moment();
-    },1000);
+    // setInterval(function(){
+    //   app.currentTime = moment();
+    // },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -98,6 +98,14 @@ document.addEventListener(
   },
   false
 );
+
+Vue.use(vueDirectiveTooltip, {
+  delay: 500,
+  placement: 'top',
+  class: 'tooltip-rb',
+  triggers: ['hover','click'],
+  offset: 0
+});
 
 var app = new Vue({
   el: ".js--tal",
