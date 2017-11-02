@@ -62,6 +62,10 @@
                 <span class="t-h4">{{ countdown(lot) }}</span>
             </span>
         </div>
-        <div v-if="!closingSoon(lot)">({{ lot.closes | calendarTime }})</div>
+        <div v-if="!lot.extended">({{ lot.closes | calendarTime }})</div> 
+        <div v-else class="t-bold c-lot--time-extended">
+            <span>Time Extended</span>
+            <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
+        </div>
     </div>
 </div>

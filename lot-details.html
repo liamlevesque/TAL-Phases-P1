@@ -117,9 +117,9 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="c-navigation__tertiary g-wrapper">
-                        <button class="o-button__primary o-button__narrow" v-on:click="gotoPage('index')"><i class="icon-arrow-left"></i><span class="h-hide-mobile h-ml-50"> Back</span></button>
-                        <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200"><span class="t-bold">Lot 5001</span><span class="h-hide-mobile"> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</span></div>
+                    <div class="c-navigation__lot-details g-wrapper">
+                        <button class="o-button__transparent o-button__narrow" v-on:click="gotoPage('index')"><i class="icon-Back-Arrow"></i><span class="h-hide-mobile"> Back</span></button>
+                        <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ta-center"><span class="t-bold">Lot 5001</span><span class="h-hide-mobile"> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</span></div>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,11 @@
                                         <span class="t-h4">{{ countdown(lot) }}</span>
                                     </span>
                                 </div>
-                                <div v-if="!closingSoon(lot)">({{ lot.closes | calendarTime }})</div>
+                                <div v-if="!lot.extended">({{ lot.closes | calendarTime }})</div> 
+                                <div v-else class="t-bold c-lot--time-extended">
+                                    <span>Time Extended</span>
+                                    <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
+                                </div>
                             </div>
                         </div>
                         
@@ -448,10 +452,11 @@
                         </div>
 
     </div>
+    
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-directive-tooltip@latest/dist/vueDirectiveTooltip.min.js"></script>
     <script type="text/javascript" src="assets/js/min/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
-
 </body>
 
 </html>

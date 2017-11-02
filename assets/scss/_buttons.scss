@@ -37,6 +37,22 @@ $button-padding: 25px;
   }
 }
 
+.o-button__transparent {
+  @include button;
+
+  color: white;
+  background-color: transparent;
+
+  &:hover {
+    background-color: palette(brand, dark);
+  }
+
+  &[disabled] {
+    color: palette(grey, 1);
+    background-color: palette(grey, 2);
+  }
+}
+
 .o-button__secondary {
   @include button;
 

@@ -74,9 +74,9 @@ document.addEventListener(
       );
     }
 
-    // setInterval(function(){
-    //   app.currentTime = moment();
-    // },1000);
+    setInterval(function(){
+      app.currentTime = moment();
+    },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -205,6 +205,7 @@ var app = new Vue({
         lot.closes = moment().add(1,'minutes');
         lot.extended = true;
       } 
+      console.log(lot.extended);
     },
 
     buildBid: function(bidder, amt, type) {
@@ -332,7 +333,10 @@ var app = new Vue({
     closingSoon: function(lot){
       if(lot.extended) return true;
       let span = closingTime(lot.closes);
-      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon) return true;
+      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon){
+         lot.hideCountdown = true;
+         return true;
+      }
       return false;
     },
     closingSoonString: function(lot){
@@ -359,7 +363,8 @@ var app = new Vue({
     lotStatus:function(lot){
       return{
         's-sold':lot.status === 'sold',
-        's-sold-to-you':lot.status === 'sold' && lot.bids[0] && lot.bids[0].bidder === this.bidder.number
+        's-sold-to-you':lot.status === 'sold' && lot.bids[0] && lot.bids[0].bidder === this.bidder.number,
+        's-extended': lot.extended
       }
     },
     toggleNotificationsMinimized: function(){
