@@ -82,7 +82,7 @@
 
 
 
-.c-navigation__tertiary, .c-navigation__choice-create {
+.c-navigation__tertiary, .c-navigation__choice-create, .c-navigation__lot-details{
   background-color: palette(brand,dark);
   color: white;
   padding: spacing(xx-small);
@@ -102,6 +102,14 @@
 
     &:before{
       background-color: palette(grey);
+    }
+  }
+
+  .c-navigation__lot-details{
+    background-color: palette(brand);
+
+    &:before{
+      background-color: palette(brand);
     }
   }
 

@@ -35,12 +35,12 @@ $icon-xxlarge: 48px;
 
 @font-face {
   font-family: "ritchie-icons";
-  src: url("../fonts/ritchie-icons.eot?z5b68m");
-  src: url("../fonts/ritchie-icons.eot?z5b68m#iefix")
+  src: url("../fonts/ritchie-icons.eot?3tc0wp");
+  src: url("../fonts/ritchie-icons.eot?3tc0wp#iefix")
       format("embedded-opentype"),
-    url("../fonts/ritchie-icons.ttf?z5b68m") format("truetype"),
-    url("../fonts/ritchie-icons.woff?z5b68m") format("woff"),
-    url("../fonts/ritchie-icons.svg?z5b68m#ritchie-icons") format("svg");
+    url("../fonts/ritchie-icons.ttf?3tc0wp") format("truetype"),
+    url("../fonts/ritchie-icons.woff?3tc0wp") format("woff"),
+    url("../fonts/ritchie-icons.svg?3tc0wp#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -76,6 +76,9 @@ $icon-xxlarge: 48px;
 .i-size-med {
   font-size: 20px;
   vertical-align: middle;
+}
+.icon-Back-Arrow:before {
+  content: "\e92b";
 }
 .icon-group-add:before {
   content: "\e92a";

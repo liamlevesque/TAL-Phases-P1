@@ -33,7 +33,7 @@
         
     </div>
     <div class="c-choice-group--body">
-        <div class="c-lot-listing" v-for="lot in lotsInGroup(group.lots)" v-bind:class="lotStatus(lot)">
+        <div class="c-lot-listing" v-for="(lot, index) in lotsInGroup(group.lots)" v-bind:class="lotStatus(lot)">
             <!-- @include '/assets/components/components/lot_item' -->
         </div>
     </div>

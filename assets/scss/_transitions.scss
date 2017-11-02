@@ -36,6 +36,34 @@ $transition: $transition-time_1 $transition-function;
     }
 }
 
+@mixin fadeinout{
+    animation-name: fadeinout;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes fadeinout{
+    0%{
+        opacity: 0;
+    }
+  
+    25%{
+        opacity: 1;
+    }
+  
+    75%{
+        opacity: 1;
+    }
+  
+    100%{
+        opacity: 0;
+    } 
+  
+  }
+
+
+
 
 @mixin loading($color,$height:4px,$bottom:0){
     overflow: hidden;

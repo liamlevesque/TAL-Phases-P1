@@ -24,9 +24,9 @@
                     <div class="l-scroll-revealable-header h-hide-mobile" v-bind:class="{'s-showWholeHeader' : showSecondaryHeader}">
                         <!-- @include '/assets/components/components/navigation_tabs' -->
                     </div>
-                    <div class="c-navigation__tertiary g-wrapper">
-                        <button class="o-button__primary o-button__narrow" v-on:click="gotoPage('index')"><i class="icon-arrow-left"></i><span class="h-hide-mobile h-ml-50"> Back</span></button>
-                        <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ml-200"><span class="t-bold">Lot 5001</span><span class="h-hide-mobile"> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</span></div>
+                    <div class="c-navigation__lot-details g-wrapper">
+                        <button class="o-button__transparent o-button__narrow" v-on:click="gotoPage('index')"><i class="icon-Back-Arrow"></i><span class="h-hide-mobile"> Back</span></button>
+                        <div class="g-cell t-h2 t-bold t-lh-300 h-color-white h-ta-center"><span class="t-bold">Lot 5001</span><span class="h-hide-mobile"> - 2012 Cummins C150D6R-A041K83 150 KW T/A Gen Set</span></div>
                     </div>
                 </div>
             </div>
@@ -75,10 +75,8 @@
         <!-- @include '/assets/components/layout/footer' -->
 
     </div>
-    <script src="https://unpkg.com/vue"></script>
-    <script type="text/javascript" src="assets/js/min/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
-
+    
+    <!-- @include '/assets/components/components/js-includes' -->
 </body>
 
 </html>
