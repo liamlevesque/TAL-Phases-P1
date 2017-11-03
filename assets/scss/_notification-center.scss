@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0;
     left: spacing(small);
-    width: 450px;
+    width: 480px;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: white;
@@ -30,10 +30,27 @@
         }
     }
 
-    .c-notification{
+    [class*='c-notification__']{
         padding: spacing(small);
+        padding-left: 65px;
+        position: relative;
+
+        &:before{
+            @include icon-font;
+            font-size: 35px;
+            position: absolute;
+            left: spacing(small);
+            top: spacing(medium);
+        }
         
         &:not(last-child){
             border-bottom: 1px solid palette(grey,2);
         }
     }
+
+        .c-notification__warning{
+            @extend .icon-warning;
+            &:before{
+                color: palette(yellow);
+            }
+        }

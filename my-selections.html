@@ -189,6 +189,7 @@
                                         </div>
                                         <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                     </a>
+                                    <button v-on:click.stop="bidAgainstMe(lot)">Bid Against Me</button>
                                     <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                                             v-if="bidder.number != null && lot.status != 'sold'" 
                                             v-on:click="createOrAddToChoiceGroup(lot)"
@@ -247,46 +248,34 @@
                                     No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
                                 </div>
                                 
-                                <transition name="fade">
-                                    <div class="h-pos-relative c-lot--closing-soon" v-if="closingSoon(lot) && lot.status != 'sold'">
-                                        <div class="g-wrapper o-message__tal">
-                                            <div class="g-cell t-h4">
-                                                {{ closingSoonString(lot) }}
-                                            </div>
+                                
+                            
+                                <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
+                                    <div class="g-cell">
+                                        <div v-show="!closingSoon(lot)" class="c-lot--closing-time">
+                                            <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
+                                            <span class="t-h4">{{ countdown(lot) }}</span>
                                         </div>
-                                        <transition name="fade">
-                                            <div class="g-wrapper o-message__tal s-highlight" v-if="lot.extended">
+                                        <transition name="slidein">
+                                            <div class="g-wrapper o-message__tal" v-if="closingSoon(lot)" v-bind:class="{'s-highlight':lot.extended}">
                                                 <div class="g-cell t-h4">
                                                     {{ closingSoonString(lot) }}
                                                 </div>
-                                                <div v-if="lot.extended" class="t-bold c-lot--time-extended">
-                                                    <span>Time Extended</span>
-                                                    <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
-                                                </div>
-                                                <!-- <div class="h-abs-fill">
-                                                    <svg v-if="lot.extended" class="lot--pulse-container" viewBox="0 0 418 48" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                            <rect class="lot--pulseBorder" stroke="#E87722" stroke-width="3" x="1.5" y="1.5" width="415" height="45"></rect>
-                                                        </g>
-                                                    </svg>
-                                                </div> -->
                                             </div>
                                         </transition>
                                     </div>
-                                </transition>
-                            
-                                <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'" v-show="!closingSoon(lot)">
-                                    <div class="g-cell">
-                                        <span>
-                                            <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                                            <span class="t-h4">{{ countdown(lot) }}</span>
-                                        </span>
-                                    </div>
-                                    <div v-if="!lot.extended">({{ lot.closes | calendarTime }})</div> 
-                                    <div v-else class="t-bold c-lot--time-extended">
-                                        <span>Time Extended</span>
-                                        <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
-                                    </div>
+                                    <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">({{ lot.closes | calendarTime }})</div> 
+                                    <transition name="dropin">
+                                        <div v-if="lot.extended" class="t-bold c-lot--time-extended">
+                                            <span>Time Added</span>
+                                            <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
+                                            <transition name="dropinout">
+                                                <div v-if="lot.newBid" class="t-bold c-lot--new-bid">
+                                                    <span>NEW BID</span>
+                                                </div>
+                                            </transition>
+                                        </div>
+                                    </transition>
                                 </div>
                             </div> 
                             
@@ -421,7 +410,7 @@
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage(['my-selections.html','search-results-watching.html'])">
                     <i class="icon-eye"></i>
-                    <span>Watch & Bid</span>
+                    <span>Watch/Bid</span>
                 </li>
                 <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage(['choice-groups.html'])">
                     <i class="icon-group"></i>
@@ -472,7 +461,7 @@
             </div>
             
             <div class="c-notification-center__body" v-bind:class="{'s-minimized': notificationsMinimized}">
-                <div class="c-notification" v-for="message in messages">
+                <div class="c-notification__warning" v-for="message in messages">
                     <div class="g-wrapper">
                         <div class="g-cell">You've been outbid on a lot closing soon: </div>
                         <div><i class="icon-close" v-on:click="messages.splice(index,1)"></i></div>
