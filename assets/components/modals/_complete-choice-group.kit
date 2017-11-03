@@ -60,7 +60,7 @@
                 <div class="t-h3 g-wrapper g--center">
                     <div class="g-cell h-ta-right">I want to bid up to</div>
                     <div class="g-cell__no-stretch h-mr-100 h-ml-100">
-                        <input type="text" class="o-input--text" placeholder="enter $35 USD or more">
+                        <input type="number" class="o-input--text" v-model="tempChoiceBid" placeholder="enter $35 USD or more">
                     </div>
                     <div class="g-cell">on each lot</div>
                 </div>
@@ -70,7 +70,7 @@
 
                 <button class="o-button__blank t-link" v-on:click="toggleCompleteChoiceGroupModalVisible">Cancel</button>
                 <button class="o-button__secondary" v-on:click="setChoiceProgress(2)">Back</button>
-                <button class="o-button__primary" v-on:click="setChoiceProgress(4)">Next</button>
+                <button class="o-button__primary" v-on:click="setChoiceProgress(4)" v-bind:disabled="!tempChoiceBid || tempChoiceBid.length === 0">Next</button>
 
             </div>
         </div>

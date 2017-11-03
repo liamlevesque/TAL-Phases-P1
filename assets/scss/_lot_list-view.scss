@@ -25,9 +25,9 @@
     }
   }
 
-  &.s-extended:before{
-    background-color: palette(blue,1);
-  }
+  // &.s-extended:before{
+  //   background-color: palette(blue,1);
+  // }
 
   &.s-sold{
     opacity: 0.85;
@@ -254,8 +254,6 @@
   padding: spacing(small) 0 0;
 
   & .c-lot--highBid + .c-lot--closing{
-    padding-top: spacing(small);
-
     @include breakpoint(medium) {
       border-top: $ritchie-border;
       margin-top: spacing(small);
@@ -270,6 +268,25 @@
   }
 }
 
+  .c-lot--closing-time{
+    padding: spacing(small) 0;
+  }
+
+.dropin-enter-active, .dropin-enter-active{
+  transition: all .2s ease-in-out;
+}
+  .dropin-enter{
+    transform: translateY(-100%);
+    padding-top: 0;
+  }
+
+.slidein-enter-active, .slidein-enter-active{
+  transition: all .2s ease-in-out;
+}
+  .slidein-enter{
+    transform: translateX(100%);
+  }
+
 .fade-enter-active, .fade-leave-active {
   transition: all .2s;
 }
@@ -280,17 +297,40 @@
 }
 
 .c-lot--time-extended{
-  color: palette(brand);
+  background-color: lighten(palette(rbblue),10%);
+  color: white;
   position: relative;
+  padding: spacing(small);
+  overflow: hidden;
   
   span{
     display: inline-block;
     position: relative;
     backface-visibility: hidden;
-    @include fadeinout;
   }
 }
 
+  .c-lot--new-bid{
+    @extend .h-abs-fill;
+    background-color: palette(red);
+    padding: spacing(small);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+    
+  .dropinout-enter-active, .dropinout-leave-active {
+      transition: all .2s;
+    }
+    
+    .dropinout-enter{
+      transform: translateY(-100%);
+      padding-top: 0;
+    }
+
+    .dropinout-leave-to{
+      padding-top: 100%;
+      transform: translateY(100%);
+    }
 
   .lot--pulse-container{
     width: 100%;
@@ -357,9 +397,6 @@
     // }
   }
 
-  .c-lot--closing{
-    padding-bottom: spacing(small);
-  }
 
 .c-lot--bid-buttons {
   @include breakpoint(medmax) {

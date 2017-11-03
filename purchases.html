@@ -258,7 +258,7 @@
                         </li>
                         <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('my-selections')" v-bind:class="isActivePage(['my-selections.html','search-results-watching.html'])">
                             <i class="icon-eye"></i>
-                            <span>Watch & Bid</span>
+                            <span>Watch/Bid</span>
                         </li>
                         <li class="g-cell c-nav-tabs__mobile--tab" v-on:click="gotoPage('choice-groups')" v-bind:class="isActivePage(['choice-groups.html'])">
                             <i class="icon-group"></i>
@@ -277,9 +277,11 @@
                 </nav>
         
 	</div>
+    
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-directive-tooltip@latest/dist/vueDirectiveTooltip.min.js"></script>
     <script type="text/javascript" src="assets/js/min/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+    <script type="text/javascript" src="assets/js/min/scripts-min.js"></script> 
 
 </body>
 </html>

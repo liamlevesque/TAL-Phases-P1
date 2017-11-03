@@ -10,7 +10,7 @@
     </div>
     
     <div class="c-notification-center__body" v-bind:class="{'s-minimized': notificationsMinimized}">
-        <div class="c-notification" v-for="message in messages">
+        <div class="c-notification__warning" v-for="message in messages">
             <div class="g-wrapper">
                 <div class="g-cell">You've been outbid on a lot closing soon: </div>
                 <div><i class="icon-close" v-on:click="messages.splice(index,1)"></i></div>

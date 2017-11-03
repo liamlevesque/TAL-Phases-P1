@@ -59,16 +59,7 @@
 
         &.s-highlight{
             color: white;
-            //background-color: palette(brand,light)
-            background-color: #003A70;
-            //background-color: #4B3185;
-            border-color: white;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-
+            background-color: palette(rbblue);
             //@include bgwipe(darken(palette(brand,light),10%),100%,0);
 
             &:before{

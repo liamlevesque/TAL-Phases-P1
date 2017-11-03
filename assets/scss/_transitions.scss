@@ -137,3 +137,33 @@ $transition: $transition-time_1 $transition-function;
     }
 
 
+@mixin shimmer{
+    z-index: 1;
+    overflow: hidden;
+
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #003a70 44%,#005499 55%,#005499 71%,#003a70 91%);
+        z-index: -1;
+
+        animation-name: shimmer;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out; 
+    }
+}
+
+    @keyframes shimmer{
+        0%{
+           transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(100%);
+        }
+    }

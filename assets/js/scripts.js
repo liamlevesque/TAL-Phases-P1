@@ -33,6 +33,7 @@ const tal = {
   creatingChoiceGroup: false,
   tempChoiceGroupArray: [],
   tempChoiceGroup: [],
+  tempChoiceBid:null,
   choiceProgress: 1,
   completeChoiceGroupModalVisible: false,
   choiceGroups: [
@@ -74,9 +75,9 @@ document.addEventListener(
       );
     }
 
-    setInterval(function(){
-      app.currentTime = moment();
-    },1000);
+    // setInterval(function(){
+    //   app.currentTime = moment();
+    // },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -175,7 +176,7 @@ var app = new Vue({
     completeBid: function() {
       this.confirmPlaceBidVisible = false;
       this.watchLot(this.selectedLot, false);
-      this.pricedBid(this.selectedLot, "quick", this.bidder.number, 5);
+      this.pricedBid(this.selectedLot, "quick", this.bidder.number, this.selectedLot.bids[0] ? this.selectedLot.bids[0].bid + 5 : 5);
     },
     watchLot: function(lot, removeIfExists) {
       if (this.watchedLots.indexOf(lot.lotNumber) < 0) {
@@ -204,8 +205,13 @@ var app = new Vue({
       else if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 2 )){
         lot.closes = moment().add(1,'minutes');
         lot.extended = true;
-      } 
-      console.log(lot.extended);
+      }
+      if(bidder != this.bidder.number){ 
+        lot.newBid = true;
+        setTimeout(function(){
+          lot.newBid = false;
+        },2000);
+      }
     },
 
     buildBid: function(bidder, amt, type) {
@@ -263,6 +269,7 @@ var app = new Vue({
 
       this.choiceGroups.push(newGroup);
       this.toggleCompleteChoiceGroupModalVisible();
+      this.gotoPage('choice-groups');
     },
     toggleManageAlertsVisible: function() {
       this.manageAlertsVisible = !this.manageAlertsVisible;
@@ -330,8 +337,12 @@ var app = new Vue({
         "s"
       );
     },
+    absoluteTime(time){
+      if(typeof time._d === 'undefined') return time;
+      return time._d + 'hat';
+    },
     closingSoon: function(lot){
-      if(lot.extended) return true;
+      //if(lot.extended) return true;
       let span = closingTime(lot.closes);
       if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon){
          lot.hideCountdown = true;
@@ -372,6 +383,9 @@ var app = new Vue({
     },
     toggleSessionTimedOut: function(){
       this.sessionTimedOut = !this.sessionTimedOut;
+    },
+    bidAgainstMe: function(lot){
+      this.pricedBid(lot, "quick", '10005', lot.bids[0] ? lot.bids[0].bid + 5 : 5);
     }
 
 
