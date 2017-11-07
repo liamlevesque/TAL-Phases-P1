@@ -54,3 +54,18 @@
                 color: palette(yellow);
             }
         }
+
+        .c-notification__success{
+            @extend .icon-correct;
+            &:before{
+                color: palette(green);
+            }
+        }
+
+        .c-notification__watch{
+            @extend .icon-eye;
+            &:before{
+                color: palette(blue);
+                font-size: 20px;
+            }
+        }

@@ -179,7 +179,7 @@
                                                 </div>
                                                 <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                             </a>
-                                            <button v-on:click.stop="bidAgainstMe(lot)">Bid Against Me</button>
+                                            <button v-on:click.stop="bidAgainstMe(lot)" style="display:none">Bid Against Me</button>
                                             <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                                                     v-if="bidder.number != null && lot.status != 'sold'" 
                                                     v-on:click="createOrAddToChoiceGroup(lot)"
@@ -209,18 +209,13 @@
                                     </div>
                                 </div> 
                                 <div class="c-lot--bidding g-cell g-mob--full">
+                                    
+                                    
                                     <div v-if="lot.status === 'sold'">
-                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div>
                                         <!-- IF YOU WERE OUTBID -->
                                         <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3>
                                         <!-- IF ITEM SOLD -->
-                                        <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
-                                    </div>
-                                    <div v-else>
-                                        <!-- IF YOU WERE OUTBID -->
-                                        <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div>
-                                        <!-- IF YOU ARE HIGH BIDDER -->
-                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div>
+                                        <h3 class="c-lot--sold-notice" v-else >Bidding is closed for this item</h3>
                                     </div>
                                     
                                     <div class="c-lot--bid-and-closing">
@@ -244,7 +239,7 @@
                                             <div class="g-cell">
                                                 <div v-show="!closingSoon(lot)" class="c-lot--closing-time">
                                                     <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                                                    <span class="t-h4">{{ countdown(lot) }}</span>
+                                                    <span class="t-h4 h-flash-color" v-bind:class="{'s-flash':lot.newBid}">{{ countdown(lot) }}</span>
                                                 </div>
                                                 <transition name="slidein">
                                                     <div class="g-wrapper o-message__tal" v-if="closingSoon(lot)" v-bind:class="{'s-highlight':lot.extended}">
@@ -254,34 +249,25 @@
                                                     </div>
                                                 </transition>
                                             </div>
-                                            <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">({{ lot.closes | calendarTime }})</div> 
-                                            <transition name="dropin">
-                                                <div v-if="lot.extended" class="t-bold c-lot--time-extended">
-                                                    <span>Time Added</span>
-                                                    <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
-                                                    <transition name="dropinout">
-                                                        <div v-if="lot.newBid" class="t-bold c-lot--new-bid">
-                                                            <span>NEW BID</span>
-                                                        </div>
-                                                    </transition>
-                                                </div>
-                                            </transition>
+                                            <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">
+                                                ({{ lot.closes | calendarTime }})
+                                            </div> 
+                                            
                                         </div>
                                     </div> 
                                     
+                                    
                                     <div class="c-lot--bid-buttons" v-if="bidder.number != null && lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
-                                        <div class="g-wrapper">
+                                        <div class="g-wrapper h-mb-50">
                                             <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot) + ' USD or higher'"></div>
                                             <div class="g-cell">
-                                                <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)">
-                                                    <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
-                                                    <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
+                                                <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)" v-bind:disabled="!lot.tempMaxBid || lot.tempMaxBid.length === 0">
+                                                    <span>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
                                                 </button>
                                             </div>
                                         </div>
-                                        <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
-                                            <div class="h-ta-center">- OR -</div>
-                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
+                                        <div><!-- IF NOT HIGH BIDDER -->
+                                            <button class="o-button__primary h-width-100" v-bind:disabled="userIsHighBidder(lot.bids)" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
                                         </div>
                                         <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
                                             <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
@@ -291,6 +277,14 @@
                                     <div class="c-lot--bid-buttons" v-if="bidder.number === null">
                                         <button class="o-button__primary">Sign in to bid on this item!</button>
                                     </div>
+                                    
+                                    <transition name="slidein">
+                                        <div class="o-message__success h-mt-50" key="winner" v-if="lot.status === 'sold' && userIsHighBidder(lot.bids)">You won this item!</div>
+                                        <!-- IF OUTBID -->
+                                        <div class="o-message__warning h-mt-50" key="outbid" v-if="lot.status != 'sold' && userWasOutbid(lot.bids)">You have been outbid</div>
+                                        <!-- IF YOU ARE HIGH BIDDER -->
+                                        <div class="o-message__success h-mt-50" key="highbid" v-if="lot.status != 'sold' && userIsHighBidder(lot.bids)">You are the high bidder!</div>
+                                    </transition>
                                     <div class="c-lot--messages">
                                                 <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                     You bid on this lot in a choice group.
@@ -359,7 +353,7 @@
                                                                 </div>
                                                                 <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                                                             </a>
-                                                            <button v-on:click.stop="bidAgainstMe(lot)">Bid Against Me</button>
+                                                            <button v-on:click.stop="bidAgainstMe(lot)" style="display:none">Bid Against Me</button>
                                                             <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                                                                     v-if="bidder.number != null && lot.status != 'sold'" 
                                                                     v-on:click="createOrAddToChoiceGroup(lot)"
@@ -389,18 +383,13 @@
                                                     </div>
                                                 </div> 
                                                 <div class="c-lot--bidding g-cell g-mob--full">
+                                                    
+                                                    
                                                     <div v-if="lot.status === 'sold'">
-                                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div>
                                                         <!-- IF YOU WERE OUTBID -->
                                                         <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3>
                                                         <!-- IF ITEM SOLD -->
-                                                        <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
-                                                    </div>
-                                                    <div v-else>
-                                                        <!-- IF YOU WERE OUTBID -->
-                                                        <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div>
-                                                        <!-- IF YOU ARE HIGH BIDDER -->
-                                                        <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div>
+                                                        <h3 class="c-lot--sold-notice" v-else >Bidding is closed for this item</h3>
                                                     </div>
                                                     
                                                     <div class="c-lot--bid-and-closing">
@@ -424,7 +413,7 @@
                                                             <div class="g-cell">
                                                                 <div v-show="!closingSoon(lot)" class="c-lot--closing-time">
                                                                     <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                                                                    <span class="t-h4">{{ countdown(lot) }}</span>
+                                                                    <span class="t-h4 h-flash-color" v-bind:class="{'s-flash':lot.newBid}">{{ countdown(lot) }}</span>
                                                                 </div>
                                                                 <transition name="slidein">
                                                                     <div class="g-wrapper o-message__tal" v-if="closingSoon(lot)" v-bind:class="{'s-highlight':lot.extended}">
@@ -434,34 +423,25 @@
                                                                     </div>
                                                                 </transition>
                                                             </div>
-                                                            <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">({{ lot.closes | calendarTime }})</div> 
-                                                            <transition name="dropin">
-                                                                <div v-if="lot.extended" class="t-bold c-lot--time-extended">
-                                                                    <span>Time Added</span>
-                                                                    <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
-                                                                    <transition name="dropinout">
-                                                                        <div v-if="lot.newBid" class="t-bold c-lot--new-bid">
-                                                                            <span>NEW BID</span>
-                                                                        </div>
-                                                                    </transition>
-                                                                </div>
-                                                            </transition>
+                                                            <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">
+                                                                ({{ lot.closes | calendarTime }})
+                                                            </div> 
+                                                            
                                                         </div>
                                                     </div> 
                                                     
+                                                    
                                                     <div class="c-lot--bid-buttons" v-if="bidder.number != null && lot.status != 'sold' && !userHasInGroupBid(lot.lotNumber) && lot.status != 'notinyard'"><!-- IF NOT PART OF A CHOICE GROUP -->
-                                                        <div class="g-wrapper">
+                                                        <div class="g-wrapper h-mb-50">
                                                             <div class="g-cell g-mob--third"><input type="number" v-on="{ mousewheel : disableNumberInputScroll }" class="o-input--text" v-model="lot.tempMaxBid" v-bind:placeholder="'$'+nextIncrement(lot) + ' USD or higher'"></div>
                                                             <div class="g-cell">
-                                                                <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)">
-                                                                    <span v-if="userIsHighBidder(lot.bids)">Change Maximum Bid</span><!-- IF HAS SET A MAX BID -->
-                                                                    <span v-else>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
+                                                                <button class="o-button__primary o-button__input-buddy h-width-100" v-on:click="placeMaxBid(lot)" v-bind:disabled="!lot.tempMaxBid || lot.tempMaxBid.length === 0">
+                                                                    <span>Set Maximum Bid</span><!-- IF NOT SET A MAX BID -->
                                                                 </button>
                                                             </div>
                                                         </div>
-                                                        <div v-if="!userIsHighBidder(lot.bids)"><!-- IF NOT HIGH BIDDER -->
-                                                            <div class="h-ta-center">- OR -</div>
-                                                            <button class="o-button__primary h-width-100" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
+                                                        <div><!-- IF NOT HIGH BIDDER -->
+                                                            <button class="o-button__primary h-width-100" v-bind:disabled="userIsHighBidder(lot.bids)" v-on:click="placeBid(lot)">Quick Bid <span class="CCY t-bold">{{ nextIncrement(lot) }}</span></button>
                                                         </div>
                                                         <div v-if="userIsMaxBidder(lot)"><!-- ELSE IF HIGH BIDDER && MAX BID -->
                                                             <div class="c-input--hint">Your Maximum Bid: <span class="CCY">{{lot.maxBid.bid}}</span></div>
@@ -471,6 +451,14 @@
                                                     <div class="c-lot--bid-buttons" v-if="bidder.number === null">
                                                         <button class="o-button__primary">Sign in to bid on this item!</button>
                                                     </div>
+                                                    
+                                                    <transition name="slidein">
+                                                        <div class="o-message__success h-mt-50" key="winner" v-if="lot.status === 'sold' && userIsHighBidder(lot.bids)">You won this item!</div>
+                                                        <!-- IF OUTBID -->
+                                                        <div class="o-message__warning h-mt-50" key="outbid" v-if="lot.status != 'sold' && userWasOutbid(lot.bids)">You have been outbid</div>
+                                                        <!-- IF YOU ARE HIGH BIDDER -->
+                                                        <div class="o-message__success h-mt-50" key="highbid" v-if="lot.status != 'sold' && userIsHighBidder(lot.bids)">You are the high bidder!</div>
+                                                    </transition>
                                                     <div class="c-lot--messages">
                                                                 <div class="o-message__choice-group c-lot--messages__choice-group" v-if="userHasInGroupBid(lot.lotNumber)"><!-- IF BID AS PART OF CHOICE GROUP -->
                                                                     You bid on this lot in a choice group.
@@ -637,23 +625,23 @@
             </div>
             
             <div class="c-notification-center__body" v-bind:class="{'s-minimized': notificationsMinimized}">
-                <div class="c-notification__warning" v-for="message in messages">
+                <div v-for="(message,index) in messages" v-bind:class="notificationTypes(message)">
                     <div class="g-wrapper">
-                        <div class="g-cell">You've been outbid on a lot closing soon: </div>
+                        <div class="g-cell">{{message.message}}</div> 
                         <div><i class="icon-close" v-on:click="messages.splice(index,1)"></i></div>
                     </div>
                     
-                    <p class="t-h3 t-bold t-link" v-on:click="navigateToLot(outbidMessageLot.lotNumber)">Lot {{ outbidMessageLot.lotNumber }}:{{ outbidMessageLot.description }}</p>
+                    <p class="t-h3 t-bold t-link" v-on:click="navigateToLot(message.lot.lotNumber)">Lot {{ message.lot.lotNumber }}:{{ message.lot.description }}</p>
         
-                    <div class="g-wrapper">
+                    <div class="g-wrapper" v-bind:class="{'h-color-affirmative': message.lot.bids[0] && message.lot.bids[0].bidder === bidder.number}">
                         <!-- <div class="g-cell"> -->
-                            <div class="g-cell">
+                            <div class="g-cell" v-if="message.lot.bids[0]">
                                 <label for="" class="t-inline-label">Bid:</label>
-                                <span class="t-h3 t-bold CCY">{{ outbidMessageLot.bids[0]? outbidMessageLot.bids[0].bid : '' }}</span>
+                                <span class="t-h3 t-bold CCY">{{ message.lot.bids[0]? message.lot.bids[0].bid : '' }}</span>
                             </div>
-                            <div>
+                            <div v-if="message.lot.bids[0]">
                                 <label for="" class="t-inline-label">High Bidder:</label>
-                                <span class="t-h3 t-bold">{{ !outbidMessageLot.bids[0]? '' : outbidMessageLot.bids[0].bidder === bidder.number ? 'You!' : outbidMessageLot.bids[0].bidder }}</span>
+                                <span class="t-h3 t-bold">{{ !message.lot.bids[0]? '' : message.lot.bids[0].bidder === bidder.number ? 'You!' : message.lot.bids[0].bidder }}</span>
                             </div>
                         <!-- </div> -->
                         <!-- <div>

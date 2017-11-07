@@ -277,6 +277,14 @@
 	}
 
 
+.h-flash-color{
+	transition: color 0.2s;
+
+	&.s-flash{
+		color: palette(brand);
+	}
+}
+
 .h-color-white{
 	color: white !important;
 }
