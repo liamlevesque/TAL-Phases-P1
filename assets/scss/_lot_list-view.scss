@@ -269,7 +269,8 @@
 }
 
   .c-lot--closing-time{
-    padding: spacing(small) 0;
+    padding: spacing(small) spacing(small) spacing(small) 0;
+    white-space: nowrap;
   }
 
 .dropin-enter-active, .dropin-enter-active{
@@ -302,11 +303,18 @@
   position: relative;
   padding: spacing(small);
   overflow: hidden;
+  width: 40%;
+  text-align: center;
   
   span{
     display: inline-block;
     position: relative;
     backface-visibility: hidden;
+    // white-space: nowrap;
+
+    &.s-hide{
+      transform: translateY(100%);
+    }
   }
 }
 
@@ -314,8 +322,8 @@
     @extend .h-abs-fill;
     background-color: palette(red);
     padding: spacing(small);
-    letter-spacing: 1px;
     text-align: center;
+    letter-spacing: 1px;
   }
     
   .dropinout-enter-active, .dropinout-leave-active {
@@ -324,11 +332,9 @@
     
     .dropinout-enter{
       transform: translateY(-100%);
-      padding-top: 0;
     }
 
     .dropinout-leave-to{
-      padding-top: 100%;
       transform: translateY(100%);
     }
 

@@ -729,7 +729,7 @@ a.t-link {
 .icon-group:before, .o-message__choice-group:before {
   content: "\e91c"; }
 
-.icon-correct:before, .o-message__success:before {
+.icon-correct:before, .o-message__success:before, .c-notification__success:before {
   content: "\e908"; }
 
 .icon-information:before, .o-message__info:before {
@@ -792,7 +792,7 @@ a.t-link {
 .icon-dei:before {
   content: "\e908"; }
 
-.icon-eye:before {
+.icon-eye:before, .c-notification__watch:before {
   content: "\e909"; }
 
 .icon-help:before {
@@ -2234,6 +2234,13 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 .c-notification__warning:before {
   color: #F2B200; }
 
+.c-notification__success:before {
+  color: #11AF00; }
+
+.c-notification__watch:before {
+  color: #20579E;
+  font-size: 20px; }
+
 @media (max-width: 63em) {
   .o-lot-listings {
     background-color: #F0F0F0;
@@ -2446,7 +2453,8 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
       margin-top: 15px; } }
 
 .c-lot--closing-time {
-  padding: 15px 0; }
+  padding: 15px 15px 15px 0;
+  white-space: nowrap; }
 
 .dropin-enter-active, .dropin-enter-active {
   -webkit-transition: all .2s ease-in-out;
@@ -2479,18 +2487,23 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
   color: white;
   position: relative;
   padding: 15px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 40%;
+  text-align: center; }
   .c-lot--time-extended span {
     display: inline-block;
     position: relative;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden; }
+    .c-lot--time-extended span.s-hide {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%); }
 
 .c-lot--new-bid {
   background-color: #E50000;
   padding: 15px;
-  letter-spacing: 1px;
-  text-align: center; }
+  text-align: center;
+  letter-spacing: 1px; }
 
 .dropinout-enter-active, .dropinout-leave-active {
   -webkit-transition: all .2s;
@@ -2498,11 +2511,9 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 .dropinout-enter {
   -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  padding-top: 0; }
+          transform: translateY(-100%); }
 
 .dropinout-leave-to {
-  padding-top: 100%;
   -webkit-transform: translateY(100%);
           transform: translateY(100%); }
 
@@ -2896,6 +2907,12 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 @media (max-width: 30.0625em) {
   .h-hide-tiny {
     display: none !important; } }
+
+.h-flash-color {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s; }
+  .h-flash-color.s-flash {
+    color: #E87511; }
 
 .h-color-white {
   color: white !important; }

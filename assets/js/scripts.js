@@ -61,7 +61,33 @@ const tal = {
 
   outbidMessageVisible: false,
   outbidMessageLot: lotlist[33],
-  messages: [1,1],
+  messages: [
+    {
+      type: 'warning',
+      lot: lotlist[33],
+      message: 'You\'ve been outbid on a lot closing soon:'
+    },
+    {
+      lot: lotlist[21],
+      type: 'success',
+      message: 'Nice work! You won a lot you were bidding on!'
+    },
+    {
+      lot: lotlist[23],
+      type: 'watch',
+      message: 'A lot you are watching is closing soon!'
+    },
+    {
+      lot: lotlist[30],
+      type: 'warning',
+      message: 'You have been outbid a lot you were bidding on!'
+    },
+    {
+      lot: lotlist[35],
+      type: 'watch',
+      message: 'Bidding has opened for a lot you are watching!'
+    }
+  ],
   notificationsMinimized: false,
 };
 
@@ -75,9 +101,9 @@ document.addEventListener(
       );
     }
 
-    // setInterval(function(){
-    //   app.currentTime = moment();
-    // },1000);
+    setInterval(function(){
+      app.currentTime = moment();
+    },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
@@ -161,10 +187,10 @@ var app = new Vue({
       this.selectedLot = lot;
     },
     placeMaxBid: function(lot) {
-      if (lot.tempMaxBid === null) {
-        this.toggleInvalidMaxBidVisible();
-        lot.tempMaxBid = null;
-      } else this.toggleOffIncrementMaxBidVisible();
+      if (lot.tempMaxBid === null) this.toggleInvalidMaxBidVisible();
+      else this.toggleOffIncrementMaxBidVisible();
+      
+      lot.tempMaxBid = null;
       //else this.confirmPlaceMaxBidVisible = true;
 
       this.selectedLot = lot;
@@ -197,21 +223,24 @@ var app = new Vue({
 
     pricedBid: function(lot, type, bidder, amt) {
       lot.bids.unshift(this.buildBid(bidder, amt, type));
+      if(lot.maxBid.bid > amt) lot.bids.unshift(this.buildBid(lot.maxBid.bidder, amt + 5, 'max'));
+
       let span = closingTime(lot.closes);
       if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 1 )){
         lot.closes = moment().add(2,'minutes');
         lot.extended = true;
       } 
       else if(lot.extended || (span.days() === 0 && span.hours() === 0 && span.minutes() < 2 )){
-        lot.closes = moment().add(1,'minutes');
+        lot.closes = moment(lot.closes).add(1,'minutes');
         lot.extended = true;
       }
-      if(bidder != this.bidder.number){ 
+
+      //if(bidder != this.bidder.number){ 
         lot.newBid = true;
         setTimeout(function(){
           lot.newBid = false;
         },2000);
-      }
+      //}
     },
 
     buildBid: function(bidder, amt, type) {
@@ -326,16 +355,14 @@ var app = new Vue({
       if(span.seconds() < 0){ 
         lot.status = 'sold';
       }
-      return (
-        span.days() +
-        "d " +
-        span.hours() +
-        "h " +
-        span.minutes() +
-        "m " +
-        span.seconds() +
-        "s"
-      );
+      let days = span.days() > 0 ? `${span.days()}d ` : '';
+      let hours = span.hours() > 0 || span.days() > 0 ? `${span.hours()}h ` : '';
+      let minutes = span.minutes() > 0 || span.hours() > 0 || span.days() > 0 ? `${span.minutes()}m ` : '';
+      let seconds = span.seconds() > 0 || span.minutes() > 0 || span.hours() > 0 || span.days() > 0 ? `${span.seconds()}s` : '';
+
+      //if(seconds.length < 2) seconds = '0' + seconds;
+
+      return days + minutes + hours + seconds;
     },
     absoluteTime(time){
       if(typeof time._d === 'undefined') return time;
@@ -376,6 +403,14 @@ var app = new Vue({
         's-sold':lot.status === 'sold',
         's-sold-to-you':lot.status === 'sold' && lot.bids[0] && lot.bids[0].bidder === this.bidder.number,
         's-extended': lot.extended
+      }
+    },
+    notificationTypes:function(message){
+      return{
+        'c-notification__warning': message.type === 'warning',
+        'c-notification__success': message.type === 'success',
+        'c-notification__info': message.type === 'info',
+        'c-notification__watch': message.type === 'watch'
       }
     },
     toggleNotificationsMinimized: function(){

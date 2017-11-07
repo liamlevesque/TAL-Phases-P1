@@ -1,15 +1,10 @@
+
+
 <div v-if="lot.status === 'sold'">
-    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You won this item!</div>
     <!-- IF YOU WERE OUTBID -->
     <h3 class="c-lot--sold-notice" v-if="lot.bids.length > 0">This item has been sold!</h3>
     <!-- IF ITEM SOLD -->
-    <h3 class="c-lot--sold-notice" v-else>Bidding is closed for this item</h3>
-</div>
-<div v-else>
-    <!-- IF YOU WERE OUTBID -->
-    <div class="o-message__warning" v-if="userWasOutbid(lot.bids)">You have been outbid</div>
-    <!-- IF YOU ARE HIGH BIDDER -->
-    <div class="o-message__success" v-if="userIsHighBidder(lot.bids)">You are the high bidder!</div>
+    <h3 class="c-lot--sold-notice" v-else >Bidding is closed for this item</h3>
 </div>
 
 <div class="c-lot--bid-and-closing">
@@ -33,7 +28,7 @@
         <div class="g-cell">
             <div v-show="!closingSoon(lot)" class="c-lot--closing-time">
                 <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
-                <span class="t-h4">{{ countdown(lot) }}</span>
+                <span class="t-h4 h-flash-color" v-bind:class="{'s-flash':lot.newBid}">{{ countdown(lot) }}</span>
             </div>
             <transition name="slidein">
                 <div class="g-wrapper o-message__tal" v-if="closingSoon(lot)" v-bind:class="{'s-highlight':lot.extended}">
@@ -43,17 +38,9 @@
                 </div>
             </transition>
         </div>
-        <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">({{ lot.closes | calendarTime }})</div> 
-        <transition name="dropin">
-            <div v-if="lot.extended" class="t-bold c-lot--time-extended">
-                <span>Time Added</span>
-                <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
-                <transition name="dropinout">
-                    <div v-if="lot.newBid" class="t-bold c-lot--new-bid">
-                        <span>NEW BID</span>
-                    </div>
-                </transition>
-            </div>
-        </transition>
+        <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">
+            ({{ lot.closes | calendarTime }})
+        </div> 
+        
     </div>
 </div>

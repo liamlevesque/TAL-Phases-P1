@@ -14,7 +14,7 @@
                     </div>
                     <h3 class="c-lot--lot-number t-h3">Lot {{ lot.lotNumber }}</h3>
                 </a>
-                <button v-on:click.stop="bidAgainstMe(lot)">Bid Against Me</button>
+                <button v-on:click.stop="bidAgainstMe(lot)" style="display:none">Bid Against Me</button>
                 <button class="o-button__icon-toggle o-button__mobile-toggle h-hide-desktop" 
                         v-if="bidder.number != null && lot.status != 'sold'" 
                         v-on:click="createOrAddToChoiceGroup(lot)"
