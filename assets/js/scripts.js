@@ -103,9 +103,9 @@ document.addEventListener(
       );
     }
 
-    // setInterval(function(){
-    //   app.currentTime = moment();
-    // },1000);
+    setInterval(function(){
+      app.currentTime = moment();
+    },1000);
 
     var waypoint = new Waypoint({
       element: document.querySelector(".js--nav-pin-waypoint"),
