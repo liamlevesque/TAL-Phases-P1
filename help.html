@@ -195,6 +195,13 @@
                         <p>No. Every bid placed at a Ritchie Bros. auction is final and irrevocable. You cannot cancel or retract any bids you place in the Timed Auction system. When you place a Quick Bid or Maximum Bid, you will be asked to confirm your bid to ensure that you don’t place any bids by mistake. </p> 
                         <p>However, if you are the current high bidder, you can reduce your Maximum Bid to the next increment above your current high bid. </p> 
                     </li class="o-faq-item">
+
+                    <li class="o-faq-item">
+                        <h3 class="t-h3">What does "Time Added" mean and why did it happen?</h3> 
+                        <p>If any bids are placed on a lot with less than <strong class="">2 minutes remaining</strong> the timed auction automatically extends the closing time for that lot to give other bidders a chance to increase their bids in response.</p>
+                        <strong>So when will bidding for a lot actually close?</strong> 
+                        <p>It depends on how many people continue to bid on the lot. If people continue to bid, the lot will remain open until no new bids are placed and the added time runs out.</p>
+                    </li class="o-faq-item">
                     
                     <li class="o-faq-item">
                         <h3 class="t-h3">How do I know if I was the highest bidder?</h3>
@@ -361,9 +368,12 @@
         </div>
 
     </div>
+
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-directive-tooltip@latest/dist/vueDirectiveTooltip.min.js"></script>
     <script type="text/javascript" src="assets/js/min/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="assets/js/min/scripts-min.js"></script>
+    
     
 </body>
 </html>

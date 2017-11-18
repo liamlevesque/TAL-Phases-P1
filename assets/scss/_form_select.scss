@@ -2,7 +2,7 @@
 	@include textinput;
 	padding-right: 40px;
 	background-color:white;
-	background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(grey,2)};' transform='translate(-4 -8.5)'/></svg>");
+	background-image: url("data:image/svg+xml;utf8,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Cpath d='M13%2C14.09l5.29-5.3a1%2C1%2C0%2C0%2C1%2C1.42%2C1.42l-7%2C7a1%2C1%2C0%2C0%2C1-1.42%2C0l-7-7A1%2C1%2C0%2C0%2C1%2C5%2C8.5a1%2C1%2C0%2C0%2C1%2C.71.29L11%2C14.09A1.16%2C1.16%2C0%2C0%2C0%2C13%2C14.09Z' fill='%23CCCCCC' transform='translate%28-4 -8.5%29'/%3E%3C/svg%3E");
 	background-size: 20px 20px;
 	background-position: right 10px center; 
 	background-repeat: no-repeat;
@@ -15,7 +15,7 @@
 	}
 
 	&:hover{
-		background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(grey)};' transform='translate(-4 -8.5)'/></svg>");
+		background-image: url("data:image/svg+xml;utf8,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Cpath d='M13%2C14.09l5.29-5.3a1%2C1%2C0%2C0%2C1%2C1.42%2C1.42l-7%2C7a1%2C1%2C0%2C0%2C1-1.42%2C0l-7-7A1%2C1%2C0%2C0%2C1%2C5%2C8.5a1%2C1%2C0%2C0%2C1%2C.71.29L11%2C14.09A1.16%2C1.16%2C0%2C0%2C0%2C13%2C14.09Z' fill='%233F3F3F' transform='translate%28-4 -8.5%29'/%3E%3C/svg%3E");
 		//background-color: palette(grey,light); 
 	}
 
@@ -39,10 +39,10 @@
 		background-color: palette(grey);
 		color: white;
 		font-weight: 700;
-		background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: white;' transform='translate(-4 -8.5)'/></svg>");
+		background-image: url("data:image/svg+xml;utf8,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Cpath d='M13%2C14.09l5.29-5.3a1%2C1%2C0%2C0%2C1%2C1.42%2C1.42l-7%2C7a1%2C1%2C0%2C0%2C1-1.42%2C0l-7-7A1%2C1%2C0%2C0%2C1%2C5%2C8.5a1%2C1%2C0%2C0%2C1%2C.71.29L11%2C14.09A1.16%2C1.16%2C0%2C0%2C0%2C13%2C14.09Z' fill='%23ffffff' transform='translate%28-4 -8.5%29'/%3E%3C/svg%3E");
 
 		&:hover{
-			background-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'><path d='M13,14.09l5.29-5.3a1,1,0,0,1,1.42,1.42l-7,7a1,1,0,0,1-1.42,0l-7-7A1,1,0,0,1,5,8.5a1,1,0,0,1,.71.29L11,14.09A1.16,1.16,0,0,0,13,14.09Z' style='fill: #{palette(brand)};' transform='translate(-4 -8.5)'/></svg>");
+			background-image: url("data:image/svg+xml;utf8,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Cpath d='M13%2C14.09l5.29-5.3a1%2C1%2C0%2C0%2C1%2C1.42%2C1.42l-7%2C7a1%2C1%2C0%2C0%2C1-1.42%2C0l-7-7A1%2C1%2C0%2C0%2C1%2C5%2C8.5a1%2C1%2C0%2C0%2C1%2C.71.29L11%2C14.09A1.16%2C1.16%2C0%2C0%2C0%2C13%2C14.09Z' fill='%23E87511' transform='translate%28-4 -8.5%29'/%3E%3C/svg%3E");
 		}
 
 		@include breakpoint(medmax){

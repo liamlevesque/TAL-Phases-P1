@@ -11,8 +11,10 @@ const tal = {
   },
   preSoldOffset: 20,
   closeInterval: 15,
-  timeClosingSoon: 30,
-  timeGoingGoing: 15,
+  timeGoingOnce: 30,
+  timeGoingTwice: 20,
+  timeGoingThrice: 10,
+
   currentTime: moment(),
   bidder: {
     number: "12345"
@@ -371,8 +373,7 @@ var app = new Vue({
     closingSoon: function(lot){
       //if(lot.extended) return true;
       let span = closingTime(lot.closes);
-      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon){
-         lot.hideCountdown = true;
+      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeGoingOnce){
          return true;
       }
       return false;
@@ -380,8 +381,11 @@ var app = new Vue({
     closingSoonString: function(lot){
       if (!lot.closes) return "";
       let span = closingTime(lot.closes);
-      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeGoingGoing) return "Going, Going...";
-      else if((span.days() === 0 && span.hours() === 0 && span.minutes() === 0 && span.seconds() < this.timeClosingSoon) || lot.extended) return "Closing Soon!";
+      if(span.days() === 0 && span.hours() === 0 && span.minutes() === 0){
+        if( span.seconds() < this.timeGoingThrice ) return "Going Three Times";
+        else if( span.seconds() < this.timeGoingTwice ) return "Going Twice";
+        else if( span.seconds() < this.timeGoingOnce) return "Going Once";
+      }
       //else if() return "Closing Soon!"
     },
     toggleOutbidMessage: function(){

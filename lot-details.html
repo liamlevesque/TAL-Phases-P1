@@ -183,26 +183,28 @@
                             <div v-else class="t-faint c-lot--highBid">
                                 No bids <span v-if="lot.status === 'sold'">were</span><span v-else>have been</span> placed on this lot.
                             </div>
-                            
-                            
                         
                             <div class="c-lot--closing g-wrapper" v-if="lot.status != 'sold'">
                                 <div class="g-cell">
-                                    <div v-show="!closingSoon(lot)" class="c-lot--closing-time">
+                                    <div class="c-lot--closing-time">
                                         <label for="" class="t-inline-label"><span class="h-hide-mobile">Bidding </span> Closes:</label>
                                         <span class="t-h4 h-flash-color" v-bind:class="{'s-flash':lot.newBid}">{{ countdown(lot) }}</span>
                                     </div>
-                                    <transition name="slidein">
-                                        <div class="g-wrapper o-message__tal" v-if="closingSoon(lot)" v-bind:class="{'s-highlight':lot.extended}">
-                                            <div class="g-cell t-h4">
-                                                {{ closingSoonString(lot) }}
-                                            </div>
-                                        </div>
-                                    </transition>
                                 </div>
-                                <div v-if="!lot.extended && !closingSoon(lot)" v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">
+                                <div v-tooltip.top.end="absoluteTime(lot.closes)" class="c-lot--closing-time">
                                     ({{ lot.closes | calendarTime }})
                                 </div> 
+                                <!-- <transition name="dropin">
+                                    <div v-if="lot.extended" class="t-bold c-lot--time-extended">
+                                        <span>Time Added</span>
+                                        <i class="icon-help icon-size--ml h-ml-50" v-tooltip.top.end="{ html: 'timeExtensionTooltip' }"></i>
+                                        <transition name="dropinout">
+                                            <div v-if="lot.newBid" class="t-bold c-lot--new-bid">
+                                                <span>NEW BID</span>
+                                            </div>
+                                        </transition>
+                                    </div>
+                                </transition> -->
                                 
                             </div>
                         </div>
