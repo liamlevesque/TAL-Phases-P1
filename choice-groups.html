@@ -164,10 +164,10 @@
                     <div class="c-choice-group--body">
                         <div class="c-lot-listing" v-for="(lot, index) in lotsInGroup(group.lots)" v-bind:class="lotStatus(lot)">
                             <div class="g-wrapper">
-                                <div class="h-hide-mobile" v-if="creatingChoiceGroup">
+                                <div class="h-hide-mobile" v-if="creatingChoiceGroup && lot.status != 'sold'">
                                     <label class="o-input--checkbox">
                                         <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index + 20" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
-                                        <span class="o-input--checksymbol"></span>
+                                        <span class="o-input--addsymbol"></span>
                                     </label>
                                 </div>
                                 <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
@@ -340,10 +340,10 @@
                                     <div class="c-choice-group--body">
                                         <div class="c-lot-listing" v-for="(lot, index) in lotsInGroup(group.lots)" v-bind:class="lotStatus(lot)">
                                             <div class="g-wrapper">
-                                                <div class="h-hide-mobile" v-if="creatingChoiceGroup">
+                                                <div class="h-hide-mobile" v-if="creatingChoiceGroup && lot.status != 'sold'">
                                                     <label class="o-input--checkbox">
                                                         <input type="checkbox" v-bind:id="lot.lotNumber" v-bind:value="index + 20" v-model="tempChoiceGroupArray" v-on:change="updateChoiceGroup" number v-bind:disabled="tempChoiceGroup.length >= groupMaximumLots && tempChoiceGroup.indexOf(lot.lotNumber) < 0">
-                                                        <span class="o-input--checksymbol"></span>
+                                                        <span class="o-input--addsymbol"></span>
                                                     </label>
                                                 </div>
                                                 <div class="c-lot--details-wrapper g-cell g-cell__two-thirds g-mob--full">
